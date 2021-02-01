@@ -1,0 +1,7 @@
+add_subdirectory(currency)
+#add_subdirectory(eshi)
+add_subdirectory(latinka_translitterator)
+add_subdirectory(pocket_munnin)
+add_subdirectory(tsmok)
+add_subdirectory(warehouse_tsd)
+add_subdirectory(swan_test)
