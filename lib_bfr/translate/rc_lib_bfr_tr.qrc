@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/lib_bfr/tr">
+        <file>bfr_de.ts</file>
+        <file>bfr_fr.ts</file>
+        <file>bfr_jp.ts</file>
+        <file>bfr_pl.ts</file>
+        <file>bfr_ru.ts</file>
+        <file>bfr_sp.ts</file>
+        <file>bfr_ua.ts</file>
+    </qresource>
+</RCC>

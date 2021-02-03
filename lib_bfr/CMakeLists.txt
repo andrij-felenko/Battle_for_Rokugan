@@ -2,69 +2,64 @@ cmake_minimum_required(VERSION 3.14)
 project(lib_bfr VERSION 0.0.1)
 
 set (lib_bfr_h
-    include/lib_bfr/token.h
+    include/lib_bfr/border.h
+    include/lib_bfr/card.h
+    include/lib_bfr/game.h
+    include/lib_bfr/gameMap.h
+    include/lib_bfr/mission.h
+    include/lib_bfr/player.h
+    include/lib_bfr/province.h
+    include/lib_bfr/provinceToken.h
+    include/lib_bfr/region.h
+    include/lib_bfr/turnToken.h
     include/lib_bfr/clan.h
-#    include/trinnLib.h
-#    include/lib_trinn/model/management.h
-#    include/lib_trinn/model/subject.h
-#    include/lib_trinn/model/transaction.h
-#    include/lib_trinn/trinnEnum.h
-#    include/lib_trinn/trinnStorage.h
-#    include/lib_trinn/management/budgate.h
-#    include/lib_trinn/management/plan.h
-#    include/lib_trinn/subject/account.h
-#    include/lib_trinn/subject/category.h
-#    include/lib_trinn/subject/project.h
-#    include/lib_trinn/subject/store.h
-#    include/lib_trinn/transaction/income.h
-#    include/lib_trinn/transaction/magnet.h
-#    include/lib_trinn/transaction/purchase.h
-#    include/lib_trinn/transaction/transfer.h
+    include/bfrLib.h
 )
 
 set (lib_bfr_cpp
-    cards/token.cpp
-    cards/clan.cpp
-#    trinnEnum.cpp
-#    trinnStorage.cpp
-#    model/management.cpp
-#    model/subject.cpp
-#    model/transaction.cpp
-#    management/budgate.cpp
-#    management/plan.cpp
-#    subject/account.cpp
-#    subject/category.cpp
-#    subject/project.cpp
-#    subject/store.cpp
-#    transaction/income.cpp
-#    transaction/magnet.cpp
-#    transaction/purchase.cpp
-#    transaction/transfer.cpp
+    border.cpp
+    card.cpp
+    clan.cpp
+    game.cpp
+    gameMap.cpp
+    mission.cpp
+    player.cpp
+    province.cpp
+    provinceToken.cpp
+    region.cpp
+    turnToken.cpp
 )
 
 set (bfr_initialize_header
-#    include/TrinnLib
-#    include/Trinn/Model/Management
-#    include/Trinn/Model/Subject
-#    include/Trinn/Model/Transaction
-#    include/Trinn/Enum
-#    include/Trinn/Storage
-#    include/Trinn/Management/Budgate
-#    include/Trinn/Management/Plan
-#    include/Trinn/Subject/Account
-#    include/Trinn/Subject/Category
-#    include/Trinn/Subject/Project
-#    include/Trinn/Subject/Store
-#    include/Trinn/Transaction/Income
-#    include/Trinn/Transaction/Magnet
-#    include/Trinn/Transaction/Purchase
-#    include/Trinn/Transaction/Transfer
+    include/BFR/Border
+    include/BFR/Card
+    include/BFR/Game
+    include/BFR/GameMap
+    include/BFR/Mission
+    include/BFR/Player
+    include/BFR/Province
+    include/BFR/ProvinceToken
+    include/BFR/Region
+    include/BFR/TurnToken
+    include/BFR/Clan
+    include/BFRlib
 )
 
 set (CMAKE_AUTOMOC, true)
-find_package(Qt6Core)
+set (CMAKE_AUTORCC ON)
+find_package(Qt6 COMPONENTS Core LinguistTools)
+qt6_create_translation(QM_FILES ${lib_bfr_h} ${lib_bfr_cpp}
+    tr/bfr_ua.ts
+    tr/bfr_ru.ts
+    tr/bfr_sp.ts
+    tr/bfr_fr.ts
+    tr/bfr_de.ts
+    tr/bfr_pl.ts
+    tr/bfr_jp.ts
+)
 
-add_library(lib_bfr ${lib_bfr_h} ${lib_bfr_cpp} ${bfr_initialize_header})
+add_library(lib_bfr ${lib_bfr_h} ${lib_bfr_cpp}
+    translate/rc_lib_bfr_tr.qrc ${bfr_initialize_header} ${QM_FILES})
 
 set_target_properties(lib_bfr PROPERTIES OUTPUT_NAME "lib_bfr")
 target_link_libraries(lib_bfr lib_baseAF lib_currencyAF Qt6::Core)
@@ -74,4 +69,14 @@ target_include_directories(lib_bfr
     PRIVATE include/lib_trinn
     PUBLIC $<TARGET_PROPERTY:lib_currencyAF,INTERFACE_INCLUDE_DIRECTORIES>
     PUBLIC $<TARGET_PROPERTY:lib_baseAF,INTERFACE_INCLUDE_DIRECTORIES>
+)
+
+add_custom_command(TARGET lib_bfr PRE_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/translate
+                                               ${CMAKE_CURRENT_SOURCE_DIR}/tr
+)
+
+add_custom_command(TARGET lib_bfr POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/tr
+                                               ${CMAKE_CURRENT_SOURCE_DIR}/translate
 )

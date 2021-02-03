@@ -1,12 +1,16 @@
 #ifndef LIB_BFR_CLAN_H
 #define LIB_BFR_CLAN_H
 
+#include <QtCore/QObject>
+
 namespace BattleForRokugan {
     class Clan;
+    class TurnToken;
 }
 
-class BattleForRokugan::Clan
+class BattleForRokugan::Clan : public QObject
 {
+    Q_OBJECT
 public:
     //!
     //! \brief The Type enum
@@ -15,20 +19,21 @@ public:
         Crane,
         Dragon,
         Phoenix,
-        Scorpio,
+        Scorpion,
         Lion,
         Crab,
         Unicorn,
-        Archipelago,
-        Dune,
-        LandOfShadowUp,
-        LandOfShadowDown
-    };
+        None
+    }; Q_ENUM(Type)
 
-    Clan(const Type& type);
+    Clan(const Type& type, QObject* parent = nullptr);
 
     Type type() const;
     void setType(const Type &type);
+
+    QString name(const Type& type);
+
+    TurnToken specialClanToken(const Type type) const;
 
 private:
     Type m_type;
