@@ -32,9 +32,14 @@ QString BattleForRokugan::Clan::name(const BattleForRokugan::Clan::Type &type)
     return tr("No one");
 }
 
-BattleForRokugan::TurnToken BattleForRokugan::Clan::specialClanToken(const BattleForRokugan::Clan::Type type) const
+QString BattleForRokugan::Clan::name() const
 {
-    switch (type) {
+    return name(m_type);
+}
+
+BattleForRokugan::TurnToken BattleForRokugan::Clan::specialClanToken() const
+{
+    switch (m_type) {
     case Type::Crane:    return TurnToken(TurnToken::Type::Diplomacy);
     case Type::Unicorn:  return TurnToken(TurnToken::Type::Sabotage);
     case Type::Crab:     return TurnToken(TurnToken::Type::Navy,     3);
@@ -45,4 +50,10 @@ BattleForRokugan::TurnToken BattleForRokugan::Clan::specialClanToken(const Battl
     default:;
     }
     return TurnToken(TurnToken::Type::None);
+}
+
+BattleForRokugan::Clan::Type operator+(BattleForRokugan::Clan::Type type, unsigned i)
+{
+    using namespace BattleForRokugan;
+    return static_cast <Clan::Type>(static_cast <unsigned>(type) + i);
 }

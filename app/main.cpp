@@ -3,7 +3,7 @@
 #include <QtGui/QIcon>
 #include <QDir>
 #include "AFbaseLib"
-#include "lib_bfr/mission.h"
+#include "BFRlib"
 
 int main(int argc, char** argv)
 {
@@ -17,8 +17,14 @@ int main(int argc, char** argv)
 
     // TODO add company information
     app.setWindowIcon(QIcon(":/icon/af_base/af_logo.svg"));
-    BattleForRokugan::Mission m;
-    qDebug() << m.description(BattleForRokugan::Mission::Type::EmeraldEmpire);
+
+    BattleForRokugan::Game game;
+    game.addPlayer("Ja_1");
+    game.addPlayer("Ja_2");
+    game.addPlayer("Ja_3");
+    game.addPlayer("Ja_4");
+    game.addPlayer("Ja_5");
+    game.start();
 
     return app.exec();
 }

@@ -47,6 +47,7 @@ set (bfr_initialize_header
 
 set (CMAKE_AUTOMOC, true)
 set (CMAKE_AUTORCC ON)
+set (CMAKE_CXX_STANDARD 20)
 find_package(Qt6 COMPONENTS Core LinguistTools)
 qt6_create_translation(QM_FILES ${lib_bfr_h} ${lib_bfr_cpp}
     tr/bfr_ua.ts
@@ -73,10 +74,8 @@ target_include_directories(lib_bfr
 
 add_custom_command(TARGET lib_bfr PRE_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/translate
-                                               ${CMAKE_CURRENT_SOURCE_DIR}/tr
-)
+                                               ${CMAKE_CURRENT_SOURCE_DIR}/tr)
 
 add_custom_command(TARGET lib_bfr POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/tr
-                                               ${CMAKE_CURRENT_SOURCE_DIR}/translate
-)
+                                               ${CMAKE_CURRENT_SOURCE_DIR}/translate)

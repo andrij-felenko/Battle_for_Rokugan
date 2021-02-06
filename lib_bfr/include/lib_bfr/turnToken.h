@@ -25,7 +25,8 @@ public:
         None,
     }; Q_ENUM(Type)
 
-    TurnToken(const Type& type, unsigned char value = 0);
+    TurnToken(const Type& type, unsigned char value, QObject* parent = nullptr);
+    TurnToken(const Type& type, QObject* parent = nullptr);
 
     Type type() const;
     void setType(const Type &type);

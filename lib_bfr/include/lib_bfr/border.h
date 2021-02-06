@@ -32,6 +32,9 @@ public:
     void setToken(const TurnToken::Type &token);
     void clear();
 
+    std::shared_ptr<Province> province1() const;
+    std::shared_ptr<Province> province2() const;
+
 private:
     Type m_type;
     std::shared_ptr <Province> m_province1;

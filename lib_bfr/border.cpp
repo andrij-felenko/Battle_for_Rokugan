@@ -30,6 +30,16 @@ void BattleForRokugan::Border::clear()
     setToken(TurnToken::Type::None);
 }
 
+std::shared_ptr<BattleForRokugan::Province> BattleForRokugan::Border::province2() const
+{
+    return m_province2;
+}
+
+std::shared_ptr<BattleForRokugan::Province> BattleForRokugan::Border::province1() const
+{
+    return m_province1;
+}
+
 BattleForRokugan::TurnToken::Type BattleForRokugan::Border::token() const
 {
     return m_token;

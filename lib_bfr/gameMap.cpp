@@ -1,4 +1,7 @@
 #include "lib_bfr/gameMap.h"
+#include "lib_bfr/clan.h"
+#include "lib_bfr/game.h"
+#include "AFbase/AfFunction"
 
 BattleForRokugan::GameMap::GameMap(QObject* parent) : QObject(parent)
 {
@@ -10,12 +13,22 @@ BattleForRokugan::GameMap::GameMap(QObject* parent) : QObject(parent)
     addNavyBorder();
 }
 
+BattleForRokugan::Region* BattleForRokugan::GameMap::operator [](const Region::Type type) const
+{
+    for (auto it : m_regionList)
+        if (it->type() == type)
+            return it;
+    return nullptr;
+}
+
 bool BattleForRokugan::GameMap::addBorder(BattleForRokugan::Region::Type type, uchar number)
 {
     auto prov = findProvince(type, number);
     if (not prov)
         return false;
-    m_listBorders.push_back(new Border(prov.value(), this));
+    auto border = new Border(prov.value(), this);
+    m_listBorders.push_back(border);
+    prov->get()->addBorder(border);
     return true;
 }
 
@@ -26,7 +39,10 @@ bool BattleForRokugan::GameMap::addBorder(BattleForRokugan::Region::Type type1, 
     auto prov2 = findProvince(type2, s2);
     if (not prov1 or  not prov2)
         return false;
-    m_listBorders.push_back(new Border(prov1.value(), prov2.value(), this));
+    auto border = new Border(prov1.value(), prov2.value(), this);
+    m_listBorders.push_back(border);
+    prov1->get()->addBorder(border);
+    prov2->get()->addBorder(border);
     return true;
 }
 
@@ -46,6 +62,27 @@ BattleForRokugan::GameMap::findRegion(BattleForRokugan::Region::Type type) const
         if (type == it->type())
             return it;
     return std::nullopt;
+}
+
+std::list<BattleForRokugan::Clan::Type> BattleForRokugan::GameMap::minCountProvincesClan() const
+{
+    auto clan_list = static_cast <Game*> (parent())->getClanProvinceOwned();
+    std::list <Clan::Type> ret;
+    for (auto it : AFfunction::findMinIndexList <unsigned, 7> (clan_list))
+        ret.push_back(static_cast <Clan::Type> (it));
+    return ret;
+}
+
+std::list<BattleForRokugan::Clan::Type> BattleForRokugan::GameMap::maxCountProvincesClan(bool withToken) const
+{
+    std::array <unsigned, 7> clan_owner_count;
+    auto game = static_cast <Game*>(parent());
+    clan_owner_count = withToken ? game->getClanControlToken() : game->getClanProvinceOwned();
+
+    std::list <Clan::Type> ret;
+    for (auto it : AFfunction::findMinIndexList <unsigned, 7> (clan_owner_count))
+        ret.push_back(static_cast <Clan::Type> (it));
+    return ret;
 }
 
 void BattleForRokugan::GameMap::addLandBorder()
@@ -92,16 +129,16 @@ void BattleForRokugan::GameMap::addLandBorder()
     addBorder(RegionType::Scorpion, 2, RegionType::Crab, 1);
     addBorder(RegionType::Crab, 0, RegionType::Crab, 1);
     addBorder(RegionType::Crab, 0, RegionType::Crab, 2);
-    addBorder(RegionType::Crab, 0, RegionType::LandOfShadowUp);
+    addBorder(RegionType::Crab, 0, RegionType::ShadowUp);
     addBorder(RegionType::Crab, 1, RegionType::Crane, 2);
     addBorder(RegionType::Crab, 1, RegionType::Dune, 0);
     addBorder(RegionType::Crab, 1, RegionType::Crab, 2);
     addBorder(RegionType::Crab, 2, RegionType::Crab, 3);
     addBorder(RegionType::Crab, 2, RegionType::Dune, 0);
-    addBorder(RegionType::Crab, 2, RegionType::LandOfShadowUp);
+    addBorder(RegionType::Crab, 2, RegionType::ShadowUp);
     addBorder(RegionType::Crab, 3, RegionType::Dune, 2);
-    addBorder(RegionType::Crab, 3, RegionType::LandOfShadowDown);
-    addBorder(RegionType::Crab, 3, RegionType::LandOfShadowUp);
+    addBorder(RegionType::Crab, 3, RegionType::ShadowDown);
+    addBorder(RegionType::Crab, 3, RegionType::ShadowUp);
     addBorder(RegionType::Crane, 0, RegionType::Crane, 1);
     addBorder(RegionType::Crane, 1, RegionType::Crane, 2);
     addBorder(RegionType::Crane, 2, RegionType::Dune, 0);
@@ -109,7 +146,7 @@ void BattleForRokugan::GameMap::addLandBorder()
     addBorder(RegionType::Dune, 0, RegionType::Dune, 1);
     addBorder(RegionType::Dune, 0, RegionType::Dune, 2);
     addBorder(RegionType::Dune, 1, RegionType::Dune, 2);
-    addBorder(RegionType::LandOfShadowDown, 0, RegionType::LandOfShadowUp);
+    addBorder(RegionType::ShadowDown, 0, RegionType::ShadowUp);
 }
 
 void BattleForRokugan::GameMap::addNavyBorder()
@@ -127,5 +164,5 @@ void BattleForRokugan::GameMap::addNavyBorder()
     addBorder(RegionType::Archipelago, 1);
     addBorder(RegionType::Archipelago, 2);
     addBorder(RegionType::Crab, 3);
-    addBorder(RegionType::LandOfShadowDown, 0);
+    addBorder(RegionType::ShadowDown, 0);
 }

@@ -16,6 +16,8 @@ class BattleForRokugan::GameMap : public QObject
 public:
     GameMap(QObject* parent = nullptr);
 
+    Region* operator[](const Region::Type type) const;
+
 private:
     QList <Region*> m_regionList;
     QList <Border*> m_listBorders;
@@ -25,8 +27,14 @@ private:
     std::optional <std::shared_ptr <Province>> findProvince(Region::Type type, unsigned char stars) const;
     std::optional <Region*> findRegion(Region::Type type) const;
 
+    std::list <Clan::Type> minCountProvincesClan() const;
+    std::list <Clan::Type> maxCountProvincesClan(bool withToken = false) const;
+
     inline void addLandBorder();
     inline void addNavyBorder();
+
+    friend class Game;
+    friend class Mission;
 };
 
 #endif // LIB_BFR_GAMEMAP_H

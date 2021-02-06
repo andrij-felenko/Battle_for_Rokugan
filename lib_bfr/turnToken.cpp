@@ -1,7 +1,14 @@
 #include "lib_bfr/turnToken.h"
 
-BattleForRokugan::TurnToken::TurnToken(const BattleForRokugan::TurnToken::Type &type, unsigned char value)
-    : m_type(type), m_value(value)
+BattleForRokugan::TurnToken::TurnToken(const BattleForRokugan::TurnToken::Type &type,
+                                       unsigned char value, QObject *parent)
+    : QObject(parent), m_type(type), m_value(value)
+{
+    //
+}
+
+BattleForRokugan::TurnToken::TurnToken(const BattleForRokugan::TurnToken::Type &type, QObject *parent)
+    : TurnToken(type, 0, parent)
 {
     //
 }
