@@ -1,60 +1,41 @@
 #ifndef LIB_BFR_REGION_H
 #define LIB_BFR_REGION_H
 
-#include <list>
-#include <memory>
-#include <optional>
-#include "clan.h"
-#include <QtCore/QObject>
-
-namespace BattleForRokugan {
-    class Region;
-    class Province;
-}
+#include "bfrLib_pre.h"
 
 class BattleForRokugan::Region : public QObject
 {
     Q_OBJECT
 public:
-    //!
-    //! \brief The Type enum
-    //!
-    enum class Type : unsigned char {
-        Crab,
-        Crane,
-        Dragon,
-        Lion,
-        Phoenix,
-        Scorpion,
-        Unicorn,
-        Archipelago,
-        Dune,
-        ShadowUp,
-        ShadowDown
-    }; Q_ENUM(Type)
+    Region(RegionType type, QObject* parent);
+    Q_ENUM(RegionType)
 
-    Region(const Type type, QObject* parent = nullptr);
-    std::optional <Clan::Type> daimyoRegion() const;
-    int provinceOwnerCount(const Clan::Type type) const;
-    std::optional <std::shared_ptr <Province>> capital() const;
+    ClanType daimyo() const;
+    int provinceOwnerCount(ClanType type) const;
+    Province* capital() const;
 
-    std::shared_ptr <Province> operator[](unsigned number) const;
+    Province* operator[](unsigned number) const;
 
-    Type type() const;
+    RegionType type() const;
 
-    static bool isShadow(const Type type);
+    static bool isShadow(RegionType type);
+    unsigned provinceCount() const;
 
 private:
-    Type m_type;
+    RegionType m_type;
     bool m_firstCard;
-    std::vector <std::shared_ptr <Province>> m_provinceList;
+    ProvinceList m_provinceList;
 
-    void addProvinces(std::vector<char> list, char capital = -1,
-                      std::vector <char> navyList = {});
-    std::optional <std::shared_ptr <Province>> findProvince(unsigned char number);
+    void addProvinces(char_v list, char capital = -1, char_v navyList = {});
+    Province* findProvince(uchar number);
 
-    friend class GameMap;
+    friend class Map;
     friend class Mission;
 };
+
+namespace BattleForRokugan {
+    RegionType operator+ (RegionType type, unsigned i);
+    RegionType operator++(RegionType type);
+}
 
 #endif // LIB_BFR_REGION_H

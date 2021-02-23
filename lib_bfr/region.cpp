@@ -1,99 +1,117 @@
 #include "lib_bfr/region.h"
 #include "lib_bfr/province.h"
-#include <QDebug>
+#include <AfFunction>
 
-BattleForRokugan::Region::Region(const BattleForRokugan::Region::Type type, QObject *parent)
-    : QObject(parent), m_type(type), m_firstCard(std::rand()%2)
+BFR::Region::Region(RegionType type, QObject *parent)
+    : QObject(parent), m_type(type), m_firstCard(AFfunction::randomInt(0, 1))
 {
     // init provinces
     switch (type) {
-    case Type::Crab:       addProvinces({ 1, 3, 2, 2 },  3, {          3 }); break;
-    case Type::Crane:      addProvinces({ 2, 2, 3    },  0, { 0, 1, 2    }); break;
-    case Type::Dragon:     addProvinces({ 1, 2, 3    },  1                ); break;
-    case Type::Lion:       addProvinces({ 2, 2, 2    },  1 ,{       2    }); break;
-    case Type::Phoenix:    addProvinces({ 2, 2, 1    },  0, {       2    }); break;
-    case Type::Scorpion:   addProvinces({ 3, 2, 1    },  1                ); break;
-    case Type::Unicorn:    addProvinces({ 2, 3, 1    },  0                ); break;
-    case Type::Archipelago:addProvinces({ 2, 1, 1    }, -1, { 0, 1, 2    }); break;
-    case Type::Dune:       addProvinces({ 3, 2, 3    }, -1, {    1, 2    }); break;
-    case Type::ShadowDown: addProvinces({ 0          }, -1, { 0          }); break;
-    case Type::ShadowUp:   addProvinces({ 0          }                    ); break;
+    case RegionType::Crab:       addProvinces({ 1, 3, 2, 2 },  3, {          3 }); break;
+    case RegionType::Crane:      addProvinces({ 2, 2, 3    },  0, { 0, 1, 2    }); break;
+    case RegionType::Dragon:     addProvinces({ 1, 2, 3    },  1                ); break;
+    case RegionType::Lion:       addProvinces({ 2, 2, 2    },  1 ,{       2    }); break;
+    case RegionType::Phoenix:    addProvinces({ 2, 2, 1    },  0, {       2    }); break;
+    case RegionType::Scorpion:   addProvinces({ 3, 2, 1    },  1                ); break;
+    case RegionType::Unicorn:    addProvinces({ 2, 3, 1    },  0                ); break;
+    case RegionType::Archipelago:addProvinces({ 2, 1, 1    }, -1, { 0, 1, 2    }); break;
+    case RegionType::Dune:       addProvinces({ 3, 2, 3    }, -1, {    1, 2    }); break;
+    case RegionType::ShadowDown: addProvinces({ 0          }, -1, { 0          }); break;
+    case RegionType::ShadowUp:   addProvinces({ 0          }                    ); break;
     default:;
     }
 }
 
-std::optional <BattleForRokugan::Clan::Type> BattleForRokugan::Region::daimyoRegion() const
+BFR::ClanType BFR::Region::daimyo() const
 {
-    auto clan = Clan::Type::None;
+    auto clan = ClanType::None;
     for (const auto &it : m_provinceList){
-        if (auto clanIt = it->clanOwner(); it.get()== m_provinceList.begin()->get()){
-            if (clanIt != Clan::Type::None){
-                clan = clanIt;
-                continue;
-            }
-            else
-                return std::nullopt;
+        if (it->scorched())
+            continue;
+
+        if (it->clanType() == ClanType::None)
+            return ClanType::None;
+
+        if (clan == ClanType::None){
+            clan = it->clanType();
+            continue;
         }
-        else if (clanIt != clan)
-            return std::nullopt;
+
+        if (it->clanType() == clan)
+            continue;
+
+        return ClanType::None;
     }
+
     return clan;
 }
 
-int BattleForRokugan::Region::provinceOwnerCount(const Clan::Type type) const
+int BFR::Region::provinceOwnerCount(ClanType type) const
 {
     int ret = 0;
     for (const auto &it : m_provinceList)
-        if (it.get()->clanOwner() == type)
+        if (it->clanType() == type)
             ret++;
     return ret;
 }
 
-std::optional <std::shared_ptr <BattleForRokugan::Province>>
-BattleForRokugan::Region::capital() const
+BFR::Province* BFR::Region::capital() const
 {
     for (auto it : m_provinceList)
-        if (it.get()->capital())
+        if (it->capital())
             return it;
-    return std::nullopt;
+    return nullptr;
 }
 
-std::shared_ptr <BattleForRokugan::Province>
-BattleForRokugan::Region::operator[](unsigned number) const
+BFR::Province* BFR::Region::operator[](unsigned number) const
 {
     if (number < 0 || number >= m_provinceList.size())
         return nullptr;
     return m_provinceList[number];
 }
 
-BattleForRokugan::Region::Type BattleForRokugan::Region::type() const
+BFR::RegionType BFR::Region::type() const
 {
     return m_type;
 }
 
-bool BattleForRokugan::Region::isShadow(const BattleForRokugan::Region::Type type)
+bool BFR::Region::isShadow(RegionType type)
 {
-    return type == Type::ShadowDown || type == Type::ShadowUp;
+    return type == RegionType::ShadowDown || type == RegionType::ShadowUp;
 }
 
-void BattleForRokugan::Region::addProvinces(std::vector <char> list, char capital,
-                                            std::vector<char> navyList)
+uint BFR::Region::provinceCount() const
+{
+    return m_provinceList.size();
+}
+
+void BFR::Region::addProvinces(char_v list, char capital, char_v navyList)
 {
     if (list.size() <= 0)
         return;
 
     for (char i = 0; i < char(list.size()); i++){
         bool navy = std::find(navyList.begin(), navyList.end(), i) != navyList.end();
-        m_provinceList.push_back(
-                    std::make_shared <Province> (m_type, i == capital, navy, i, list[i]));
+        m_provinceList.push_back(new Province(m_type, i == capital, navy, i, list[i], this));
     }
 }
 
-std::optional <std::shared_ptr <BattleForRokugan::Province>>
-BattleForRokugan::Region::findProvince(unsigned char number)
+BFR::Province* BFR::Region::findProvince(uchar number)
 {
     for (auto it : m_provinceList)
-        if (it.get()->number() == number)
+        if (it->number() == number)
             return it;
-    return std::nullopt;
+    return nullptr;
+}
+
+namespace BattleForRokugan {
+    RegionType operator+(RegionType type, unsigned i)
+    {
+        return static_cast <RegionType>(static_cast <uint>(type) + i);
+    }
+
+    RegionType operator++(RegionType type)
+    {
+        return type + 1;
+    }
 }

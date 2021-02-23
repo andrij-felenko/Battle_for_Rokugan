@@ -1,45 +1,31 @@
 #ifndef LIB_BFR_BORDER_H
 #define LIB_BFR_BORDER_H
 
-#include <QtCore/QObject>
-#include "province.h"
-#include "turnToken.h"
-
-namespace BattleForRokugan {
-    class Border;
-}
+#include "bfrLib_pre.h"
 
 class BattleForRokugan::Border : public QObject
 {
     Q_OBJECT
 public:
-    //!
-    //! \brief The Type enum
-    //!
-    enum class Type {
-        Land,
-        Navy,
-    }; Q_ENUM(Type)
+    Border(Province* prov, QObject* parent);
+    Border(Province* prov1, Province* prov2, QObject* parent);
+    Q_ENUM(BorderType)
 
-    Border(std::shared_ptr<Province> prov, QObject* parent = nullptr);
-    Border(std::shared_ptr<Province> prov1, std::shared_ptr<Province> prov2,
-           QObject* parent = nullptr);
+    BorderType type() const;
+    void setType(BorderType type);
 
-    Type type() const;
-    void setType(const Type &type);
-
-    TurnToken::Type token() const;
-    void setToken(const TurnToken::Type &token);
+    TurnTokenType token() const;
+    void setToken(TurnTokenType token);
     void clear();
 
-    std::shared_ptr<Province> province1() const;
-    std::shared_ptr<Province> province2() const;
+    Province* province1() const;
+    Province* province2() const;
 
 private:
-    Type m_type;
-    std::shared_ptr <Province> m_province1;
-    std::shared_ptr <Province> m_province2;
-    TurnToken::Type m_token;
+    BorderType m_type;
+    Province* m_province1;
+    Province* m_province2;
+    TurnTokenType m_token;
 };
 
 #endif // LIB_BFR_BORDER_H

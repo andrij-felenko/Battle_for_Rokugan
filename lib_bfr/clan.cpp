@@ -1,59 +1,70 @@
 #include "lib_bfr/clan.h"
 #include "lib_bfr/turnToken.h"
 
-BattleForRokugan::Clan::Clan(const Type& type, QObject *parent)
-    : QObject(parent), m_type(type)
+BattleForRokugan::Clan::Clan(ClanType type, QObject *parent)
+    : QObject(parent), m_type(type), m_specialToken(nullptr)
 {
-    //
+    typedef TurnTokenType TTT;
+    switch (m_type) {
+    case ClanType::Crane:    m_specialToken = new TurnToken(TTT::Diplomacy,   nullptr);
+    case ClanType::Unicorn:  m_specialToken = new TurnToken(TTT::Sabotage,    this);
+    case ClanType::Crab:     m_specialToken = new TurnToken(TTT::Navy,     3, this);
+    case ClanType::Dragon:
+    case ClanType::Phoenix:  m_specialToken = new TurnToken(TTT::Blessing, 3, this);
+    case ClanType::Scorpion: m_specialToken = new TurnToken(TTT::Shinobi,  3, this);
+    case ClanType::Lion:     m_specialToken = new TurnToken(TTT::Army,     6, this);
+    default:;
+    }
 }
 
-BattleForRokugan::Clan::Type BattleForRokugan::Clan::type() const
-{
-    return m_type;
-}
+BFR::RegionType BFR::Clan::homeRegion() const { return homeRegion(m_type);}
+BFR::ClanType   BFR::Clan::type()       const { return            m_type ;}
+QString         BFR::Clan::name()       const { return       name(m_type);}
 
-void BattleForRokugan::Clan::setType(const Type &type)
+void BFR::Clan::setType(ClanType type)
 {
     m_type = type;
 }
 
-QString BattleForRokugan::Clan::name(const BattleForRokugan::Clan::Type &type)
+BFR::RegionType BFR::Clan::homeRegion(ClanType type)
 {
     switch (type) {
-    case Type::Crab:     return tr("Crab clan");
-    case Type::Crane:    return tr("Crane clan");
-    case Type::Dragon:   return tr("Dragon clan");
-    case Type::Lion:     return tr("Lion clan");
-    case Type::Phoenix:  return tr("Phoenix clan");
-    case Type::Scorpion: return tr("Scorpion clan");
-    case Type::Unicorn:  return tr("Unicorn clan");
+    case ClanType::Crab:     return RegionType::Crab;
+    case ClanType::Crane:    return RegionType::Crane;
+    case ClanType::Dragon:   return RegionType::Dragon;
+    case ClanType::Lion:     return RegionType::Lion;
+    case ClanType::Phoenix:  return RegionType::Phoenix;
+    case ClanType::Scorpion: return RegionType::Scorpion;
+    case ClanType::Unicorn:  return RegionType::Unicorn;
+    default:;
+    }
+    return RegionType::None;
+}
+
+const BFR::TurnToken* BFR::Clan::specialClanToken() const
+{
+    return m_specialToken;
+}
+
+QString BFR::Clan::name(ClanType type)
+{
+    switch (type) {
+    case ClanType::Crab:     return tr("Crab clan");
+    case ClanType::Crane:    return tr("Crane clan");
+    case ClanType::Dragon:   return tr("Dragon clan");
+    case ClanType::Lion:     return tr("Lion clan");
+    case ClanType::Phoenix:  return tr("Phoenix clan");
+    case ClanType::Scorpion: return tr("Scorpion clan");
+    case ClanType::Unicorn:  return tr("Unicorn clan");
     default:;
     }
     return tr("No one");
 }
 
-QString BattleForRokugan::Clan::name() const
-{
-    return name(m_type);
-}
-
-BattleForRokugan::TurnToken BattleForRokugan::Clan::specialClanToken() const
-{
-    switch (m_type) {
-    case Type::Crane:    return TurnToken(TurnToken::Type::Diplomacy);
-    case Type::Unicorn:  return TurnToken(TurnToken::Type::Sabotage);
-    case Type::Crab:     return TurnToken(TurnToken::Type::Navy,     3);
-    case Type::Dragon:   return TurnToken(TurnToken::Type::Blessing, 3);
-    case Type::Phoenix:  return TurnToken(TurnToken::Type::Blessing, 3);
-    case Type::Scorpion: return TurnToken(TurnToken::Type::Shinobi,  3);
-    case Type::Lion:     return TurnToken(TurnToken::Type::Army,     6);
-    default:;
+namespace BattleForRokugan {
+    ClanType operator+(ClanType type, uint i)
+    {
+        uint value = static_cast <uint> (type) + i;
+        return static_cast <ClanType> (value);
     }
-    return TurnToken(TurnToken::Type::None);
-}
-
-BattleForRokugan::Clan::Type operator+(BattleForRokugan::Clan::Type type, unsigned i)
-{
-    using namespace BattleForRokugan;
-    return static_cast <Clan::Type>(static_cast <unsigned>(type) + i);
 }

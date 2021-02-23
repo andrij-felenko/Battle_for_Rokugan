@@ -1,46 +1,33 @@
 #ifndef LIB_BFR_CLAN_H
 #define LIB_BFR_CLAN_H
 
-#include <QtCore/QObject>
-
-namespace BattleForRokugan {
-    class Clan;
-    class TurnToken;
-}
+#include "bfrLib_pre.h"
 
 class BattleForRokugan::Clan : public QObject
 {
     Q_OBJECT
-public:
-    //!
-    //! \brief The Type enum
-    //!
-    enum class Type {
-        Crab,
-        Crane,
-        Dragon,
-        Lion,
-        Phoenix,
-        Scorpion,
-        Unicorn,
-        None,
-        First = Crab
-    }; Q_ENUM(Type)
+public:    
+    Clan(ClanType type, QObject* parent);
+    Q_ENUM(ClanType)
 
-    Clan(const Type& type, QObject* parent = nullptr);
+    ClanType type() const;
+    void setType(ClanType type);
 
-    Type type() const;
-    void setType(const Type &type);
+    static RegionType homeRegion(ClanType type);
+    RegionType homeRegion() const;
 
-    static QString name(const Type& type);
+    static QString name(ClanType type);
     QString name() const;
 
-    TurnToken specialClanToken() const;
+    const TurnToken* specialClanToken() const;
 
 private:
-    Type m_type;
+    ClanType m_type;
+    TurnToken* m_specialToken;
 };
 
-BattleForRokugan::Clan::Type operator+(BattleForRokugan::Clan::Type type, unsigned i);
+namespace BattleForRokugan {
+    ClanType operator+(ClanType type, uint i);
+}
 
 #endif // LIB_BFR_CLAN_H

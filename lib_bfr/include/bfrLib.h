@@ -1,11 +1,12 @@
 #ifndef LIB_BFR_LIB_H
 #define LIB_BFR_LIB_H
 
+#include "bfrLib_pre.h"
 #include "lib_bfr/border.h"
 #include "lib_bfr/card.h"
 #include "lib_bfr/clan.h"
 #include "lib_bfr/game.h"
-#include "lib_bfr/gameMap.h"
+#include "lib_bfr/map.h"
 #include "lib_bfr/mission.h"
 #include "lib_bfr/player.h"
 #include "lib_bfr/province.h"

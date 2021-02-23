@@ -5,7 +5,7 @@ set (lib_bfr_h
     include/lib_bfr/border.h
     include/lib_bfr/card.h
     include/lib_bfr/game.h
-    include/lib_bfr/gameMap.h
+    include/lib_bfr/map.h
     include/lib_bfr/mission.h
     include/lib_bfr/player.h
     include/lib_bfr/province.h
@@ -13,7 +13,11 @@ set (lib_bfr_h
     include/lib_bfr/region.h
     include/lib_bfr/turnToken.h
     include/lib_bfr/clan.h
+    include/lib_bfr/clanStats.h
+    include/lib_bfr/battle.h
     include/bfrLib.h
+    include/bfrLib_pre.h
+    include/bfrEnum.h
 )
 
 set (lib_bfr_cpp
@@ -21,20 +25,22 @@ set (lib_bfr_cpp
     card.cpp
     clan.cpp
     game.cpp
-    gameMap.cpp
+    map.cpp
     mission.cpp
     player.cpp
     province.cpp
     provinceToken.cpp
     region.cpp
     turnToken.cpp
+    battle.cpp
+    clanStats.cpp
 )
 
 set (bfr_initialize_header
     include/BFR/Border
     include/BFR/Card
     include/BFR/Game
-    include/BFR/GameMap
+    include/BFR/Map
     include/BFR/Mission
     include/BFR/Player
     include/BFR/Province
@@ -42,6 +48,8 @@ set (bfr_initialize_header
     include/BFR/Region
     include/BFR/TurnToken
     include/BFR/Clan
+    include/BFR/Battle
+    include/BFR/ClanStats
     include/BFRlib
 )
 

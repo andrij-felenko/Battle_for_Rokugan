@@ -1,27 +1,38 @@
-#include "lib_bfr/game.h"
-#include <QDebug>
 #include "AFbase/AfFunction"
+#include "lib_bfr/card.h"
+#include "lib_bfr/clan.h"
+#include "lib_bfr/clanStats.h"
+#include "lib_bfr/game.h"
+#include "lib_bfr/map.h"
+#include "lib_bfr/mission.h"
+#include "lib_bfr/player.h"
 
-BattleForRokugan::Game::Game(QObject *parent) : QObject(parent)
+BFR::Game::Game(QObject *parent) : QObject(parent)
 {
-    //
+    m_map = new Map(this);
+    m_stats = new ClanStats(m_map);
 }
 
-void BattleForRokugan::Game::addPlayer(QString name, BattleForRokugan::Clan::Type clan)
+BFR::Game::~Game()
+{
+    clear();
+}
+
+void BFR::Game::addPlayer(QString name, ClanType clan)
 {
     if (m_playerList.length() >= 5)
         return;
 
     // add warning why we not add new player
-    for (auto it : m_playerList)
+    for (const auto &it : m_playerList)
         if (name == it->name())
             return;
 
     // make random clan
-    while (clan == Clan::Type::None){
+    while (clan == ClanType::None){
         bool isUnique = true;
-        auto clanT = static_cast <Clan::Type> (AFlib::Function::randomInt(0, 6));
-        for (auto it : m_playerList)
+        auto clanT = static_cast <ClanType> (AFfunction::randomInt(0, 6));
+        for (const auto &it : m_playerList)
             if (clanT == it->clan()->type()){
                 isUnique = false;
                 break;
@@ -30,31 +41,96 @@ void BattleForRokugan::Game::addPlayer(QString name, BattleForRokugan::Clan::Typ
             clan = clanT;
     }
 
-    m_playerList.push_back(new Player(name, clan, this));
+    auto it = AFfunction::randomInt(0, m_missionList.size() - 1);
+    auto mis_1 = m_missionList.takeAt(it);
+
+    it = AFfunction::randomInt(0, m_missionList.size() - 1);
+    auto mis_2 = m_missionList.takeAt(it);
+
+    auto player = new Player(name, clan, m_map, m_stats, mis_1, mis_2, this);
+    m_playerList.push_back(player);
+    connect(player, &Player::missionSet, this, &Game::isCanStartChanged);
 }
 
-void BattleForRokugan::Game::removePlayer(const BattleForRokugan::Clan::Type& clan)
+void BFR::Game::removePlayer(ClanType clan)
 {
     m_playerList.erase(std::remove_if(m_playerList.begin(), m_playerList.end(),
-                                      [clan](Player* p){ return p->clan()->type() == clan; }));
+                                      [clan](Player* p){
+                           p->deleteLater();
+                           return p->clan()->type() == clan;
+                       }));
 }
 
-std::optional <QString> BattleForRokugan::Game::start()
+void BFR::Game::clear()
 {
-    if (m_playerList.length() < 2)
-        return "Player not enought, need at least 2 player";
+    // clear all components from game, call only on reinit function
+    m_map->clear();
+    m_stats->clear();
+    m_firstList.clear();
 
-    //#Pregame
-    m_turn = -1;
+    for (auto it : m_playerList)
+        it->deleteLater();
+    m_playerList.clear();
+
+    for (auto it : m_cardPocket)
+        it->deleteLater();
+    m_cardPocket.clear();
+
+    for (auto it : m_missionList)
+        it->deleteLater();
+    m_missionList.clear();
+}
+
+void BFR::Game::init()
+{
+    // create all pregame component
+    m_turn = 0;
     m_phase = Phase::Pregame;
-    // call Pregame status
+
     // init cardPocket
     m_cardPocket.clear();
-    m_cardPocket.push_back(new Card(Card::Type::FirstPlayer, this));
+    m_cardPocket.push_back(new Card(CardType::FirstPlayer, this));
     for (int i = 0; i < 11; i++){
-        auto cardType = Card::Type::FirstRegion + i * 2 + AFfunction::randomInt(0, 1);
+        auto cardType = CardType::FirstRegion + i * 2 + AFfunction::randomInt(0, 1);
         m_cardPocket.push_back(new Card(cardType, this));
     }
+    for (int i = 0; i < 12; i++)
+        m_missionList.push_back(new Mission(static_cast <MissionType>(i), m_map, m_stats, this));
+}
+
+bool BFR::Game::checkIsCanStart()
+{
+    /// check pregame component, if smth not fill full
+    /// return value (emit) need for button start battle in interface
+    // check count of players, must be more or equal 2
+    if (m_playerList.count() < 2){
+        // TODO add warning msg
+        // "Player not enought, need at least 2 player"
+        return false;
+    }
+
+    // check mission, every player must have one
+    for (auto it : m_playerList)
+        if (it->mission() == nullptr){
+            // TODO add error msg
+//            "Mission of player " + it->name() + " not found."
+            return false;
+        }
+
+    return true;
+}
+
+void BFR::Game::reinit()
+{
+    clear();
+    init();
+}
+
+ErrorMsg BFR::Game::start()
+{
+    // just set main provinces in capital, set first player for first turn
+    //
+
 
     // make random first turn card
     m_firstList.clear();
@@ -63,8 +139,8 @@ std::optional <QString> BattleForRokugan::Game::start()
         m_firstList.insert(AFlib::Function::randomInt(0, m_firstList.size()),
                            Card::getNeutralCard(neutralCard[i]));
     for (auto it : m_playerList)
-        m_firstList.insert(AFlib::Function::randomInt(0, m_firstList.size()),
-                           Card::Type::FirstInitiative + it->clan()->type());
+        m_firstList.insert(AFfunction::randomInt(0, m_firstList.size()),
+                           CardType::FirstInitiative + it->clan()->type());
 
     // TODO choose mission to all players
     // TODO set control token to capital
@@ -73,23 +149,7 @@ std::optional <QString> BattleForRokugan::Game::start()
 
     //#Turn
     // choose first player
-    m_turnQueue.clear();
-    bool isFound = false;
-    Clan::Type firstClan = getCurrentFirstPlayer();
-    for (auto it : m_playerList){
-        if (it->clan()->type() == firstClan)
-            isFound = true;
-
-        if (isFound)
-            m_turnQueue.push_back(it);
-    }
-
-    for (auto it : m_playerList){
-        if (it->clan()->type() == firstClan)
-            break;
-
-        m_turnQueue.push_back(it);
-    }
+    updatePlayerPosition();
 
     // TODO add turn token to 6 (8 if dragon)
     // TODO wait while Dragon get back 2 turn tokens
@@ -110,42 +170,42 @@ std::optional <QString> BattleForRokugan::Game::start()
     return std::nullopt;
 }
 
-BattleForRokugan::Clan::Type BattleForRokugan::Game::getCurrentFirstPlayer()
+BFR::ClanType BFR::Game::getCurrentFirstPlayer()
 {
-    Clan::Type clan = Clan::Type::None;
-    Card::Type card;
+    ClanType clan = ClanType::None;
+    CardType card;
     for (auto it : m_firstList){
         switch (it) {
-        case Card::Type::InitiativeCrab:
-        case Card::Type::InitiativeCrane:
-        case Card::Type::InitiativeDragon:
-        case Card::Type::InitiativeLion:
-        case Card::Type::InitiativePhoenix:
-        case Card::Type::InitiativeScorpion:
-        case Card::Type::InitiativeUnicorn:
-            clan = static_cast <Clan::Type>(it - Card::Type::FirstInitiative); break;
-        case Card::Type::LordOfTheLands: {
+        case CardType::InitiativeCrab:
+        case CardType::InitiativeCrane:
+        case CardType::InitiativeDragon:
+        case CardType::InitiativeLion:
+        case CardType::InitiativePhoenix:
+        case CardType::InitiativeScorpion:
+        case CardType::InitiativeUnicorn:
+            clan = static_cast <ClanType>(it - CardType::FirstInitiative); break;
+        case CardType::LordOfTheLands: {
             if (m_phase == Phase::Pregame)
                 continue;
-            auto clanIndex = AFfunction::findMaxElement<unsigned, 7> (getClanProvinceOwned()).first;
-            clan = static_cast <Clan::Type>(clanIndex);
+            auto clanIndex = AFfunction::findMaxElement <uint, 7> (getClanProvinceOwned()).first;
+            clan = static_cast <ClanType>(clanIndex);
             break;
         }
-        case Card::Type::SupremeStrategist: {
+        case CardType::SupremeStrategist: {
             if (m_phase == Phase::Pregame)
                 continue;
-            auto clanIndex = AFfunction::findMaxElement<unsigned, 7> (getClanControlToken()).first;
-            clan = static_cast <Clan::Type>(clanIndex);
+            auto clanIndex = AFfunction::findMaxElement <uint, 7> (getClanControlToken()).first;
+            clan = static_cast <ClanType>(clanIndex);
             break;
         }
-        case Card::Type::YoungEmperor: {
+        case CardType::YoungEmperor: {
             if (m_phase == Phase::Pregame)
                 continue;
-            auto clanIndex = AFfunction::findMaxElement<unsigned, 7> (getRegionCardOwner()).first;
-            clan = static_cast <Clan::Type>(clanIndex);
+            auto clanIndex = AFfunction::findMaxElement <uint, 7> (getRegionCardOwner()).first;
+            clan = static_cast <ClanType>(clanIndex);
             break;
         }
-        default: return Clan::Type::None;
+        default: return ClanType::None;
         }
 
         card = it;
@@ -156,26 +216,87 @@ BattleForRokugan::Clan::Type BattleForRokugan::Game::getCurrentFirstPlayer()
     return clan;
 }
 
-std::array<unsigned, 7> BattleForRokugan::Game::getClanControlToken() const
+void BFR::Game::updatePlayerPosition()
 {
-    std::array <unsigned, 7> ret = { 0, 0, 0, 0, 0, 0, 0 };
+    typedef std::pair <ClanType, unsigned int> PointClan;
+    std::vector <PointClan> points;
     for (auto it : m_playerList)
-        ret[static_cast <unsigned>(it->clan()->type())] = it->controlTokenCount();
+        points.push_back(std::make_pair(it->clan()->type(), it->pointsOfHonor()));
+
+    // TODO add some other additional checked
+    // sort points clan vector
+    for (uint i = 0; i < points.size(); i++){
+        uint minIndex = i;
+        uint minValue = points[i].second;
+
+        for (uint j = i + 1; j < points.size(); j++)
+            if (points[j].second > minValue){
+                minIndex = j;
+                minValue = points[j].second;
+            }
+
+        if (minIndex != i)
+            std::swap(points[i], points[minIndex]);
+    }
+
+    // set position to Player object
+    for (auto it : m_playerList){
+        int position = 0;
+        for (auto p = points.begin(); p != points.end(); ++p, ++position)
+            if (p->first == it->clan()->type()){
+                it->setPosition(position);
+                break;
+            }
+    }
+}
+
+void BFR::Game::updateTurnQueue()
+{
+    for (auto it : m_playerList)
+        it->setPosition(-1);
+
+    bool isFound = false;
+    int currentPosition = 0;
+    ClanType firstClan = getCurrentFirstPlayer();
+    for (auto it : m_playerList){
+        if (it->clan()->type() == firstClan)
+            isFound = true;
+
+        if (isFound){
+            it->setPosition(currentPosition);
+            currentPosition++;
+        }
+    }
+
+    for (auto it : m_playerList){
+        if (it->clan()->type() == firstClan)
+            break;
+
+        it->setPosition(currentPosition);
+        currentPosition++;
+    }
+}
+
+array_u7 BFR::Game::getClanControlToken() const
+{
+    array_u7 ret = { 0, 0, 0, 0, 0, 0, 0 };
+    for (auto it : m_playerList)
+        ret[static_cast <uint>(it->clan()->type())] = it->controlTokenCount();
     return ret;
 }
 
-std::array<unsigned, 7> BattleForRokugan::Game::getClanProvinceOwned() const
+array_u7 BFR::Game::getClanProvinceOwned() const
 {
-    std::array <unsigned, 7> ret = { 0, 0, 0, 0, 0, 0, 0 };
+    array_u7 ret = { 0, 0, 0, 0, 0, 0, 0 };
     for (auto it : m_playerList)
-        ret[static_cast <unsigned>(it->clan()->type())] = it->provinceCount();
+        ret[static_cast <uint>(it->clan()->type())] = it->provinceCount();
     return ret;
 }
 
-std::array<unsigned, 7> BattleForRokugan::Game::getRegionCardOwner() const
+array_u7 BFR::Game::getRegionCardOwner() const
 {
-    std::array <unsigned, 7> ret = { 0, 0, 0, 0, 0, 0, 0 };
+    array_u7 ret = { 0, 0, 0, 0, 0, 0, 0 };
     for (auto it : m_playerList)
-        ret[static_cast <unsigned>(it->clan()->type())] = it->regionCardCount();
+        ret[static_cast <uint>(it->clan()->type())] = it->regionCardCount();
     return ret;
 }

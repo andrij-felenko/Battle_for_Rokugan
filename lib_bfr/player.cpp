@@ -1,52 +1,82 @@
+#include "lib_bfr/card.h"
+#include "lib_bfr/clan.h"
+#include "lib_bfr/clanStats.h"
+#include "lib_bfr/map.h"
+#include "lib_bfr/mission.h"
 #include "lib_bfr/player.h"
+#include "lib_bfr/province.h"
+#include "lib_bfr/region.h"
+#include "lib_bfr/turnToken.h"
 
-BattleForRokugan::Player::Player(QString name, Clan::Type type, QObject* parent)
-    : QObject(parent), m_clan(new Clan(type,this)), m_name(name), m_mission(nullptr)
+BFR::Player::Player(QString name, ClanType clan, Map* map, ClanStats* stats,
+                    Mission* mis1, Mission* mis2, QObject* parent)
+    : QObject(parent),
+      m_clan(new Clan(clan, this)),
+      m_name(name),
+      m_mission1(mis1),
+      m_mission2(mis2),
+      m_map(map),
+      m_stats(stats),
+      m_position(-1),
+      m_queue(-1)
 {
-    m_tokenAssetsList.push_back(new TurnToken(TurnToken::Type::Empty, this));
+    m_tokenAssetsList.push_back(new TurnToken(TurnTokenType::Empty, this));
 
     // add all token to start reserve pocket
-    addTokenToReserve(TurnToken::Type::Army, 6 , 1);
-    addTokenToReserve(TurnToken::Type::Army, 4 , 2);
-    addTokenToReserve(TurnToken::Type::Army, 3 , 3);
-    addTokenToReserve(TurnToken::Type::Army, 2 , 4);
-    addTokenToReserve(TurnToken::Type::Army, 1 , 5);
-    addTokenToReserve(TurnToken::Type::Navy, 2 , 1);
-    addTokenToReserve(TurnToken::Type::Navy, 1 , 2);
-    addTokenToReserve(TurnToken::Type::Shinobi, 1 , 1);
-    addTokenToReserve(TurnToken::Type::Shinobi, 2 , 2);
-    addTokenToReserve(TurnToken::Type::Blessing, 2 , 2);
-    addTokenToReserve(TurnToken::Type::Diplomacy);
-    addTokenToReserve(TurnToken::Type::Sabotage);
+    addTokenToReserve(TurnTokenType::Army, 6 , 1);
+    addTokenToReserve(TurnTokenType::Army, 4 , 2);
+    addTokenToReserve(TurnTokenType::Army, 3 , 3);
+    addTokenToReserve(TurnTokenType::Army, 2 , 4);
+    addTokenToReserve(TurnTokenType::Army, 1 , 5);
+    addTokenToReserve(TurnTokenType::Navy, 2 , 1);
+    addTokenToReserve(TurnTokenType::Navy, 1 , 2);
+    addTokenToReserve(TurnTokenType::Shinobi, 1 , 1);
+    addTokenToReserve(TurnTokenType::Shinobi, 2 , 2);
+    addTokenToReserve(TurnTokenType::Blessing, 2 , 2);
+    addTokenToReserve(TurnTokenType::Diplomacy);
+    addTokenToReserve(TurnTokenType::Sabotage);
 
     // add special clan turn token
     auto specClanToken = m_clan->specialClanToken();
-    addTokenToReserve(specClanToken.type(), 1, specClanToken.value());
+    addTokenToReserve(specClanToken->type(), 1, specClanToken->value());
 
     // add base cards
-    m_cardList.push_back(new Card(Card::Type::Shugendja, this));
-    m_cardList.push_back(new Card(Card::Type::Intelligence, this));
-    m_cardList.push_back(new Card(Card::Type::Intelligence, this));
+    m_cardList.push_back(new Card(CardType::Shugendja, this));
+    m_cardList.push_back(new Card(CardType::Intelligence, this));
+    m_cardList.push_back(new Card(CardType::Intelligence, this));
 }
 
-QString BattleForRokugan::Player::name() const
+BattleForRokugan::Player::~Player()
+{
+    // TODO
+}
+
+QString BFR::Player::name() const
 {
     return m_name;
 }
 
-const BattleForRokugan::Clan* BattleForRokugan::Player::clan() const
+const BFR::Clan* BFR::Player::clan() const
 {
     return m_clan;
 }
 
-void BattleForRokugan::Player::setMission(BattleForRokugan::Mission::Type mission)
+ErrorMsg BFR::Player::pickMission(MissionType mission)
 {
-    if (m_mission == nullptr)
-        return;
-    m_mission = new Mission(mission, this);
+    if (this->mission() == nullptr)
+        return "Can`t set misssion, it already picked.";
+
+    if (m_mission1->type() == mission)
+        m_mission1->setPicked(m_clan);
+    else if (m_mission2->type() == mission)
+        m_mission2->setPicked(m_clan);
+    else
+        return "Wrong mission, type not found.";
+
+    return std::nullopt;
 }
 
-unsigned BattleForRokugan::Player::regionCardCount() const
+unsigned BFR::Player::regionCardCount() const
 {
     unsigned ret = 0;
     for (auto it : m_cardList)
@@ -55,26 +85,81 @@ unsigned BattleForRokugan::Player::regionCardCount() const
     return ret;
 }
 
-unsigned BattleForRokugan::Player::provinceCount() const
+unsigned BFR::Player::provinceCount() const
 {
     return m_provinceList.size();
 }
 
-unsigned BattleForRokugan::Player::controlTokenCount() const
+unsigned BFR::Player::controlTokenCount() const
 {
     unsigned ret = provinceCount();
     for (const auto &it : m_provinceList)
-        ret += it.get()->controlUp();
+        ret += it->controlUp();
     return ret;
 }
 
-const BattleForRokugan::Mission* BattleForRokugan::Player::mission() const
+unsigned BFR::Player::pointsOfHonor() const
 {
-    return m_mission;
+    unsigned point = mission()->result();
+    for (auto reg = RegionType::First; reg != RegionType::Last; ++reg){
+        auto region = m_map->operator[](reg);
+        if (region->daimyo() == m_clan->type())
+            point += 5;
+        for (unsigned i = 0; i < region->provinceCount(); i++)
+            point += region->operator[](i)->stars();
+    }
+    return point;
 }
 
-void BattleForRokugan::Player::addTokenToReserve(BattleForRokugan::TurnToken::Type type,
-                                                 unsigned char count, unsigned char value)
+int BFR::Player::position() const
+{
+    return m_position;
+}
+
+void BFR::Player::setPosition(int position)
+{
+    m_position = position;
+}
+
+int BFR::Player::queue() const
+{
+    return m_queue;
+}
+
+void BFR::Player::setQueue(int queue)
+{
+    m_queue = queue;
+}
+
+void BFR::Player::takeProvince(Province* province)
+{
+//    province->setClanOwner(m_clan->type());
+    // TODO
+}
+
+void BFR::Player::lostProvince(Province* province)
+{
+    // TODO
+}
+
+bool BFR::Player::contains(MissionType type) const
+{
+    return m_mission1->type() == type || m_mission2->type() == type;
+}
+
+const BFR::Mission* BFR::Player::mission() const
+{
+    if (m_mission1->picked())
+        return m_mission1;
+
+    if (m_mission2->picked())
+        return m_mission2;
+
+    return nullptr;
+}
+
+void BFR::Player::addTokenToReserve(TurnTokenType type,
+                               unsigned char count, unsigned char value)
 {
     for (unsigned char i = 0; i < count; i++)
         m_tokenReserveList.push_back(new TurnToken(type, value, this));

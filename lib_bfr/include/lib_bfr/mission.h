@@ -1,48 +1,43 @@
 #ifndef LIB_BFR_MISSION_H
 #define LIB_BFR_MISSION_H
 
-#include <QtCore/QObject>
-#include "gameMap.h"
-
-namespace BattleForRokugan {
-    class Mission;
-}
+#include "bfrLib_pre.h"
 
 class BattleForRokugan::Mission : public QObject
 {
     Q_OBJECT
 public:
-    enum class Type : unsigned char {
-        SuburbOfTheFiveWinds,
-        GreatLibrary,
-        VaultOfSecrets,
-        EmpireRiceBowl,
-        GreatWallOfTheNorth,
-        MasterOfTheSeas,
-        EmeraldEmpire,
-        Modesty_PolitenessOfKings,
-        UbiquitousInfluence,
-        Battlefield,
-        TheLastLineOfDefense,
-        ForgottenLands
-    }; Q_ENUM(Type)
-
-    Mission(const Type& type, QObject* parent = nullptr);
+    Mission(MissionType type, Map* map, ClanStats* stats, QObject* parent);
+    Q_ENUM(MissionType)
 
     QString name();
     QString description();
 
-    int result(Clan::Type clan, const GameMap* const map) const;
-    static int result(Type type, Clan::Type clan, const GameMap* const map);
+    int result() const;
+    static int result(MissionType type, Clan* clan, Map* map, ClanStats* stats);
 
     QString name() const;
-    static QString name(const Type& type);
+    static QString name(MissionType type);
 
     QString description() const;
-    static QString description(const Type& type);
+    static QString description(MissionType type);
+
+    MissionType type() const;
+
+    bool picked() const;
+    void setPicked(Clan* clan);
 
 private:
-    Type m_type;
+    MissionType m_type;
+    Clan* m_clan;
+    bool m_picked;
+    Map* m_map;
+    ClanStats* m_stats;
 };
+
+namespace BattleForRokugan {
+    MissionType operator+ (MissionType type, uint i);
+    MissionType operator++(MissionType type);
+}
 
 #endif // LIB_BFR_MISSION_H
