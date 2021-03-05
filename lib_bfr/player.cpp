@@ -18,7 +18,8 @@ BFR::Player::Player(QString name, ClanType clan, Map* map, ClanStats* stats,
       m_map(map),
       m_stats(stats),
       m_position(-1),
-      m_queue(-1)
+      m_queue(-1),
+      m_startCtrlToken(0)
 {
     m_tokenAssetsList.push_back(new TurnToken(TurnTokenType::Empty, this));
 
@@ -44,6 +45,9 @@ BFR::Player::Player(QString name, ClanType clan, Map* map, ClanStats* stats,
     m_cardList.push_back(new Card(CardType::Shugendja, this));
     m_cardList.push_back(new Card(CardType::Intelligence, this));
     m_cardList.push_back(new Card(CardType::Intelligence, this));
+
+    // set turn token control to clan capital
+    takeProvince(m_map->operator[](m_clan->homeRegion())->capital());
 }
 
 BattleForRokugan::Player::~Player()
@@ -73,6 +77,7 @@ ErrorMsg BFR::Player::pickMission(MissionType mission)
     else
         return "Wrong mission, type not found.";
 
+    emit missionPicked();
     return std::nullopt;
 }
 
@@ -133,18 +138,62 @@ void BFR::Player::setQueue(int queue)
 
 void BFR::Player::takeProvince(Province* province)
 {
-//    province->setClanOwner(m_clan->type());
-    // TODO
+    m_provinceList.push_back(province);
+    province->setOwner(this);
+
+    if (m_startCtrlToken > 0){
+        m_startCtrlToken--;
+        emit startCtrlTokenPlaced();
+    }
+
+    connect(province, &Province::ownerChanged,
+            this, static_cast<void (Player::*)(Player*)>(&Player::lostProvince));
 }
 
 void BFR::Player::lostProvince(Province* province)
 {
-    // TODO
+    m_provinceList.removeOne(province);
+}
+
+void BFR::Player::lostProvince(Player* player)
+{
+    auto province = qobject_cast <Province*>(sender());
+    if (player != this)
+        lostProvince(province);
+    disconnect(province, &Province::ownerChanged,
+               this, static_cast<void (Player::*)(Player*)>(&Player::lostProvince));
+}
+
+void BattleForRokugan::Player::untakeProvince(Province *province)
+{
+    province->setOwner(nullptr);
 }
 
 bool BFR::Player::contains(MissionType type) const
 {
     return m_mission1->type() == type || m_mission2->type() == type;
+}
+
+void BattleForRokugan::Player::addFirstCard(Card *firstCard)
+{
+    m_cardList.push_back(firstCard);
+}
+
+void BattleForRokugan::Player::removeFirstCard()
+{
+    Card* tmp = nullptr;
+    for (auto it : m_cardList)
+        if (it->type() == CardType::FirstPlayer){
+            tmp = it;
+            break;
+        }
+    if (tmp != nullptr)
+        m_cardList.removeOne(tmp);
+}
+
+void BattleForRokugan::Player::setStartCtrlToken(int size)
+{
+    m_startCtrlToken = size;
 }
 
 const BFR::Mission* BFR::Player::mission() const

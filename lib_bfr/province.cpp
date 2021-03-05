@@ -96,14 +96,17 @@ BFR::Player* BFR::Province::owner() const
 {
     if (not m_player)
         return nullptr;
+
     return m_player;
 }
 
 void BFR::Province::setOwner(Player* newOwner)
 {
-    // TODO check is it good line to emit remove province from player list
+    if (newOwner == m_player)
+        return;
+
     m_player = newOwner;
-    // TODO emit owner changed
+    emit ownerChanged(m_player);
 }
 
 bool BFR::Province::capital() const

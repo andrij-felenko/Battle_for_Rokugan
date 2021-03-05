@@ -13,5 +13,6 @@
 #include "lib_bfr/provinceToken.h"
 #include "lib_bfr/region.h"
 #include "lib_bfr/turnToken.h"
+#include "lib_bfr/turnManager.h"
 
 #endif // LIB_BFR_LIB_H

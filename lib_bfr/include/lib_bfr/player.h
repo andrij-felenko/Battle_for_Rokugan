@@ -20,8 +20,11 @@ public:
     unsigned provinceCount() const;
     unsigned controlTokenCount() const;
     unsigned pointsOfHonor() const;
-    void takeProvince(Province* province);
+
+    void   takeProvince(Province* province);
+    void untakeProvince(Province* province);
     void lostProvince(Province* province);
+    void lostProvince(Player* player);
 
     int position() const;
     void setPosition(int position);
@@ -31,8 +34,14 @@ public:
 
     bool contains(MissionType type) const;
 
+    void    addFirstCard(Card* firstCard);
+    void removeFirstCard();
+    void setStartCtrlToken(int size);
+
 signals:
-    void missionSet();
+    void missionPicked();
+    void startCtrlTokenPlaced();
+    void battleTokenPlaced();
 
 private:
     Clan* m_clan;
@@ -43,6 +52,7 @@ private:
     ClanStats* m_stats;
     int m_position;
     int m_queue;
+    int m_startCtrlToken;
 
     ProvinceList m_provinceList;
 

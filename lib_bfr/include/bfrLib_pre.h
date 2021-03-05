@@ -39,6 +39,7 @@ namespace BattleForRokugan {
     AFdeclareClass(ProvinceToken)
     AFdeclareClass(Region)
     AFdeclareClass(TurnToken)
+    AFdeclareClass(TurnManager)
     AFdeclareClass(Battle)
     AFdeclareClass(ClanStats)
 }

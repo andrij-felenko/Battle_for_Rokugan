@@ -12,6 +12,7 @@ set (lib_bfr_h
     include/lib_bfr/provinceToken.h
     include/lib_bfr/region.h
     include/lib_bfr/turnToken.h
+    include/lib_bfr/turnManager.h
     include/lib_bfr/clan.h
     include/lib_bfr/clanStats.h
     include/lib_bfr/battle.h
@@ -32,6 +33,7 @@ set (lib_bfr_cpp
     provinceToken.cpp
     region.cpp
     turnToken.cpp
+    turnManager.cpp
     battle.cpp
     clanStats.cpp
 )
@@ -47,6 +49,7 @@ set (bfr_initialize_header
     include/BFR/ProvinceToken
     include/BFR/Region
     include/BFR/TurnToken
+    include/BFR/TurnManager
     include/BFR/Clan
     include/BFR/Battle
     include/BFR/ClanStats

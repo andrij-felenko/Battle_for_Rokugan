@@ -1,4 +1,5 @@
 #include "AFbase/AfFunction"
+#include "lib_bfr/battle.h"
 #include "lib_bfr/card.h"
 #include "lib_bfr/clan.h"
 #include "lib_bfr/clanStats.h"
@@ -6,11 +7,18 @@
 #include "lib_bfr/map.h"
 #include "lib_bfr/mission.h"
 #include "lib_bfr/player.h"
+#include "lib_bfr/turnManager.h"
 
 BFR::Game::Game(QObject *parent) : QObject(parent)
 {
     m_map = new Map(this);
+    m_battle = new Battle(m_map, this);
     m_stats = new ClanStats(m_map);
+    m_turns = new TurnManager(m_stats, this);
+
+    connect(m_map, &Map::allTokenOpened, m_battle, &Battle::run);
+    connect(m_turns, &TurnManager::turnPlacedFinished, m_map, &Map::openTokens);
+    connect(m_battle, &Battle::battleFinished, m_turns, &TurnManager::nextTurn);
 }
 
 BFR::Game::~Game()
@@ -49,7 +57,8 @@ void BFR::Game::addPlayer(QString name, ClanType clan)
 
     auto player = new Player(name, clan, m_map, m_stats, mis_1, mis_2, this);
     m_playerList.push_back(player);
-    connect(player, &Player::missionSet, this, &Game::isCanStartChanged);
+    connect(player, &Player::missionPicked, this, &Game::checkIsCanStart);
+    checkIsCanStart();
 }
 
 void BFR::Game::removePlayer(ClanType clan)
@@ -66,7 +75,7 @@ void BFR::Game::clear()
     // clear all components from game, call only on reinit function
     m_map->clear();
     m_stats->clear();
-    m_firstList.clear();
+    m_turns->clear();
 
     for (auto it : m_playerList)
         it->deleteLater();
@@ -83,10 +92,6 @@ void BFR::Game::clear()
 
 void BFR::Game::init()
 {
-    // create all pregame component
-    m_turn = 0;
-    m_phase = Phase::Pregame;
-
     // init cardPocket
     m_cardPocket.clear();
     m_cardPocket.push_back(new Card(CardType::FirstPlayer, this));
@@ -106,6 +111,7 @@ bool BFR::Game::checkIsCanStart()
     if (m_playerList.count() < 2){
         // TODO add warning msg
         // "Player not enought, need at least 2 player"
+        emit isCanStartChanged(false);
         return false;
     }
 
@@ -114,9 +120,11 @@ bool BFR::Game::checkIsCanStart()
         if (it->mission() == nullptr){
             // TODO add error msg
 //            "Mission of player " + it->name() + " not found."
+            emit isCanStartChanged(false);
             return false;
         }
 
+    emit isCanStartChanged(true);
     return true;
 }
 
@@ -126,21 +134,10 @@ void BFR::Game::reinit()
     init();
 }
 
-ErrorMsg BFR::Game::start()
+void BFR::Game::start()
 {
-    // just set main provinces in capital, set first player for first turn
-    //
-
-
-    // make random first turn card
-    m_firstList.clear();
-    auto neutralCard = Card::randNeutralCard();
-    for (unsigned i = 0 ; i < 5 - m_playerList.length(); i++)
-        m_firstList.insert(AFlib::Function::randomInt(0, m_firstList.size()),
-                           Card::getNeutralCard(neutralCard[i]));
-    for (auto it : m_playerList)
-        m_firstList.insert(AFfunction::randomInt(0, m_firstList.size()),
-                           CardType::FirstInitiative + it->clan()->type());
+    m_battle->reset(m_playerList);
+    m_turns->reset(m_playerList);
 
     // TODO choose mission to all players
     // TODO set control token to capital
@@ -149,15 +146,14 @@ ErrorMsg BFR::Game::start()
 
     //#Turn
     // choose first player
-    updatePlayerPosition();
 
     // TODO add turn token to 6 (8 if dragon)
     // TODO wait while Dragon get back 2 turn tokens
 
-    if (m_turn > 1){
+//    if (m_turn > 1){
         // TODO add region card to player
         // TODO use region card
-    }
+//    }
     // TODO set turn token on map and (if player want) use region shadow card or player card
 
     // #Turn-battle phase
@@ -166,137 +162,4 @@ ErrorMsg BFR::Game::start()
     // TODO use not battle token
     // TODO battle
     // TODO call next turn
-
-    return std::nullopt;
-}
-
-BFR::ClanType BFR::Game::getCurrentFirstPlayer()
-{
-    ClanType clan = ClanType::None;
-    CardType card;
-    for (auto it : m_firstList){
-        switch (it) {
-        case CardType::InitiativeCrab:
-        case CardType::InitiativeCrane:
-        case CardType::InitiativeDragon:
-        case CardType::InitiativeLion:
-        case CardType::InitiativePhoenix:
-        case CardType::InitiativeScorpion:
-        case CardType::InitiativeUnicorn:
-            clan = static_cast <ClanType>(it - CardType::FirstInitiative); break;
-        case CardType::LordOfTheLands: {
-            if (m_phase == Phase::Pregame)
-                continue;
-            auto clanIndex = AFfunction::findMaxElement <uint, 7> (getClanProvinceOwned()).first;
-            clan = static_cast <ClanType>(clanIndex);
-            break;
-        }
-        case CardType::SupremeStrategist: {
-            if (m_phase == Phase::Pregame)
-                continue;
-            auto clanIndex = AFfunction::findMaxElement <uint, 7> (getClanControlToken()).first;
-            clan = static_cast <ClanType>(clanIndex);
-            break;
-        }
-        case CardType::YoungEmperor: {
-            if (m_phase == Phase::Pregame)
-                continue;
-            auto clanIndex = AFfunction::findMaxElement <uint, 7> (getRegionCardOwner()).first;
-            clan = static_cast <ClanType>(clanIndex);
-            break;
-        }
-        default: return ClanType::None;
-        }
-
-        card = it;
-    }
-
-    // remove taked first from list
-    m_firstList.removeOne(card);
-    return clan;
-}
-
-void BFR::Game::updatePlayerPosition()
-{
-    typedef std::pair <ClanType, unsigned int> PointClan;
-    std::vector <PointClan> points;
-    for (auto it : m_playerList)
-        points.push_back(std::make_pair(it->clan()->type(), it->pointsOfHonor()));
-
-    // TODO add some other additional checked
-    // sort points clan vector
-    for (uint i = 0; i < points.size(); i++){
-        uint minIndex = i;
-        uint minValue = points[i].second;
-
-        for (uint j = i + 1; j < points.size(); j++)
-            if (points[j].second > minValue){
-                minIndex = j;
-                minValue = points[j].second;
-            }
-
-        if (minIndex != i)
-            std::swap(points[i], points[minIndex]);
-    }
-
-    // set position to Player object
-    for (auto it : m_playerList){
-        int position = 0;
-        for (auto p = points.begin(); p != points.end(); ++p, ++position)
-            if (p->first == it->clan()->type()){
-                it->setPosition(position);
-                break;
-            }
-    }
-}
-
-void BFR::Game::updateTurnQueue()
-{
-    for (auto it : m_playerList)
-        it->setPosition(-1);
-
-    bool isFound = false;
-    int currentPosition = 0;
-    ClanType firstClan = getCurrentFirstPlayer();
-    for (auto it : m_playerList){
-        if (it->clan()->type() == firstClan)
-            isFound = true;
-
-        if (isFound){
-            it->setPosition(currentPosition);
-            currentPosition++;
-        }
-    }
-
-    for (auto it : m_playerList){
-        if (it->clan()->type() == firstClan)
-            break;
-
-        it->setPosition(currentPosition);
-        currentPosition++;
-    }
-}
-
-array_u7 BFR::Game::getClanControlToken() const
-{
-    array_u7 ret = { 0, 0, 0, 0, 0, 0, 0 };
-    for (auto it : m_playerList)
-        ret[static_cast <uint>(it->clan()->type())] = it->controlTokenCount();
-    return ret;
-}
-
-array_u7 BFR::Game::getClanProvinceOwned() const
-{
-    array_u7 ret = { 0, 0, 0, 0, 0, 0, 0 };
-    for (auto it : m_playerList)
-        ret[static_cast <uint>(it->clan()->type())] = it->provinceCount();
-    return ret;
-}
-
-array_u7 BFR::Game::getRegionCardOwner() const
-{
-    array_u7 ret = { 0, 0, 0, 0, 0, 0, 0 };
-    for (auto it : m_playerList)
-        ret[static_cast <uint>(it->clan()->type())] = it->regionCardCount();
-    return ret;
 }

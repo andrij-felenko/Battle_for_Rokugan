@@ -3,29 +3,21 @@
 
 #include "bfrLib_pre.h"
 
-//class BattleForRokugan::Border : public QObject
-//{
-//    Q_OBJECT
-//public:
-//    Border(ProvincePtr prov);
-//    Border(ProvincePtr prov1, ProvincePtr prov2);
-//    Q_ENUM(BorderType)
+class BattleForRokugan::Battle : public QObject
+{
+    Q_OBJECT
+public:
+    Battle(Map* map, QObject* parent);
 
-//    BorderType type() const;
-//    void setType(BorderType type);
+    void reset(PlayerList pList);
+    void run();
 
-//    TurnTokenType token() const;
-//    void setToken(TurnTokenType token);
-//    void clear();
+signals:
+    void battleFinished();
 
-//    ProvincePtr province1() const;
-//    ProvincePtr province2() const;
-
-//private:
-//    BorderType m_type;
-//    ProvincePtr m_province1;
-//    ProvincePtr m_province2;
-//    TurnTokenType m_token;
-//};
+private:
+    Map* m_map;
+    PlayerList m_playerList;
+};
 
 #endif // LIB_BFR_BATTLE_H

@@ -27,6 +27,9 @@ public:
     void addBorder(Border* border);
     ProvinceList neighboringProvinces() const;
 
+signals:
+    void ownerChanged(Player*);
+
 private:
     bool m_capital;
     bool m_navy;

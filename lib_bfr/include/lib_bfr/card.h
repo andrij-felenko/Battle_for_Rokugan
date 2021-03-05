@@ -26,6 +26,8 @@ public:
 private:
     CardType m_type;
     bool m_used;
+
+    friend class TurnManager;
 };
 
 namespace BattleForRokugan {

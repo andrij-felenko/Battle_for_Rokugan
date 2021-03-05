@@ -15,36 +15,26 @@ public:
     void addPlayer(QString name, ClanType clan = ClanType::None);
     void removePlayer(ClanType clan);
 
-    ErrorMsg start();
+    void start();
     void init();
     void reinit();
 
-    array_u7 getClanControlToken() const;
-    array_u7 getClanProvinceOwned() const;
-    array_u7 getRegionCardOwner() const;
-
-//    MapPtr map() const;
-
 signals:
-    bool isCanStartChanged();
+    void isCanStartChanged(bool);
     void missionAdded();
 
 private:
-    int m_turn;
-    Phase m_phase;
     Map* m_map;
+    TurnManager* m_turns;
 
-    ClanType getCurrentFirstPlayer();
-    void updatePlayerPosition();
-    void updateTurnQueue();
     void clear();
     bool checkIsCanStart();
 
-    CardTypeList m_firstList;
     CardList m_cardPocket;
     PlayerList m_playerList;
     MissionList m_missionList;
     ClanStats* m_stats;
+    Battle* m_battle;
 };
 
 #endif // LIB_BFR_Game_H

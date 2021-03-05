@@ -12,6 +12,10 @@ public:
 
     Region* operator[](const RegionType type) const;
     void clear();
+    void openTokens();
+
+signals:
+    void allTokenOpened();
 
 private:
     RegionList m_regionList;

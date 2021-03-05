@@ -27,6 +27,11 @@ void BFR::Map::clear()
     // TODO clear all
 }
 
+void BattleForRokugan::Map::openTokens()
+{
+    // TODO
+}
+
 bool BFR::Map::addBorder(RegionType type, uchar_v v)
 {
     bool ret = true;
@@ -138,10 +143,10 @@ void BFR::Map::addLandBorder()
 void BFR::Map::addNavyBorder()
 {
     // init navy borders
-    addBorder(RegionType::Phoenix,     { 2 });
-    addBorder(RegionType::Lion ,       { 2 });
-    addBorder(RegionType::Crab,        { 3 });
-    addBorder(RegionType::ShadowDown,  { 0 });
+    addBorder(RegionType::Phoenix,     uchar_v { 2 });
+    addBorder(RegionType::Lion ,       uchar_v { 2 });
+    addBorder(RegionType::Crab,        uchar_v { 3 });
+    addBorder(RegionType::ShadowDown,  uchar_v { 0 });
     addBorder(RegionType::Dune,        { 1, 2 });
     addBorder(RegionType::Crane,       { 0, 1, 2 });
     addBorder(RegionType::Archipelago, { 0, 1, 2 });
