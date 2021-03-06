@@ -33,6 +33,8 @@ set (lib_bfr_cpp
     provinceToken.cpp
     region.cpp
     turnToken.cpp
+    turnTokenPlace.h
+    turnTokenPlace.cpp
     turnManager.cpp
     battle.cpp
     clanStats.cpp

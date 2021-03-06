@@ -21,7 +21,7 @@ BFR::Player::Player(QString name, ClanType clan, Map* map, ClanStats* stats,
       m_queue(-1),
       m_startCtrlToken(0)
 {
-    m_tokenAssetsList.push_back(new TurnToken(TurnTokenType::Empty, this));
+    m_tokenList.push_back(new TurnToken(this, TurnTokenType::Empty));
 
     // add all token to start reserve pocket
     addTokenToReserve(TurnTokenType::Army, 6 , 1);
@@ -211,5 +211,5 @@ void BFR::Player::addTokenToReserve(TurnTokenType type,
                                unsigned char count, unsigned char value)
 {
     for (unsigned char i = 0; i < count; i++)
-        m_tokenReserveList.push_back(new TurnToken(type, value, this));
+        m_tokenList.push_back(new TurnToken(this, type, value));
 }

@@ -42,6 +42,8 @@ namespace BattleForRokugan {
     AFdeclareClass(TurnManager)
     AFdeclareClass(Battle)
     AFdeclareClass(ClanStats)
+
+    class TurnTokenPlace;
 }
 
 namespace BFR = BattleForRokugan;

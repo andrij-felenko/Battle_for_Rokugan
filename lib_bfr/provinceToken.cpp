@@ -1,11 +1,12 @@
 #include "lib_bfr/provinceToken.h"
 
-BFR::ProvinceToken::ProvinceToken(QObject *parent) : QObject(parent)
+BFR::ProvinceToken::ProvinceToken(ProvinceTokenType type, QObject *parent)
+    : QObject(parent), m_type(type)
 {
     //
 }
 
-QString BFR::ProvinceToken::name(ProvinceTokenType type) const
+QString BFR::ProvinceToken::name(ProvinceTokenType type)
 {
     switch (type) {
     case ProvinceTokenType::ControlOn:
@@ -30,9 +31,4 @@ QString BattleForRokugan::ProvinceToken::name() const
 BFR::ProvinceTokenType BFR::ProvinceToken::type() const
 {
     return m_type;
-}
-
-void BFR::ProvinceToken::setType(ProvinceTokenType type)
-{
-    m_type = type;
 }

@@ -17,7 +17,9 @@ BFR::Game::Game(QObject *parent) : QObject(parent)
     m_turns = new TurnManager(m_stats, this);
 
     connect(m_map, &Map::allTokenOpened, m_battle, &Battle::run);
+    connect(m_turns, &TurnManager::turnChanged,        m_map, &Map::newTurn);
     connect(m_turns, &TurnManager::turnPlacedFinished, m_map, &Map::openTokens);
+    connect(m_battle, &Battle::battleFinished, m_stats, &ClanStats::update);
     connect(m_battle, &Battle::battleFinished, m_turns, &TurnManager::nextTurn);
 }
 

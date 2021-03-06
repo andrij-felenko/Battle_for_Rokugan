@@ -57,9 +57,7 @@ private:
     ProvinceList m_provinceList;
 
     CardList m_cardList;
-    TurnTokenList m_tokenDischargeList;
-    TurnTokenList m_tokenReserveList;
-    TurnTokenList m_tokenAssetsList;
+    TurnTokenList m_tokenList;
     inline void addTokenToReserve(TurnTokenType type,
                                   unsigned char count = 1,
                                   unsigned char value = 0);

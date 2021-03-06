@@ -163,6 +163,18 @@ enum class TurnTokenType {
     Empty,  ///< [ 1]
     None,
 };
+
+typedef TurnTokenType TTT;
+
+//!
+//! \brief The TurnTokenStatus enum
+//!
+enum class TurnTokenStatus {
+    Reserve,
+    Assets,
+    Discharge
+};
+typedef TurnTokenStatus TTS;
 }
 
 #endif // LIB_BFR_LIB_ENUM_H

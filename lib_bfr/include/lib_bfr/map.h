@@ -7,15 +7,20 @@
 class BattleForRokugan::Map : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(bool showTurnToken READ showTurnToken NOTIFY showTurnTokenChanged)
 public:
     Map(QObject* parent);
 
     Region* operator[](const RegionType type) const;
     void clear();
     void openTokens();
+    void newTurn();
+
+    bool showTurnToken() const;
 
 signals:
     void allTokenOpened();
+    void showTurnTokenChanged(bool showTurnToken);
 
 private:
     RegionList m_regionList;
@@ -35,8 +40,12 @@ private:
     inline void addLandBorder();
     inline void addNavyBorder();
 
+    void setShowTurnToken(bool showTurnToken);
+
     friend class Game;
     friend class Mission;
+    friend class Battle;
+    bool m_showTurnToken;
 };
 
 #endif // LIB_BFR_MAP_H

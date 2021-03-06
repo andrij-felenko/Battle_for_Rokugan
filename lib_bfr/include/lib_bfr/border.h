@@ -2,8 +2,9 @@
 #define LIB_BFR_BORDER_H
 
 #include "bfrLib_pre.h"
+#include "../turnTokenPlace.h"
 
-class BattleForRokugan::Border : public QObject
+class BattleForRokugan::Border : public BFR::TurnTokenPlace
 {
     Q_OBJECT
 public:
@@ -14,8 +15,8 @@ public:
     BorderType type() const;
     void setType(BorderType type);
 
-    TurnTokenType token() const;
-    void setToken(TurnTokenType token);
+    TurnToken* turnToken() const;
+    virtual void pushTurnToken(TurnToken* turnToken) override final;
     void clear();
 
     Province* province1() const;
@@ -25,7 +26,9 @@ private:
     BorderType m_type;
     Province* m_province1;
     Province* m_province2;
-    TurnTokenType m_token;
+
+    friend class Battle;
+    friend class Province;
 };
 
 #endif // LIB_BFR_BORDER_H

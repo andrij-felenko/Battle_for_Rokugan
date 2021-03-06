@@ -1,13 +1,16 @@
+#include "lib_bfr/player.h"
 #include "lib_bfr/turnToken.h"
 
-BFR::TurnToken::TurnToken(TurnTokenType type, uchar value, QObject *parent)
-    : QObject(parent), m_type(type), m_value(value)
+BFR::TurnToken::TurnToken(Player *owner, TurnTokenType type, uchar value)
+    : QObject(owner), m_value(value), m_owner(owner),m_type(type),
+      m_status(type == TTT::Empty ? TTS::Assets : TTS::Reserve),
+      m_blessing(nullptr)
 {
     //
 }
 
-BFR::TurnToken::TurnToken(TurnTokenType type, QObject *parent)
-    : TurnToken(type, 0, parent)
+BFR::TurnToken::TurnToken(Player* owner, TurnTokenType type)
+    : TurnToken(owner, type, 0)
 {
     //
 }
@@ -46,6 +49,9 @@ ErrorMsg BFR::TurnToken::name() const
 
 uchar BFR::TurnToken::value() const
 {
+    if (m_blessing)
+        return m_value + m_blessing->value();
+
     return m_value;
 }
 
@@ -54,4 +60,38 @@ void BFR::TurnToken::setValue(uchar value)
     if (value == m_value)
         return;
     m_value = value;
+}
+
+bool BattleForRokugan::TurnToken::setBlessing(BattleForRokugan::TurnToken *token)
+{
+    if (m_blessing)
+        return false;
+
+    switch (m_type) {
+    case TurnTokenType::Army:
+    case TurnTokenType::Navy:
+    case TurnTokenType::Shinobi: m_blessing = token; return true;
+    default:;
+    }
+    return false;
+}
+
+BFR::Player *BattleForRokugan::TurnToken::owner() const
+{
+    return m_owner;
+}
+
+BFR::TurnTokenStatus BFR::TurnToken::status() const
+{
+    return m_status;
+}
+
+void BFR::TurnToken::setStatus(const TurnTokenStatus &status)
+{
+    m_status = status;
+}
+
+BFR::TurnToken* BFR::TurnToken::blessing() const
+{
+    return m_blessing;
 }

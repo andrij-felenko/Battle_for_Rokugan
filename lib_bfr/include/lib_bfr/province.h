@@ -2,8 +2,9 @@
 #define LIB_BFR_PROVINCE_H
 
 #include "bfrLib_pre.h"
+#include "../turnTokenPlace.h"
 
-class BattleForRokugan::Province : public QObject
+class BattleForRokugan::Province : public BFR::TurnTokenPlace
 {
     Q_OBJECT
 public:
@@ -27,8 +28,13 @@ public:
     void addBorder(Border* border);
     ProvinceList neighboringProvinces() const;
 
+    void setProvinceToken(ProvinceTokenType type);
+    bool provinceTokenContains(ProvinceTokenType type);
+    void clearTurnToken(bool withBorders);
+
 signals:
     void ownerChanged(Player*);
+    void scorchedStatusChanged(bool isScorched);
 
 private:
     bool m_capital;
@@ -41,6 +47,8 @@ private:
     Player* m_player;
     ProvinceTokenList m_tokenList;
     BorderList m_borderList;
+
+    friend class Battle;
 };
 
 #endif // LIB_BFR_PROVINCE_H

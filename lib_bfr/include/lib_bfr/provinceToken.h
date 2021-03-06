@@ -7,14 +7,13 @@ class BattleForRokugan::ProvinceToken : public QObject
 {
     Q_OBJECT
 public:
-    ProvinceToken(QObject* parent);
+    ProvinceToken(ProvinceTokenType type, QObject* parent);
     Q_ENUM(ProvinceTokenType)
 
-    QString name(ProvinceTokenType type) const;
+    static QString name(ProvinceTokenType type);
     QString name() const;
 
     ProvinceTokenType type() const;
-    void setType(ProvinceTokenType type);
 
 private:
     ProvinceTokenType m_type;

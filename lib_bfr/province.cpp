@@ -3,10 +3,11 @@
 #include "lib_bfr/player.h"
 #include "lib_bfr/province.h"
 #include "lib_bfr/provinceToken.h"
+#include "lib_bfr/turnToken.h"
 
 BFR::Province::Province(RegionType region, bool capital, bool navy,
                    uchar number, uchar stars, QObject *parent)
-    : QObject(parent),
+    : TurnTokenPlace(parent),
       m_capital(capital),
       m_navy(navy),
       m_number(number),
@@ -90,6 +91,34 @@ BFR::ProvinceList BFR::Province::neighboringProvinces() const
             list.push_back(it->province2());
     }
     return list;
+}
+
+void BattleForRokugan::Province::setProvinceToken(ProvinceTokenType type)
+{
+    m_tokenList.push_back(new ProvinceToken(type, this));
+
+    if (type ==ProvinceTokenType::ScorchedEarth)
+        emit scorchedStatusChanged(true);
+
+    // TODO check is we can add some more
+}
+
+bool BattleForRokugan::Province::provinceTokenContains(ProvinceTokenType type)
+{
+    for (auto it : m_tokenList)
+        if (it->type() == type)
+            return true;
+    return false;
+}
+
+void BattleForRokugan::Province::clearTurnToken(bool withBorders)
+{
+    removeTurnToken(m_turnTokenList);
+    if (not withBorders)
+        return;
+
+    for (auto it : m_borderList)
+        it->removeTurnToken(it->m_turnTokenList);
 }
 
 BFR::Player* BFR::Province::owner() const

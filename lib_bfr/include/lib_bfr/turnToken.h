@@ -7,9 +7,10 @@ class BattleForRokugan::TurnToken : public QObject
 {
     Q_OBJECT
 public:
-    TurnToken(TurnTokenType type, uchar value, QObject* parent);
-    TurnToken(TurnTokenType type, QObject* parent);
+    TurnToken(Player* owner, TurnTokenType type, uchar value);
+    TurnToken(Player* owner, TurnTokenType type);
     Q_ENUM(TurnTokenType)
+    Q_ENUM(TurnTokenStatus)
 
     TurnTokenType type() const;
     void setType(TurnTokenType type);
@@ -19,10 +20,21 @@ public:
 
     uchar value() const;
     void setValue(uchar value);
+    bool setBlessing(TurnToken* token);
+
+    Player* owner() const;
+
+    TurnTokenStatus status() const;
+    void setStatus(const TurnTokenStatus &status);
+
+    TurnToken *blessing() const;
 
 private:
-    TurnTokenType m_type;
     uchar m_value;
+    Player* m_owner;
+    TurnTokenType m_type;
+    TurnTokenStatus m_status;
+    TurnToken* m_blessing;
 };
 
 #endif // LIB_BFR_TURN_TOKEN_H

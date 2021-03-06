@@ -9,7 +9,7 @@ class BattleForRokugan::Battle : public QObject
 public:
     Battle(Map* map, QObject* parent);
 
-    void reset(PlayerList pList);
+    void reset(PlayerList playerList);
     void run();
 
 signals:
@@ -18,6 +18,10 @@ signals:
 private:
     Map* m_map;
     PlayerList m_playerList;
+
+    inline void removeNotFormatPlaced();
+    inline void scorcheEarthAndDiplomacy();
+    inline void calculateBattle(Province* province);
 };
 
 #endif // LIB_BFR_BATTLE_H

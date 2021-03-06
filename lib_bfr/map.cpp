@@ -29,7 +29,17 @@ void BFR::Map::clear()
 
 void BattleForRokugan::Map::openTokens()
 {
-    // TODO
+    setShowTurnToken(true);
+}
+
+void BattleForRokugan::Map::newTurn()
+{
+    setShowTurnToken(false);
+}
+
+bool BattleForRokugan::Map::showTurnToken() const
+{
+    return m_showTurnToken;
 }
 
 bool BFR::Map::addBorder(RegionType type, uchar_v v)
@@ -150,4 +160,15 @@ void BFR::Map::addNavyBorder()
     addBorder(RegionType::Dune,        { 1, 2 });
     addBorder(RegionType::Crane,       { 0, 1, 2 });
     addBorder(RegionType::Archipelago, { 0, 1, 2 });
+}
+
+void BattleForRokugan::Map::setShowTurnToken(bool showTurnToken)
+{
+    if (m_showTurnToken == showTurnToken)
+        return;
+
+    m_showTurnToken = showTurnToken;
+    emit showTurnTokenChanged(m_showTurnToken);
+    if (m_showTurnToken)
+        emit allTokenOpened();
 }
