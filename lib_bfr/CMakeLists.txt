@@ -2,59 +2,63 @@ cmake_minimum_required(VERSION 3.14)
 project(lib_bfr VERSION 0.0.1)
 
 set (lib_bfr_h
-    include/lib_bfr/border.h
-    include/lib_bfr/card.h
+    include/lib_bfr/handler/battle.h
+    include/lib_bfr/handler/stats.h
+    include/lib_bfr/handler/turn.h
+    include/lib_bfr/karta/border.h
+    include/lib_bfr/karta/map.h
+    include/lib_bfr/karta/province.h
+    include/lib_bfr/karta/territory.h
+    include/lib_bfr/karta/tokenBasement.h
+    include/lib_bfr/object/card.h
+    include/lib_bfr/object/clan.h
+    include/lib_bfr/object/player.h
+    include/lib_bfr/object/secretObjective.h
+    include/lib_bfr/token/combat.h
+    include/lib_bfr/token/control.h
+    include/lib_bfr/token/province.h
     include/lib_bfr/game.h
-    include/lib_bfr/map.h
-    include/lib_bfr/mission.h
-    include/lib_bfr/player.h
-    include/lib_bfr/province.h
-    include/lib_bfr/provinceToken.h
-    include/lib_bfr/region.h
-    include/lib_bfr/turnToken.h
-    include/lib_bfr/turnManager.h
-    include/lib_bfr/clan.h
-    include/lib_bfr/clanStats.h
-    include/lib_bfr/battle.h
-    include/bfrLib.h
-    include/bfrLib_pre.h
     include/bfrEnum.h
+    include/bfrLib_pre.h
+    include/bfrLib.h
 )
 
 set (lib_bfr_cpp
-    border.cpp
-    card.cpp
-    clan.cpp
-    game.cpp
-    map.cpp
-    mission.cpp
-    player.cpp
-    province.cpp
-    provinceToken.cpp
-    region.cpp
-    turnToken.cpp
-    turnTokenPlace.h
-    turnTokenPlace.cpp
-    turnManager.cpp
-    battle.cpp
-    clanStats.cpp
+    src/game.cpp
+    src/handler/battle.cpp
+    src/handler/stats.cpp
+    src/handler/turn.cpp
+    src/karta/border.cpp
+    src/karta/map.cpp
+    src/karta/province.cpp
+    src/karta/territory.cpp
+    src/karta/tokenBasement.cpp
+    src/object/card.cpp
+    src/object/clan.cpp
+    src/object/player.cpp
+    src/object/secretObjective.cpp
+    src/token/combat.cpp
+    src/token/control.cpp
+    src/token/province.cpp
 )
 
 set (bfr_initialize_header
-    include/BFR/Border
-    include/BFR/Card
+    include/BFR/Handler/Battle
+    include/BFR/Handler/Stats
+    include/BFR/Handler/Turn
+    include/BFR/Karta/Border
+    include/BFR/Karta/Map
+    include/BFR/Karta/Province
+    include/BFR/Karta/Territory
+    include/BFR/Karta/TokenBasement
+    include/BFR/Object/Card
+    include/BFR/Object/Clan
+    include/BFR/Object/Player
+    include/BFR/Object/SecretObjective
+    include/BFR/Token/Combat
+    include/BFR/Token/Control
+    include/BFR/Token/Province
     include/BFR/Game
-    include/BFR/Map
-    include/BFR/Mission
-    include/BFR/Player
-    include/BFR/Province
-    include/BFR/ProvinceToken
-    include/BFR/Region
-    include/BFR/TurnToken
-    include/BFR/TurnManager
-    include/BFR/Clan
-    include/BFR/Battle
-    include/BFR/ClanStats
     include/BFRlib
 )
 
@@ -80,7 +84,7 @@ target_link_libraries(lib_bfr lib_baseAF lib_currencyAF Qt6::Core)
 target_include_directories(lib_bfr
     PUBLIC  include
     PUBLIC  include/Trinn
-    PRIVATE include/lib_trinn
+    PRIVATE include/lib_bfr
     PUBLIC $<TARGET_PROPERTY:lib_currencyAF,INTERFACE_INCLUDE_DIRECTORIES>
     PUBLIC $<TARGET_PROPERTY:lib_baseAF,INTERFACE_INCLUDE_DIRECTORIES>
 )

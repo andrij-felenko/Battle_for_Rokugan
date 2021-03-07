@@ -24,17 +24,17 @@ signals:
     void missionAdded();
 
 private:
-    Map* m_map;
-    TurnManager* m_turns;
+    Karta::Map* m_map;
+    Handler::Turn* m_turns;
 
     void clear();
     bool checkIsCanStart();
 
-    CardList m_cardPocket;
-    PlayerList m_playerList;
-    MissionList m_missionList;
-    ClanStats* m_stats;
-    Battle* m_battle;
+    Object::CardList m_cardPocket;
+    Object::PlayerList m_playerList;
+    Object::SecretObjectiveList m_secretObjectiveList;
+    Handler::Stats* m_stats;
+    Handler::Battle* m_battle;
 };
 
 #endif // LIB_BFR_Game_H

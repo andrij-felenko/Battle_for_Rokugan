@@ -17,8 +17,9 @@ enum class BorderType {
 //!
 enum class CardType {
     FirstPlayer,       ///< [1]
-    Shugendja,         ///< [5]
-    Intelligence,      ///< [10]
+    Shugenja,         ///< [5]
+    Scout,      ///< [10]
+
     InitiativeCrab,    ///< [7 for each nation with their logit and 3 neutral cards]
     InitiativeCrane,
     InitiativeDragon,
@@ -26,37 +27,39 @@ enum class CardType {
     InitiativePhoenix,
     InitiativeScorpion,
     InitiativeUnicorn,
-    LordOfTheLands,       ///< Neutral card
-    SupremeStrategist,    ///< Neutral card
-    YoungEmperor,         ///< Neutral card
-    RegionCrab_SeaAccess, ///< region cards
-    RegionCrab_Castling,
-    RegionCrane_CodeOfHonor,
-    RegionCrane_DiplomaticMission,
-    RegionDragon_ObjectiveMovement,
-    RegionDragon_BlessedLand,
-    RegionLion_Bushido,
-    RegionLion_GloriousBattle,
-    RegionPhoenix_KamiSupport,
-    RegionPhoenix_Purge,
-    RegionScorpion_SpyNetwork,
-    RegionScorpion_FiresOfRebellion,
-    RegionUnicorn_Reinforcement,
-    RegionUnicorn_CulturalExchange,
-    RegionArchipelago_PirateRaids,
-    RegionArchipelago_Prosperity,
-    RegionDune_BountifulHarvest,
-    RegionDune_AshigaruMilitia,
-    RegionLandOfShadowUp_DealWithEvil,
-    RegionLandOfShadowUp_KillingTheWeak,
-    RegionLandOfShadowDown_RaiseDead,
-    RegionLandOfShadowDown_DominionOfTerror,
+
+    MasterOfGovernance,       ///< Neutral card
+    MasterOfTactics,    ///< Neutral card
+    RiseOfAnEmpire,         ///< Neutral card
+
+    TerritoryCrab_FeatsOfEngineering, ///< region cards
+    TerritoryCrab_Promotion,
+    TerritoryCrane_CodeOfHonor,
+    TerritoryCrane_DiplomaticMission,
+    TerritoryDragon_StrengthOfPurpose,
+    TerritoryDragon_SacredGround,
+    TerritoryLion_Bushido,
+    TerritoryLion_HonorableFight,
+    TerritoryPhoenix_AidOfTheKami,
+    TerritoryPhoenix_BlessTheLands,
+    TerritoryScorpion_SpyNetwork,
+    TerritoryScorpion_FomentRebellion,
+    TerritoryUnicorn_Reinforcement,
+    TerritoryUnicorn_CulturalExchange,
+    TerritoryIslands_PirateRaids,
+    TerritoryIslands_PortOfProsperity,
+    TerritoryMountains_BountifulHarvest,
+    TerritoryMountains_AshigaruLevies,
+    TerritoryShadowlandsNorth_DarkFavors,
+    TerritoryShadowlandsNorth_PurgeTheWeak,
+    TerritoryShadowlandsSouth_AnimateTheDead,
+    TerritoryShadowlandsSouth_InspireFear,
 
     FirstInitiative = InitiativeCrab,
     LastInitiative = InitiativeUnicorn,
 
-    FirstRegion = RegionCrab_SeaAccess,
-    LastRegion = RegionLandOfShadowDown_DominionOfTerror,
+    FirstTerritory = TerritoryCrab_FeatsOfEngineering,
+    LastTerritory = TerritoryShadowlandsSouth_InspireFear,
 };
 typedef QList <CardType> CardTypeList;
 
@@ -96,23 +99,24 @@ enum class Phase : unsigned char {
 //!
 //! \brief The MissionType enum
 //!
-enum class MissionType : unsigned char {
-    SuburbOfTheFiveWinds = 0,
+enum class SecretObjectiveType : unsigned char {
+    CourtOfTheFiveWinds = 0,
     GreatLibrary,
-    VaultOfSecrets,
-    EmpireRiceBowl,
+    DenOfSecrets,
+    RiceBowlOfTheEmpire,
     GreatWallOfTheNorth,
-    MasterOfTheSeas,
+    WayOfTheSail,
     EmeraldEmpire,
-    Modesty_PolitenessOfKings,
-    UbiquitousInfluence,
-    Battlefield,
+    WayOfHumility,
+    WebOfInfluence,
+    PlainsOfBattle,
     TheLastLineOfDefense,
-    ForgottenLands,
+    ReclaimingLostLands,
 
-    First = SuburbOfTheFiveWinds,
-    Last = ForgottenLands
+    First = CourtOfTheFiveWinds,
+    Last = ReclaimingLostLands
 };
+typedef SecretObjectiveType SOT;
 
 //!
 //! \brief The ProvinceTokenType enum
@@ -124,15 +128,13 @@ enum class ProvinceTokenType {
     Peace,  ///< [15]
     ScorchedEarth,   ///< [15]
     ProtectionBonus, ///< [ 4]
-    HonorBonus,      ///< [ 4]
-    ControlOn, ///< [27], on first 2[11], 3[7], 4[5], 5[4]
-    ControlOff
+    HonorBonus       ///< [ 4]
 };
 
 //!
-//! \brief The RegionType enum
+//! \brief The TerritoryType enum
 //!
-enum class RegionType : uchar {
+enum class TerritoryType : uchar {
     Crab,
     Crane,
     Dragon,
@@ -140,41 +142,41 @@ enum class RegionType : uchar {
     Phoenix,
     Scorpion,
     Unicorn,
-    Archipelago,
-    Dune,
-    ShadowUp,
-    ShadowDown,
+    Islands,
+    Mountains,
+    ShadowlandsNorth,
+    ShadowlandsSouth,
     None,
 
     First = Crab,
-    Last = ShadowDown,
+    Last = ShadowlandsSouth
 };
 
 //!
-//! \brief The TurnTokenType enum
+//! \brief The CombatTokenType enum
 //!
-enum class TurnTokenType {
-    Army,    ///< 1[6], 2[4], 3[3], 4[2], 5[1]
-    Navy,    ///< 1[2], 2[1]
-    Shinobi, ///< 1[1], 2[2]
+enum class CombatTokenType {
+    Army,      ///< 1[6], 2[4], 3[3], 4[2], 5[1]
+    Navy,      ///< 1[2], 2[1]
+    Shinobi,   ///< 1[1], 2[2]
     Diplomacy, ///< 1[1]
-    Sabotage,  ///< 1[1]
+    Raid,      ///< 1[1]
     Blessing,  ///< 2[2]
-    Empty,  ///< [ 1]
+    Empty,     ///< [ 1]
     None,
 };
 
-typedef TurnTokenType TTT;
+typedef CombatTokenType CTT;
 
 //!
-//! \brief The TurnTokenStatus enum
+//! \brief The StatusTokenType enum
 //!
-enum class TurnTokenStatus {
+enum class StatusTokenType {
     Reserve,
     Assets,
     Discharge
 };
-typedef TurnTokenStatus TTS;
+typedef StatusTokenType STT;
 }
 
 #endif // LIB_BFR_LIB_ENUM_H
