@@ -24,8 +24,6 @@ int main(int argc, char** argv)
     game.addPlayer("Ja_3");
     game.addPlayer("Ja_4");
     game.addPlayer("Ja_5");
-    if (auto error = game.start())
-        qDebug() << error.value();
 
     return app.exec();
 }
