@@ -51,7 +51,7 @@ BFR::Object::Player::Player(QString name, ClanType clan,
     m_cardList.push_back(new Card(CardType::Scout, this));
     m_cardList.push_back(new Card(CardType::Scout, this));
 
-    // set turn token control to clan capital
+    // set combat token control to clan capital
     takeProvince(m_map->operator[](m_clan->homeTerritory())->capital());
 
     connect(m_turns, &Handler::Turn::turnChanged, this, &Player::updateCombatTokenInAssets);
@@ -212,7 +212,7 @@ void BattleForRokugan::Object::Player::updateCombatTokenInAssets()
             token->setStatus(StatusTokenType::Assets);
         }
     }
-    // TODO wait while Dragon get back 2 turn tokens
+    // TODO wait while Dragon get back 2 combat tokens
 }
 
 const BFR::Object::SecretObjective* BFR::Object::Player::secretObjective() const

@@ -45,6 +45,7 @@ namespace Object {
 namespace Token {
     AFdeclareClass(Combat)
     AFdeclareClass(Control)
+    AFdeclareClass(Honor)
     AFdeclareClass(Province)
 }
 }

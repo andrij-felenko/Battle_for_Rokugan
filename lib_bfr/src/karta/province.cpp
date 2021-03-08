@@ -4,6 +4,7 @@
 #include "lib_bfr/object/player.h"
 #include "lib_bfr/token/combat.h"
 #include "lib_bfr/token/control.h"
+#include "lib_bfr/token/honor.h"
 #include "lib_bfr/token/province.h"
 
 BFR::Karta::Province::Province(TerritoryType territory, bool capital, bool navy,
@@ -29,12 +30,17 @@ BFR::ClanType BFR::Karta::Province::clanType() const
 uchar BFR::Karta::Province::stars() const
 {
     uchar ret = m_stars;
-    for (const auto &it : m_statusList)
-        if (it->type() == ProvinceTokenType::HonorBonus)
-            ret += (4 - m_stars);
-
     for (const auto &it : m_ctrlTokenList)
         ret += it->stars();
+
+    for (const auto &it : m_statusList)
+        if (it->type() == ProvinceTokenType::HonorBonusFull){
+            ret += (4 - m_stars);
+            return ret;
+        }
+
+    for (const auto &it : m_honorList)
+        ret += it->honor();
 
     return ret;
 }
@@ -107,12 +113,51 @@ void BattleForRokugan::Karta::Province::addControlOnToken(uint count)
     emit ctrlTokenCountChanged();
 }
 
+void BattleForRokugan::Karta::Province::popControlToken()
+{
+    auto isRemoveSmth = std::remove_if(m_ctrlTokenList.begin(), m_ctrlTokenList.end(),
+                                       [](Token::Control* token){
+            if (token->isOn()){
+                token->deleteLater();
+                return true;
+            }
+            return false;
+    });
+    if (isRemoveSmth != m_ctrlTokenList.end())
+        m_ctrlTokenList.erase(isRemoveSmth, m_ctrlTokenList.end());
+    else if (m_ctrlTokenList.count() > 0){
+        m_ctrlTokenList.first()->deleteLater();
+        m_ctrlTokenList.removeFirst();
+    }
+    emit ctrlTokenCountChanged();
+}
+
+void BattleForRokugan::Karta::Province::pushHonor(uint value)
+{
+    m_honorList.push_back(new Token::Honor(value, this));
+}
+
 void BFR::Karta::Province::setProvinceToken(ProvinceTokenType type)
 {
-    m_statusList.push_back(new Token::Province(m_player, type));
+    m_statusList.push_back(new Token::Province(m_player, this, type));
 
     if (type ==ProvinceTokenType::ScorchedEarth)
         emit scorchedStatusChanged(true);
+}
+
+void BattleForRokugan::Karta::Province::removeProvinceToken(ProvinceTokenType type)
+{
+    m_statusList.erase(
+                std::remove_if(m_statusList.begin(), m_statusList.end(),
+                               [type](Token::Province* token)
+                {
+                    if (token->type() == type){
+                        token->deleteLater();
+                        return true;
+                    }
+                    return false;
+                }),
+            m_statusList.end());
 }
 
 bool BFR::Karta::Province::provinceTokenContains(ProvinceTokenType type)

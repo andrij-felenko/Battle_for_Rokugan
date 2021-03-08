@@ -128,7 +128,7 @@ enum class ProvinceTokenType {
     Peace,  ///< [15]
     ScorchedEarth,   ///< [15]
     ProtectionBonus, ///< [ 4]
-    HonorBonus       ///< [ 4]
+    HonorBonusFull
 };
 
 //!

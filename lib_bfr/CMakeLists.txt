@@ -16,6 +16,7 @@ set (lib_bfr_h
     include/lib_bfr/object/secretObjective.h
     include/lib_bfr/token/combat.h
     include/lib_bfr/token/control.h
+    include/lib_bfr/token/honor.h
     include/lib_bfr/token/province.h
     include/lib_bfr/game.h
     include/bfrEnum.h
@@ -39,6 +40,7 @@ set (lib_bfr_cpp
     src/object/secretObjective.cpp
     src/token/combat.cpp
     src/token/control.cpp
+    src/token/honor.cpp
     src/token/province.cpp
 )
 
@@ -57,6 +59,7 @@ set (bfr_initialize_header
     include/BFR/Object/SecretObjective
     include/BFR/Token/Combat
     include/BFR/Token/Control
+    include/BFR/Token/Honor
     include/BFR/Token/Province
     include/BFR/Game
     include/BFRlib

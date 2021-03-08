@@ -89,9 +89,24 @@ BFR::StatusTokenType BFR::Token::Combat::status() const
 void BFR::Token::Combat::setStatus(const StatusTokenType &status)
 {
     m_status = status;
+    show(m_status != StatusTokenType::Assets);
 }
 
 BFR::Token::Combat* BFR::Token::Combat::blessing() const
 {
     return m_blessing;
+}
+
+bool BattleForRokugan::Token::Combat::isShow() const
+{
+    return m_show;
+}
+
+void BattleForRokugan::Token::Combat::show(bool show)
+{
+    if (m_show == show)
+        return;
+
+    m_show = show;
+    emit showChanged(m_show);
 }

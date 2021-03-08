@@ -29,7 +29,11 @@ public:
     ProvinceList neighboringProvinces() const;
 
     void addControlOnToken(uint count = 1);
+    void popControlToken();
+    void pushHonor(uint value);
     void setProvinceToken(ProvinceTokenType type);
+    void removeProvinceToken(ProvinceTokenType type);
+
     bool provinceTokenContains(ProvinceTokenType type);
     void clearCombatToken(bool withBorders);
 
@@ -48,6 +52,7 @@ private:
     TerritoryType m_territory;
     Object::Player* m_player;
     Token::ProvinceList m_statusList;
+    Token::HonorList m_honorList;
     Token::ControlList m_ctrlTokenList;
     BorderList m_borderList;
 
