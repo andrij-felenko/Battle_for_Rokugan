@@ -2,480 +2,527 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
-    <name>BattleForRokugan::Card</name>
+    <name>BFR::Object::Card</name>
     <message>
-        <location filename="../card.cpp" line="12"/>
+        <location filename="../src/object/card.cpp" line="149"/>
         <source>First Player</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../card.cpp" line="13"/>
-        <source>Initiative cards</source>
+        <location filename="../src/object/card.cpp" line="150"/>
+        <source>Scout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../card.cpp" line="14"/>
-        <source>Lord of the Lands</source>
+        <location filename="../src/object/card.cpp" line="151"/>
+        <source>Shugenja</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../card.cpp" line="15"/>
-        <source>Reconnaissance</source>
+        <location filename="../src/object/card.cpp" line="152"/>
+        <source>Master of Governance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../card.cpp" line="16"/>
-        <source>Shugendja</source>
+        <location filename="../src/object/card.cpp" line="153"/>
+        <source>Master of Tactics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../card.cpp" line="17"/>
-        <source>Supreme Strategist</source>
+        <location filename="../src/object/card.cpp" line="154"/>
+        <source>Rise of an Empire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../card.cpp" line="18"/>
-        <source>Young Emperor</source>
+        <location filename="../src/object/card.cpp" line="156"/>
+        <source>Feats of engineering</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../card.cpp" line="28"/>
-        <source>(You may play this card at the start of your turn during the Placement Phase.) Take any player&apos;s battle token from the board. Look at the front of it without showing the rest of the players, and then mix the token into the owner&apos;s personal supply.</source>
+        <location filename="../src/object/card.cpp" line="157"/>
+        <source>Promotion</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../card.cpp" line="34"/>
-        <source>The player who controls the most provinces becomes the first player.</source>
+        <location filename="../src/object/card.cpp" line="158"/>
+        <source>Code of Honor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../card.cpp" line="37"/>
-        <source>(You may play this card at the beginning of your turn during the Deployment Phase.) Take 1 battle token of any opponent from the board. Look at the front of it, without showing the others, and return the token to its place.</source>
+        <location filename="../src/object/card.cpp" line="159"/>
+        <source>Diplomatic Mission</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../card.cpp" line="42"/>
-        <source>(You may play this card at the start of your turn during the Placement Phase.) Draw 1 Battle Token from any opponent from the board. Open its front side to everyone and send it to the owner&apos;s reset.</source>
+        <location filename="../src/object/card.cpp" line="160"/>
+        <source>Sacred ground</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../card.cpp" line="47"/>
-        <source>The player with the most control tokens on the board (both face up and down) becomes the first player.</source>
+        <location filename="../src/object/card.cpp" line="161"/>
+        <source>Strength of purpose</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../card.cpp" line="51"/>
-        <source>The player with the most region cards becomes the first player.</source>
+        <location filename="../src/object/card.cpp" line="162"/>
+        <source>Pirate raids</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="163"/>
+        <source>Port of prosperity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="164"/>
+        <source>Bushido</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="165"/>
+        <source>Honorable fight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="166"/>
+        <source>Ashigaru levies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="167"/>
+        <source>Bountiful Harvest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="168"/>
+        <source>Aid of the Kami</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="169"/>
+        <source>Bless the lands</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="170"/>
+        <source>Foment rebellion</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="171"/>
+        <source>Spy Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="172"/>
+        <source>Dark favors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="173"/>
+        <source>Purge the weak</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="174"/>
+        <source>Animate the dead</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="175"/>
+        <source>Inspire fear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="176"/>
+        <source>Cultural Exchange</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="177"/>
+        <source>Reinforcement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="187"/>
+        <source>Choose one combat token on the board belonging to any player. Look at the token without revealing it to the other players, then return the token to its owner’s token pool.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="192"/>
+        <source>The player who controls the highest number of provinces is the first player.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="196"/>
+        <source>Take 1 battle token of any opponent from the board. Look at the front of it, without showing the others, and return the token to its place.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="200"/>
+        <source>Draw 1 Battle Token from any opponent from the board. Open its front side to everyone and send it to the owner&apos;s reset.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="204"/>
+        <source>The player who has the highest number of control tokens (faceup and facedown) on the board is the first player.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="208"/>
+        <source>The player who has the highest number of territory cards is the first player.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="211"/>
+        <source>Place one scorched earth token in any province. If you place the scorched earth token in a province you control, place three of your control tokens faceup in another province you control.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="215"/>
+        <source>Choose a non-Shadowlands province and place one +2 honor token in it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="218"/>
+        <source>Choose one army, navy, or shinobi token in your discard pile and return it to your hand. Then choose one combat token in your hand and either discard it or return it to your token pool.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="222"/>
+        <source>Choose a landlocked province and place the harbor token in it. That province is now a coastal province.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="226"/>
+        <source>Choose two different non-Shadowlands provinces and place one +1 honor token in each province.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="229"/>
+        <source>Place one peace token in any province. If you place the peace token in an opponent’s province, add two of your control tokens faceup to a province you control.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="234"/>
+        <source>Choose a province and place the shrine token in it. That province cannot be attacked, but attacks can originate from it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="237"/>
+        <source>Choose two different provinces you control and add one of your control tokens faceup to each of those provinces.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="241"/>
+        <source>Choose three different non-Shadowlands provinces and place one +1 defense token in each province.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="244"/>
+        <source>Choose one province you control and place two of your control tokens faceup in that province.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="248"/>
+        <source>Remove one of your control tokens from a non-Shadowlands province. Then remove up to two special tokens from the board.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="251"/>
+        <source>Remove one of your control tokens from a non-Shadowlands province. Then choose one combat token in your discard pile and place it faceup on the board, following all normal placement rules. (Then place a combat token from your hand as usual).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="257"/>
+        <source>Remove one of your control tokens from a non-Shadowlands province. Then look at up to four combat tokens on the board (without revealing them). Reveal and discard one of those tokens.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="261"/>
+        <source>Discard one combat token from your hand (you will not place a combat token this turn). Then choose two combat tokens on the board. Reveal and discard each token.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="266"/>
+        <source>Choose a non-Shadowlands province and place the 4-honor token in it, covering its printed honor value. That province’s printed honor value is now 4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="269"/>
+        <source>Choose a province and place the battlefield token in it. That province cannot be targeted by raid tokens.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="273"/>
+        <source>Choose a non-Shadowlands provinces and place one +2 defense token in it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="275"/>
+        <source>Remove one scorched earth token from any province. Then place two of your control tokens in that province and flip them faceup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="279"/>
+        <source>Remove one peace token from any province. If you remove a peace token from a province you control, add two of your control tokens faceup to that province.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="283"/>
+        <source>Choose another player and look at the tokens in that player’s hand. That player cannot use his or her bluff token this round.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="287"/>
+        <source>Choose a province you control and a province controlled by an opponent. Swap all of the control tokens in your province with all of the control tokens in the opponent’s province (preserving the faceup or facedown status of each).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/object/card.cpp" line="291"/>
+        <source>Choose two army tokens in your discard pile and return them to your hand. Then return two combat tokens in your hand and either discard them or return them to your token pool.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>BattleForRokugan::Clan</name>
+    <name>BFR::Object::Clan</name>
     <message>
-        <location filename="../clan.cpp" line="23"/>
+        <location filename="../src/object/clan.cpp" line="54"/>
         <source>Crab clan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../clan.cpp" line="24"/>
+        <location filename="../src/object/clan.cpp" line="55"/>
         <source>Crane clan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../clan.cpp" line="25"/>
+        <location filename="../src/object/clan.cpp" line="56"/>
         <source>Dragon clan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../clan.cpp" line="26"/>
+        <location filename="../src/object/clan.cpp" line="57"/>
         <source>Lion clan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../clan.cpp" line="27"/>
+        <location filename="../src/object/clan.cpp" line="58"/>
         <source>Phoenix clan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../clan.cpp" line="28"/>
+        <location filename="../src/object/clan.cpp" line="59"/>
         <source>Scorpion clan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../clan.cpp" line="29"/>
+        <location filename="../src/object/clan.cpp" line="60"/>
         <source>Unicorn clan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../clan.cpp" line="32"/>
+        <location filename="../src/object/clan.cpp" line="63"/>
         <source>No one</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>BattleForRokugan::Mission</name>
+    <name>BFR::Object::SecretObjective</name>
     <message>
-        <location filename="../mission.cpp" line="13"/>
-        <source>If you control a Lion Clan Capital Province or 2 provinces in a Lion Clan Region at the end of the game, gain 7 Honor Points.</source>
+        <location filename="../src/object/secretObjective.cpp" line="129"/>
+        <source>Plains of battle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mission.cpp" line="17"/>
-        <source>If at the end of the game you control a chain of 6 contiguous provinces that belong to 3 different regions, you will receive 10 honor points.</source>
+        <location filename="../src/object/secretObjective.cpp" line="130"/>
+        <source>Great library</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mission.cpp" line="21"/>
-        <source>If at the end you control a Capital Province of the Crane Clan or 2 provinces in the Crane Region, gain 6 Honor Points.</source>
+        <location filename="../src/object/secretObjective.cpp" line="131"/>
+        <source>Emerald empire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mission.cpp" line="25"/>
-        <source>If you control the Shadowlands (both provinces) at the end of the game, gain 3 honor points.</source>
+        <location filename="../src/object/secretObjective.cpp" line="132"/>
+        <source>Rice bow of the empire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mission.cpp" line="29"/>
-        <source>If at the end you control a Phoenix capital province or 2 provinces in a Phoenix clan region, gain 7 honor points.</source>
+        <location filename="../src/object/secretObjective.cpp" line="133"/>
+        <source>Reclaiming lost lands</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mission.cpp" line="33"/>
-        <source>If at the end of the game you control a Dragon clan capital province or 2 provinces in a Dragon clan region, gain 6 honor points.</source>
+        <location filename="../src/object/secretObjective.cpp" line="134"/>
+        <source>Den of secrets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mission.cpp" line="37"/>
-        <source>If you control 6 coastal provinces at the end of the game, gain 10 honor points.</source>
+        <location filename="../src/object/secretObjective.cpp" line="135"/>
+        <source>Way of the sail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mission.cpp" line="41"/>
-        <source>If you control the least number of provinces at the end of the game, you will receive 10 honor points. If there is a tie, you still complete this goal and earn honor points.</source>
+        <location filename="../src/object/secretObjective.cpp" line="136"/>
+        <source>Great wall of the north</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mission.cpp" line="46"/>
-        <source>If you control at least one province in 7 different regions at the end of the game, you will receive 10 Honor points.</source>
+        <location filename="../src/object/secretObjective.cpp" line="137"/>
+        <source>Web of influence</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mission.cpp" line="50"/>
-        <source>If at the end of the game you control a Unicorn capital province or 2 provinces in a Unicorn clan region, gain 6 honor points.</source>
+        <location filename="../src/object/secretObjective.cpp" line="138"/>
+        <source>Court of the five winds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mission.cpp" line="54"/>
-        <source>If at the end of the game you control a Crab capital province or 2 provinces in the Crab clan regions, gain 5 honor points.</source>
+        <location filename="../src/object/secretObjective.cpp" line="139"/>
+        <source>The last line of defense</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mission.cpp" line="58"/>
-        <source>If at the end of the game you control a Scorpion capital province or 2 provinces in a Scorpio clan region, gain 7 honor points.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>BattleForRokugan::ProvinceToken</name>
-    <message>
-        <location filename="../provinceToken.cpp" line="12"/>
-        <source>Control</source>
+        <location filename="../src/object/secretObjective.cpp" line="140"/>
+        <source>Way of humility</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../provinceToken.cpp" line="13"/>
-        <source>Glory</source>
+        <location filename="../src/object/secretObjective.cpp" line="150"/>
+        <source>At the end of the game, if you control either the Lion capital or two provinces in the Lion territory, you earn 7 honor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../provinceToken.cpp" line="14"/>
-        <source>Harbor</source>
+        <location filename="../src/object/secretObjective.cpp" line="154"/>
+        <source>At the end of the game, if you control six consecutively adjacent provinces that span three different territories, you earn 10 honor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../provinceToken.cpp" line="15"/>
-        <source>Honor bonus</source>
+        <location filename="../src/object/secretObjective.cpp" line="158"/>
+        <source>At the end of the game, if you control either the Crane capital or two provinces in the Crane territory, you earn 6 honor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../provinceToken.cpp" line="16"/>
-        <source>Peace</source>
+        <location filename="../src/object/secretObjective.cpp" line="162"/>
+        <source>At the end of the game, if you control both Shadowlands provinces, you earn 3 honor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../provinceToken.cpp" line="17"/>
-        <source>Protection bonus</source>
+        <location filename="../src/object/secretObjective.cpp" line="166"/>
+        <source>At the end of the game, if you control either the Phoenix capital or two provinces in the Phoenix territory, you earn 7 honor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../provinceToken.cpp" line="18"/>
-        <source>Scorched earth</source>
+        <location filename="../src/object/secretObjective.cpp" line="170"/>
+        <source>At the end of the game, if you control either the Dragon capital or two provinces in the Dragon territory, you earn 6 honor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../provinceToken.cpp" line="19"/>
-        <source>Shrine</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>BattleForRokugan::Region</name>
-    <message>
-        <location filename="../region.cpp" line="52"/>
-        <source>Sea Access</source>
+        <location filename="../src/object/secretObjective.cpp" line="174"/>
+        <source>At the end of the game, if you control six coastal provinces, you earn 10 honor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../region.cpp" line="53"/>
-        <source>Castling</source>
+        <location filename="../src/object/secretObjective.cpp" line="178"/>
+        <source>At the end of the game, if you control the fewest provinces, you earn 10 honor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../region.cpp" line="56"/>
-        <source>Pirate Raids</source>
+        <location filename="../src/object/secretObjective.cpp" line="182"/>
+        <source>At the end of the game, if you control at least one province in each of seven different territories, you earn 10 honor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../region.cpp" line="57"/>
-        <source>Prosperity</source>
+        <location filename="../src/object/secretObjective.cpp" line="186"/>
+        <source>At the end of the game, if you control either the Unicorn capital or two provinces in the Unicorn territory, you earn 6 honor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../region.cpp" line="60"/>
-        <source>Code of Honor</source>
+        <location filename="../src/object/secretObjective.cpp" line="190"/>
+        <source>At the end of the game, if you control either the Crab capital or two provinces in the Crab territory, you earn 5 honor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../region.cpp" line="61"/>
-        <source>Diplomatic Mission</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="64"/>
-        <source>Objective Movement</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="65"/>
-        <source>Blessed Land</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="68"/>
-        <source>Bountiful Harvest</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="69"/>
-        <source>Ashigaru Militia</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="72"/>
-        <source>Bushido</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="73"/>
-        <source>Glorious Battle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="76"/>
-        <source>Kami Support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="77"/>
-        <source>Purge</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="80"/>
-        <source>Spy Network</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="81"/>
-        <source>Fires of Rebellion</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="84"/>
-        <source>Reinforcement</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="85"/>
-        <source>Cultural Exchange</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="88"/>
-        <source>Raise Dead</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="89"/>
-        <source>Dominion of Terror</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="92"/>
-        <source>Deal with Evil</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="93"/>
-        <source>Killing the Weak</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="103"/>
-        <source>Select a continental province and place a harbor token in it. This province is now considered a coastal province.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="106"/>
-        <source>Select 1 Army, Fleet, or Shinobi token from your discard and return it to your asset. Then choose 1 battle token from your asset and either discard it or mix it into your personal supply.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="111"/>
-        <source>Select a province and place a scorched earth token on it. If you control that province, place 3 control tokens faceup and another province you control.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="115"/>
-        <source>Select a province (other than Shadowlands) and place a +2 Honor Bonus token there.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="119"/>
-        <source>Select 2 provinces (excluding shadow lands) and place a +1 Honor Bonus token in each.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="122"/>
-        <source>Select a province and place a peace token in it. If another player controls the province, place 2 control tokens faceup on any province you control.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="127"/>
-        <source>Choose 2 provinces you control and place 1 control token face up on each province.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="130"/>
-        <source>Select a province and place a shrine token on it. This province cannot be attacked, but the player who controls the province can attack neighboring provinces from it.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="135"/>
-        <source>Choose a province you control and place 2 control tokens there face up.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="137"/>
-        <source>Select 3 provinces (excluding Shadowlands) and place a +1 Defense Bonus token on each province.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="141"/>
-        <source>Select a province (except the Shadowlands) and place a 4-flower token in it, covering the flower printed on the board. The honor value of this province becomes 4.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="145"/>
-        <source>Select a province and place a Glory token on it. Diplomacy and mayhem tokens cannot be placed in this province.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="149"/>
-        <source>Select a province (except Shadowlands) and place a +2 Defense Bonus token there.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="152"/>
-        <source>Remove the Scorched Earth token from any province. Then, place 2 of your control tokens in that province and turn one of them face up.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="156"/>
-        <source>Choose another player and see the tokens in his asset. This player cannot use an empty token for this round.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="159"/>
-        <source>Remove a peace token from any province. If you control this province, place 2 control tokens faceup on it.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="163"/>
-        <source>Choose 2 Army tokens from your discard and return them to your asset. Then choose 2 battle tokens from your asset and either discard them or mix them into your personal supply.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="167"/>
-        <source>Choose a province under your control and a province under enemy control. Swap all control tokens in your province with all control tokens in the enemy province (do not flip them).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="172"/>
-        <source>Remove your control token from any province other than the Shadowlands. Then, choose a battle token from your discard and place it face up on the board, observing the rest of the placement rules. After that, place a battle token from your asset as usual.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="177"/>
-        <source>Remove your control token from any province other than the Shadowlands. Then remove 2 or fewer Special Tokens from the board.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="181"/>
-        <source>Remove your control token from any province other than the Shadowlands. Then select 4 or fewer battle tokens on the board and look at their faces without showing the others. Reveal one of these tokens and send it to its clan&apos;s discard.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../region.cpp" line="186"/>
-        <source>Discard a Battle token from your asset. You do not place a battle token this turn. Then reveal any 2 battle tokens on the board and send them to their clans&apos; discard.</source>
+        <location filename="../src/object/secretObjective.cpp" line="194"/>
+        <source>At the end of the game, if you control either the Scorpion capital or two provinces in the Scorpion territory, you earn 7 honor.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>BattleForRokugan::TurnToken</name>
+    <name>BFR::Token::Combat</name>
     <message>
-        <location filename="../turnToken.cpp" line="24"/>
+        <location filename="../src/token/combat.cpp" line="33"/>
         <source>Army</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../turnToken.cpp" line="25"/>
+        <location filename="../src/token/combat.cpp" line="34"/>
         <source>Blessing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../turnToken.cpp" line="26"/>
+        <location filename="../src/token/combat.cpp" line="35"/>
         <source>Diplomacy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../turnToken.cpp" line="27"/>
+        <location filename="../src/token/combat.cpp" line="36"/>
         <source>Empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../turnToken.cpp" line="28"/>
+        <location filename="../src/token/combat.cpp" line="37"/>
         <source>Navy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../turnToken.cpp" line="29"/>
-        <source>Sabotage</source>
+        <location filename="../src/token/combat.cpp" line="38"/>
+        <source>Raid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../turnToken.cpp" line="30"/>
+        <location filename="../src/token/combat.cpp" line="39"/>
         <source>Shinobi</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BFR::Token::Province</name>
+    <message>
+        <location filename="../src/token/province.cpp" line="13"/>
+        <source>Glory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/token/province.cpp" line="14"/>
+        <source>Harbor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/token/province.cpp" line="15"/>
+        <source>Honor bonus</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/token/province.cpp" line="16"/>
+        <source>Peace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/token/province.cpp" line="17"/>
+        <source>Protection bonus</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/token/province.cpp" line="18"/>
+        <source>Scorched earth</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/token/province.cpp" line="19"/>
+        <source>Shrine</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -28,9 +28,9 @@ enum class CardType {
     InitiativeScorpion,
     InitiativeUnicorn,
 
-    MasterOfGovernance,       ///< Neutral card
+    MasterOfGovernance, ///< Neutral card
     MasterOfTactics,    ///< Neutral card
-    RiseOfAnEmpire,         ///< Neutral card
+    RiseOfAnEmpire,     ///< Neutral card
 
     TerritoryCrab_FeatsOfEngineering, ///< territory cards
     TerritoryCrab_Promotion,

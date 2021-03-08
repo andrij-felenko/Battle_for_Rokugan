@@ -27,7 +27,8 @@ BFR::Game::~Game()
 {
     clear();
     for (const auto &it : m_cardPocket)
-        it->deleteLater();
+        if (it->parent() == nullptr)
+            it->deleteLater();
 }
 
 void BFR::Game::addPlayer(QString name, ClanType clan)
