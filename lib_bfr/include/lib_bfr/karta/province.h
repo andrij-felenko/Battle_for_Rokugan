@@ -8,7 +8,7 @@ class BattleForRokugan::Karta::Province : public TokenBasement
 {
     Q_OBJECT
 public:
-    Province(TerritoryType region, bool capital, bool navy,
+    Province(TerritoryType territory, bool capital, bool navy,
              uchar number, uchar stars, QObject* parent);
 
     ClanType clanType() const;
@@ -21,7 +21,7 @@ public:
     uchar defends() const;
     uchar number() const;
     uchar stars() const;
-    TerritoryType region() const;
+    TerritoryType territory() const;
 
     uchar controlUp() const;
 
@@ -45,7 +45,7 @@ private:
     uchar m_stars;
     uchar m_defends;
 
-    TerritoryType m_region;
+    TerritoryType m_territory;
     Object::Player* m_player;
     Token::ProvinceList m_statusList;
     Token::ControlList m_ctrlTokenList;

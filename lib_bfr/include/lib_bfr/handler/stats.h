@@ -15,7 +15,7 @@ public:
 
     OneStatOpt operator[](ClanType clan) const;
 
-    ClanTypeList maxRegionCard() const;
+    ClanTypeList maxTerritoryCard() const;
     ClanTypeList minProvinceClan() const;
     ClanTypeList maxProvinceClan() const;
     ClanTypeList maxCtrlToken(bool withToken) const;
@@ -43,15 +43,15 @@ class BattleForRokugan::Handler::Stats::OneStat : public QObject
                WRITE setProvinceCount
                NOTIFY   provinceCountChanged)
 
-    Q_PROPERTY(uint regionCount
-               READ     regionCount
-               WRITE setRegionCount
-               NOTIFY   regionCountChanged)
+    Q_PROPERTY(uint territoryCount
+               READ     territoryCount
+               WRITE setTerritoryCount
+               NOTIFY   territoryCountChanged)
 
-    Q_PROPERTY(uint regionCardCount
-               READ     regionCardCount
-               WRITE setRegionCardCount
-               NOTIFY   regionCardCountChanged)
+    Q_PROPERTY(uint territoryCardCount
+               READ     territoryCardCount
+               WRITE setTerritoryCardCount
+               NOTIFY   territoryCardCountChanged)
 
     Q_PROPERTY(uint ctrlTokenOn
                READ     ctrlTokenOn
@@ -71,8 +71,8 @@ public:
 
     uint honorPoints()     const;
     uint provinceCount()   const;
-    uint regionCount()     const;
-    uint regionCardCount() const;
+    uint territoryCount()     const;
+    uint territoryCardCount() const;
     uint ctrlTokenOn()     const;
     uint ctrlTokenOff()    const;
     uint ctrlToken()       const;
@@ -81,8 +81,8 @@ public:
 signals:
     void honorPointsChanged    (uint honorPoints);
     void provinceCountChanged  (uint provinceCount);
-    void regionCountChanged    (uint regionCount);
-    void regionCardCountChanged(uint regionCardCount);
+    void territoryCountChanged    (uint territoryCount);
+    void territoryCardCountChanged(uint territoryCardCount);
     void ctrlTokenOnChanged    (uint ctrlTokenOn);
     void ctrlTokenOffChanged   (uint ctrlTokenOff);
     void ctrlTokenChanged      (uint ctrlToken);
@@ -92,8 +92,8 @@ private:
     friend class Stats;
     uint m_honorPoints;
     uint m_provinceCount;
-    uint m_regionCount;
-    uint m_regionCardCount;
+    uint m_territoryCount;
+    uint m_territoryCardCount;
     uint m_ctrlTokenOn;
     uint m_ctrlTokenOff;
     ClanType m_type;
@@ -101,8 +101,8 @@ private:
     void clear();
     void setHonorPoints    (uint honorPoints);
     void setProvinceCount  (uint provinceCount);
-    void setRegionCount    (uint regionCount);
-    void setRegionCardCount(uint regionCardCount);
+    void setTerritoryCount    (uint territoryCount);
+    void setTerritoryCardCount(uint territoryCardCount);
     void setCtrlTokenOn    (uint ctrlTokenOn);
     void setCtrlTokenOff   (uint ctrlTokenOff);
 };

@@ -145,8 +145,8 @@ void BFR::Game::start()
     m_turns->reset(m_playerList);
 
 //    if (m_turn > 1){
-        // TODO add region card to player
-        // TODO use region card
+        // TODO add territory card to player
+        // TODO use territory card
 //    }
-    // TODO set turn token on map and (if player want) use region shadow card or player card
+    // TODO set turn token on map and (if player want) use territory shadow card or player card
 }

@@ -25,16 +25,16 @@ BFR::Handler::Stats::operator [](ClanType clan) const
     return std::nullopt;
 }
 
-BFR::ClanTypeList BFR::Handler::Stats::maxRegionCard() const
+BFR::ClanTypeList BFR::Handler::Stats::maxTerritoryCard() const
 {
     uint cardMax = 0;
     for (auto it : m_clanList)
-        if (auto count = it->m_regionCardCount; count >= cardMax)
+        if (auto count = it->m_territoryCardCount; count >= cardMax)
             cardMax = count;
 
     ClanTypeList list;
     for (auto it : m_clanList)
-        if (it->regionCardCount() == cardMax)
+        if (it->territoryCardCount() == cardMax)
             list.push_back(it->type());
     return list;
 }
@@ -124,8 +124,8 @@ void BCO::clear()
 {
     setHonorPoints(0);
     setProvinceCount(0);
-    setRegionCount(0);
-    setRegionCardCount(0);
+    setTerritoryCount(0);
+    setTerritoryCardCount(0);
     setCtrlTokenOff(0);
     setCtrlTokenOn(0);
 }
@@ -133,8 +133,8 @@ void BCO::clear()
 BFR::ClanType BCO::type() const { return m_type; }
 uint BCO::honorPoints()   const { return m_honorPoints; }
 uint BCO::provinceCount() const { return m_provinceCount; }
-uint BCO::regionCount()   const { return m_regionCount; }
-uint BCO::regionCardCount() const { return m_regionCardCount; }
+uint BCO::territoryCount()   const { return m_territoryCount; }
+uint BCO::territoryCardCount() const { return m_territoryCardCount; }
 uint BCO::ctrlTokenOff() const { return m_ctrlTokenOff; }
 uint BCO::ctrlTokenOn() const { return m_ctrlTokenOn; }
 uint BCO::ctrlToken()  const { return m_ctrlTokenOff + m_ctrlTokenOn;}
@@ -157,22 +157,22 @@ void BCO::setProvinceCount(uint provinceCount)
     emit provinceCountChanged(m_provinceCount);
 }
 
-void BCO::setRegionCount(uint regionCount)
+void BCO::setTerritoryCount(uint territoryCount)
 {
-    if (m_regionCount == regionCount)
+    if (m_territoryCount == territoryCount)
         return;
 
-    m_regionCount = regionCount;
-    emit regionCountChanged(m_regionCount);
+    m_territoryCount = territoryCount;
+    emit territoryCountChanged(m_territoryCount);
 }
 
-void BCO::setRegionCardCount(uint regionCardCount)
+void BCO::setTerritoryCardCount(uint territoryCardCount)
 {
-    if (m_regionCardCount == regionCardCount)
+    if (m_territoryCardCount == territoryCardCount)
         return;
 
-    m_regionCardCount = regionCardCount;
-    emit regionCardCountChanged(m_regionCardCount);
+    m_territoryCardCount = territoryCardCount;
+    emit territoryCardCountChanged(m_territoryCardCount);
 }
 
 void BCO::setCtrlTokenOn(uint ctrlTokenOn)

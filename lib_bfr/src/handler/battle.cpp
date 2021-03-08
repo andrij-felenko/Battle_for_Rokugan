@@ -26,9 +26,9 @@ void BattleForRokugan::Handler::Battle::run()
     scorcheEarthAndDiplomacy();
 
     for (auto regType = TerritoryType::First; regType <= TerritoryType::Last; ++regType){
-        auto region = m_map->operator[](regType);
-        for (uint i = 0; i < region->provinceCount(); i++){
-            auto province = region->operator[](i);
+        auto territory = m_map->operator[](regType);
+        for (uint i = 0; i < territory->provinceCount(); i++){
+            auto province = territory->operator[](i);
             calculateBattle(province);
             province->clearCombatToken(true);
         }
@@ -40,9 +40,9 @@ void BattleForRokugan::Handler::Battle::run()
 void BattleForRokugan::Handler::Battle::removeNotFormatPlaced()
 {
     for (auto regType = TerritoryType::First; regType <= TerritoryType::Last; ++regType){
-        auto region = m_map->operator[](regType);
-        for (uint i = 0; i < region->provinceCount(); i++){
-            auto province = region->operator[](i);
+        auto territory = m_map->operator[](regType);
+        for (uint i = 0; i < territory->provinceCount(); i++){
+            auto province = territory->operator[](i);
             province->clearEmptyTokens();
 
             Token::CombatList list;
@@ -99,9 +99,9 @@ void BattleForRokugan::Handler::Battle::scorcheEarthAndDiplomacy()
 {
     // fist of all we burn the ground
     for (auto regType = TerritoryType::First; regType <= TerritoryType::Last; ++regType){
-        auto region = m_map->operator[](regType);
-        for (uint i = 0; i < region->provinceCount(); i++){
-            auto province = region->operator[](i);
+        auto territory = m_map->operator[](regType);
+        for (uint i = 0; i < territory->provinceCount(); i++){
+            auto province = territory->operator[](i);
             if (province->combatTokenContains(CombatTokenType::Raid)){
                 province->setProvinceToken(ProvinceTokenType::ScorchedEarth);
                 province->owner()->untakeProvince(province);

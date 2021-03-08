@@ -36,7 +36,7 @@ private:
     inline bool addBorder(TerritoryType type1, TerritoryType type2, uchar_pair_v v);
 
     Province*  findProvince(TerritoryType type, unsigned char stars) const;
-    Territory* findRegion  (TerritoryType type) const;
+    Territory* findTerritory  (TerritoryType type) const;
 
     inline void addLandBorder();
     inline void addNavyBorder();

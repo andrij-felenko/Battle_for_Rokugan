@@ -39,10 +39,10 @@ int BFR::Object::SecretObjective::result(SOT mission, Clan* clan, Karta::Map* ma
     // capital or 2 province
     auto capOr2Prov = [clan, map](TerritoryType terType)->bool
     {
-        auto region = map->operator[](terType);
-        if (region->provinceOwnerCount(clan->type()) >= 2)
+        auto territory = map->operator[](terType);
+        if (territory->provinceOwnerCount(clan->type()) >= 2)
             return true;
-        if (auto capital = region->capital(); capital)
+        if (auto capital = territory->capital(); capital)
             if (capital->owner()->clan() == clan)
                 return true;
         return false;
@@ -76,7 +76,7 @@ int BFR::Object::SecretObjective::result(SOT mission, Clan* clan, Karta::Map* ma
             if (list.size() < 6)
                 return false;
 
-            // check is it contains in 3 different region
+            // check is it contains in 3 different territory
             std::set <ClanType> clanSet;
             for (const auto &province : list)
                 if (auto player = province->owner(); player)

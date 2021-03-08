@@ -6,7 +6,7 @@
 
 BFR::Karta::Map::Map(QObject *parent) : QObject(parent)
 {
-    // init regions
+    // init territorys
     for (unsigned char i = 0; i < 11; i++)
         m_territoryList.push_back(new Territory(static_cast <TerritoryType>(i), this));
 
@@ -99,13 +99,13 @@ bool BFR::Karta::Map::addBorder(TerritoryType type1, TerritoryType type2, uchar_
 
 BFR::Karta::Province* BFR::Karta::Map::findProvince(TerritoryType type, unsigned char stars) const
 {
-    auto region = findRegion(type);
-    if (region)
-        return region->findProvince(stars);
+    auto territory = findTerritory(type);
+    if (territory)
+        return territory->findProvince(stars);
     return nullptr;
 }
 
-BFR::Karta::Territory* BFR::Karta::Map::findRegion(TerritoryType type) const
+BFR::Karta::Territory* BFR::Karta::Map::findTerritory(TerritoryType type) const
 {
     for (auto it : m_territoryList)
         if (type == it->type())

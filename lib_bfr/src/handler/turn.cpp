@@ -85,7 +85,7 @@ BFR::ClanType BFR::Handler::Turn::getCurrentFirstPlayer()
         case CardType::RiseOfAnEmpire: {
             if (m_phase == Phase::Pregame)
                 continue;
-            clan = m_stats->maxRegionCard().first();
+            clan = m_stats->maxTerritoryCard().first();
             break;
         }
         default: return ClanType::None;

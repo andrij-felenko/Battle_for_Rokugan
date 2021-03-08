@@ -6,7 +6,7 @@
 #include "lib_bfr/token/control.h"
 #include "lib_bfr/token/province.h"
 
-BFR::Karta::Province::Province(TerritoryType region, bool capital, bool navy,
+BFR::Karta::Province::Province(TerritoryType territory, bool capital, bool navy,
                    uchar number, uchar stars, QObject *parent)
     : TokenBasement(parent),
       m_capital(capital),
@@ -14,7 +14,7 @@ BFR::Karta::Province::Province(TerritoryType region, bool capital, bool navy,
       m_number(number),
       m_stars(stars),
       m_defends(capital ? 2 : 0),
-      m_region(region)
+      m_territory(territory)
 {
     //
 }
@@ -65,9 +65,9 @@ uchar BFR::Karta::Province::defends() const
     return ret;
 }
 
-BFR::TerritoryType BFR::Karta::Province::region() const
+BFR::TerritoryType BFR::Karta::Province::territory() const
 {
-    return m_region;
+    return m_territory;
 }
 
 uchar BFR::Karta::Province::controlUp() const

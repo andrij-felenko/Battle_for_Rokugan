@@ -32,7 +32,7 @@ enum class CardType {
     MasterOfTactics,    ///< Neutral card
     RiseOfAnEmpire,         ///< Neutral card
 
-    TerritoryCrab_FeatsOfEngineering, ///< region cards
+    TerritoryCrab_FeatsOfEngineering, ///< territory cards
     TerritoryCrab_Promotion,
     TerritoryCrane_CodeOfHonor,
     TerritoryCrane_DiplomaticMission,

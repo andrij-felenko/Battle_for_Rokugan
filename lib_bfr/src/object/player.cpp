@@ -83,7 +83,7 @@ ErrorMsg BFR::Object::Player::pickSecretObjective(SecretObjectiveType secret)
     return std::nullopt;
 }
 
-unsigned BFR::Object::Player::regionCardCount() const
+unsigned BFR::Object::Player::territoryCardCount() const
 {
     unsigned ret = 0;
     for (auto it : m_cardList)
@@ -109,11 +109,11 @@ unsigned BFR::Object::Player::pointsOfHonor() const
 {
     unsigned point = secretObjective()->result();
     for (auto reg = TerritoryType::First; reg <= TerritoryType::Last; ++reg){
-        auto region = m_map->operator[](reg);
-        if (region->daimyo() == m_clan->type())
+        auto territory = m_map->operator[](reg);
+        if (territory->daimyo() == m_clan->type())
             point += 5;
-        for (unsigned i = 0; i < region->provinceCount(); i++)
-            point += region->operator[](i)->stars();
+        for (unsigned i = 0; i < territory->provinceCount(); i++)
+            point += territory->operator[](i)->stars();
     }
     return point;
 }

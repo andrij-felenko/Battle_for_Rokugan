@@ -16,7 +16,7 @@ public:
     const SecretObjective* secretObjective() const;
 
     ErrorMsg pickSecretObjective(SecretObjectiveType secret);
-    unsigned regionCardCount() const;
+    unsigned territoryCardCount() const;
     unsigned provinceCount() const;
     unsigned controlTokenCount() const;
     unsigned pointsOfHonor() const;
