@@ -157,8 +157,7 @@
     <message>
         <location filename="../src/object/card.cpp" line="196"/>
         <source>Take 1 battle token of any opponent from the board. Look at the front of it, without showing the others, and return the token to its place.</source>
-        <translation>Возьмите с поля 1 жетон битвы любого соперника. Посмотрите его лицевую сторону, не показывая остальным, и верните жетон на место.
-Карты тайных целей [12]</translation>
+        <translation>Возьмите с поля 1 жетон битвы любого соперника. Посмотрите его лицевую сторону, не показывая остальным, и верните жетон на место.</translation>
     </message>
     <message>
         <location filename="../src/object/card.cpp" line="200"/>

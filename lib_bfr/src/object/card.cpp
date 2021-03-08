@@ -107,6 +107,17 @@ void BFR::Object::Card::useTerritoryCrane_CodeOfHonor(BFR::Karta::Province *prov
     use();
 }
 
+void BattleForRokugan::Object::Card::useTerritoryCrane_DiplomaticMission(BattleForRokugan::Karta::Province *provPeace, Karta::Province *provToken)
+{
+    if (m_type != CardType::TerritoryCrane_DiplomaticMission)
+        return;
+
+    provPeace->setProvinceToken(ProvinceTokenType::Peace);
+    if (provToken && provPeace->owner() != m_owner)
+        provToken->addControlOnToken(2);
+    use();
+}
+
 void BattleForRokugan::Object::Card::useTerritoryDragon_SacredGround(BattleForRokugan::Karta::Province *province)
 {
     if (m_type != CardType::TerritoryDragon_SacredGround)
@@ -123,6 +134,18 @@ void BattleForRokugan::Object::Card::useTerritoryDragon_StrengthOfPurpose(Battle
 
     prov1->addControlOnToken(1);
     prov2->addControlOnToken(1);
+    use();
+}
+
+void BattleForRokugan::Object::Card::useTerritoryIslands_PirateRaids(BattleForRokugan::Karta::Province *provScorch, BattleForRokugan::Karta::Province *provToken)
+{
+    if (m_type != CardType::TerritoryIslands_PirateRaids)
+        return;
+
+    if (provToken && provScorch->owner() == m_owner)
+        provToken->addControlOnToken(3);
+
+    provScorch->setProvinceToken(ProvinceTokenType::ScorchedEarth);
     use();
 }
 
@@ -153,6 +176,23 @@ void BattleForRokugan::Object::Card::useTerritoryLion_HonorableFight(BattleForRo
     use();
 }
 
+void BattleForRokugan::Object::Card::useTerritoryMountains_AshigaruLevies(BattleForRokugan::Karta::Province *prov1, BattleForRokugan::Karta::Province *prov2, BattleForRokugan::Karta::Province *prov3)
+{
+    if (m_type != CardType::TerritoryMountains_AshigaruLevies)
+        return;
+
+    if (not prov1->isShadowProvince())
+        prov1->setProvinceToken(ProvinceTokenType::ProtectionBonus);
+
+    if (not prov2->isShadowProvince())
+        prov2->setProvinceToken(ProvinceTokenType::ProtectionBonus);
+
+    if (not prov3->isShadowProvince())
+        prov3->setProvinceToken(ProvinceTokenType::ProtectionBonus);
+
+    use();
+}
+
 void BattleForRokugan::Object::Card::useTerritoryMountains_BountifulHarvest(BattleForRokugan::Karta::Province *province)
 {
     if (m_type != CardType::TerritoryMountains_BountifulHarvest)
@@ -167,7 +207,7 @@ void BattleForRokugan::Object::Card::useTerritoryPhoenix_AidOfTheKami(BattleForR
     if (m_type != CardType::TerritoryPhoenix_AidOfTheKami)
         return;
 
-    province->setProvinceToken(ProvinceTokenType::ProtectionBonus);
+    province->setProvinceToken(ProvinceTokenType::ProtectionBonus2);
     use();
 }
 
@@ -182,6 +222,19 @@ void BattleForRokugan::Object::Card::useTerritoryPhoenix_BlessTheLands(BattleFor
     province->removeProvinceToken(ProvinceTokenType::ScorchedEarth);
     m_owner->takeProvince(province);
     province->addControlOnToken(2);
+    use();
+}
+
+void BattleForRokugan::Object::Card::useTerritoryScorpion_FomentRebellion(BattleForRokugan::Karta::Province *province)
+{
+    if (m_type != CardType::TerritoryScorpion_FomentRebellion)
+        return;
+
+    if (not province->provinceTokenContains(ProvinceTokenType::Peace))
+        return;
+
+    if (province->owner() == m_owner)
+        province->addControlOnToken(2);
     use();
 }
 
@@ -209,6 +262,15 @@ void BFR::Object::Card::useTerritoryUnicorn_Reinforcement(BFR::Token::Combat *di
     dis2->setStatus(StatusTokenType::Assets);
     ast1->setStatus(StatusTokenType::Reserve);
     ast2->setStatus(StatusTokenType::Reserve);
+    use();
+}
+
+void BattleForRokugan::Object::Card::useTerritoryUnicorn_CulturalExchange(BattleForRokugan::Karta::Province *prov1, BattleForRokugan::Karta::Province *prov2)
+{
+    if (m_type != CardType::TerritoryUnicorn_CulturalExchange)
+        return;
+
+    prov1->swapAllContent(prov2);
     use();
 }
 

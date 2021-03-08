@@ -61,9 +61,12 @@ uchar BFR::Karta::Province::number() const
 uchar BFR::Karta::Province::defends() const
 {
     uchar ret = m_defends;
-    for (const auto &it : m_statusList)
-        if (it->type() == ProvinceTokenType::ProtectionBonus)
+    for (const auto &it : m_statusList){
+        if (it->type() == ProvinceTokenType::ProtectionBonus2)
             ret += 2;
+        else if (it->type() == ProvinceTokenType::ProtectionBonus)
+            ret++;
+    }
 
     for (const auto &it : m_ctrlTokenList)
         ret += it->defends();
@@ -176,6 +179,24 @@ void BFR::Karta::Province::clearCombatToken(bool withBorders)
 
     for (auto it : m_borderList)
         it->removeCombatToken(it->m_combatList);
+}
+
+bool BattleForRokugan::Karta::Province::isShadowProvince() const
+{
+    return m_territory == TerritoryType::ShadowlandsNorth ||
+            m_territory == TerritoryType::ShadowlandsSouth;
+}
+
+void BattleForRokugan::Karta::Province::swapAllContent(BattleForRokugan::Karta::Province *province)
+{
+    std::swap(m_combatList, province->m_combatList);
+    std::swap(m_ctrlTokenList, province->m_ctrlTokenList);
+    std::swap(m_statusList, province->m_statusList);
+    std::swap(m_player, province->m_player);
+
+    emit ownerChanged(m_player);
+    emit ctrlTokenCountChanged();
+    emit scorchedStatusChanged(scorched());
 }
 
 BFR::Object::Player* BFR::Karta::Province::owner() const

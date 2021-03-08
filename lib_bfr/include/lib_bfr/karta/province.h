@@ -37,6 +37,9 @@ public:
     bool provinceTokenContains(ProvinceTokenType type);
     void clearCombatToken(bool withBorders);
 
+    bool isShadowProvince() const;
+    void swapAllContent(Province* province);
+
 signals:
     void ownerChanged(Object::Player*);
     void scorchedStatusChanged(bool isScorched);
