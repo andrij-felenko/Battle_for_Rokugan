@@ -107,12 +107,81 @@ void BFR::Object::Card::useTerritoryCrane_CodeOfHonor(BFR::Karta::Province *prov
     use();
 }
 
+void BattleForRokugan::Object::Card::useTerritoryDragon_SacredGround(BattleForRokugan::Karta::Province *province)
+{
+    if (m_type != CardType::TerritoryDragon_SacredGround)
+        return;
+
+    province->setProvinceToken(ProvinceTokenType::Shrine);
+    use();
+}
+
+void BattleForRokugan::Object::Card::useTerritoryDragon_StrengthOfPurpose(BattleForRokugan::Karta::Province *prov1, BattleForRokugan::Karta::Province *prov2)
+{
+    if (m_type != CardType::TerritoryDragon_StrengthOfPurpose)
+        return;
+
+    prov1->addControlOnToken(1);
+    prov2->addControlOnToken(1);
+    use();
+}
+
 void BFR::Object::Card::useTerritoryIslands_PortOfProsperity(BFR::Karta::Province *province)
 {
     if (m_type != CardType::TerritoryIslands_PortOfProsperity)
         return;
 
     province->pushHonor(2);
+    use();
+}
+
+void BattleForRokugan::Object::Card::useTerritoryLion_Bushido(BattleForRokugan::Karta::Province *province)
+{
+    if (m_type != CardType::TerritoryLion_Bushido)
+        return;
+
+    province->setProvinceToken(ProvinceTokenType::HonorBonusFull);
+    use();
+}
+
+void BattleForRokugan::Object::Card::useTerritoryLion_HonorableFight(BattleForRokugan::Karta::Province *province)
+{
+    if (m_type != CardType::TerritoryLion_HonorableFight)
+        return;
+
+    province->setProvinceToken(ProvinceTokenType::Glory);
+    use();
+}
+
+void BattleForRokugan::Object::Card::useTerritoryMountains_BountifulHarvest(BattleForRokugan::Karta::Province *province)
+{
+    if (m_type != CardType::TerritoryMountains_BountifulHarvest)
+        return;
+
+    province->addControlOnToken(2);
+    use();
+}
+
+void BattleForRokugan::Object::Card::useTerritoryPhoenix_AidOfTheKami(BattleForRokugan::Karta::Province *province)
+{
+    if (m_type != CardType::TerritoryPhoenix_AidOfTheKami)
+        return;
+
+    province->setProvinceToken(ProvinceTokenType::ProtectionBonus);
+    use();
+}
+
+void BattleForRokugan::Object::Card::useTerritoryPhoenix_BlessTheLands(BattleForRokugan::Karta::Province *province)
+{
+    if (m_type != CardType::TerritoryPhoenix_AidOfTheKami)
+        return;
+
+    if (not province->scorched())
+        return;
+
+    province->removeProvinceToken(ProvinceTokenType::ScorchedEarth);
+    m_owner->takeProvince(province);
+    province->addControlOnToken(2);
     use();
 }
 

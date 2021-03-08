@@ -41,16 +41,16 @@ private:
     void useTerritoryCrane_CodeOfHonor(Karta::Province* prov1, Karta::Province* prov2);
     // TODO
 //    void useTerritoryCrane_DiplomaticMission:  return tr("Diplomatic Mission");
-//    void useTerritoryDragon_SacredGround:      return tr("Sacred ground");
-//    void useTerritoryDragon_StrengthOfPurpose: return tr("Strength of purpose");
+    void useTerritoryDragon_SacredGround(Karta::Province* province);
+    void useTerritoryDragon_StrengthOfPurpose(Karta::Province* prov1, Karta::Province* prov2);
 //    void useTerritoryIslands_PirateRaids:      return tr("Pirate raids");
     void useTerritoryIslands_PortOfProsperity(Karta::Province* province);
-//    void useTerritoryLion_Bushido:             return tr("Bushido");
-//    void useTerritoryLion_HonorableFight:      return tr("Honorable fight");
+    void useTerritoryLion_Bushido(Karta::Province* province);
+    void useTerritoryLion_HonorableFight(Karta::Province* province);
 //    void useTerritoryMountains_AshigaruLevies:   return tr("Ashigaru levies");
-//    void useTerritoryMountains_BountifulHarvest: return tr("Bountiful Harvest");
-//    void useTerritoryPhoenix_AidOfTheKami:       return tr("Aid of the Kami");
-//    void useTerritoryPhoenix_BlessTheLands:      return tr("Bless the lands");
+    void useTerritoryMountains_BountifulHarvest(Karta::Province* province);
+    void useTerritoryPhoenix_AidOfTheKami(Karta::Province* province);
+    void useTerritoryPhoenix_BlessTheLands(Karta::Province* province);
 //    void useTerritoryScorpion_FomentRebellion:   return tr("Foment rebellion");
 //    void useTerritoryScorpion_SpyNetwork:        return tr("Spy Network");
 //    void useTerritoryShadowlandsNorth_DarkFavors:     return tr("Dark favors");
