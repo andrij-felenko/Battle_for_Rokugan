@@ -7,7 +7,7 @@ class BattleForRokugan::Object::Card : public QObject
 {
     Q_OBJECT
 public:
-    Card(CardType type, Player* owner);
+    Card(CardType type, Player* owner = nullptr);
     Q_ENUM(CardType)
 
     QString name() const;
@@ -15,7 +15,6 @@ public:
     CardType type() const;
 
     bool isUsed() const;
-    void use();
 
     static array_u3 randNeutralCard();
     static CardType getNeutralCard(uint i);
@@ -23,10 +22,14 @@ public:
     static bool isInitiative(CardType type);
     static bool isTerritory(CardType type);
 
+    Player *getOwner() const;
+    void setOwner(Player *owner);
+
 private:
     Player* m_owner;
     CardType m_type;
     bool m_used;
+    void use();
 
     CombatTokenType useFirstPlayer(Token::Combat* token);
     CombatTokenType useScout(Token::Combat* token);

@@ -31,27 +31,52 @@ bool BFR::Object::Card::isTerritory(CardType type)
     return type >= CardType::FirstTerritory && type <= CardType::LastTerritory;
 }
 
+BFR::Object::Player *BFR::Object::Card::getOwner() const
+{
+    return m_owner;
+}
+
+void BFR::Object::Card::setOwner(Player *owner)
+{
+    m_owner = owner;
+}
+
 BFR::CombatTokenType BFR::Object::Card::useFirstPlayer(Token::Combat *token)
 {
+    if (m_type != CardType::FirstPlayer)
+        return CombatTokenType::None;
+
     token->setStatus(StatusTokenType::Reserve);
+    setOwner(nullptr);
     return token->type();
 }
 
 BFR::CombatTokenType BFR::Object::Card::useScout(BFR::Token::Combat *token)
 {
+    if (m_type != CardType::Scout)
+        return CombatTokenType::None;
+
+    use();
     return token->type();
 }
 
 void BFR::Object::Card::useShugenja(BFR::Token::Combat *token)
 {
+    if (m_type != CardType::Shugenja)
+        return;
+
     token->show();
     // TODO add pause
     token->setStatus(StatusTokenType::Discharge);
+    use();
 }
 
 void BFR::Object::Card::useTerritoryCrab_FeatsOfEngineering(BFR::Karta::Province *province,
                                                             BFR::Karta::Province *pushProvince)
 {
+    if (m_type != CardType::TerritoryCrab_FeatsOfEngineering)
+        return;
+
     if (province->owner() == m_owner){
         if (pushProvince->owner() == m_owner)
             pushProvince->addControlOnToken(3);
@@ -59,42 +84,63 @@ void BFR::Object::Card::useTerritoryCrab_FeatsOfEngineering(BFR::Karta::Province
             ;// TODO set error
     }
     province->setProvinceToken(ProvinceTokenType::ScorchedEarth);
+    use();
 }
 
 void BFR::Object::Card::useTerritoryCrab_Promotion(BFR::Karta::Province *province)
 {
+    if (m_type != CardType::TerritoryCrab_Promotion)
+        return;
+
     province->setProvinceToken(ProvinceTokenType::Harbor);
+    use();
 }
 
 void BFR::Object::Card::useTerritoryCrane_CodeOfHonor(BFR::Karta::Province *prov1,
                                                       BFR::Karta::Province *prov2)
 {
+    if (m_type != CardType::TerritoryCrane_CodeOfHonor)
+        return;
+
     prov1->pushHonor(1);
     prov2->pushHonor(1);
+    use();
 }
 
 void BFR::Object::Card::useTerritoryIslands_PortOfProsperity(BFR::Karta::Province *province)
 {
+    if (m_type != CardType::TerritoryIslands_PortOfProsperity)
+        return;
+
     province->pushHonor(2);
+    use();
 }
 
 void BFR::Object::Card::useTerritoryShadowlandsSouth_InspireFear(BFR::Karta::Province *province,
                                                                  BFR::Token::Province *token1,
                                                                  BFR::Token::Province *token2)
 {
+    if (m_type != CardType::TerritoryShadowlandsSouth_InspireFear)
+        return;
+
     province->popControlToken();
     token1->province()->removeProvinceToken(token1->type());
     if (token2)
         token2->province()->removeProvinceToken(token2->type());
+    use();
 }
 
 void BFR::Object::Card::useTerritoryUnicorn_Reinforcement(BFR::Token::Combat *dis1, BFR::Token::Combat *dis2,
                                                           BFR::Token::Combat *ast1, BFR::Token::Combat *ast2)
 {
+    if (m_type != CardType::TerritoryUnicorn_Reinforcement)
+        return;
+
     dis1->setStatus(StatusTokenType::Assets);
     dis2->setStatus(StatusTokenType::Assets);
     ast1->setStatus(StatusTokenType::Reserve);
     ast2->setStatus(StatusTokenType::Reserve);
+    use();
 }
 
 QString BFR::Object::Card::name() const
@@ -264,7 +310,7 @@ array_u3 BFR::Object::Card::randNeutralCard()
     return ret;
 }
 
-namespace BFR {
+namespace BattleForRokugan {
     CardType operator+(CardType type, uint i)
     {
         return static_cast <CardType> (static_cast <uint> (type) + i);

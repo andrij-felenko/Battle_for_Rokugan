@@ -179,6 +179,7 @@ bool BFR::Object::Player::contains(SOT type) const
 void BFR::Object::Player::addFirstCard(Card *firstCard)
 {
     m_cardList.push_back(firstCard);
+    firstCard->setOwner(this);
 }
 
 void BFR::Object::Player::removeFirstCard()

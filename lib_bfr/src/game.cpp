@@ -26,6 +26,8 @@ BFR::Game::Game(QObject *parent) : QObject(parent)
 BFR::Game::~Game()
 {
     clear();
+    for (const auto &it : m_cardPocket)
+        it->deleteLater();
 }
 
 void BFR::Game::addPlayer(QString name, ClanType clan)
@@ -96,10 +98,9 @@ void BFR::Game::init()
 {
     // init cardPocket
     m_cardPocket.clear();
-    m_cardPocket.push_back(new Object::Card(CardType::FirstPlayer, this));
     for (int i = 0; i < 11; i++){
         auto cardType = CardType::FirstTerritory + i * 2 + AFfunction::randomInt(0, 1);
-        m_cardPocket.push_back(new Object::Card(cardType, this));
+        m_cardPocket.push_back(new Object::Card(cardType));
     }
     for (int i = 0; i < 12; i++){
         auto so = new Object::SecretObjective(static_cast <SecretObjectiveType>(i),

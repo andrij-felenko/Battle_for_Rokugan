@@ -9,7 +9,7 @@
 BFR::Handler::Turn::Turn(Stats *stats, QObject *parent)
     : QObject(parent), m_stats(stats)
 {
-    m_firstCard = new Object::Card(CardType::FirstPlayer, this);
+    m_firstCard = new Object::Card(CardType::FirstPlayer);
     connect(this, &Turn::turnChanged, this, &Turn::updateTurnQueue);
 }
 
