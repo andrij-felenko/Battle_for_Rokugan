@@ -34,7 +34,8 @@ void BFR::Object::SecretObjective::setPicked(Clan* clan)
 }
 
 int BFR::Object::SecretObjective::result() const { return result(m_type, m_clan, m_map, m_stats); }
-int BFR::Object::SecretObjective::result(SOT mission, Clan* clan, Karta::Map* map, Handler::Stats* stats)
+int BFR::Object::SecretObjective::result(SOT secretObjective, Clan* clan,
+                                         Karta::Map* map, Handler::Stats* stats)
 {
     // capital or 2 province
     auto capOr2Prov = [clan, map](TerritoryType terType)->bool
@@ -48,7 +49,7 @@ int BFR::Object::SecretObjective::result(SOT mission, Clan* clan, Karta::Map* ma
         return false;
     };
 
-    switch (mission) {
+    switch (secretObjective) {
     case SOT::PlainsOfBattle:       return capOr2Prov(TerritoryType::Lion)     ? 7 : 0;
     case SOT::RiceBowlOfTheEmpire:  return capOr2Prov(TerritoryType::Crane)    ? 6 : 0;
     case SOT::GreatLibrary:         return capOr2Prov(TerritoryType::Phoenix)  ? 7 : 0;

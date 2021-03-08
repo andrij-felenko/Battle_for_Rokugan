@@ -77,7 +77,7 @@ ErrorMsg BFR::Object::Player::pickSecretObjective(SecretObjectiveType secret)
     else if (m_secretObjective2->type() == secret)
         m_secretObjective2->setPicked(m_clan);
     else
-        return "Wrong mission, type not found.";
+        return "Wrong secret objective, type not found.";
 
     emit secretObjectivePicked();
     return std::nullopt;

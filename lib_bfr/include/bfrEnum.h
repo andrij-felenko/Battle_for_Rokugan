@@ -97,7 +97,7 @@ enum class Phase : unsigned char {
 };
 
 //!
-//! \brief The MissionType enum
+//! \brief The SecretObjectiveType enum
 //!
 enum class SecretObjectiveType : unsigned char {
     CourtOfTheFiveWinds = 0,

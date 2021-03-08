@@ -21,7 +21,7 @@ public:
 
 signals:
     void isCanStartChanged(bool);
-    void missionAdded();
+    void secretObjectiveAdded();
 
 private:
     Karta::Map* m_map;

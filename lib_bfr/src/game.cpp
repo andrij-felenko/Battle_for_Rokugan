@@ -52,12 +52,12 @@ void BFR::Game::addPlayer(QString name, ClanType clan)
     }
 
     auto it = AFfunction::randomInt(0, m_secretObjectiveList.size() - 1);
-    auto mis_1 = m_secretObjectiveList.takeAt(it);
+    auto so_1 = m_secretObjectiveList.takeAt(it);
 
     it = AFfunction::randomInt(0, m_secretObjectiveList.size() - 1);
-    auto mis_2 = m_secretObjectiveList.takeAt(it);
+    auto so_2 = m_secretObjectiveList.takeAt(it);
 
-    auto player = new Object::Player(name, clan, m_map, m_stats, mis_1, mis_2, this);
+    auto player = new Object::Player(name, clan, m_map, m_turns, m_stats, so_1, so_2, this);
     m_playerList.push_back(player);
     connect(player, &Object::Player::secretObjectivePicked, this, &Game::checkIsCanStart);
     checkIsCanStart();
@@ -120,11 +120,11 @@ bool BFR::Game::checkIsCanStart()
         return false;
     }
 
-    // check mission, every player must have one
+    // check secret objective, every player must have one
     for (auto it : m_playerList)
         if (it->secretObjective() == nullptr){
             // TODO add error msg
-//            "Mission of player " + it->name() + " not found."
+//            "Secret objective of player " + it->name() + " not found."
             emit isCanStartChanged(false);
             return false;
         }
