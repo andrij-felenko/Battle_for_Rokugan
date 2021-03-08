@@ -15,6 +15,7 @@
 #include "lib_bfr/object/secretObjective.h"
 #include "lib_bfr/token/combat.h"
 #include "lib_bfr/token/control.h"
+#include "lib_bfr/token/honor.h"
 #include "lib_bfr/token/province.h"
 #include "lib_bfr/game.h"
 #include "bfrEnum.h"
