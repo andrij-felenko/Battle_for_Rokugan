@@ -3,21 +3,21 @@
 #include "lib_bfr/object/clan.h"
 #include <set>
 
-BFR::Handler::Stats::Stats(Karta::Map* map)
+bfr::handler::Stats::Stats(karta::Map* map)
     : QObject(map), m_map(map)
 {
     for (uint i = 0; i < 7; i++)
         m_clanList.push_back(new OneStat(ClanType::First + i));
 }
 
-BFR::Handler::Stats::~Stats()
+bfr::handler::Stats::~Stats()
 {
     for (auto it : m_clanList)
         it->deleteLater();
 }
 
-BFR::Handler::Stats::OneStatOpt
-BFR::Handler::Stats::operator [](ClanType clan) const
+bfr::handler::Stats::OneStatOpt
+bfr::handler::Stats::operator [](ClanType clan) const
 {
     for (auto it : m_clanList)
         if (it->type() == clan)
@@ -25,7 +25,7 @@ BFR::Handler::Stats::operator [](ClanType clan) const
     return std::nullopt;
 }
 
-BFR::ClanTypeList BFR::Handler::Stats::maxTerritoryCard() const
+bfr::ClanTypeList bfr::handler::Stats::maxTerritoryCard() const
 {
     uint cardMax = 0;
     for (auto it : m_clanList)
@@ -39,7 +39,7 @@ BFR::ClanTypeList BFR::Handler::Stats::maxTerritoryCard() const
     return list;
 }
 
-BFR::ClanTypeList BFR::Handler::Stats::maxProvinceClan() const
+bfr::ClanTypeList bfr::handler::Stats::maxProvinceClan() const
 {
     uint provMax = 0;
     for (auto it : m_clanList)
@@ -53,7 +53,7 @@ BFR::ClanTypeList BFR::Handler::Stats::maxProvinceClan() const
     return list;
 }
 
-BFR::ClanTypeList BFR::Handler::Stats::minProvinceClan() const
+bfr::ClanTypeList bfr::handler::Stats::minProvinceClan() const
 {
     uint provMin = uint(0) - 1;
     for (auto it : m_clanList)
@@ -67,7 +67,7 @@ BFR::ClanTypeList BFR::Handler::Stats::minProvinceClan() const
     return list;
 }
 
-bool BFR::Handler::Stats::maxProvinceClan(ClanType clan) const
+bool bfr::handler::Stats::maxProvinceClan(ClanType clan) const
 {
     uint provMax = 0;
     for (auto it : m_clanList)
@@ -76,7 +76,7 @@ bool BFR::Handler::Stats::maxProvinceClan(ClanType clan) const
     return operator[](clan).value()->provinceCount() == provMax;
 }
 
-bool BFR::Handler::Stats::minProvinceClan(ClanType clan) const
+bool bfr::handler::Stats::minProvinceClan(ClanType clan) const
 {
     uint provMin = uint(0) - 1;
     for (auto it : m_clanList)
@@ -85,7 +85,7 @@ bool BFR::Handler::Stats::minProvinceClan(ClanType clan) const
     return operator[](clan).value()->provinceCount() == provMin;
 }
 
-BFR::ClanTypeList BFR::Handler::Stats::maxCtrlToken(bool withToken) const
+bfr::ClanTypeList bfr::handler::Stats::maxCtrlToken(bool withToken) const
 {
     uint provMax = 0;
     for (auto it : m_clanList)
@@ -101,18 +101,18 @@ BFR::ClanTypeList BFR::Handler::Stats::maxCtrlToken(bool withToken) const
     return list;
 }
 
-void BFR::Handler::Stats::update()
+void bfr::handler::Stats::update()
 {
     // TODO
 }
 
-void BFR::Handler::Stats::clear()
+void bfr::handler::Stats::clear()
 {
     for (auto it : m_clanList)
         it->clear();
 }
 
-typedef BFR::Handler::Stats::OneStat BCO;
+typedef bfr::handler::Stats::OneStat BCO;
 
 BCO::OneStat(ClanType type)
     : m_type(type)
@@ -130,7 +130,7 @@ void BCO::clear()
     setCtrlTokenOn(0);
 }
 
-BFR::ClanType BCO::type() const { return m_type; }
+bfr::ClanType BCO::type() const { return m_type; }
 uint BCO::honorPoints()   const { return m_honorPoints; }
 uint BCO::provinceCount() const { return m_provinceCount; }
 uint BCO::territoryCount()   const { return m_territoryCount; }

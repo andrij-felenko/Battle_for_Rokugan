@@ -2,33 +2,33 @@
 #include "lib_bfr/object/player.h"
 #include "lib_bfr/token/combat.h"
 
-BFR::Object::Clan::Clan(ClanType type, QObject *parent)
+bfr::object::Clan::Clan(ClanType type, QObject *parent)
     : QObject(parent), m_type(type), m_specialToken(nullptr)
 {
     auto player = qobject_cast <Player*> (parent);
     typedef CombatTokenType TTT;
     switch (m_type) {
-    case ClanType::Crane:    m_specialToken = new Token::Combat(player, TTT::Diplomacy);
-    case ClanType::Unicorn:  m_specialToken = new Token::Combat(player, TTT::Raid);
-    case ClanType::Crab:     m_specialToken = new Token::Combat(player, TTT::Navy,     3);
+    case ClanType::Crane:    m_specialToken = new token::Combat(player, TTT::Diplomacy);
+    case ClanType::Unicorn:  m_specialToken = new token::Combat(player, TTT::Raid);
+    case ClanType::Crab:     m_specialToken = new token::Combat(player, TTT::Navy,     3);
     case ClanType::Dragon:
-    case ClanType::Phoenix:  m_specialToken = new Token::Combat(player, TTT::Blessing, 3);
-    case ClanType::Scorpion: m_specialToken = new Token::Combat(player, TTT::Shinobi,  3);
-    case ClanType::Lion:     m_specialToken = new Token::Combat(player, TTT::Army,     6);
+    case ClanType::Phoenix:  m_specialToken = new token::Combat(player, TTT::Blessing, 3);
+    case ClanType::Scorpion: m_specialToken = new token::Combat(player, TTT::Shinobi,  3);
+    case ClanType::Lion:     m_specialToken = new token::Combat(player, TTT::Army,     6);
     default:;
     }
 }
 
-BFR::TerritoryType BFR::Object::Clan::homeTerritory() const { return homeTerritory(m_type);}
-BFR::ClanType      BFR::Object::Clan::type()          const { return               m_type ;}
-QString            BFR::Object::Clan::name()          const { return          name(m_type);}
+bfr::TerritoryType bfr::object::Clan::homeTerritory() const { return homeTerritory(m_type);}
+bfr::ClanType      bfr::object::Clan::type()          const { return               m_type ;}
+QString            bfr::object::Clan::name()          const { return          name(m_type);}
 
-void BFR::Object::Clan::setType(ClanType type)
+void bfr::object::Clan::setType(ClanType type)
 {
     m_type = type;
 }
 
-BFR::TerritoryType BFR::Object::Clan::homeTerritory(ClanType type)
+bfr::TerritoryType bfr::object::Clan::homeTerritory(ClanType type)
 {
     switch (type) {
     case ClanType::Crab:     return TerritoryType::Crab;
@@ -43,12 +43,12 @@ BFR::TerritoryType BFR::Object::Clan::homeTerritory(ClanType type)
     return TerritoryType::None;
 }
 
-const BFR::Token::Combat* BFR::Object::Clan::uniqueCombatToken() const
+const bfr::token::Combat* bfr::object::Clan::uniqueCombatToken() const
 {
     return m_specialToken;
 }
 
-QString BFR::Object::Clan::name(ClanType type)
+QString bfr::object::Clan::name(ClanType type)
 {
     switch (type) {
     case ClanType::Crab:     return tr("Crab clan");
@@ -63,7 +63,7 @@ QString BFR::Object::Clan::name(ClanType type)
     return tr("No one");
 }
 
-namespace BattleForRokugan {
+namespace battle_for_rokugan {
     ClanType operator+(ClanType type, uint i)
     {
         uint value = static_cast <uint> (type) + i;

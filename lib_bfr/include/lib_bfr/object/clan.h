@@ -3,7 +3,7 @@
 
 #include "bfrLib_pre.h"
 
-class BattleForRokugan::Object::Clan : public QObject
+class battle_for_rokugan::object::Clan : public QObject
 {
     Q_OBJECT
 public:    
@@ -19,14 +19,14 @@ public:
     static QString name(ClanType type);
     QString name() const;
 
-    const Token::Combat* uniqueCombatToken() const;
+    const token::Combat* uniqueCombatToken() const;
 
 private:
     ClanType m_type;
-    Token::Combat* m_specialToken;
+    token::Combat* m_specialToken;
 };
 
-namespace BattleForRokugan {
+namespace battle_for_rokugan {
     ClanType operator+(ClanType type, uint i);
 }
 

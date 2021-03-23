@@ -3,22 +3,22 @@
 
 #include "bfrLib_pre.h"
 
-class BattleForRokugan::Karta::TokenBasement : public QObject
+class battle_for_rokugan::karta::TokenBasement : public QObject
 {
 public:
     TokenBasement(QObject* parent = nullptr);
-    Token::CombatList m_combatList;
+    token::CombatList m_combatList;
 
     // battle handler
     bool combatTokenContains(CombatTokenType type) const;
-    virtual void pushCombatToken(Token::Combat* token);
+    virtual void pushCombatToken(token::Combat* token);
 
 protected:
     void clearEmptyTokens();
-    void removeCombatToken(Token::Combat* token);
-    void removeCombatToken(Token::CombatList list);
+    void removeCombatToken(token::Combat* token);
+    void removeCombatToken(token::CombatList list);
 
-    friend class Handler::Battle;
+    friend class handler::Battle;
 };
 
 #endif

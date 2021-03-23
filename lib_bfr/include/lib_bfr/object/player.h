@@ -3,12 +3,12 @@
 
 #include "bfrLib_pre.h"
 
-class BattleForRokugan::Object::Player : public QObject
+class battle_for_rokugan::object::Player : public QObject
 {
     Q_OBJECT
 public:
-    Player(QString name, ClanType clan, Karta::Map* map,
-           Handler::Turn* turns, Handler::Stats* stats,
+    Player(QString name, ClanType clan, karta::Map* map,
+           handler::Turn* turns, handler::Stats* stats,
            SecretObjective* secret1, SecretObjective* secret2, QObject* parent);
 
     QString name() const;
@@ -21,9 +21,9 @@ public:
     unsigned controlTokenCount() const;
     unsigned pointsOfHonor() const;
 
-    void   takeProvince(Karta::Province* province);
-    void untakeProvince(Karta::Province* province);
-    void lostProvince(Karta::Province* province);
+    void   takeProvince(karta::Province* province);
+    void untakeProvince(karta::Province* province);
+    void lostProvince(karta::Province* province);
     void lostProvince(Player* player);
 
     int position() const;
@@ -49,17 +49,17 @@ private:
     QString m_name;
     SecretObjective* m_secretObjective1;
     SecretObjective* m_secretObjective2;
-    Karta::Map* m_map;
-    Handler::Stats* m_stats;
-    Handler::Turn* m_turns;
+    karta::Map* m_map;
+    handler::Stats* m_stats;
+    handler::Turn* m_turns;
     int m_position;
     int m_queue;
     int m_startCtrlToken;
 
-    Karta::ProvinceList m_provinceList;
+    karta::ProvinceList m_provinceList;
 
     CardList m_cardList;
-    Token::CombatList m_tokenList;
+    token::CombatList m_tokenList;
     inline void addTokenToReserve(CombatTokenType type,
                                   unsigned char count = 1,
                                   unsigned char value = 0);

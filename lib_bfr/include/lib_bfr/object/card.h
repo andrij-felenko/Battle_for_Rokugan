@@ -3,7 +3,7 @@
 
 #include "bfrLib_pre.h"
 
-class BattleForRokugan::Object::Card : public QObject
+class battle_for_rokugan::object::Card : public QObject
 {
     Q_OBJECT
 public:
@@ -26,49 +26,49 @@ public:
     void setOwner(Player *owner);
 
 public slots:
-    CombatTokenType useFirstPlayer(Token::Combat* token);
-    CombatTokenType useScout(Token::Combat* token);
-    void useShugenja(Token::Combat* token);
+    CombatTokenType useFirstPlayer(token::Combat* token);
+    CombatTokenType useScout(token::Combat* token);
+    void useShugenja(token::Combat* token);
 
     // territory side
-    void useTerritoryCrab_Promotion(Karta::Province* province);
-    void useTerritoryCrab_FeatsOfEngineering(Karta::Province* province,
-                                             Karta::Province* pushProvince = nullptr);
+    void useTerritoryCrab_Promotion(karta::Province* province);
+    void useTerritoryCrab_FeatsOfEngineering(karta::Province* province,
+                                             karta::Province* pushProvince = nullptr);
 
-    void useTerritoryCrane_CodeOfHonor(Karta::Province* prov1,
-                                       Karta::Province* prov2);
-    void useTerritoryCrane_DiplomaticMission(Karta::Province* provPeace,
-                                             Karta::Province* provToken = nullptr);
+    void useTerritoryCrane_CodeOfHonor(karta::Province* prov1,
+                                       karta::Province* prov2);
+    void useTerritoryCrane_DiplomaticMission(karta::Province* provPeace,
+                                             karta::Province* provToken = nullptr);
 
-    void useTerritoryDragon_SacredGround(Karta::Province* province);
-    void useTerritoryDragon_StrengthOfPurpose(Karta::Province* prov1,
-                                              Karta::Province* prov2);
+    void useTerritoryDragon_SacredGround(karta::Province* province);
+    void useTerritoryDragon_StrengthOfPurpose(karta::Province* prov1,
+                                              karta::Province* prov2);
 
-    void useTerritoryIslands_PortOfProsperity(Karta::Province* province);
-    void useTerritoryIslands_PirateRaids(Karta::Province* provScorch,
-                                         Karta::Province* provToken = nullptr);
+    void useTerritoryIslands_PortOfProsperity(karta::Province* province);
+    void useTerritoryIslands_PirateRaids(karta::Province* provScorch,
+                                         karta::Province* provToken = nullptr);
 
-    void useTerritoryLion_Bushido(Karta::Province* province);
-    void useTerritoryLion_HonorableFight(Karta::Province* province);
+    void useTerritoryLion_Bushido(karta::Province* province);
+    void useTerritoryLion_HonorableFight(karta::Province* province);
 
-    void useTerritoryMountains_BountifulHarvest(Karta::Province* province);
-    void useTerritoryMountains_AshigaruLevies(Karta::Province* prov1,
-                                              Karta::Province* prov2,
-                                              Karta::Province* prov3);
+    void useTerritoryMountains_BountifulHarvest(karta::Province* province);
+    void useTerritoryMountains_AshigaruLevies(karta::Province* prov1,
+                                              karta::Province* prov2,
+                                              karta::Province* prov3);
 
-    void useTerritoryPhoenix_AidOfTheKami(Karta::Province* province);
-    void useTerritoryPhoenix_BlessTheLands(Karta::Province* province);
+    void useTerritoryPhoenix_AidOfTheKami(karta::Province* province);
+    void useTerritoryPhoenix_BlessTheLands(karta::Province* province);
 
-    void useTerritoryScorpion_FomentRebellion(Karta::Province* province);
+    void useTerritoryScorpion_FomentRebellion(karta::Province* province);
 
-    void useTerritoryShadowlandsSouth_InspireFear(Karta::Province* province,
-                                                  Token::Province* token1,
-                                                  Token::Province* token2 = nullptr);
+    void useTerritoryShadowlandsSouth_InspireFear(karta::Province* province,
+                                                  token::Province* token1,
+                                                  token::Province* token2 = nullptr);
 
-    void useTerritoryUnicorn_Reinforcement(Token::Combat* dis1, Token::Combat* dis2,
-                                           Token::Combat* ast1, Token::Combat* ast2);
-    void useTerritoryUnicorn_CulturalExchange(Karta::Province* prov1,
-                                              Karta::Province* prov2);
+    void useTerritoryUnicorn_Reinforcement(token::Combat* dis1, token::Combat* dis2,
+                                           token::Combat* ast1, token::Combat* ast2);
+    void useTerritoryUnicorn_CulturalExchange(karta::Province* prov1,
+                                              karta::Province* prov2);
 
 private:
     Player* m_owner;
@@ -81,10 +81,10 @@ private:
 //    void useTerritoryShadowlandsNorth_PurgeTheWeak:   return tr("Purge the weak");
 //    void useTerritoryShadowlandsSouth_AnimateTheDead: return tr("Animate the dead");
 
-    friend class Handler::Turn;
+    friend class handler::Turn;
 };
 
-namespace BattleForRokugan {
+namespace battle_for_rokugan {
     CardType operator+ (CardType type, uint i);
     CardType operator+ (CardType card, ClanType clan);
     CardType operator- (CardType left, CardType right);

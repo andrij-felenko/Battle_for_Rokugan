@@ -1,13 +1,13 @@
 #include "lib_bfr/object/player.h"
 #include "lib_bfr/token/province.h"
 
-BFR::Token::Province::Province(Object::Player *player, Karta::Province *province, ProvinceTokenType type)
+bfr::token::Province::Province(object::Player *player, karta::Province *province, ProvinceTokenType type)
     : QObject(player), m_type(type), m_player(player), m_province(province)
 {
     //
 }
 
-QString BFR::Token::Province::name(ProvinceTokenType type)
+QString bfr::token::Province::name(ProvinceTokenType type)
 {
     switch (type) {
     case ProvinceTokenType::Glory:           return tr("Glory");
@@ -22,17 +22,17 @@ QString BFR::Token::Province::name(ProvinceTokenType type)
     return "";
 }
 
-QString BattleForRokugan::Token::Province::name() const
+QString bfr::token::Province::name() const
 {
     return name(m_type);
 }
 
-BFR::ProvinceTokenType BFR::Token::Province::type() const
+bfr::ProvinceTokenType bfr::token::Province::type() const
 {
     return m_type;
 }
 
-BattleForRokugan::Karta::Province *BattleForRokugan::Token::Province::province() const
+bfr::karta::Province *bfr::token::Province::province() const
 {
     return m_province;
 }

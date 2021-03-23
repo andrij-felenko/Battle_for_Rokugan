@@ -3,7 +3,7 @@
 #include <optional>
 #include <QtCore/QList>
 
-namespace BattleForRokugan {
+namespace battle_for_rokugan {
 //!
 //! \brief The BorderType enum
 //!

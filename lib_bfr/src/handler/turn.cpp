@@ -6,21 +6,21 @@
 #include "lib_bfr/object/player.h"
 
 
-BFR::Handler::Turn::Turn(Stats *stats, QObject *parent)
+bfr::handler::Turn::Turn(Stats *stats, QObject *parent)
     : QObject(parent), m_stats(stats)
 {
-    m_firstCard = new Object::Card(CardType::FirstPlayer);
+    m_firstCard = new object::Card(CardType::FirstPlayer);
     connect(this, &Turn::turnChanged, this, &Turn::updateTurnQueue);
 }
 
-void BFR::Handler::Turn::nextTurn()
+void bfr::handler::Turn::nextTurn()
 {
     m_turn++;
     m_subTurnLeft = 5 * m_playerList.count();
     emit turnChanged(m_turn);
 }
 
-void BFR::Handler::Turn::reset(Object::PlayerList list)
+void bfr::handler::Turn::reset(object::PlayerList list)
 {
     // create all pregame component
     m_turn = 0;
@@ -30,10 +30,10 @@ void BFR::Handler::Turn::reset(Object::PlayerList list)
 
     // make random first turn card
     m_firstList.clear();
-    auto neutralCard = Object::Card::randNeutralCard();
+    auto neutralCard = object::Card::randNeutralCard();
     for (unsigned i = 0 ; i < 5 - m_playerList.length(); i++)
         m_firstList.insert(AFlib::Function::randomInt(0, m_firstList.size()),
-                           Object::Card::getNeutralCard(neutralCard[i]));
+                           object::Card::getNeutralCard(neutralCard[i]));
 
     m_subTurnLeft = (1 << (5 - m_playerList.count())) + 3;
     for (auto it : m_playerList){
@@ -45,18 +45,18 @@ void BFR::Handler::Turn::reset(Object::PlayerList list)
 
     updateTurnQueue();
     for (auto it : m_playerList){
-        using namespace Object;
+        using namespace object;
         connect(it, &Player::startCtrlTokenPlaced, this, &Turn::nextPosition);
         connect(it, &Player::combatTokenPlaced,    this, &Turn::nextPosition);
     }
 }
 
-void BFR::Handler::Turn::clear()
+void bfr::handler::Turn::clear()
 {
     m_firstList.clear();
 }
 
-BFR::ClanType BFR::Handler::Turn::getCurrentFirstPlayer()
+bfr::ClanType bfr::handler::Turn::getCurrentFirstPlayer()
 {
     ClanType clan = ClanType::None;
     CardType card;
@@ -100,7 +100,7 @@ BFR::ClanType BFR::Handler::Turn::getCurrentFirstPlayer()
 }
 
 // must call only 1 time in each game turn (up to 5 time maximum)
-void BFR::Handler::Turn::updateTurnQueue()
+void bfr::handler::Turn::updateTurnQueue()
 {
     for (auto it : m_playerList){
         if (it->position() == 0)
@@ -133,7 +133,7 @@ void BFR::Handler::Turn::updateTurnQueue()
     }
 }
 
-void BFR::Handler::Turn::nextPosition()
+void bfr::handler::Turn::nextPosition()
 {
     if (m_position + 1 == m_playerList.count()){
         m_position = 0;

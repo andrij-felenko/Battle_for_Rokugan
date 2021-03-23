@@ -9,18 +9,18 @@
 #include "lib_bfr/token/province.h"
 #include <QtCore/QMap>
 
-BattleForRokugan::Handler::Battle::Battle(Karta::Map *map, QObject *parent)
+bfr::handler::Battle::Battle(karta::Map *map, QObject *parent)
     : QObject(parent), m_map(map)
 {
     //
 }
 
-void BattleForRokugan::Handler::Battle::reset(Object::PlayerList playerList)
+void bfr::handler::Battle::reset(object::PlayerList playerList)
 {
     m_playerList = playerList;
 }
 
-void BattleForRokugan::Handler::Battle::run()
+void bfr::handler::Battle::run()
 {
     removeNotFormatPlaced();
     scorcheEarthAndDiplomacy();
@@ -37,7 +37,7 @@ void BattleForRokugan::Handler::Battle::run()
     emit battleFinished();
 }
 
-void BattleForRokugan::Handler::Battle::removeNotFormatPlaced()
+void bfr::handler::Battle::removeNotFormatPlaced()
 {
     for (auto regType = TerritoryType::First; regType <= TerritoryType::Last; ++regType){
         auto territory = m_map->operator[](regType);
@@ -45,7 +45,7 @@ void BattleForRokugan::Handler::Battle::removeNotFormatPlaced()
             auto province = territory->operator[](i);
             province->clearEmptyTokens();
 
-            Token::CombatList list;
+            token::CombatList list;
             for (auto token : province->m_combatList){
                 if (token->type() == CTT::Empty)
                     continue;
@@ -72,7 +72,7 @@ void BattleForRokugan::Handler::Battle::removeNotFormatPlaced()
 
     for (auto b : m_map->m_listBorders){
         b->clearEmptyTokens();
-        Token::CombatList list;
+        token::CombatList list;
         for (auto token : b->m_combatList){
             switch (token->type()) {
             case CTT::Army: {
@@ -95,7 +95,7 @@ void BattleForRokugan::Handler::Battle::removeNotFormatPlaced()
     }
 }
 
-void BattleForRokugan::Handler::Battle::scorcheEarthAndDiplomacy()
+void bfr::handler::Battle::scorcheEarthAndDiplomacy()
 {
     // fist of all we burn the ground
     for (auto regType = TerritoryType::First; regType <= TerritoryType::Last; ++regType){
@@ -116,7 +116,7 @@ void BattleForRokugan::Handler::Battle::scorcheEarthAndDiplomacy()
     }
 }
 
-void BattleForRokugan::Handler::Battle::calculateBattle(Karta::Province *province)
+void bfr::handler::Battle::calculateBattle(karta::Province *province)
 {
     auto owner = province->owner();
     auto provClan = ClanType::None;

@@ -3,12 +3,12 @@
 
 #include "bfrLib_pre.h"
 
-class BattleForRokugan::Object::SecretObjective : public QObject
+class battle_for_rokugan::object::SecretObjective : public QObject
 {
     Q_OBJECT
 public:
-    SecretObjective(SecretObjectiveType type, Karta::Map* map,
-                    Handler::Stats* stats, QObject* parent);
+    SecretObjective(SecretObjectiveType type, karta::Map* map,
+                    handler::Stats* stats, QObject* parent);
     Q_ENUM(SecretObjectiveType)
 
     QString name();
@@ -16,7 +16,7 @@ public:
 
     int result() const;
     static int result(SecretObjectiveType type, Clan* clan,
-                      Karta::Map* map, Handler::Stats* stats);
+                      karta::Map* map, handler::Stats* stats);
 
     QString name() const;
     static QString name(SecretObjectiveType type);
@@ -33,11 +33,11 @@ private:
     SecretObjectiveType m_type;
     Clan* m_clan;
     bool m_picked;
-    Karta::Map* m_map;
-    Handler::Stats* m_stats;
+    karta::Map* m_map;
+    handler::Stats* m_stats;
 };
 
-namespace BattleForRokugan {
+namespace battle_for_rokugan {
     SecretObjectiveType operator+ (SecretObjectiveType type, uint i);
     SecretObjectiveType operator++(SecretObjectiveType type);
 }

@@ -3,7 +3,7 @@
 
 #include "bfrLib_pre.h"
 
-class BattleForRokugan::Handler::Turn : public QObject
+class battle_for_rokugan::handler::Turn : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(int turn     READ turn     NOTIFY turnChanged)
@@ -12,7 +12,7 @@ public:
     Turn(Stats* stats, QObject* parent);
 
     void nextTurn();
-    void reset(Object::PlayerList list);
+    void reset(object::PlayerList list);
     void clear();
 
     int turn()     const { return m_turn; }
@@ -36,9 +36,9 @@ private:
     Phase m_phase;
 
     CardTypeList m_firstList;
-    Object::PlayerList m_playerList;
-    Handler::Stats* m_stats;
-    Object::Card* m_firstCard;
+    object::PlayerList m_playerList;
+    handler::Stats* m_stats;
+    object::Card* m_firstCard;
 };
 
 #endif

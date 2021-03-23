@@ -1,13 +1,13 @@
 #include "lib_bfr/karta/tokenBasement.h"
 #include "lib_bfr/token/combat.h"
 
-BFR::Karta::TokenBasement::TokenBasement(QObject *parent)
+bfr::karta::TokenBasement::TokenBasement(QObject *parent)
     :QObject(parent)
 {
     //
 }
 
-bool BFR::Karta::TokenBasement::combatTokenContains(CombatTokenType type) const
+bool bfr::karta::TokenBasement::combatTokenContains(CombatTokenType type) const
 {
     for (auto it : m_combatList)
         if (it->type() == type)
@@ -15,14 +15,14 @@ bool BFR::Karta::TokenBasement::combatTokenContains(CombatTokenType type) const
     return false;
 }
 
-void BFR::Karta::TokenBasement::pushCombatToken(Token::Combat *token)
+void bfr::karta::TokenBasement::pushCombatToken(token::Combat *token)
 {
     m_combatList.push_back(token);
 }
 
-void BFR::Karta::TokenBasement::clearEmptyTokens()
+void bfr::karta::TokenBasement::clearEmptyTokens()
 {
-    auto removeFunc = [](Token::Combat* t)
+    auto removeFunc = [](token::Combat* t)
     {
         if (t->type() == CombatTokenType::Empty){
             if (t->blessing())
@@ -36,14 +36,14 @@ void BFR::Karta::TokenBasement::clearEmptyTokens()
                                          removeFunc), m_combatList.end());
 }
 
-void BFR::Karta::TokenBasement::removeCombatToken(Token::Combat *token)
+void bfr::karta::TokenBasement::removeCombatToken(token::Combat *token)
 {
-    removeCombatToken(Token::CombatList { token });
+    removeCombatToken(token::CombatList { token });
 }
 
-void BFR::Karta::TokenBasement::removeCombatToken(Token::CombatList list)
+void bfr::karta::TokenBasement::removeCombatToken(token::CombatList list)
 {
-    auto removeFunc = [list](Token::Combat* t){
+    auto removeFunc = [list](token::Combat* t){
         for (auto it : list)
             if (it == t){
                 it->setStatus(STT::Discharge);

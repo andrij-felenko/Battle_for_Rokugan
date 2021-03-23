@@ -4,7 +4,7 @@
 #include "bfrLib_pre.h"
 #include "tokenBasement.h"
 
-class BattleForRokugan::Karta::Province : public TokenBasement
+class battle_for_rokugan::karta::Province : public TokenBasement
 {
     Q_OBJECT
 public:
@@ -12,8 +12,8 @@ public:
              uchar number, uchar stars, QObject* parent);
 
     ClanType clanType() const;
-    Object::Player* owner() const;
-    void setOwner(Object::Player* newOwner);
+    object::Player* owner() const;
+    void setOwner(object::Player* newOwner);
 
     bool scorched() const;
     bool capital() const;
@@ -41,7 +41,7 @@ public:
     void swapAllContent(Province* province);
 
 signals:
-    void ownerChanged(Object::Player*);
+    void ownerChanged(object::Player*);
     void scorchedStatusChanged(bool isScorched);
     void ctrlTokenCountChanged();
 
@@ -53,13 +53,13 @@ private:
     uchar m_defends;
 
     TerritoryType m_territory;
-    Object::Player* m_player;
-    Token::ProvinceList m_statusList;
-    Token::HonorList m_honorList;
-    Token::ControlList m_ctrlTokenList;
+    object::Player* m_player;
+    token::ProvinceList m_statusList;
+    token::HonorList m_honorList;
+    token::ControlList m_ctrlTokenList;
     BorderList m_borderList;
 
-    friend class Handler::Battle;
+    friend class handler::Battle;
 };
 
 #endif

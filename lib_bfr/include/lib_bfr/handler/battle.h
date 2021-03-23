@@ -3,25 +3,25 @@
 
 #include "bfrLib_pre.h"
 
-class BattleForRokugan::Handler::Battle : public QObject
+class battle_for_rokugan::handler::Battle : public QObject
 {
     Q_OBJECT
 public:
-    Battle(Karta::Map* map, QObject* parent);
+    Battle(karta::Map* map, QObject* parent);
 
-    void reset(Object::PlayerList playerList);
+    void reset(object::PlayerList playerList);
     void run();
 
 signals:
     void battleFinished();
 
 private:
-    Karta::Map* m_map;
-    Object::PlayerList m_playerList;
+    karta::Map* m_map;
+    object::PlayerList m_playerList;
 
     inline void removeNotFormatPlaced();
     inline void scorcheEarthAndDiplomacy();
-    inline void calculateBattle(Karta::Province* province);
+    inline void calculateBattle(karta::Province* province);
 };
 
 #endif

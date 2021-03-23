@@ -2,7 +2,7 @@
 #include "lib_bfr/karta/province.h"
 #include <AfFunction>
 
-BFR::Karta::Territory::Territory(TerritoryType type, QObject *parent)
+bfr::karta::Territory::Territory(TerritoryType type, QObject *parent)
     : QObject(parent), m_type(type), m_firstCard(AFfunction::randomInt(0, 1))
 {
     // init provinces
@@ -22,7 +22,7 @@ BFR::Karta::Territory::Territory(TerritoryType type, QObject *parent)
     }
 }
 
-BFR::ClanType BFR::Karta::Territory::daimyo() const
+bfr::ClanType bfr::karta::Territory::daimyo() const
 {
     auto clan = ClanType::None;
     for (const auto &it : m_provinceList){
@@ -46,7 +46,7 @@ BFR::ClanType BFR::Karta::Territory::daimyo() const
     return clan;
 }
 
-int BFR::Karta::Territory::provinceOwnerCount(ClanType type) const
+int bfr::karta::Territory::provinceOwnerCount(ClanType type) const
 {
     int ret = 0;
     for (const auto &it : m_provinceList)
@@ -55,7 +55,7 @@ int BFR::Karta::Territory::provinceOwnerCount(ClanType type) const
     return ret;
 }
 
-BFR::Karta::Province* BFR::Karta::Territory::capital() const
+bfr::karta::Province* bfr::karta::Territory::capital() const
 {
     for (auto it : m_provinceList)
         if (it->capital())
@@ -63,29 +63,29 @@ BFR::Karta::Province* BFR::Karta::Territory::capital() const
     return nullptr;
 }
 
-BFR::Karta::Province* BFR::Karta::Territory::operator[](unsigned number) const
+bfr::karta::Province* bfr::karta::Territory::operator[](unsigned number) const
 {
     if (number < 0 || number >= m_provinceList.size())
         return nullptr;
     return m_provinceList[number];
 }
 
-BFR::TerritoryType BFR::Karta::Territory::type() const
+bfr::TerritoryType bfr::karta::Territory::type() const
 {
     return m_type;
 }
 
-bool BFR::Karta::Territory::isShadow(TerritoryType type)
+bool bfr::karta::Territory::isShadow(TerritoryType type)
 {
     return type == TerritoryType::ShadowlandsNorth || type == TerritoryType::ShadowlandsSouth;
 }
 
-uint BFR::Karta::Territory::provinceCount() const
+uint bfr::karta::Territory::provinceCount() const
 {
     return m_provinceList.size();
 }
 
-void BFR::Karta::Territory::addProvinces(char_v list, char capital, char_v navyList)
+void bfr::karta::Territory::addProvinces(char_v list, char capital, char_v navyList)
 {
     if (list.size() <= 0)
         return;
@@ -96,7 +96,7 @@ void BFR::Karta::Territory::addProvinces(char_v list, char capital, char_v navyL
     }
 }
 
-BFR::Karta::Province* BFR::Karta::Territory::findProvince(uchar number)
+bfr::karta::Province* bfr::karta::Territory::findProvince(uchar number)
 {
     for (auto it : m_provinceList)
         if (it->number() == number)
@@ -104,7 +104,7 @@ BFR::Karta::Province* BFR::Karta::Territory::findProvince(uchar number)
     return nullptr;
 }
 
-namespace BattleForRokugan {
+namespace battle_for_rokugan {
     TerritoryType operator+(TerritoryType type, unsigned i)
     {
         return static_cast <TerritoryType>(static_cast <uint>(type) + i);

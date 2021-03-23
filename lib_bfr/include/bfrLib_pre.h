@@ -18,16 +18,16 @@ typedef std::vector < char>  char_v;
 typedef std::vector <uchar> uchar_v;
 typedef std::vector <std::pair <uchar, uchar>> uchar_pair_v;
 
-namespace BattleForRokugan {
+namespace battle_for_rokugan {
     AFdeclareClass(Game)
 
-namespace Handler {
+namespace handler {
     AFdeclareClass(Battle)
     AFdeclareClass(Stats)
     AFdeclareClass(Turn)
 }
 
-namespace Karta {
+namespace karta {
     AFdeclareClass(Border)
     AFdeclareClass(Map)
     AFdeclareClass(Province)
@@ -35,14 +35,14 @@ namespace Karta {
     AFdeclareClass(TokenBasement)
 }
 
-namespace Object {
+namespace object {
     AFdeclareClass(Card)
     AFdeclareClass(Clan)
     AFdeclareClass(Player)
     AFdeclareClass(SecretObjective)
 }
 
-namespace Token {
+namespace token {
     AFdeclareClass(Combat)
     AFdeclareClass(Control)
     AFdeclareClass(Honor)
@@ -50,6 +50,6 @@ namespace Token {
 }
 }
 
-namespace BFR = BattleForRokugan;
+namespace bfr = battle_for_rokugan;
 
 #endif // LIB_BFR_LIB_PRE_H

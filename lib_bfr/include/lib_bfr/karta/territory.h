@@ -3,7 +3,7 @@
 
 #include "bfrLib_pre.h"
 
-class BattleForRokugan::Karta::Territory : public QObject
+class battle_for_rokugan::karta::Territory : public QObject
 {
     Q_OBJECT
 public:
@@ -30,10 +30,10 @@ private:
     Province* findProvince(uchar number);
 
     friend class Map;
-    friend class Object::SecretObjective;
+    friend class object::SecretObjective;
 };
 
-namespace BattleForRokugan {
+namespace battle_for_rokugan {
     TerritoryType operator+ (TerritoryType type, unsigned i);
     TerritoryType operator++(TerritoryType type);
 }

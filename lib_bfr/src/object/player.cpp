@@ -10,8 +10,8 @@
 #include "token/combat.h"
 #include <AfFunction>
 
-BFR::Object::Player::Player(QString name, ClanType clan,
-                            Karta::Map* map, Handler::Turn *turns, Handler::Stats* stats,
+bfr::object::Player::Player(QString name, ClanType clan,
+                            karta::Map* map, handler::Turn *turns, handler::Stats* stats,
                             SecretObjective* secret1, SecretObjective* secret2,
                             QObject* parent)
     : QObject(parent),
@@ -26,7 +26,7 @@ BFR::Object::Player::Player(QString name, ClanType clan,
       m_queue(-1),
       m_startCtrlToken(0)
 {
-    m_tokenList.push_back(new Token::Combat(this, CombatTokenType::Empty));
+    m_tokenList.push_back(new token::Combat(this, CombatTokenType::Empty));
 
     // add all token to start reserve pocket
     addTokenToReserve(CombatTokenType::Army, 6 , 1);
@@ -54,20 +54,20 @@ BFR::Object::Player::Player(QString name, ClanType clan,
     // set combat token control to clan capital
     takeProvince(m_map->operator[](m_clan->homeTerritory())->capital());
 
-    connect(m_turns, &Handler::Turn::turnChanged, this, &Player::updateCombatTokenInAssets);
+    connect(m_turns, &handler::Turn::turnChanged, this, &Player::updateCombatTokenInAssets);
 }
 
-QString BFR::Object::Player::name() const
+QString bfr::object::Player::name() const
 {
     return m_name;
 }
 
-const BFR::Object::Clan* BFR::Object::Player::clan() const
+const bfr::object::Clan* bfr::object::Player::clan() const
 {
     return m_clan;
 }
 
-ErrorMsg BFR::Object::Player::pickSecretObjective(SecretObjectiveType secret)
+ErrorMsg bfr::object::Player::pickSecretObjective(SecretObjectiveType secret)
 {
     if (this->secretObjective() == nullptr)
         return "Can`t set misssion, it already picked.";
@@ -83,7 +83,7 @@ ErrorMsg BFR::Object::Player::pickSecretObjective(SecretObjectiveType secret)
     return std::nullopt;
 }
 
-unsigned BFR::Object::Player::territoryCardCount() const
+unsigned bfr::object::Player::territoryCardCount() const
 {
     unsigned ret = 0;
     for (auto it : m_cardList)
@@ -92,12 +92,12 @@ unsigned BFR::Object::Player::territoryCardCount() const
     return ret;
 }
 
-unsigned BFR::Object::Player::provinceCount() const
+unsigned bfr::object::Player::provinceCount() const
 {
     return m_provinceList.size();
 }
 
-unsigned BFR::Object::Player::controlTokenCount() const
+unsigned bfr::object::Player::controlTokenCount() const
 {
     unsigned ret = provinceCount();
     for (const auto &it : m_provinceList)
@@ -105,7 +105,7 @@ unsigned BFR::Object::Player::controlTokenCount() const
     return ret;
 }
 
-unsigned BFR::Object::Player::pointsOfHonor() const
+unsigned bfr::object::Player::pointsOfHonor() const
 {
     unsigned point = secretObjective()->result();
     for (auto reg = TerritoryType::First; reg <= TerritoryType::Last; ++reg){
@@ -118,27 +118,27 @@ unsigned BFR::Object::Player::pointsOfHonor() const
     return point;
 }
 
-int BFR::Object::Player::position() const
+int bfr::object::Player::position() const
 {
     return m_position;
 }
 
-void BFR::Object::Player::setPosition(int position)
+void bfr::object::Player::setPosition(int position)
 {
     m_position = position;
 }
 
-int BFR::Object::Player::queue() const
+int bfr::object::Player::queue() const
 {
     return m_queue;
 }
 
-void BFR::Object::Player::setQueue(int queue)
+void bfr::object::Player::setQueue(int queue)
 {
     m_queue = queue;
 }
 
-void BFR::Object::Player::takeProvince(Karta::Province* province)
+void bfr::object::Player::takeProvince(karta::Province* province)
 {
     m_provinceList.push_back(province);
     province->setOwner(this);
@@ -148,41 +148,41 @@ void BFR::Object::Player::takeProvince(Karta::Province* province)
         emit startCtrlTokenPlaced();
     }
 
-    connect(province, &Karta::Province::ownerChanged,
+    connect(province, &karta::Province::ownerChanged,
             this, static_cast<void (Player::*)(Player*)>(&Player::lostProvince));
 }
 
-void BFR::Object::Player::lostProvince(Karta::Province* province)
+void bfr::object::Player::lostProvince(karta::Province* province)
 {
     m_provinceList.removeOne(province);
 }
 
-void BFR::Object::Player::lostProvince(Player* player)
+void bfr::object::Player::lostProvince(Player* player)
 {
-    auto province = qobject_cast <Karta::Province*>(sender());
+    auto province = qobject_cast <karta::Province*>(sender());
     if (player != this)
         lostProvince(province);
-    disconnect(province, &Karta::Province::ownerChanged,
+    disconnect(province, &karta::Province::ownerChanged,
                this, static_cast<void (Player::*)(Player*)>(&Player::lostProvince));
 }
 
-void BFR::Object::Player::untakeProvince(Karta::Province *province)
+void bfr::object::Player::untakeProvince(karta::Province *province)
 {
     province->setOwner(nullptr);
 }
 
-bool BFR::Object::Player::contains(SOT type) const
+bool bfr::object::Player::contains(SOT type) const
 {
     return m_secretObjective1->type() == type || m_secretObjective2->type() == type;
 }
 
-void BFR::Object::Player::addFirstCard(Card *firstCard)
+void bfr::object::Player::addFirstCard(Card *firstCard)
 {
     m_cardList.push_back(firstCard);
     firstCard->setOwner(this);
 }
 
-void BFR::Object::Player::removeFirstCard()
+void bfr::object::Player::removeFirstCard()
 {
     Card* tmp = nullptr;
     for (auto it : m_cardList)
@@ -194,12 +194,12 @@ void BFR::Object::Player::removeFirstCard()
         m_cardList.removeOne(tmp);
 }
 
-void BFR::Object::Player::setStartCtrlToken(int size)
+void bfr::object::Player::setStartCtrlToken(int size)
 {
     m_startCtrlToken = size;
 }
 
-void BattleForRokugan::Object::Player::updateCombatTokenInAssets()
+void bfr::object::Player::updateCombatTokenInAssets()
 {
     uint needToAdd = m_clan->type() == ClanType::Dragon ? 8 : 6;
     for (auto it : m_tokenList)
@@ -216,7 +216,7 @@ void BattleForRokugan::Object::Player::updateCombatTokenInAssets()
     // TODO wait while Dragon get back 2 combat tokens
 }
 
-const BFR::Object::SecretObjective* BFR::Object::Player::secretObjective() const
+const bfr::object::SecretObjective* bfr::object::Player::secretObjective() const
 {
     if (m_secretObjective1->picked())
         return m_secretObjective1;
@@ -227,9 +227,9 @@ const BFR::Object::SecretObjective* BFR::Object::Player::secretObjective() const
     return nullptr;
 }
 
-void BFR::Object::Player::addTokenToReserve(CombatTokenType type,
+void bfr::object::Player::addTokenToReserve(CombatTokenType type,
                                unsigned char count, unsigned char value)
 {
     for (unsigned char i = 0; i < count; i++)
-        m_tokenList.push_back(new Token::Combat(this, type, value));
+        m_tokenList.push_back(new token::Combat(this, type, value));
 }

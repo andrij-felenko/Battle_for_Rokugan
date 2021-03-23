@@ -4,7 +4,7 @@
 #include "bfrLib_pre.h"
 #include <array>
 
-class BattleForRokugan::Karta::Map : public QObject
+class battle_for_rokugan::karta::Map : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool showCombatToken READ showCombatToken NOTIFY showCombatTokenChanged)
@@ -44,8 +44,8 @@ private:
     void setShowCombatToken(bool showCombatToken);
 
     friend class Game;
-    friend class Handler::Battle;
-    friend class Object::SecretObjective;
+    friend class handler::Battle;
+    friend class object::SecretObjective;
 };
 
 #endif

@@ -3,13 +3,13 @@
 
 #include "bfrLib_pre.h"
 
-class BattleForRokugan::Token::Combat : public QObject
+class battle_for_rokugan::token::Combat : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool show READ isShow WRITE show NOTIFY showChanged)
 public:
-    Combat(Object::Player* owner, CombatTokenType type, uchar value);
-    Combat(Object::Player* owner, CombatTokenType type);
+    Combat(object::Player* owner, CombatTokenType type, uchar value);
+    Combat(object::Player* owner, CombatTokenType type);
     Q_ENUM(CombatTokenType)
     Q_ENUM(StatusTokenType)
 
@@ -23,7 +23,7 @@ public:
     void setValue(uchar value);
     bool setBlessing(Combat* token);
 
-    Object::Player* owner() const;
+    object::Player* owner() const;
 
     StatusTokenType status() const;
     void setStatus(const StatusTokenType &status);
@@ -40,7 +40,7 @@ signals:
 
 private:
     uchar m_value;
-    Object::Player* m_owner;
+    object::Player* m_owner;
     CombatTokenType m_type;
     StatusTokenType m_status;
     Combat* m_blessing;

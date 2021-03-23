@@ -4,7 +4,7 @@
 #include "bfrLib_pre.h"
 #include "tokenBasement.h"
 
-class BattleForRokugan::Karta::Border : public TokenBasement
+class battle_for_rokugan::karta::Border : public TokenBasement
 {
     Q_OBJECT
 public:
@@ -15,8 +15,8 @@ public:
     BorderType type() const;
     void setType(BorderType type);
 
-    Token::Combat* combatToken() const;
-    virtual void pushCombatToken(Token::Combat* token) override final;
+    token::Combat* combatToken() const;
+    virtual void pushCombatToken(token::Combat* token) override final;
     void clear();
 
     Province* province1() const;
@@ -27,8 +27,8 @@ private:
     Province* m_province1;
     Province* m_province2;
 
-    friend class Handler::Battle;
-    friend class Karta::Province;
+    friend class handler::Battle;
+    friend class karta::Province;
 };
 
 #endif

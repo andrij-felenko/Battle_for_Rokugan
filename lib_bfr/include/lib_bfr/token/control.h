@@ -4,7 +4,7 @@
 #include "bfrLib_pre.h"
 #include "province.h"
 
-class BattleForRokugan::Token::Control : public QObject
+class battle_for_rokugan::token::Control : public QObject
 {
     Q_OBJECT
 public:

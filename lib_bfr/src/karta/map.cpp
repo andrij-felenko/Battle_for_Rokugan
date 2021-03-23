@@ -4,7 +4,7 @@
 #include "lib_bfr/karta/province.h"
 #include "lib_bfr/karta/territory.h"
 
-BFR::Karta::Map::Map(QObject *parent) : QObject(parent)
+bfr::karta::Map::Map(QObject *parent) : QObject(parent)
 {
     // init territorys
     for (unsigned char i = 0; i < 11; i++)
@@ -14,7 +14,7 @@ BFR::Karta::Map::Map(QObject *parent) : QObject(parent)
     addNavyBorder();
 }
 
-BFR::Karta::Territory* BFR::Karta::Map::operator [](const TerritoryType type) const
+bfr::karta::Territory* bfr::karta::Map::operator [](const TerritoryType type) const
 {
     for (auto it : m_territoryList)
         if (it->type() == type)
@@ -22,27 +22,27 @@ BFR::Karta::Territory* BFR::Karta::Map::operator [](const TerritoryType type) co
     return nullptr;
 }
 
-void BFR::Karta::Map::clear()
+void bfr::karta::Map::clear()
 {
     // TODO clear all
 }
 
-void BFR::Karta::Map::openTokens()
+void bfr::karta::Map::openTokens()
 {
     setShowCombatToken(true);
 }
 
-void BFR::Karta::Map::newTurn()
+void bfr::karta::Map::newTurn()
 {
     setShowCombatToken(false);
 }
 
-bool BFR::Karta::Map::showCombatToken() const
+bool bfr::karta::Map::showCombatToken() const
 {
     return m_showCombatToken;
 }
 
-bool BFR::Karta::Map::addBorder(TerritoryType type, uchar_v v)
+bool bfr::karta::Map::addBorder(TerritoryType type, uchar_v v)
 {
     bool ret = true;
     for (auto it : v){
@@ -58,7 +58,7 @@ bool BFR::Karta::Map::addBorder(TerritoryType type, uchar_v v)
     return ret;
 }
 
-bool BFR::Karta::Map::addBorder(TerritoryType type1, unsigned char s1,
+bool bfr::karta::Map::addBorder(TerritoryType type1, unsigned char s1,
                          TerritoryType type2, unsigned char s2)
 {
     auto prov1 = findProvince(type1, s1);
@@ -72,7 +72,7 @@ bool BFR::Karta::Map::addBorder(TerritoryType type1, unsigned char s1,
     return true;
 }
 
-bool BFR::Karta::Map::addBorder(TerritoryType type1, uchar_v s1,
+bool bfr::karta::Map::addBorder(TerritoryType type1, uchar_v s1,
                          TerritoryType type2, uchar_v s2)
 {
     bool ret = true;
@@ -83,12 +83,12 @@ bool BFR::Karta::Map::addBorder(TerritoryType type1, uchar_v s1,
     return ret;
 }
 
-bool BFR::Karta::Map::addBorder(TerritoryType type, uchar_pair_v v)
+bool bfr::karta::Map::addBorder(TerritoryType type, uchar_pair_v v)
 {
     return addBorder(type, type, v);
 }
 
-bool BFR::Karta::Map::addBorder(TerritoryType type1, TerritoryType type2, uchar_pair_v v)
+bool bfr::karta::Map::addBorder(TerritoryType type1, TerritoryType type2, uchar_pair_v v)
 {
     bool ret = true;
     for (auto it : v)
@@ -97,7 +97,7 @@ bool BFR::Karta::Map::addBorder(TerritoryType type1, TerritoryType type2, uchar_
     return ret;
 }
 
-BFR::Karta::Province* BFR::Karta::Map::findProvince(TerritoryType type, unsigned char stars) const
+bfr::karta::Province* bfr::karta::Map::findProvince(TerritoryType type, unsigned char stars) const
 {
     auto territory = findTerritory(type);
     if (territory)
@@ -105,7 +105,7 @@ BFR::Karta::Province* BFR::Karta::Map::findProvince(TerritoryType type, unsigned
     return nullptr;
 }
 
-BFR::Karta::Territory* BFR::Karta::Map::findTerritory(TerritoryType type) const
+bfr::karta::Territory* bfr::karta::Map::findTerritory(TerritoryType type) const
 {
     for (auto it : m_territoryList)
         if (type == it->type())
@@ -113,7 +113,7 @@ BFR::Karta::Territory* BFR::Karta::Map::findTerritory(TerritoryType type) const
     return nullptr;
 }
 
-void BFR::Karta::Map::addLandBorder()
+void bfr::karta::Map::addLandBorder()
 {
     // init land borders
     addBorder(TerritoryType::Crane,    {{0, 1}, {1, 2}});
@@ -148,7 +148,7 @@ void BFR::Karta::Map::addLandBorder()
     addBorder(TerritoryType::Phoenix,  { 0, 1, 2 }, TerritoryType::Lion,     { 2 });
 }
 
-void BFR::Karta::Map::addNavyBorder()
+void bfr::karta::Map::addNavyBorder()
 {
     // init navy borders
     addBorder(TerritoryType::Phoenix,          uchar_v { 2 });
@@ -160,7 +160,7 @@ void BFR::Karta::Map::addNavyBorder()
     addBorder(TerritoryType::Islands,   { 0, 1, 2 });
 }
 
-void BFR::Karta::Map::setShowCombatToken(bool showCombatToken)
+void bfr::karta::Map::setShowCombatToken(bool showCombatToken)
 {
     if (m_showCombatToken == showCombatToken)
         return;

@@ -6,42 +6,42 @@
 #include "lib_bfr/token/combat.h"
 #include "lib_bfr/token/province.h"
 
-BFR::Object::Card::Card(CardType type, Player *owner)
+bfr::object::Card::Card(CardType type, Player *owner)
     : QObject(owner), m_owner(owner), m_type(type), m_used(false)
 {
     //
 }
 
-BFR::CardType BFR::Object::Card::type()   const { return m_type; }
-bool          BFR::Object::Card::isUsed() const { return m_used; }
-void          BFR::Object::Card::  use ()       { m_used = true; }
+bfr::CardType bfr::object::Card::type()   const { return m_type; }
+bool          bfr::object::Card::isUsed() const { return m_used; }
+void          bfr::object::Card::  use ()       { m_used = true; }
 
-BFR::CardType BFR::Object::Card::getNeutralCard(uint i)
+bfr::CardType bfr::object::Card::getNeutralCard(uint i)
 {
     return CardType::MasterOfGovernance + i;
 }
 
-bool BFR::Object::Card::isInitiative(CardType type)
+bool bfr::object::Card::isInitiative(CardType type)
 {
     return type >= CardType::FirstInitiative && type <= CardType::LastInitiative;
 }
 
-bool BFR::Object::Card::isTerritory(CardType type)
+bool bfr::object::Card::isTerritory(CardType type)
 {
     return type >= CardType::FirstTerritory && type <= CardType::LastTerritory;
 }
 
-BFR::Object::Player *BFR::Object::Card::getOwner() const
+bfr::object::Player *bfr::object::Card::getOwner() const
 {
     return m_owner;
 }
 
-void BFR::Object::Card::setOwner(Player *owner)
+void bfr::object::Card::setOwner(Player *owner)
 {
     m_owner = owner;
 }
 
-BFR::CombatTokenType BFR::Object::Card::useFirstPlayer(Token::Combat *token)
+bfr::CombatTokenType bfr::object::Card::useFirstPlayer(token::Combat *token)
 {
     if (m_type != CardType::FirstPlayer)
         return CombatTokenType::None;
@@ -51,7 +51,7 @@ BFR::CombatTokenType BFR::Object::Card::useFirstPlayer(Token::Combat *token)
     return token->type();
 }
 
-BFR::CombatTokenType BFR::Object::Card::useScout(BFR::Token::Combat *token)
+bfr::CombatTokenType bfr::object::Card::useScout(bfr::token::Combat *token)
 {
     if (m_type != CardType::Scout)
         return CombatTokenType::None;
@@ -60,7 +60,7 @@ BFR::CombatTokenType BFR::Object::Card::useScout(BFR::Token::Combat *token)
     return token->type();
 }
 
-void BFR::Object::Card::useShugenja(BFR::Token::Combat *token)
+void bfr::object::Card::useShugenja(bfr::token::Combat *token)
 {
     if (m_type != CardType::Shugenja)
         return;
@@ -71,8 +71,8 @@ void BFR::Object::Card::useShugenja(BFR::Token::Combat *token)
     use();
 }
 
-void BFR::Object::Card::useTerritoryCrab_FeatsOfEngineering(BFR::Karta::Province *province,
-                                                            BFR::Karta::Province *pushProvince)
+void bfr::object::Card::useTerritoryCrab_FeatsOfEngineering(bfr::karta::Province *province,
+                                                            bfr::karta::Province *pushProvince)
 {
     if (m_type != CardType::TerritoryCrab_FeatsOfEngineering)
         return;
@@ -87,7 +87,7 @@ void BFR::Object::Card::useTerritoryCrab_FeatsOfEngineering(BFR::Karta::Province
     use();
 }
 
-void BFR::Object::Card::useTerritoryCrab_Promotion(BFR::Karta::Province *province)
+void bfr::object::Card::useTerritoryCrab_Promotion(bfr::karta::Province *province)
 {
     if (m_type != CardType::TerritoryCrab_Promotion)
         return;
@@ -96,8 +96,8 @@ void BFR::Object::Card::useTerritoryCrab_Promotion(BFR::Karta::Province *provinc
     use();
 }
 
-void BFR::Object::Card::useTerritoryCrane_CodeOfHonor(BFR::Karta::Province *prov1,
-                                                      BFR::Karta::Province *prov2)
+void bfr::object::Card::useTerritoryCrane_CodeOfHonor(bfr::karta::Province *prov1,
+                                                      bfr::karta::Province *prov2)
 {
     if (m_type != CardType::TerritoryCrane_CodeOfHonor)
         return;
@@ -107,7 +107,7 @@ void BFR::Object::Card::useTerritoryCrane_CodeOfHonor(BFR::Karta::Province *prov
     use();
 }
 
-void BattleForRokugan::Object::Card::useTerritoryCrane_DiplomaticMission(BattleForRokugan::Karta::Province *provPeace, Karta::Province *provToken)
+void bfr::object::Card::useTerritoryCrane_DiplomaticMission(bfr::karta::Province *provPeace, karta::Province *provToken)
 {
     if (m_type != CardType::TerritoryCrane_DiplomaticMission)
         return;
@@ -118,7 +118,7 @@ void BattleForRokugan::Object::Card::useTerritoryCrane_DiplomaticMission(BattleF
     use();
 }
 
-void BattleForRokugan::Object::Card::useTerritoryDragon_SacredGround(BattleForRokugan::Karta::Province *province)
+void bfr::object::Card::useTerritoryDragon_SacredGround(bfr::karta::Province *province)
 {
     if (m_type != CardType::TerritoryDragon_SacredGround)
         return;
@@ -127,7 +127,7 @@ void BattleForRokugan::Object::Card::useTerritoryDragon_SacredGround(BattleForRo
     use();
 }
 
-void BattleForRokugan::Object::Card::useTerritoryDragon_StrengthOfPurpose(BattleForRokugan::Karta::Province *prov1, BattleForRokugan::Karta::Province *prov2)
+void bfr::object::Card::useTerritoryDragon_StrengthOfPurpose(bfr::karta::Province *prov1, bfr::karta::Province *prov2)
 {
     if (m_type != CardType::TerritoryDragon_StrengthOfPurpose)
         return;
@@ -137,7 +137,7 @@ void BattleForRokugan::Object::Card::useTerritoryDragon_StrengthOfPurpose(Battle
     use();
 }
 
-void BattleForRokugan::Object::Card::useTerritoryIslands_PirateRaids(BattleForRokugan::Karta::Province *provScorch, BattleForRokugan::Karta::Province *provToken)
+void bfr::object::Card::useTerritoryIslands_PirateRaids(bfr::karta::Province *provScorch, bfr::karta::Province *provToken)
 {
     if (m_type != CardType::TerritoryIslands_PirateRaids)
         return;
@@ -149,7 +149,7 @@ void BattleForRokugan::Object::Card::useTerritoryIslands_PirateRaids(BattleForRo
     use();
 }
 
-void BFR::Object::Card::useTerritoryIslands_PortOfProsperity(BFR::Karta::Province *province)
+void bfr::object::Card::useTerritoryIslands_PortOfProsperity(bfr::karta::Province *province)
 {
     if (m_type != CardType::TerritoryIslands_PortOfProsperity)
         return;
@@ -158,7 +158,7 @@ void BFR::Object::Card::useTerritoryIslands_PortOfProsperity(BFR::Karta::Provinc
     use();
 }
 
-void BattleForRokugan::Object::Card::useTerritoryLion_Bushido(BattleForRokugan::Karta::Province *province)
+void bfr::object::Card::useTerritoryLion_Bushido(bfr::karta::Province *province)
 {
     if (m_type != CardType::TerritoryLion_Bushido)
         return;
@@ -167,7 +167,7 @@ void BattleForRokugan::Object::Card::useTerritoryLion_Bushido(BattleForRokugan::
     use();
 }
 
-void BattleForRokugan::Object::Card::useTerritoryLion_HonorableFight(BattleForRokugan::Karta::Province *province)
+void bfr::object::Card::useTerritoryLion_HonorableFight(bfr::karta::Province *province)
 {
     if (m_type != CardType::TerritoryLion_HonorableFight)
         return;
@@ -176,7 +176,7 @@ void BattleForRokugan::Object::Card::useTerritoryLion_HonorableFight(BattleForRo
     use();
 }
 
-void BattleForRokugan::Object::Card::useTerritoryMountains_AshigaruLevies(BattleForRokugan::Karta::Province *prov1, BattleForRokugan::Karta::Province *prov2, BattleForRokugan::Karta::Province *prov3)
+void bfr::object::Card::useTerritoryMountains_AshigaruLevies(bfr::karta::Province *prov1, bfr::karta::Province *prov2, bfr::karta::Province *prov3)
 {
     if (m_type != CardType::TerritoryMountains_AshigaruLevies)
         return;
@@ -193,7 +193,7 @@ void BattleForRokugan::Object::Card::useTerritoryMountains_AshigaruLevies(Battle
     use();
 }
 
-void BattleForRokugan::Object::Card::useTerritoryMountains_BountifulHarvest(BattleForRokugan::Karta::Province *province)
+void bfr::object::Card::useTerritoryMountains_BountifulHarvest(bfr::karta::Province *province)
 {
     if (m_type != CardType::TerritoryMountains_BountifulHarvest)
         return;
@@ -202,7 +202,7 @@ void BattleForRokugan::Object::Card::useTerritoryMountains_BountifulHarvest(Batt
     use();
 }
 
-void BattleForRokugan::Object::Card::useTerritoryPhoenix_AidOfTheKami(BattleForRokugan::Karta::Province *province)
+void bfr::object::Card::useTerritoryPhoenix_AidOfTheKami(bfr::karta::Province *province)
 {
     if (m_type != CardType::TerritoryPhoenix_AidOfTheKami)
         return;
@@ -211,7 +211,7 @@ void BattleForRokugan::Object::Card::useTerritoryPhoenix_AidOfTheKami(BattleForR
     use();
 }
 
-void BattleForRokugan::Object::Card::useTerritoryPhoenix_BlessTheLands(BattleForRokugan::Karta::Province *province)
+void bfr::object::Card::useTerritoryPhoenix_BlessTheLands(bfr::karta::Province *province)
 {
     if (m_type != CardType::TerritoryPhoenix_AidOfTheKami)
         return;
@@ -225,7 +225,7 @@ void BattleForRokugan::Object::Card::useTerritoryPhoenix_BlessTheLands(BattleFor
     use();
 }
 
-void BattleForRokugan::Object::Card::useTerritoryScorpion_FomentRebellion(BattleForRokugan::Karta::Province *province)
+void bfr::object::Card::useTerritoryScorpion_FomentRebellion(bfr::karta::Province *province)
 {
     if (m_type != CardType::TerritoryScorpion_FomentRebellion)
         return;
@@ -238,9 +238,9 @@ void BattleForRokugan::Object::Card::useTerritoryScorpion_FomentRebellion(Battle
     use();
 }
 
-void BFR::Object::Card::useTerritoryShadowlandsSouth_InspireFear(BFR::Karta::Province *province,
-                                                                 BFR::Token::Province *token1,
-                                                                 BFR::Token::Province *token2)
+void bfr::object::Card::useTerritoryShadowlandsSouth_InspireFear(bfr::karta::Province *province,
+                                                                 bfr::token::Province *token1,
+                                                                 bfr::token::Province *token2)
 {
     if (m_type != CardType::TerritoryShadowlandsSouth_InspireFear)
         return;
@@ -252,8 +252,10 @@ void BFR::Object::Card::useTerritoryShadowlandsSouth_InspireFear(BFR::Karta::Pro
     use();
 }
 
-void BFR::Object::Card::useTerritoryUnicorn_Reinforcement(BFR::Token::Combat *dis1, BFR::Token::Combat *dis2,
-                                                          BFR::Token::Combat *ast1, BFR::Token::Combat *ast2)
+void bfr::object::Card::useTerritoryUnicorn_Reinforcement(bfr::token::Combat *dis1,
+                                                          bfr::token::Combat *dis2,
+                                                          bfr::token::Combat *ast1,
+                                                          bfr::token::Combat *ast2)
 {
     if (m_type != CardType::TerritoryUnicorn_Reinforcement)
         return;
@@ -265,7 +267,7 @@ void BFR::Object::Card::useTerritoryUnicorn_Reinforcement(BFR::Token::Combat *di
     use();
 }
 
-void BattleForRokugan::Object::Card::useTerritoryUnicorn_CulturalExchange(BattleForRokugan::Karta::Province *prov1, BattleForRokugan::Karta::Province *prov2)
+void bfr::object::Card::useTerritoryUnicorn_CulturalExchange(bfr::karta::Province *prov1, bfr::karta::Province *prov2)
 {
     if (m_type != CardType::TerritoryUnicorn_CulturalExchange)
         return;
@@ -274,7 +276,7 @@ void BattleForRokugan::Object::Card::useTerritoryUnicorn_CulturalExchange(Battle
     use();
 }
 
-QString BFR::Object::Card::name() const
+QString bfr::object::Card::name() const
 {
     switch (m_type) {
     case CardType::FirstPlayer:        return tr("First Player");
@@ -311,7 +313,7 @@ QString BFR::Object::Card::name() const
     return Clan::name(static_cast <ClanType> (m_type - CardType::InitiativeCrab));
 }
 
-QString BFR::Object::Card::description() const
+QString bfr::object::Card::description() const
 {
     switch (m_type) {
     case CardType::FirstPlayer:
@@ -427,7 +429,7 @@ QString BFR::Object::Card::description() const
     return "";
 }
 
-array_u3 BFR::Object::Card::randNeutralCard()
+array_u3 bfr::object::Card::randNeutralCard()
 {
     array_u3 ret = { 0, 0, 0 };
     ret[AFlib::Function::randomInt(0, 2)] = 1;
@@ -441,7 +443,7 @@ array_u3 BFR::Object::Card::randNeutralCard()
     return ret;
 }
 
-namespace BattleForRokugan {
+namespace battle_for_rokugan {
     CardType operator+(CardType type, uint i)
     {
         return static_cast <CardType> (static_cast <uint> (type) + i);

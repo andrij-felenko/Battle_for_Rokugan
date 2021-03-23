@@ -3,14 +3,14 @@
 
 #include "bfrLib_pre.h"
 
-class BattleForRokugan::Handler::Stats : public QObject
+class battle_for_rokugan::handler::Stats : public QObject
 {
     Q_OBJECT
 public:
     class OneStat;
     typedef std::optional <OneStat*> OneStatOpt;
 
-    Stats(Karta::Map* map);
+    Stats(karta::Map* map);
     virtual ~Stats();
 
     OneStatOpt operator[](ClanType clan) const;
@@ -26,11 +26,11 @@ public:
     void clear();
 
 private:
-    Karta::Map* m_map;
+    karta::Map* m_map;
     QList <OneStat*> m_clanList;
 };
 
-class BattleForRokugan::Handler::Stats::OneStat : public QObject
+class battle_for_rokugan::handler::Stats::OneStat : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(uint honorPoints

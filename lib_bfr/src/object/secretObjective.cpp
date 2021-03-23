@@ -8,24 +8,24 @@
 #include "lib_bfr/object/player.h"
 #include "lib_bfr/object/secretObjective.h"
 
-BFR::Object::SecretObjective::SecretObjective(SOT type, Karta::Map* map,
-                                              Handler::Stats* stats, QObject* parent)
+bfr::object::SecretObjective::SecretObjective(SOT type, karta::Map* map,
+                                              handler::Stats* stats, QObject* parent)
     : QObject(parent), m_type(type), m_picked(false), m_map(map), m_stats(stats)
 {
     //
 }
 
-BFR::SOT BFR::Object::SecretObjective::type() const
+bfr::SOT bfr::object::SecretObjective::type() const
 {
     return m_type;
 }
 
-bool BFR::Object::SecretObjective::picked() const
+bool bfr::object::SecretObjective::picked() const
 {
     return m_picked;
 }
 
-void BFR::Object::SecretObjective::setPicked(Clan* clan)
+void bfr::object::SecretObjective::setPicked(Clan* clan)
 {
     if (picked())
         return;
@@ -33,9 +33,9 @@ void BFR::Object::SecretObjective::setPicked(Clan* clan)
     m_picked = true;
 }
 
-int BFR::Object::SecretObjective::result() const { return result(m_type, m_clan, m_map, m_stats); }
-int BFR::Object::SecretObjective::result(SOT secretObjective, Clan* clan,
-                                         Karta::Map* map, Handler::Stats* stats)
+int bfr::object::SecretObjective::result() const { return result(m_type, m_clan, m_map, m_stats); }
+int bfr::object::SecretObjective::result(SOT secretObjective, Clan* clan,
+                                         karta::Map* map, handler::Stats* stats)
 {
     // capital or 2 province
     auto capOr2Prov = [clan, map](TerritoryType terType)->bool
@@ -58,8 +58,8 @@ int BFR::Object::SecretObjective::result(SOT secretObjective, Clan* clan,
     case SOT::TheLastLineOfDefense: return capOr2Prov(TerritoryType::Crab)     ? 5 : 0;
     case SOT::DenOfSecrets:         return capOr2Prov(TerritoryType::Scorpion) ? 7 : 0;
     case SOT::EmeraldEmpire: {
-        typedef std::function <bool (Karta::ProvinceList)> NextProvFunc;
-        NextProvFunc nextProv = [&nextProv, clan](Karta::ProvinceList list)->bool
+        typedef std::function <bool (karta::ProvinceList)> NextProvFunc;
+        NextProvFunc nextProv = [&nextProv, clan](karta::ProvinceList list)->bool
         {
             for (const auto &it : list.back()->neighboringProvinces()){
                 // if we found not clan border than check result
@@ -122,8 +122,8 @@ int BFR::Object::SecretObjective::result(SOT secretObjective, Clan* clan,
     return 0;
 }
 
-QString BFR::Object::SecretObjective::name() { return name(m_type); }
-QString BFR::Object::SecretObjective::name(SOT type)
+QString bfr::object::SecretObjective::name() { return name(m_type); }
+QString bfr::object::SecretObjective::name(SOT type)
 {
     switch (type) {
     case SOT::PlainsOfBattle:       return tr("Plains of battle");
@@ -142,8 +142,8 @@ QString BFR::Object::SecretObjective::name(SOT type)
     return "";
 }
 
-QString BFR::Object::SecretObjective::description() { return description(m_type); }
-QString BFR::Object::SecretObjective::description(SOT type)
+QString bfr::object::SecretObjective::description() { return description(m_type); }
+QString bfr::object::SecretObjective::description(SOT type)
 {
     switch (type) {
     case SOT::PlainsOfBattle:
@@ -197,7 +197,7 @@ QString BFR::Object::SecretObjective::description(SOT type)
     return "";
 }
 
-namespace BattleForRokugan {
+namespace battle_for_rokugan {
     SOT operator+(SOT type, uint i)
     {
         return static_cast <SOT>(static_cast <uint>(type) + i);

@@ -18,7 +18,7 @@ int main(int argc, char** argv)
     // TODO add company information
     app.setWindowIcon(QIcon(":/icon/af_base/af_logo.svg"));
 
-    BattleForRokugan::Game game;
+    bfr::Game game;
     game.addPlayer("Ja_1");
     game.addPlayer("Ja_2");
     game.addPlayer("Ja_3");

@@ -9,21 +9,21 @@
 #include "lib_bfr/object/player.h"
 #include "lib_bfr/object/secretObjective.h"
 
-BFR::Game::Game(QObject *parent) : QObject(parent)
+bfr::Game::Game(QObject *parent) : QObject(parent)
 {
-    m_map = new Karta::Map(this);
-    m_battle = new Handler::Battle(m_map, this);
-    m_stats = new Handler::Stats(m_map);
-    m_turns = new Handler::Turn(m_stats, this);
+    m_map = new karta::Map(this);
+    m_battle = new handler::Battle(m_map, this);
+    m_stats = new handler::Stats(m_map);
+    m_turns = new handler::Turn(m_stats, this);
 
-    connect(m_map, &Karta::Map::allTokenOpened, m_battle, &Handler::Battle::run);
-    connect(m_turns, &Handler::Turn::turnChanged,        m_map, &Karta::Map::newTurn);
-    connect(m_turns, &Handler::Turn::turnPlacedFinished, m_map, &Karta::Map::openTokens);
-    connect(m_battle, &Handler::Battle::battleFinished, m_stats, &Handler::Stats::update);
-    connect(m_battle, &Handler::Battle::battleFinished, m_turns, &Handler::Turn::nextTurn);
+    connect(m_map, &karta::Map::allTokenOpened, m_battle, &handler::Battle::run);
+    connect(m_turns, &handler::Turn::turnChanged,        m_map, &karta::Map::newTurn);
+    connect(m_turns, &handler::Turn::turnPlacedFinished, m_map, &karta::Map::openTokens);
+    connect(m_battle, &handler::Battle::battleFinished, m_stats, &handler::Stats::update);
+    connect(m_battle, &handler::Battle::battleFinished, m_turns, &handler::Turn::nextTurn);
 }
 
-BFR::Game::~Game()
+bfr::Game::~Game()
 {
     clear();
     for (const auto &it : m_cardPocket)
@@ -31,7 +31,7 @@ BFR::Game::~Game()
             it->deleteLater();
 }
 
-void BFR::Game::addPlayer(QString name, ClanType clan)
+void bfr::Game::addPlayer(QString name, ClanType clan)
 {
     if (m_playerList.length() >= 5)
         return;
@@ -60,22 +60,22 @@ void BFR::Game::addPlayer(QString name, ClanType clan)
     it = AFfunction::randomInt(0, m_secretObjectiveList.size() - 1);
     auto so_2 = m_secretObjectiveList.takeAt(it);
 
-    auto player = new Object::Player(name, clan, m_map, m_turns, m_stats, so_1, so_2, this);
+    auto player = new object::Player(name, clan, m_map, m_turns, m_stats, so_1, so_2, this);
     m_playerList.push_back(player);
-    connect(player, &Object::Player::secretObjectivePicked, this, &Game::checkIsCanStart);
+    connect(player, &object::Player::secretObjectivePicked, this, &Game::checkIsCanStart);
     checkIsCanStart();
 }
 
-void BFR::Game::removePlayer(ClanType clan)
+void bfr::Game::removePlayer(ClanType clan)
 {
     m_playerList.erase(std::remove_if(m_playerList.begin(), m_playerList.end(),
-                                      [clan](Object::Player* p){
+                                      [clan](object::Player* p){
                            p->deleteLater();
                            return p->clan()->type() == clan;
                        }));
 }
 
-void BFR::Game::clear()
+void bfr::Game::clear()
 {
     // clear all components from game, call only on reinit function
     m_map->clear();
@@ -95,22 +95,22 @@ void BFR::Game::clear()
     m_secretObjectiveList.clear();
 }
 
-void BFR::Game::init()
+void bfr::Game::init()
 {
     // init cardPocket
     m_cardPocket.clear();
     for (int i = 0; i < 11; i++){
         auto cardType = CardType::FirstTerritory + i * 2 + AFfunction::randomInt(0, 1);
-        m_cardPocket.push_back(new Object::Card(cardType));
+        m_cardPocket.push_back(new object::Card(cardType));
     }
     for (int i = 0; i < 12; i++){
-        auto so = new Object::SecretObjective(static_cast <SecretObjectiveType>(i),
+        auto so = new object::SecretObjective(static_cast <SecretObjectiveType>(i),
                                               m_map, m_stats, this);
         m_secretObjectiveList.push_back(so);
     }
 }
 
-bool BFR::Game::checkIsCanStart()
+bool bfr::Game::checkIsCanStart()
 {
     /// check pregame component, if smth not fill full
     /// return value (emit) need for button start battle in interface
@@ -135,13 +135,13 @@ bool BFR::Game::checkIsCanStart()
     return true;
 }
 
-void BFR::Game::reinit()
+void bfr::Game::reinit()
 {
     clear();
     init();
 }
 
-void BFR::Game::start()
+void bfr::Game::start()
 {
     m_battle->reset(m_playerList);
     m_turns->reset(m_playerList);

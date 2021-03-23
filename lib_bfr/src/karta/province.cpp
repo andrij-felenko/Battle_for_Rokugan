@@ -7,7 +7,7 @@
 #include "lib_bfr/token/honor.h"
 #include "lib_bfr/token/province.h"
 
-BFR::Karta::Province::Province(TerritoryType territory, bool capital, bool navy,
+bfr::karta::Province::Province(TerritoryType territory, bool capital, bool navy,
                    uchar number, uchar stars, QObject *parent)
     : TokenBasement(parent),
       m_capital(capital),
@@ -20,14 +20,14 @@ BFR::Karta::Province::Province(TerritoryType territory, bool capital, bool navy,
     //
 }
 
-BFR::ClanType BFR::Karta::Province::clanType() const
+bfr::ClanType bfr::karta::Province::clanType() const
 {
     if (auto pl = owner(); pl)
         return pl->clan()->type();
     return ClanType::None;
 }
 
-uchar BFR::Karta::Province::stars() const
+uchar bfr::karta::Province::stars() const
 {
     uchar ret = m_stars;
     for (const auto &it : m_ctrlTokenList)
@@ -45,7 +45,7 @@ uchar BFR::Karta::Province::stars() const
     return ret;
 }
 
-bool BFR::Karta::Province::scorched() const
+bool bfr::karta::Province::scorched() const
 {
     for (auto it : m_statusList)
         if (it->type() == ProvinceTokenType::ScorchedEarth)
@@ -53,12 +53,12 @@ bool BFR::Karta::Province::scorched() const
     return false;
 }
 
-uchar BFR::Karta::Province::number() const
+uchar bfr::karta::Province::number() const
 {
     return m_number;
 }
 
-uchar BFR::Karta::Province::defends() const
+uchar bfr::karta::Province::defends() const
 {
     uchar ret = m_defends;
     for (const auto &it : m_statusList){
@@ -74,12 +74,12 @@ uchar BFR::Karta::Province::defends() const
     return ret;
 }
 
-BFR::TerritoryType BFR::Karta::Province::territory() const
+bfr::TerritoryType bfr::karta::Province::territory() const
 {
     return m_territory;
 }
 
-uchar BFR::Karta::Province::controlUp() const
+uchar bfr::karta::Province::controlUp() const
 {
     unsigned ret = 0;
     for (const auto &it : m_ctrlTokenList)
@@ -88,12 +88,12 @@ uchar BFR::Karta::Province::controlUp() const
     return ret;
 }
 
-void BFR::Karta::Province::addBorder(Border* border)
+void bfr::karta::Province::addBorder(Border* border)
 {
     m_borderList.push_back(border);
 }
 
-BFR::Karta::ProvinceList BFR::Karta::Province::neighboringProvinces() const
+bfr::karta::ProvinceList bfr::karta::Province::neighboringProvinces() const
 {
     ProvinceList list;
     for (auto it : m_borderList){
@@ -105,21 +105,21 @@ BFR::Karta::ProvinceList BFR::Karta::Province::neighboringProvinces() const
     return list;
 }
 
-void BattleForRokugan::Karta::Province::addControlOnToken(uint count)
+void bfr::karta::Province::addControlOnToken(uint count)
 {
     if (not m_player)
         return;
 
     auto clanType = m_player->clan()->type();
     for (uint i = 0; i < count; i++)
-        m_ctrlTokenList.push_back(new Token::Control(true, clanType, this));
+        m_ctrlTokenList.push_back(new token::Control(true, clanType, this));
     emit ctrlTokenCountChanged();
 }
 
-void BattleForRokugan::Karta::Province::popControlToken()
+void bfr::karta::Province::popControlToken()
 {
     auto isRemoveSmth = std::remove_if(m_ctrlTokenList.begin(), m_ctrlTokenList.end(),
-                                       [](Token::Control* token){
+                                       [](token::Control* token){
             if (token->isOn()){
                 token->deleteLater();
                 return true;
@@ -135,24 +135,24 @@ void BattleForRokugan::Karta::Province::popControlToken()
     emit ctrlTokenCountChanged();
 }
 
-void BattleForRokugan::Karta::Province::pushHonor(uint value)
+void bfr::karta::Province::pushHonor(uint value)
 {
-    m_honorList.push_back(new Token::Honor(value, this));
+    m_honorList.push_back(new token::Honor(value, this));
 }
 
-void BFR::Karta::Province::setProvinceToken(ProvinceTokenType type)
+void bfr::karta::Province::setProvinceToken(ProvinceTokenType type)
 {
-    m_statusList.push_back(new Token::Province(m_player, this, type));
+    m_statusList.push_back(new token::Province(m_player, this, type));
 
     if (type ==ProvinceTokenType::ScorchedEarth)
         emit scorchedStatusChanged(true);
 }
 
-void BattleForRokugan::Karta::Province::removeProvinceToken(ProvinceTokenType type)
+void bfr::karta::Province::removeProvinceToken(ProvinceTokenType type)
 {
     m_statusList.erase(
                 std::remove_if(m_statusList.begin(), m_statusList.end(),
-                               [type](Token::Province* token)
+                               [type](token::Province* token)
                 {
                     if (token->type() == type){
                         token->deleteLater();
@@ -163,7 +163,7 @@ void BattleForRokugan::Karta::Province::removeProvinceToken(ProvinceTokenType ty
             m_statusList.end());
 }
 
-bool BFR::Karta::Province::provinceTokenContains(ProvinceTokenType type)
+bool bfr::karta::Province::provinceTokenContains(ProvinceTokenType type)
 {
     for (auto it : m_statusList)
         if (it->type() == type)
@@ -171,7 +171,7 @@ bool BFR::Karta::Province::provinceTokenContains(ProvinceTokenType type)
     return false;
 }
 
-void BFR::Karta::Province::clearCombatToken(bool withBorders)
+void bfr::karta::Province::clearCombatToken(bool withBorders)
 {
     removeCombatToken(m_combatList);
     if (not withBorders)
@@ -181,13 +181,13 @@ void BFR::Karta::Province::clearCombatToken(bool withBorders)
         it->removeCombatToken(it->m_combatList);
 }
 
-bool BattleForRokugan::Karta::Province::isShadowProvince() const
+bool bfr::karta::Province::isShadowProvince() const
 {
     return m_territory == TerritoryType::ShadowlandsNorth ||
             m_territory == TerritoryType::ShadowlandsSouth;
 }
 
-void BattleForRokugan::Karta::Province::swapAllContent(BattleForRokugan::Karta::Province *province)
+void bfr::karta::Province::swapAllContent(bfr::karta::Province *province)
 {
     std::swap(m_combatList, province->m_combatList);
     std::swap(m_ctrlTokenList, province->m_ctrlTokenList);
@@ -199,7 +199,7 @@ void BattleForRokugan::Karta::Province::swapAllContent(BattleForRokugan::Karta::
     emit scorchedStatusChanged(scorched());
 }
 
-BFR::Object::Player* BFR::Karta::Province::owner() const
+bfr::object::Player* bfr::karta::Province::owner() const
 {
     if (not m_player)
         return nullptr;
@@ -207,7 +207,7 @@ BFR::Object::Player* BFR::Karta::Province::owner() const
     return m_player;
 }
 
-void BFR::Karta::Province::setOwner(Object::Player* newOwner)
+void bfr::karta::Province::setOwner(object::Player* newOwner)
 {
     if (newOwner == m_player)
         return;
@@ -220,19 +220,19 @@ void BFR::Karta::Province::setOwner(Object::Player* newOwner)
     m_ctrlTokenList.clear();
     emit ctrlTokenCountChanged();
     if (m_player){
-        auto ctrl = new Token::Control(false, m_player->clan()->type(), this);
+        auto ctrl = new token::Control(false, m_player->clan()->type(), this);
         m_ctrlTokenList.push_back(ctrl);
     }
 
     emit ownerChanged(m_player);
 }
 
-bool BFR::Karta::Province::capital() const
+bool bfr::karta::Province::capital() const
 {
     return m_capital;
 }
 
-bool BFR::Karta::Province::navy() const
+bool bfr::karta::Province::navy() const
 {
     if (m_navy)
         return true;

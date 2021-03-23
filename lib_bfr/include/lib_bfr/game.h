@@ -3,7 +3,7 @@
 
 #include "bfrLib_pre.h"
 
-class BattleForRokugan::Game : public QObject
+class battle_for_rokugan::Game : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool isCanStart READ checkIsCanStart NOTIFY isCanStartChanged)
@@ -24,17 +24,17 @@ signals:
     void secretObjectiveAdded();
 
 private:
-    Karta::Map* m_map;
-    Handler::Turn* m_turns;
+    karta::Map* m_map;
+    handler::Turn* m_turns;
 
     void clear();
     bool checkIsCanStart();
 
-    Object::CardList m_cardPocket;
-    Object::PlayerList m_playerList;
-    Object::SecretObjectiveList m_secretObjectiveList;
-    Handler::Stats* m_stats;
-    Handler::Battle* m_battle;
+    object::CardList m_cardPocket;
+    object::PlayerList m_playerList;
+    object::SecretObjectiveList m_secretObjectiveList;
+    handler::Stats* m_stats;
+    handler::Battle* m_battle;
 };
 
 #endif // LIB_BFR_Game_H
