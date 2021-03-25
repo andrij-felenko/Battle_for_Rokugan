@@ -1,0 +1,26 @@
+var classbattle__for__rokugan_1_1token_1_1Combat =
+[
+    [ "Combat", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a02d930a03198c204fd575ce80111294b", null ],
+    [ "Combat", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#af17b365d7fbf2fe84b1465e6f4054fa5", null ],
+    [ "blessing", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a6e43b5e23c94fdf742fe804bbea262c8", null ],
+    [ "isShow", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a0cf455475cde8687389ec76fe70f26bd", null ],
+    [ "name", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a3e6ee00244392e8fa89f71ceb629c1da", null ],
+    [ "name", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a02fafb60f3d89b3956061546d18686f1", null ],
+    [ "owner", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#ad2c07591f34413b1bc4ab959b691c2c5", null ],
+    [ "setBlessing", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a3b3c577df6c1aed370f1fdcfffdaaefc", null ],
+    [ "setStatus", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#afce016fef4048653e3e73c75749c7687", null ],
+    [ "setType", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#aeb9337513a0782b7e5f19ac1bd10979e", null ],
+    [ "setValue", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a21ea86095cda3632925b5452b38349a3", null ],
+    [ "show", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a0ef4ea7ef805839fb78f4692b2e28dc7", null ],
+    [ "showChanged", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a53bdb034f3f27ed04c8aa56a14013771", null ],
+    [ "status", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#af8ee9854d39322f701f40c79587b6ec5", null ],
+    [ "type", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a79976bdaf0a8ee01eceadffff1516710", null ],
+    [ "value", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#ab529d7340d0bdc0592d20fb8efb22fd0", null ],
+    [ "m_blessing", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#ad135003ea47701ea81dfea225d5495c3", null ],
+    [ "m_owner", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a64545178511a5d0b0c64d482ad366ad1", null ],
+    [ "m_show", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a5ed76497d5ce99bcdab743e462ec65ac", null ],
+    [ "m_status", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a2f19989ad4ad576e425ea14a4c653e5d", null ],
+    [ "m_type", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a7b8a1bc0e3e6dbc2ffc762f8ac2d4a5d", null ],
+    [ "m_value", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#aa86ce5b131c156ce96265997d342c73e", null ],
+    [ "show", "da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#af1c2079777afefc327a0ae09541c6293", null ]
+];

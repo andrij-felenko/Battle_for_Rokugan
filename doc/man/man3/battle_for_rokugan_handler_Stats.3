@@ -1,0 +1,144 @@
+.TH "battle_for_rokugan::handler::Stats" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::handler::Stats
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <stats\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBOneStat\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::optional< \fBOneStat\fP * > \fBOneStatOpt\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStats\fP (\fBkarta::Map\fP *map)"
+.br
+.ti -1c
+.RI "virtual \fB~Stats\fP ()"
+.br
+.ti -1c
+.RI "\fBOneStatOpt\fP \fBoperator[]\fP (\fBClanType\fP clan) const"
+.br
+.ti -1c
+.RI "\fBClanTypeList\fP \fBmaxTerritoryCard\fP () const"
+.br
+.ti -1c
+.RI "\fBClanTypeList\fP \fBminProvinceClan\fP () const"
+.br
+.ti -1c
+.RI "\fBClanTypeList\fP \fBmaxProvinceClan\fP () const"
+.br
+.ti -1c
+.RI "\fBClanTypeList\fP \fBmaxCtrlToken\fP (bool withToken) const"
+.br
+.ti -1c
+.RI "bool \fBmaxProvinceClan\fP (\fBClanType\fP clan) const"
+.br
+.ti -1c
+.RI "bool \fBminProvinceClan\fP (\fBClanType\fP clan) const"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBkarta::Map\fP * \fBm_map\fP"
+.br
+.ti -1c
+.RI "QList< \fBOneStat\fP * > \fBm_clanList\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file stats\&.h\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef std::optional<\fBOneStat\fP*> \fBbattle_for_rokugan::handler::Stats::OneStatOpt\fP"
+
+.PP
+Definition at line 10 of file stats\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::handler::Stats::Stats (\fBkarta::Map\fP * map)"
+
+.PP
+Definition at line 6 of file stats\&.cpp\&.
+.SS "battle_for_rokugan::handler::Stats::~Stats ()\fC [virtual]\fP"
+
+.PP
+Definition at line 13 of file stats\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void battle_for_rokugan::handler::Stats::clear ()"
+
+.PP
+Definition at line 109 of file stats\&.cpp\&.
+.SS "\fBbfr::ClanTypeList\fP battle_for_rokugan::handler::Stats::maxCtrlToken (bool withToken) const"
+
+.PP
+Definition at line 88 of file stats\&.cpp\&.
+.SS "\fBbfr::ClanTypeList\fP battle_for_rokugan::handler::Stats::maxProvinceClan () const"
+
+.PP
+Definition at line 42 of file stats\&.cpp\&.
+.SS "bool battle_for_rokugan::handler::Stats::maxProvinceClan (\fBClanType\fP clan) const"
+
+.PP
+Definition at line 70 of file stats\&.cpp\&.
+.SS "\fBbfr::ClanTypeList\fP battle_for_rokugan::handler::Stats::maxTerritoryCard () const"
+
+.PP
+Definition at line 28 of file stats\&.cpp\&.
+.SS "\fBbfr::ClanTypeList\fP battle_for_rokugan::handler::Stats::minProvinceClan () const"
+
+.PP
+Definition at line 56 of file stats\&.cpp\&.
+.SS "bool battle_for_rokugan::handler::Stats::minProvinceClan (\fBClanType\fP clan) const"
+
+.PP
+Definition at line 79 of file stats\&.cpp\&.
+.SS "bfr::handler::Stats::OneStatOpt battle_for_rokugan::handler::Stats::operator[] (\fBClanType\fP clan) const"
+
+.PP
+Definition at line 20 of file stats\&.cpp\&.
+.SS "void battle_for_rokugan::handler::Stats::update ()"
+
+.PP
+Definition at line 104 of file stats\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QList<\fBOneStat\fP*> battle_for_rokugan::handler::Stats::m_clanList\fC [private]\fP"
+
+.PP
+Definition at line 30 of file stats\&.h\&.
+.SS "\fBkarta::Map\fP* battle_for_rokugan::handler::Stats::m_map\fC [private]\fP"
+
+.PP
+Definition at line 29 of file stats\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

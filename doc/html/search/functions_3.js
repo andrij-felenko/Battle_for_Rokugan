@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['daimyo_493',['daimyo',['../d1/d50/classbattle__for__rokugan_1_1karta_1_1Territory.html#a41b5153bcdf7661f33176c20b1e95cda',1,'battle_for_rokugan::karta::Territory']]],
+  ['defends_494',['defends',['../d8/d40/classbattle__for__rokugan_1_1karta_1_1Province.html#a7ec1cefe7e455163330cc191c1785183',1,'battle_for_rokugan::karta::Province::defends()'],['../d1/d44/classbattle__for__rokugan_1_1token_1_1Control.html#a56b8f00b660b21191ff10e998e23686b',1,'battle_for_rokugan::token::Control::defends()']]],
+  ['description_495',['description',['../d6/dea/classbattle__for__rokugan_1_1object_1_1Card.html#a5c2c2ab17b93071b82562efd8ed0774c',1,'battle_for_rokugan::object::Card::description()'],['../d6/d58/classbattle__for__rokugan_1_1object_1_1SecretObjective.html#ac4736d05a855b7d3af5145846805879f',1,'battle_for_rokugan::object::SecretObjective::description()'],['../d6/d58/classbattle__for__rokugan_1_1object_1_1SecretObjective.html#affacfa433ca6ca033be0c412e66db067',1,'battle_for_rokugan::object::SecretObjective::description() const'],['../d6/d58/classbattle__for__rokugan_1_1object_1_1SecretObjective.html#a7ea69f0ba1a8fe5541e255dedd55264f',1,'battle_for_rokugan::object::SecretObjective::description(SecretObjectiveType type)']]]
+];

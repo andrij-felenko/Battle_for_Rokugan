@@ -1,0 +1,304 @@
+.TH "battle_for_rokugan::karta::Province" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::karta::Province
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <province\&.h>\fP
+.PP
+Inherits \fBbattle_for_rokugan::karta::TokenBasement\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBownerChanged\fP (\fBobject::Player\fP *)"
+.br
+.ti -1c
+.RI "void \fBscorchedStatusChanged\fP (bool isScorched)"
+.br
+.ti -1c
+.RI "void \fBctrlTokenCountChanged\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProvince\fP (\fBTerritoryType\fP \fBterritory\fP, bool \fBcapital\fP, bool \fBnavy\fP, uchar \fBnumber\fP, uchar \fBstars\fP, QObject *parent)"
+.br
+.ti -1c
+.RI "\fBClanType\fP \fBclanType\fP () const"
+.br
+.ti -1c
+.RI "\fBobject::Player\fP * \fBowner\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetOwner\fP (\fBobject::Player\fP *newOwner)"
+.br
+.ti -1c
+.RI "bool \fBscorched\fP () const"
+.br
+.ti -1c
+.RI "bool \fBcapital\fP () const"
+.br
+.ti -1c
+.RI "bool \fBnavy\fP () const"
+.br
+.ti -1c
+.RI "uchar \fBdefends\fP () const"
+.br
+.ti -1c
+.RI "uchar \fBnumber\fP () const"
+.br
+.ti -1c
+.RI "uchar \fBstars\fP () const"
+.br
+.ti -1c
+.RI "\fBTerritoryType\fP \fBterritory\fP () const"
+.br
+.ti -1c
+.RI "uchar \fBcontrolUp\fP () const"
+.br
+.ti -1c
+.RI "void \fBaddBorder\fP (\fBBorder\fP *border)"
+.br
+.ti -1c
+.RI "ProvinceList \fBneighboringProvinces\fP () const"
+.br
+.ti -1c
+.RI "void \fBaddControlOnToken\fP (uint count=1)"
+.br
+.ti -1c
+.RI "void \fBpopControlToken\fP ()"
+.br
+.ti -1c
+.RI "void \fBpushHonor\fP (uint value)"
+.br
+.ti -1c
+.RI "void \fBsetProvinceToken\fP (\fBProvinceTokenType\fP type)"
+.br
+.ti -1c
+.RI "void \fBremoveProvinceToken\fP (\fBProvinceTokenType\fP type)"
+.br
+.ti -1c
+.RI "bool \fBprovinceTokenContains\fP (\fBProvinceTokenType\fP type)"
+.br
+.ti -1c
+.RI "void \fBclearCombatToken\fP (bool withBorders)"
+.br
+.ti -1c
+.RI "bool \fBisShadowProvince\fP () const"
+.br
+.ti -1c
+.RI "void \fBswapAllContent\fP (\fBProvince\fP *province)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBm_capital\fP"
+.br
+.ti -1c
+.RI "bool \fBm_navy\fP"
+.br
+.ti -1c
+.RI "uchar \fBm_number\fP"
+.br
+.ti -1c
+.RI "uchar \fBm_stars\fP"
+.br
+.ti -1c
+.RI "uchar \fBm_defends\fP"
+.br
+.ti -1c
+.RI "\fBTerritoryType\fP \fBm_territory\fP"
+.br
+.ti -1c
+.RI "\fBobject::Player\fP * \fBm_player\fP"
+.br
+.ti -1c
+.RI "token::ProvinceList \fBm_statusList\fP"
+.br
+.ti -1c
+.RI "token::HonorList \fBm_honorList\fP"
+.br
+.ti -1c
+.RI "token::ControlList \fBm_ctrlTokenList\fP"
+.br
+.ti -1c
+.RI "BorderList \fBm_borderList\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBhandler::Battle\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file province\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::karta::Province::Province (\fBTerritoryType\fP territory, bool capital, bool navy, uchar number, uchar stars, QObject * parent)"
+
+.PP
+Definition at line 10 of file province\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void battle_for_rokugan::karta::Province::addBorder (\fBBorder\fP * border)"
+
+.PP
+Definition at line 91 of file province\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Province::addControlOnToken (uint count = \fC1\fP)"
+
+.PP
+Definition at line 108 of file province\&.cpp\&.
+.SS "bool battle_for_rokugan::karta::Province::capital () const"
+
+.PP
+Definition at line 230 of file province\&.cpp\&.
+.SS "\fBbfr::ClanType\fP battle_for_rokugan::karta::Province::clanType () const"
+
+.PP
+Definition at line 23 of file province\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Province::clearCombatToken (bool withBorders)"
+
+.PP
+Definition at line 174 of file province\&.cpp\&.
+.SS "uchar battle_for_rokugan::karta::Province::controlUp () const"
+
+.PP
+Definition at line 82 of file province\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Province::ctrlTokenCountChanged ()\fC [signal]\fP"
+
+.SS "uchar battle_for_rokugan::karta::Province::defends () const"
+
+.PP
+Definition at line 61 of file province\&.cpp\&.
+.SS "bool battle_for_rokugan::karta::Province::isShadowProvince () const"
+
+.PP
+Definition at line 184 of file province\&.cpp\&.
+.SS "bool battle_for_rokugan::karta::Province::navy () const"
+
+.PP
+Definition at line 235 of file province\&.cpp\&.
+.SS "bfr::karta::ProvinceList battle_for_rokugan::karta::Province::neighboringProvinces () const"
+
+.PP
+Definition at line 96 of file province\&.cpp\&.
+.SS "uchar battle_for_rokugan::karta::Province::number () const"
+
+.PP
+Definition at line 56 of file province\&.cpp\&.
+.SS "bfr::object::Player * battle_for_rokugan::karta::Province::owner () const"
+
+.PP
+Definition at line 202 of file province\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Province::ownerChanged (\fBobject::Player\fP *)\fC [signal]\fP"
+
+.SS "void battle_for_rokugan::karta::Province::popControlToken ()"
+
+.PP
+Definition at line 119 of file province\&.cpp\&.
+.SS "bool battle_for_rokugan::karta::Province::provinceTokenContains (\fBProvinceTokenType\fP type)"
+
+.PP
+Definition at line 166 of file province\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Province::pushHonor (uint value)"
+
+.PP
+Definition at line 138 of file province\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Province::removeProvinceToken (\fBProvinceTokenType\fP type)"
+
+.PP
+Definition at line 151 of file province\&.cpp\&.
+.SS "bool battle_for_rokugan::karta::Province::scorched () const"
+
+.PP
+Definition at line 48 of file province\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Province::scorchedStatusChanged (bool isScorched)\fC [signal]\fP"
+
+.SS "void battle_for_rokugan::karta::Province::setOwner (\fBobject::Player\fP * newOwner)"
+
+.PP
+Definition at line 210 of file province\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Province::setProvinceToken (\fBProvinceTokenType\fP type)"
+
+.PP
+Definition at line 143 of file province\&.cpp\&.
+.SS "uchar battle_for_rokugan::karta::Province::stars () const"
+
+.PP
+Definition at line 30 of file province\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Province::swapAllContent (\fBProvince\fP * province)"
+
+.PP
+Definition at line 190 of file province\&.cpp\&.
+.SS "\fBbfr::TerritoryType\fP battle_for_rokugan::karta::Province::territory () const"
+
+.PP
+Definition at line 77 of file province\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBhandler::Battle\fP\fC [friend]\fP"
+
+.PP
+Definition at line 62 of file province\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "BorderList battle_for_rokugan::karta::Province::m_borderList\fC [private]\fP"
+
+.PP
+Definition at line 60 of file province\&.h\&.
+.SS "bool battle_for_rokugan::karta::Province::m_capital\fC [private]\fP"
+
+.PP
+Definition at line 49 of file province\&.h\&.
+.SS "token::ControlList battle_for_rokugan::karta::Province::m_ctrlTokenList\fC [private]\fP"
+
+.PP
+Definition at line 59 of file province\&.h\&.
+.SS "uchar battle_for_rokugan::karta::Province::m_defends\fC [private]\fP"
+
+.PP
+Definition at line 53 of file province\&.h\&.
+.SS "token::HonorList battle_for_rokugan::karta::Province::m_honorList\fC [private]\fP"
+
+.PP
+Definition at line 58 of file province\&.h\&.
+.SS "bool battle_for_rokugan::karta::Province::m_navy\fC [private]\fP"
+
+.PP
+Definition at line 50 of file province\&.h\&.
+.SS "uchar battle_for_rokugan::karta::Province::m_number\fC [private]\fP"
+
+.PP
+Definition at line 51 of file province\&.h\&.
+.SS "\fBobject::Player\fP* battle_for_rokugan::karta::Province::m_player\fC [private]\fP"
+
+.PP
+Definition at line 56 of file province\&.h\&.
+.SS "uchar battle_for_rokugan::karta::Province::m_stars\fC [private]\fP"
+
+.PP
+Definition at line 52 of file province\&.h\&.
+.SS "token::ProvinceList battle_for_rokugan::karta::Province::m_statusList\fC [private]\fP"
+
+.PP
+Definition at line 57 of file province\&.h\&.
+.SS "\fBTerritoryType\fP battle_for_rokugan::karta::Province::m_territory\fC [private]\fP"
+
+.PP
+Definition at line 55 of file province\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

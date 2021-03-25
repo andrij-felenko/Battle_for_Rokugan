@@ -1,0 +1,312 @@
+\hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn}{}\doxysection{battle\+\_\+for\+\_\+rokugan\+::handler\+::Turn Class Reference}
+\label{classbattle__for__rokugan_1_1handler_1_1Turn}\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+
+
+{\ttfamily \#include $<$turn.\+h$>$}
+
+Inheritance diagram for battle\+\_\+for\+\_\+rokugan\+::handler\+::Turn\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d7/ded/classbattle__for__rokugan_1_1handler_1_1Turn}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a7383fbac13e329d6876e6de8ad572ac7}{game\+Finished}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_ac21c702b8d432accbba3b9688117e101}{turn\+Placed\+Finished}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a9b89e87f3930f4b7dd3dfdcd0f6afcc7}{turn\+Changed}} (int \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a4b92bdb1cb6903e1eea855e86a714afa}{turn}})
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a48cfd3b602a68f8c31a3daabcae52506}{position\+Changed}} (int \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_adef379ba8c8cacd70ccd0bddf79537bb}{position}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a8452d4586e03224da7a8df5d877b67eb}{Turn}} (\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats}{Stats}} $\ast$stats, Q\+Object $\ast$parent)
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_acda722f0fcb37b6a3b3dd07a88b73299}{next\+Turn}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_acd4f9d6748b3e6fc47e23b850770a20c}{reset}} (object\+::\+Player\+List list)
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a252cc17f0a3150ac602c7dbd25f20ece}{clear}} ()
+\item 
+int \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a8a7184fcbfa9417e360a819881bcd333}{turn}} () const
+\item 
+int \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_abc14232df19e440c7e3e801e3af693e8}{position}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a4b92bdb1cb6903e1eea855e86a714afa}{turn}}
+\item 
+int \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_adef379ba8c8cacd70ccd0bddf79537bb}{position}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}} \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_afe1ce23a892966c17dd1fca35c835b37}{get\+Current\+First\+Player}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_ac899189d6801435af0cdaa19e6b0e041}{update\+Turn\+Queue}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a33ce21f6e0b6302bec8e015797bb6423}{next\+Position}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_ab3dc58b20f06dd0bf0107e21e271cf4e}{m\+\_\+turn}}
+\item 
+int \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_ac45d0b402fa9187a97b5421bbe65461e}{m\+\_\+sub\+Turn\+Left}}
+\item 
+int \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a86ea34df30706937d9a5ef81ffafd563}{m\+\_\+position}}
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_a168acb8772c8ff41184ea13a7706ae60}{Phase}} \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a92e4033760ebe44e097c38188c870803}{m\+\_\+phase}}
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_a7adfe1665455778383de5fb447de5b40}{Card\+Type\+List}} \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a3bd888605422458c7b7d01c70d35dfc8}{m\+\_\+first\+List}}
+\item 
+object\+::\+Player\+List \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a716b613e9a08a07909a5b50dc48ed7af}{m\+\_\+player\+List}}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats}{handler\+::\+Stats}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a697ef930b751128dbcecc1c357a97430}{m\+\_\+stats}}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Card}{object\+::\+Card}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn_a17e932247b164e170a88e5b07680e020}{m\+\_\+first\+Card}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 6 of file turn.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a8452d4586e03224da7a8df5d877b67eb}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a8452d4586e03224da7a8df5d877b67eb}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!Turn@{Turn}}
+\index{Turn@{Turn}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{Turn()}{Turn()}}
+{\footnotesize\ttfamily battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::\+Turn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats}{Stats}} $\ast$}]{stats,  }\item[{Q\+Object $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file turn.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a252cc17f0a3150ac602c7dbd25f20ece}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a252cc17f0a3150ac602c7dbd25f20ece}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!clear@{clear}}
+\index{clear@{clear}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file turn.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a7383fbac13e329d6876e6de8ad572ac7}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a7383fbac13e329d6876e6de8ad572ac7}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!gameFinished@{gameFinished}}
+\index{gameFinished@{gameFinished}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{gameFinished}{gameFinished}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::game\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_afe1ce23a892966c17dd1fca35c835b37}\label{classbattle__for__rokugan_1_1handler_1_1Turn_afe1ce23a892966c17dd1fca35c835b37}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!getCurrentFirstPlayer@{getCurrentFirstPlayer}}
+\index{getCurrentFirstPlayer@{getCurrentFirstPlayer}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{getCurrentFirstPlayer()}{getCurrentFirstPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{bfr\+::\+Clan\+Type}} battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::get\+Current\+First\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file turn.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a33ce21f6e0b6302bec8e015797bb6423}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a33ce21f6e0b6302bec8e015797bb6423}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!nextPosition@{nextPosition}}
+\index{nextPosition@{nextPosition}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{nextPosition()}{nextPosition()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::next\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 136 of file turn.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_acda722f0fcb37b6a3b3dd07a88b73299}\label{classbattle__for__rokugan_1_1handler_1_1Turn_acda722f0fcb37b6a3b3dd07a88b73299}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!nextTurn@{nextTurn}}
+\index{nextTurn@{nextTurn}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{nextTurn()}{nextTurn()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::next\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file turn.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_abc14232df19e440c7e3e801e3af693e8}\label{classbattle__for__rokugan_1_1handler_1_1Turn_abc14232df19e440c7e3e801e3af693e8}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!position@{position}}
+\index{position@{position}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{position()}{position()}}
+{\footnotesize\ttfamily int battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19 of file turn.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a48cfd3b602a68f8c31a3daabcae52506}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a48cfd3b602a68f8c31a3daabcae52506}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!positionChanged@{positionChanged}}
+\index{positionChanged@{positionChanged}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{positionChanged}{positionChanged}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::position\+Changed (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_acd4f9d6748b3e6fc47e23b850770a20c}\label{classbattle__for__rokugan_1_1handler_1_1Turn_acd4f9d6748b3e6fc47e23b850770a20c}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!reset@{reset}}
+\index{reset@{reset}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::reset (\begin{DoxyParamCaption}\item[{object\+::\+Player\+List}]{list }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file turn.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a8a7184fcbfa9417e360a819881bcd333}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a8a7184fcbfa9417e360a819881bcd333}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!turn@{turn}}
+\index{turn@{turn}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{turn()}{turn()}}
+{\footnotesize\ttfamily int battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18 of file turn.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a9b89e87f3930f4b7dd3dfdcd0f6afcc7}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a9b89e87f3930f4b7dd3dfdcd0f6afcc7}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!turnChanged@{turnChanged}}
+\index{turnChanged@{turnChanged}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{turnChanged}{turnChanged}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::turn\+Changed (\begin{DoxyParamCaption}\item[{int}]{turn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_ac21c702b8d432accbba3b9688117e101}\label{classbattle__for__rokugan_1_1handler_1_1Turn_ac21c702b8d432accbba3b9688117e101}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!turnPlacedFinished@{turnPlacedFinished}}
+\index{turnPlacedFinished@{turnPlacedFinished}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{turnPlacedFinished}{turnPlacedFinished}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::turn\+Placed\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_ac899189d6801435af0cdaa19e6b0e041}\label{classbattle__for__rokugan_1_1handler_1_1Turn_ac899189d6801435af0cdaa19e6b0e041}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!updateTurnQueue@{updateTurnQueue}}
+\index{updateTurnQueue@{updateTurnQueue}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{updateTurnQueue()}{updateTurnQueue()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::update\+Turn\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 103 of file turn.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a17e932247b164e170a88e5b07680e020}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a17e932247b164e170a88e5b07680e020}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!m\_firstCard@{m\_firstCard}}
+\index{m\_firstCard@{m\_firstCard}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{m\_firstCard}{m\_firstCard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Card}{object\+::\+Card}}$\ast$ battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::m\+\_\+first\+Card\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file turn.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a3bd888605422458c7b7d01c70d35dfc8}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a3bd888605422458c7b7d01c70d35dfc8}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!m\_firstList@{m\_firstList}}
+\index{m\_firstList@{m\_firstList}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{m\_firstList}{m\_firstList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_a7adfe1665455778383de5fb447de5b40}{Card\+Type\+List}} battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::m\+\_\+first\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file turn.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a92e4033760ebe44e097c38188c870803}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a92e4033760ebe44e097c38188c870803}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!m\_phase@{m\_phase}}
+\index{m\_phase@{m\_phase}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{m\_phase}{m\_phase}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_a168acb8772c8ff41184ea13a7706ae60}{Phase}} battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::m\+\_\+phase\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file turn.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a716b613e9a08a07909a5b50dc48ed7af}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a716b613e9a08a07909a5b50dc48ed7af}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!m\_playerList@{m\_playerList}}
+\index{m\_playerList@{m\_playerList}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{m\_playerList}{m\_playerList}}
+{\footnotesize\ttfamily object\+::\+Player\+List battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::m\+\_\+player\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 39 of file turn.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a86ea34df30706937d9a5ef81ffafd563}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a86ea34df30706937d9a5ef81ffafd563}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily int battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 35 of file turn.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a697ef930b751128dbcecc1c357a97430}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a697ef930b751128dbcecc1c357a97430}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!m\_stats@{m\_stats}}
+\index{m\_stats@{m\_stats}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{m\_stats}{m\_stats}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats}{handler\+::\+Stats}}$\ast$ battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::m\+\_\+stats\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 40 of file turn.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_ac45d0b402fa9187a97b5421bbe65461e}\label{classbattle__for__rokugan_1_1handler_1_1Turn_ac45d0b402fa9187a97b5421bbe65461e}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!m\_subTurnLeft@{m\_subTurnLeft}}
+\index{m\_subTurnLeft@{m\_subTurnLeft}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{m\_subTurnLeft}{m\_subTurnLeft}}
+{\footnotesize\ttfamily int battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::m\+\_\+sub\+Turn\+Left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 34 of file turn.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_ab3dc58b20f06dd0bf0107e21e271cf4e}\label{classbattle__for__rokugan_1_1handler_1_1Turn_ab3dc58b20f06dd0bf0107e21e271cf4e}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!m\_turn@{m\_turn}}
+\index{m\_turn@{m\_turn}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{m\_turn}{m\_turn}}
+{\footnotesize\ttfamily int battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::m\+\_\+turn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 33 of file turn.\+h.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_adef379ba8c8cacd70ccd0bddf79537bb}\label{classbattle__for__rokugan_1_1handler_1_1Turn_adef379ba8c8cacd70ccd0bddf79537bb}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!position@{position}}
+\index{position@{position}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily int battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::position\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 10 of file turn.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Turn_a4b92bdb1cb6903e1eea855e86a714afa}\label{classbattle__for__rokugan_1_1handler_1_1Turn_a4b92bdb1cb6903e1eea855e86a714afa}} 
+\index{battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}!turn@{turn}}
+\index{turn@{turn}!battle\_for\_rokugan::handler::Turn@{battle\_for\_rokugan::handler::Turn}}
+\doxysubsubsection{\texorpdfstring{turn}{turn}}
+{\footnotesize\ttfamily int battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Turn\+::turn\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 9 of file turn.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+bfr/include/lib\+\_\+bfr/handler/\mbox{\hyperlink{turn_8h}{turn.\+h}}\item 
+lib\+\_\+bfr/src/handler/\mbox{\hyperlink{turn_8cpp}{turn.\+cpp}}\end{DoxyCompactItemize}

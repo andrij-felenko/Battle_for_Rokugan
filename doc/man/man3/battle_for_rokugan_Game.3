@@ -1,0 +1,176 @@
+.TH "battle_for_rokugan::Game" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::Game
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <game\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBisCanStartChanged\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBsecretObjectiveAdded\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGame\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "virtual \fB~Game\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddPlayer\fP (QString name, \fBClanType\fP clan=\fBClanType::None\fP)"
+.br
+.ti -1c
+.RI "void \fBremovePlayer\fP (\fBClanType\fP clan)"
+.br
+.ti -1c
+.RI "void \fBstart\fP ()"
+.br
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "void \fBreinit\fP ()"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisCanStart\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcheckIsCanStart\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBkarta::Map\fP * \fBm_map\fP"
+.br
+.ti -1c
+.RI "\fBhandler::Turn\fP * \fBm_turns\fP"
+.br
+.ti -1c
+.RI "object::CardList \fBm_cardPocket\fP"
+.br
+.ti -1c
+.RI "object::PlayerList \fBm_playerList\fP"
+.br
+.ti -1c
+.RI "object::SecretObjectiveList \fBm_secretObjectiveList\fP"
+.br
+.ti -1c
+.RI "\fBhandler::Stats\fP * \fBm_stats\fP"
+.br
+.ti -1c
+.RI "\fBhandler::Battle\fP * \fBm_battle\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file game\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::Game::Game (QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 12 of file game\&.cpp\&.
+.SS "battle_for_rokugan::Game::~Game ()\fC [virtual]\fP"
+
+.PP
+Definition at line 26 of file game\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void battle_for_rokugan::Game::addPlayer (QString name, \fBClanType\fP clan = \fC\fBClanType::None\fP\fP)"
+
+.PP
+Definition at line 34 of file game\&.cpp\&.
+.SS "bool battle_for_rokugan::Game::checkIsCanStart ()\fC [private]\fP"
+check pregame component, if smth not fill full return value (emit) need for button start battle in interface
+.PP
+Definition at line 113 of file game\&.cpp\&.
+.SS "void battle_for_rokugan::Game::clear ()\fC [private]\fP"
+
+.PP
+Definition at line 78 of file game\&.cpp\&.
+.SS "void battle_for_rokugan::Game::init ()"
+
+.PP
+Definition at line 98 of file game\&.cpp\&.
+.SS "void battle_for_rokugan::Game::isCanStartChanged (bool)\fC [signal]\fP"
+
+.SS "void battle_for_rokugan::Game::reinit ()"
+
+.PP
+Definition at line 138 of file game\&.cpp\&.
+.SS "void battle_for_rokugan::Game::removePlayer (\fBClanType\fP clan)"
+
+.PP
+Definition at line 69 of file game\&.cpp\&.
+.SS "void battle_for_rokugan::Game::secretObjectiveAdded ()\fC [signal]\fP"
+
+.SS "void battle_for_rokugan::Game::start ()"
+
+.PP
+Definition at line 144 of file game\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBhandler::Battle\fP* battle_for_rokugan::Game::m_battle\fC [private]\fP"
+
+.PP
+Definition at line 37 of file game\&.h\&.
+.SS "object::CardList battle_for_rokugan::Game::m_cardPocket\fC [private]\fP"
+
+.PP
+Definition at line 33 of file game\&.h\&.
+.SS "\fBkarta::Map\fP* battle_for_rokugan::Game::m_map\fC [private]\fP"
+
+.PP
+Definition at line 27 of file game\&.h\&.
+.SS "object::PlayerList battle_for_rokugan::Game::m_playerList\fC [private]\fP"
+
+.PP
+Definition at line 34 of file game\&.h\&.
+.SS "object::SecretObjectiveList battle_for_rokugan::Game::m_secretObjectiveList\fC [private]\fP"
+
+.PP
+Definition at line 35 of file game\&.h\&.
+.SS "\fBhandler::Stats\fP* battle_for_rokugan::Game::m_stats\fC [private]\fP"
+
+.PP
+Definition at line 36 of file game\&.h\&.
+.SS "\fBhandler::Turn\fP* battle_for_rokugan::Game::m_turns\fC [private]\fP"
+
+.PP
+Definition at line 28 of file game\&.h\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool battle_for_rokugan::Game::isCanStart\fC [read]\fP"
+
+.PP
+Definition at line 9 of file game\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

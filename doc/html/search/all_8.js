@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['init_110',['init',['../da/dec/classbattle__for__rokugan_1_1Game.html#ab7ba79efcaa6a31a424a3c988173034a',1,'battle_for_rokugan::Game']]],
+  ['initiativecrab_111',['InitiativeCrab',['../d5/de6/namespacebattle__for__rokugan.html#a1c715afe8df6a245a940edb880635180a7d1610db4075084db8bf73a54f551a2d',1,'battle_for_rokugan']]],
+  ['initiativecrane_112',['InitiativeCrane',['../d5/de6/namespacebattle__for__rokugan.html#a1c715afe8df6a245a940edb880635180a57bffa1ef2754573e08455bc4e4df415',1,'battle_for_rokugan']]],
+  ['initiativedragon_113',['InitiativeDragon',['../d5/de6/namespacebattle__for__rokugan.html#a1c715afe8df6a245a940edb880635180adc69a282264241e28eedd2b3e5fd071a',1,'battle_for_rokugan']]],
+  ['initiativelion_114',['InitiativeLion',['../d5/de6/namespacebattle__for__rokugan.html#a1c715afe8df6a245a940edb880635180ac9c00c3685c4a6799886c2d302d96a7e',1,'battle_for_rokugan']]],
+  ['initiativephoenix_115',['InitiativePhoenix',['../d5/de6/namespacebattle__for__rokugan.html#a1c715afe8df6a245a940edb880635180a683c85e83f0c6d157852cfdbd13d8cb8',1,'battle_for_rokugan']]],
+  ['initiativescorpion_116',['InitiativeScorpion',['../d5/de6/namespacebattle__for__rokugan.html#a1c715afe8df6a245a940edb880635180ae317419a4a9f9131ff9ee48e2f073033',1,'battle_for_rokugan']]],
+  ['initiativeunicorn_117',['InitiativeUnicorn',['../d5/de6/namespacebattle__for__rokugan.html#a1c715afe8df6a245a940edb880635180ac9969f6c3ee1f7f45e5b14cdee2c53fb',1,'battle_for_rokugan']]],
+  ['iscanstart_118',['isCanStart',['../da/dec/classbattle__for__rokugan_1_1Game.html#a3456664a332bb538c474845cc66768e8',1,'battle_for_rokugan::Game']]],
+  ['iscanstartchanged_119',['isCanStartChanged',['../da/dec/classbattle__for__rokugan_1_1Game.html#af929137b3498860863ff56955bb450a3',1,'battle_for_rokugan::Game']]],
+  ['isinitiative_120',['isInitiative',['../d6/dea/classbattle__for__rokugan_1_1object_1_1Card.html#aeeed313b1373314f2416688208e83b3a',1,'battle_for_rokugan::object::Card']]],
+  ['islands_121',['Islands',['../d5/de6/namespacebattle__for__rokugan.html#a8a33a7daec429639341c39a880af29a8a81e271c0609b755a9f4b460150f4fc01',1,'battle_for_rokugan']]],
+  ['ison_122',['isOn',['../d1/d44/classbattle__for__rokugan_1_1token_1_1Control.html#ad411602a3de27de77120fe8c7ea4f833',1,'battle_for_rokugan::token::Control']]],
+  ['isshadow_123',['isShadow',['../d1/d50/classbattle__for__rokugan_1_1karta_1_1Territory.html#a431dac1840411e3056d29c129bab9326',1,'battle_for_rokugan::karta::Territory']]],
+  ['isshadowprovince_124',['isShadowProvince',['../d8/d40/classbattle__for__rokugan_1_1karta_1_1Province.html#a5a799c353a46eaad01fc735646099a5f',1,'battle_for_rokugan::karta::Province']]],
+  ['isshow_125',['isShow',['../da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#a0cf455475cde8687389ec76fe70f26bd',1,'battle_for_rokugan::token::Combat']]],
+  ['isterritory_126',['isTerritory',['../d6/dea/classbattle__for__rokugan_1_1object_1_1Card.html#a6c8b165dd2273f5cf9374f91f849a3b9',1,'battle_for_rokugan::object::Card']]],
+  ['isused_127',['isUsed',['../d6/dea/classbattle__for__rokugan_1_1object_1_1Card.html#a0202437aab20b66c279a0bf9cdfb0006',1,'battle_for_rokugan::object::Card']]]
+];

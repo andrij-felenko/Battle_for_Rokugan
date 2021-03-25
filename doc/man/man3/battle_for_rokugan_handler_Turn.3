@@ -1,0 +1,200 @@
+.TH "battle_for_rokugan::handler::Turn" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::handler::Turn
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <turn\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBgameFinished\fP ()"
+.br
+.ti -1c
+.RI "void \fBturnPlacedFinished\fP ()"
+.br
+.ti -1c
+.RI "void \fBturnChanged\fP (int \fBturn\fP)"
+.br
+.ti -1c
+.RI "void \fBpositionChanged\fP (int \fBposition\fP)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTurn\fP (\fBStats\fP *stats, QObject *parent)"
+.br
+.ti -1c
+.RI "void \fBnextTurn\fP ()"
+.br
+.ti -1c
+.RI "void \fBreset\fP (object::PlayerList list)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "int \fBturn\fP () const"
+.br
+.ti -1c
+.RI "int \fBposition\fP () const"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBturn\fP"
+.br
+.ti -1c
+.RI "int \fBposition\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClanType\fP \fBgetCurrentFirstPlayer\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateTurnQueue\fP ()"
+.br
+.ti -1c
+.RI "void \fBnextPosition\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBm_turn\fP"
+.br
+.ti -1c
+.RI "int \fBm_subTurnLeft\fP"
+.br
+.ti -1c
+.RI "int \fBm_position\fP"
+.br
+.ti -1c
+.RI "\fBPhase\fP \fBm_phase\fP"
+.br
+.ti -1c
+.RI "\fBCardTypeList\fP \fBm_firstList\fP"
+.br
+.ti -1c
+.RI "object::PlayerList \fBm_playerList\fP"
+.br
+.ti -1c
+.RI "\fBhandler::Stats\fP * \fBm_stats\fP"
+.br
+.ti -1c
+.RI "\fBobject::Card\fP * \fBm_firstCard\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file turn\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::handler::Turn::Turn (\fBStats\fP * stats, QObject * parent)"
+
+.PP
+Definition at line 9 of file turn\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void battle_for_rokugan::handler::Turn::clear ()"
+
+.PP
+Definition at line 54 of file turn\&.cpp\&.
+.SS "void battle_for_rokugan::handler::Turn::gameFinished ()\fC [signal]\fP"
+
+.SS "\fBbfr::ClanType\fP battle_for_rokugan::handler::Turn::getCurrentFirstPlayer ()\fC [private]\fP"
+
+.PP
+Definition at line 59 of file turn\&.cpp\&.
+.SS "void battle_for_rokugan::handler::Turn::nextPosition ()\fC [private]\fP"
+
+.PP
+Definition at line 136 of file turn\&.cpp\&.
+.SS "void battle_for_rokugan::handler::Turn::nextTurn ()"
+
+.PP
+Definition at line 16 of file turn\&.cpp\&.
+.SS "int battle_for_rokugan::handler::Turn::position () const\fC [inline]\fP"
+
+.PP
+Definition at line 19 of file turn\&.h\&.
+.SS "void battle_for_rokugan::handler::Turn::positionChanged (int position)\fC [signal]\fP"
+
+.SS "void battle_for_rokugan::handler::Turn::reset (object::PlayerList list)"
+
+.PP
+Definition at line 23 of file turn\&.cpp\&.
+.SS "int battle_for_rokugan::handler::Turn::turn () const\fC [inline]\fP"
+
+.PP
+Definition at line 18 of file turn\&.h\&.
+.SS "void battle_for_rokugan::handler::Turn::turnChanged (int turn)\fC [signal]\fP"
+
+.SS "void battle_for_rokugan::handler::Turn::turnPlacedFinished ()\fC [signal]\fP"
+
+.SS "void battle_for_rokugan::handler::Turn::updateTurnQueue ()\fC [private]\fP"
+
+.PP
+Definition at line 103 of file turn\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBobject::Card\fP* battle_for_rokugan::handler::Turn::m_firstCard\fC [private]\fP"
+
+.PP
+Definition at line 41 of file turn\&.h\&.
+.SS "\fBCardTypeList\fP battle_for_rokugan::handler::Turn::m_firstList\fC [private]\fP"
+
+.PP
+Definition at line 38 of file turn\&.h\&.
+.SS "\fBPhase\fP battle_for_rokugan::handler::Turn::m_phase\fC [private]\fP"
+
+.PP
+Definition at line 36 of file turn\&.h\&.
+.SS "object::PlayerList battle_for_rokugan::handler::Turn::m_playerList\fC [private]\fP"
+
+.PP
+Definition at line 39 of file turn\&.h\&.
+.SS "int battle_for_rokugan::handler::Turn::m_position\fC [private]\fP"
+
+.PP
+Definition at line 35 of file turn\&.h\&.
+.SS "\fBhandler::Stats\fP* battle_for_rokugan::handler::Turn::m_stats\fC [private]\fP"
+
+.PP
+Definition at line 40 of file turn\&.h\&.
+.SS "int battle_for_rokugan::handler::Turn::m_subTurnLeft\fC [private]\fP"
+
+.PP
+Definition at line 34 of file turn\&.h\&.
+.SS "int battle_for_rokugan::handler::Turn::m_turn\fC [private]\fP"
+
+.PP
+Definition at line 33 of file turn\&.h\&.
+.SH "Property Documentation"
+.PP 
+.SS "int battle_for_rokugan::handler::Turn::position\fC [read]\fP"
+
+.PP
+Definition at line 10 of file turn\&.h\&.
+.SS "int battle_for_rokugan::handler::Turn::turn\fC [read]\fP"
+
+.PP
+Definition at line 9 of file turn\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

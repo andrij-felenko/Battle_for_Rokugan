@@ -1,0 +1,502 @@
+\hypertarget{classbattle__for__rokugan_1_1object_1_1Player}{}\doxysection{battle\+\_\+for\+\_\+rokugan\+::object\+::Player Class Reference}
+\label{classbattle__for__rokugan_1_1object_1_1Player}\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+Inheritance diagram for battle\+\_\+for\+\_\+rokugan\+::object\+::Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dd/df1/classbattle__for__rokugan_1_1object_1_1Player}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_aa210321913f21292c9064655f1569b70}{secret\+Objective\+Picked}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_af8c27c88c19d8bc41e3ff6b944fe2b70}{start\+Ctrl\+Token\+Placed}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a3ca8f0b5198093fc8cfb5eee2cc50309}{combat\+Token\+Placed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a3b3b3ac320f1c534692bf072aac88af4}{Player}} (Q\+String \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_afbd0dac6e144c78784e6bc6725e114da}{name}}, \mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}} \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a44267ca530e48a336bcc712f854c21e2}{clan}}, \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map}{karta\+::\+Map}} $\ast$map, \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn}{handler\+::\+Turn}} $\ast$turns, \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats}{handler\+::\+Stats}} $\ast$stats, \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1SecretObjective}{Secret\+Objective}} $\ast$secret1, \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1SecretObjective}{Secret\+Objective}} $\ast$secret2, Q\+Object $\ast$parent)
+\item 
+Q\+String \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_afbd0dac6e144c78784e6bc6725e114da}{name}} () const
+\item 
+const \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Clan}{Clan}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a44267ca530e48a336bcc712f854c21e2}{clan}} () const
+\item 
+const \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1SecretObjective}{Secret\+Objective}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a3928a0900162755539af6a5b75539a55}{secret\+Objective}} () const
+\item 
+\mbox{\hyperlink{bfrLib__pre_8h_a88275d72684a99779efa82a372db701e}{Error\+Msg}} \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_aff7ceeed0ee8b4ca162d8404827da896}{pick\+Secret\+Objective}} (\mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}} secret)
+\item 
+unsigned \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a4bf16e16c111ebe3c580ee75851bd59c}{territory\+Card\+Count}} () const
+\item 
+unsigned \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a9ce9a8e2b7cf8a1a2f90aa52a2eb749e}{province\+Count}} () const
+\item 
+unsigned \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a34d664fb4010e4f0b18ff0214b648a4c}{control\+Token\+Count}} () const
+\item 
+unsigned \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_ac9cf7054c37458d36e8fcb212fe7c957}{points\+Of\+Honor}} () const
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_ad241613b1909bee15c3939145acdef9d}{take\+Province}} (\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Province}{karta\+::\+Province}} $\ast$province)
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a9e2b2fbf1cea37c8a2d416d7c674ed16}{untake\+Province}} (\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Province}{karta\+::\+Province}} $\ast$province)
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a26d61ea5c4d6d983240f060f197d8f84}{lost\+Province}} (\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Province}{karta\+::\+Province}} $\ast$province)
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_ade7af68576fa25656c5f9bb3e3b014ba}{lost\+Province}} (\mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player}{Player}} $\ast$player)
+\item 
+int \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_aa16f7d2efdcc541c4981f1babf0ac888}{position}} () const
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_ab529211202bdd946454c37c5fd0d787a}{set\+Position}} (int \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_aa16f7d2efdcc541c4981f1babf0ac888}{position}})
+\item 
+int \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a065598eb5319cebd722233232d52c76b}{queue}} () const
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_aebf3101953ec3eb117e51795d04b3031}{set\+Queue}} (int \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a065598eb5319cebd722233232d52c76b}{queue}})
+\item 
+bool \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_ae0616c02ba467c1574a09a4fc3cff829}{contains}} (\mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}} type) const
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a32408c9ca30bb5de97bb0200ddf34272}{add\+First\+Card}} (\mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Card}{Card}} $\ast$first\+Card)
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_af8bee06175a00230f013741a49ab1810}{remove\+First\+Card}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a682025f0dc9ab152a0d42036cedca887}{set\+Start\+Ctrl\+Token}} (int size)
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_ab03a3b308fa9d4e4ca426d82e3451818}{update\+Combat\+Token\+In\+Assets}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a2ecccdf4aaacfccaf3a81abd5ed2c7f5}{add\+Token\+To\+Reserve}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369}{Combat\+Token\+Type}} type, unsigned char count=1, unsigned char value=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Clan}{Clan}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a249b66e9bc69473c02f595be31bb6308}{m\+\_\+clan}}
+\item 
+Q\+String \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a06335603d7ebabb7a6f84005ec9d4dfc}{m\+\_\+name}}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1SecretObjective}{Secret\+Objective}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_af8f09864be957ff24d47cb8912daec4d}{m\+\_\+secret\+Objective1}}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1SecretObjective}{Secret\+Objective}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a8ca083d3599d013a77c979d50299fee1}{m\+\_\+secret\+Objective2}}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map}{karta\+::\+Map}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_aedfbf98a968e019d010a93ef7593e02f}{m\+\_\+map}}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats}{handler\+::\+Stats}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a7b7095a722cdf308a8422a95e9173071}{m\+\_\+stats}}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn}{handler\+::\+Turn}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a36513a699a829aab0a9165248ca70bd1}{m\+\_\+turns}}
+\item 
+int \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a9b4784a6d3f3aa5015a38bfb6b6fa168}{m\+\_\+position}}
+\item 
+int \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a089863426c59bd9e82f94c9dae65f763}{m\+\_\+queue}}
+\item 
+int \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_ae12ea4775f582d9032af7dda4ee523dc}{m\+\_\+start\+Ctrl\+Token}}
+\item 
+karta\+::\+Province\+List \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a34baba81b8c178c775d2179b145f9078}{m\+\_\+province\+List}}
+\item 
+Card\+List \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_aea0093ccc5c71027b3aa93d858ec9ec6}{m\+\_\+card\+List}}
+\item 
+token\+::\+Combat\+List \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player_a6acacab9965362f671e716277691749d}{m\+\_\+token\+List}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 6 of file player.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a3b3b3ac320f1c534692bf072aac88af4}\label{classbattle__for__rokugan_1_1object_1_1Player_a3b3b3ac320f1c534692bf072aac88af4}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!Player@{Player}}
+\index{Player@{Player}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::\+Player (\begin{DoxyParamCaption}\item[{Q\+String}]{name,  }\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}}}]{clan,  }\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map}{karta\+::\+Map}} $\ast$}]{map,  }\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn}{handler\+::\+Turn}} $\ast$}]{turns,  }\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats}{handler\+::\+Stats}} $\ast$}]{stats,  }\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1SecretObjective}{Secret\+Objective}} $\ast$}]{secret1,  }\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1SecretObjective}{Secret\+Objective}} $\ast$}]{secret2,  }\item[{Q\+Object $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file player.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a32408c9ca30bb5de97bb0200ddf34272}\label{classbattle__for__rokugan_1_1object_1_1Player_a32408c9ca30bb5de97bb0200ddf34272}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!addFirstCard@{addFirstCard}}
+\index{addFirstCard@{addFirstCard}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{addFirstCard()}{addFirstCard()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::add\+First\+Card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Card}{Card}} $\ast$}]{first\+Card }\end{DoxyParamCaption})}
+
+
+
+Definition at line 179 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a2ecccdf4aaacfccaf3a81abd5ed2c7f5}\label{classbattle__for__rokugan_1_1object_1_1Player_a2ecccdf4aaacfccaf3a81abd5ed2c7f5}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!addTokenToReserve@{addTokenToReserve}}
+\index{addTokenToReserve@{addTokenToReserve}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{addTokenToReserve()}{addTokenToReserve()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::add\+Token\+To\+Reserve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369}{Combat\+Token\+Type}}}]{type,  }\item[{unsigned char}]{count = {\ttfamily 1},  }\item[{unsigned char}]{value = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 230 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a44267ca530e48a336bcc712f854c21e2}\label{classbattle__for__rokugan_1_1object_1_1Player_a44267ca530e48a336bcc712f854c21e2}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!clan@{clan}}
+\index{clan@{clan}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{clan()}{clan()}}
+{\footnotesize\ttfamily const bfr\+::object\+::\+Clan $\ast$ battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::clan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 65 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a3ca8f0b5198093fc8cfb5eee2cc50309}\label{classbattle__for__rokugan_1_1object_1_1Player_a3ca8f0b5198093fc8cfb5eee2cc50309}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!combatTokenPlaced@{combatTokenPlaced}}
+\index{combatTokenPlaced@{combatTokenPlaced}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{combatTokenPlaced}{combatTokenPlaced}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::combat\+Token\+Placed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_ae0616c02ba467c1574a09a4fc3cff829}\label{classbattle__for__rokugan_1_1object_1_1Player_ae0616c02ba467c1574a09a4fc3cff829}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!contains@{contains}}
+\index{contains@{contains}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::contains (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}}}]{type }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 174 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a34d664fb4010e4f0b18ff0214b648a4c}\label{classbattle__for__rokugan_1_1object_1_1Player_a34d664fb4010e4f0b18ff0214b648a4c}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!controlTokenCount@{controlTokenCount}}
+\index{controlTokenCount@{controlTokenCount}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{controlTokenCount()}{controlTokenCount()}}
+{\footnotesize\ttfamily unsigned battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::control\+Token\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 100 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a26d61ea5c4d6d983240f060f197d8f84}\label{classbattle__for__rokugan_1_1object_1_1Player_a26d61ea5c4d6d983240f060f197d8f84}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!lostProvince@{lostProvince}}
+\index{lostProvince@{lostProvince}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{lostProvince()}{lostProvince()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::lost\+Province (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Province}{karta\+::\+Province}} $\ast$}]{province }\end{DoxyParamCaption})}
+
+
+
+Definition at line 155 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_ade7af68576fa25656c5f9bb3e3b014ba}\label{classbattle__for__rokugan_1_1object_1_1Player_ade7af68576fa25656c5f9bb3e3b014ba}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!lostProvince@{lostProvince}}
+\index{lostProvince@{lostProvince}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{lostProvince()}{lostProvince()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::lost\+Province (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Player}{Player}} $\ast$}]{player }\end{DoxyParamCaption})}
+
+
+
+Definition at line 160 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_afbd0dac6e144c78784e6bc6725e114da}\label{classbattle__for__rokugan_1_1object_1_1Player_afbd0dac6e144c78784e6bc6725e114da}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!name@{name}}
+\index{name@{name}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily Q\+String battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 60 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_aff7ceeed0ee8b4ca162d8404827da896}\label{classbattle__for__rokugan_1_1object_1_1Player_aff7ceeed0ee8b4ca162d8404827da896}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!pickSecretObjective@{pickSecretObjective}}
+\index{pickSecretObjective@{pickSecretObjective}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{pickSecretObjective()}{pickSecretObjective()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bfrLib__pre_8h_a88275d72684a99779efa82a372db701e}{Error\+Msg}} battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::pick\+Secret\+Objective (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}}}]{secret }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_ac9cf7054c37458d36e8fcb212fe7c957}\label{classbattle__for__rokugan_1_1object_1_1Player_ac9cf7054c37458d36e8fcb212fe7c957}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!pointsOfHonor@{pointsOfHonor}}
+\index{pointsOfHonor@{pointsOfHonor}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{pointsOfHonor()}{pointsOfHonor()}}
+{\footnotesize\ttfamily unsigned battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::points\+Of\+Honor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 108 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_aa16f7d2efdcc541c4981f1babf0ac888}\label{classbattle__for__rokugan_1_1object_1_1Player_aa16f7d2efdcc541c4981f1babf0ac888}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!position@{position}}
+\index{position@{position}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{position()}{position()}}
+{\footnotesize\ttfamily int battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 121 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a9ce9a8e2b7cf8a1a2f90aa52a2eb749e}\label{classbattle__for__rokugan_1_1object_1_1Player_a9ce9a8e2b7cf8a1a2f90aa52a2eb749e}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!provinceCount@{provinceCount}}
+\index{provinceCount@{provinceCount}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{provinceCount()}{provinceCount()}}
+{\footnotesize\ttfamily unsigned battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::province\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 95 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a065598eb5319cebd722233232d52c76b}\label{classbattle__for__rokugan_1_1object_1_1Player_a065598eb5319cebd722233232d52c76b}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!queue@{queue}}
+\index{queue@{queue}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{queue()}{queue()}}
+{\footnotesize\ttfamily int battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 131 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_af8bee06175a00230f013741a49ab1810}\label{classbattle__for__rokugan_1_1object_1_1Player_af8bee06175a00230f013741a49ab1810}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!removeFirstCard@{removeFirstCard}}
+\index{removeFirstCard@{removeFirstCard}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{removeFirstCard()}{removeFirstCard()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::remove\+First\+Card (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 185 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a3928a0900162755539af6a5b75539a55}\label{classbattle__for__rokugan_1_1object_1_1Player_a3928a0900162755539af6a5b75539a55}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!secretObjective@{secretObjective}}
+\index{secretObjective@{secretObjective}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{secretObjective()}{secretObjective()}}
+{\footnotesize\ttfamily const bfr\+::object\+::\+Secret\+Objective $\ast$ battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::secret\+Objective (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 219 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_aa210321913f21292c9064655f1569b70}\label{classbattle__for__rokugan_1_1object_1_1Player_aa210321913f21292c9064655f1569b70}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!secretObjectivePicked@{secretObjectivePicked}}
+\index{secretObjectivePicked@{secretObjectivePicked}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{secretObjectivePicked}{secretObjectivePicked}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::secret\+Objective\+Picked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_ab529211202bdd946454c37c5fd0d787a}\label{classbattle__for__rokugan_1_1object_1_1Player_ab529211202bdd946454c37c5fd0d787a}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::set\+Position (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption})}
+
+
+
+Definition at line 126 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_aebf3101953ec3eb117e51795d04b3031}\label{classbattle__for__rokugan_1_1object_1_1Player_aebf3101953ec3eb117e51795d04b3031}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!setQueue@{setQueue}}
+\index{setQueue@{setQueue}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{setQueue()}{setQueue()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::set\+Queue (\begin{DoxyParamCaption}\item[{int}]{queue }\end{DoxyParamCaption})}
+
+
+
+Definition at line 136 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a682025f0dc9ab152a0d42036cedca887}\label{classbattle__for__rokugan_1_1object_1_1Player_a682025f0dc9ab152a0d42036cedca887}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!setStartCtrlToken@{setStartCtrlToken}}
+\index{setStartCtrlToken@{setStartCtrlToken}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{setStartCtrlToken()}{setStartCtrlToken()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::set\+Start\+Ctrl\+Token (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 197 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_af8c27c88c19d8bc41e3ff6b944fe2b70}\label{classbattle__for__rokugan_1_1object_1_1Player_af8c27c88c19d8bc41e3ff6b944fe2b70}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!startCtrlTokenPlaced@{startCtrlTokenPlaced}}
+\index{startCtrlTokenPlaced@{startCtrlTokenPlaced}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{startCtrlTokenPlaced}{startCtrlTokenPlaced}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::start\+Ctrl\+Token\+Placed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_ad241613b1909bee15c3939145acdef9d}\label{classbattle__for__rokugan_1_1object_1_1Player_ad241613b1909bee15c3939145acdef9d}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!takeProvince@{takeProvince}}
+\index{takeProvince@{takeProvince}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{takeProvince()}{takeProvince()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::take\+Province (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Province}{karta\+::\+Province}} $\ast$}]{province }\end{DoxyParamCaption})}
+
+
+
+Definition at line 141 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a4bf16e16c111ebe3c580ee75851bd59c}\label{classbattle__for__rokugan_1_1object_1_1Player_a4bf16e16c111ebe3c580ee75851bd59c}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!territoryCardCount@{territoryCardCount}}
+\index{territoryCardCount@{territoryCardCount}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{territoryCardCount()}{territoryCardCount()}}
+{\footnotesize\ttfamily unsigned battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::territory\+Card\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 86 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a9e2b2fbf1cea37c8a2d416d7c674ed16}\label{classbattle__for__rokugan_1_1object_1_1Player_a9e2b2fbf1cea37c8a2d416d7c674ed16}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!untakeProvince@{untakeProvince}}
+\index{untakeProvince@{untakeProvince}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{untakeProvince()}{untakeProvince()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::untake\+Province (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Province}{karta\+::\+Province}} $\ast$}]{province }\end{DoxyParamCaption})}
+
+
+
+Definition at line 169 of file player.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_ab03a3b308fa9d4e4ca426d82e3451818}\label{classbattle__for__rokugan_1_1object_1_1Player_ab03a3b308fa9d4e4ca426d82e3451818}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!updateCombatTokenInAssets@{updateCombatTokenInAssets}}
+\index{updateCombatTokenInAssets@{updateCombatTokenInAssets}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{updateCombatTokenInAssets()}{updateCombatTokenInAssets()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::update\+Combat\+Token\+In\+Assets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 202 of file player.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_aea0093ccc5c71027b3aa93d858ec9ec6}\label{classbattle__for__rokugan_1_1object_1_1Player_aea0093ccc5c71027b3aa93d858ec9ec6}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_cardList@{m\_cardList}}
+\index{m\_cardList@{m\_cardList}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_cardList}{m\_cardList}}
+{\footnotesize\ttfamily Card\+List battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+card\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 61 of file player.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a249b66e9bc69473c02f595be31bb6308}\label{classbattle__for__rokugan_1_1object_1_1Player_a249b66e9bc69473c02f595be31bb6308}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_clan@{m\_clan}}
+\index{m\_clan@{m\_clan}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_clan}{m\_clan}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1Clan}{Clan}}$\ast$ battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+clan\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 48 of file player.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_aedfbf98a968e019d010a93ef7593e02f}\label{classbattle__for__rokugan_1_1object_1_1Player_aedfbf98a968e019d010a93ef7593e02f}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_map@{m\_map}}
+\index{m\_map@{m\_map}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_map}{m\_map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map}{karta\+::\+Map}}$\ast$ battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 52 of file player.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a06335603d7ebabb7a6f84005ec9d4dfc}\label{classbattle__for__rokugan_1_1object_1_1Player_a06335603d7ebabb7a6f84005ec9d4dfc}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_name@{m\_name}}
+\index{m\_name@{m\_name}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_name}{m\_name}}
+{\footnotesize\ttfamily Q\+String battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 49 of file player.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a9b4784a6d3f3aa5015a38bfb6b6fa168}\label{classbattle__for__rokugan_1_1object_1_1Player_a9b4784a6d3f3aa5015a38bfb6b6fa168}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily int battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 55 of file player.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a34baba81b8c178c775d2179b145f9078}\label{classbattle__for__rokugan_1_1object_1_1Player_a34baba81b8c178c775d2179b145f9078}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_provinceList@{m\_provinceList}}
+\index{m\_provinceList@{m\_provinceList}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_provinceList}{m\_provinceList}}
+{\footnotesize\ttfamily karta\+::\+Province\+List battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+province\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file player.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a089863426c59bd9e82f94c9dae65f763}\label{classbattle__for__rokugan_1_1object_1_1Player_a089863426c59bd9e82f94c9dae65f763}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_queue@{m\_queue}}
+\index{m\_queue@{m\_queue}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_queue}{m\_queue}}
+{\footnotesize\ttfamily int battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+queue\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 56 of file player.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_af8f09864be957ff24d47cb8912daec4d}\label{classbattle__for__rokugan_1_1object_1_1Player_af8f09864be957ff24d47cb8912daec4d}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_secretObjective1@{m\_secretObjective1}}
+\index{m\_secretObjective1@{m\_secretObjective1}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_secretObjective1}{m\_secretObjective1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1SecretObjective}{Secret\+Objective}}$\ast$ battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+secret\+Objective1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 50 of file player.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a8ca083d3599d013a77c979d50299fee1}\label{classbattle__for__rokugan_1_1object_1_1Player_a8ca083d3599d013a77c979d50299fee1}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_secretObjective2@{m\_secretObjective2}}
+\index{m\_secretObjective2@{m\_secretObjective2}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_secretObjective2}{m\_secretObjective2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1SecretObjective}{Secret\+Objective}}$\ast$ battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+secret\+Objective2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 51 of file player.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_ae12ea4775f582d9032af7dda4ee523dc}\label{classbattle__for__rokugan_1_1object_1_1Player_ae12ea4775f582d9032af7dda4ee523dc}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_startCtrlToken@{m\_startCtrlToken}}
+\index{m\_startCtrlToken@{m\_startCtrlToken}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_startCtrlToken}{m\_startCtrlToken}}
+{\footnotesize\ttfamily int battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+start\+Ctrl\+Token\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 57 of file player.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a7b7095a722cdf308a8422a95e9173071}\label{classbattle__for__rokugan_1_1object_1_1Player_a7b7095a722cdf308a8422a95e9173071}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_stats@{m\_stats}}
+\index{m\_stats@{m\_stats}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_stats}{m\_stats}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats}{handler\+::\+Stats}}$\ast$ battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+stats\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 53 of file player.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a6acacab9965362f671e716277691749d}\label{classbattle__for__rokugan_1_1object_1_1Player_a6acacab9965362f671e716277691749d}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_tokenList@{m\_tokenList}}
+\index{m\_tokenList@{m\_tokenList}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_tokenList}{m\_tokenList}}
+{\footnotesize\ttfamily token\+::\+Combat\+List battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+token\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 62 of file player.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1object_1_1Player_a36513a699a829aab0a9165248ca70bd1}\label{classbattle__for__rokugan_1_1object_1_1Player_a36513a699a829aab0a9165248ca70bd1}} 
+\index{battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}!m\_turns@{m\_turns}}
+\index{m\_turns@{m\_turns}!battle\_for\_rokugan::object::Player@{battle\_for\_rokugan::object::Player}}
+\doxysubsubsection{\texorpdfstring{m\_turns}{m\_turns}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Turn}{handler\+::\+Turn}}$\ast$ battle\+\_\+for\+\_\+rokugan\+::object\+::\+Player\+::m\+\_\+turns\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 54 of file player.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+bfr/include/lib\+\_\+bfr/object/\mbox{\hyperlink{player_8h}{player.\+h}}\item 
+lib\+\_\+bfr/src/object/\mbox{\hyperlink{player_8cpp}{player.\+cpp}}\end{DoxyCompactItemize}

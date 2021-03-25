@@ -1,0 +1,222 @@
+.TH "battle_for_rokugan::karta::Map" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::karta::Map
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <map\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBallTokenOpened\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowCombatTokenChanged\fP (bool \fBshowCombatToken\fP)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMap\fP (QObject *parent)"
+.br
+.ti -1c
+.RI "\fBTerritory\fP * \fBoperator[]\fP (const \fBTerritoryType\fP type) const"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "void \fBopenTokens\fP ()"
+.br
+.ti -1c
+.RI "void \fBnewTurn\fP ()"
+.br
+.ti -1c
+.RI "bool \fBshowCombatToken\fP () const"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBshowCombatToken\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBaddBorder\fP (\fBTerritoryType\fP type, \fBuchar_v\fP v)"
+.br
+.ti -1c
+.RI "bool \fBaddBorder\fP (\fBTerritoryType\fP type1, unsigned char s1, \fBTerritoryType\fP type2, unsigned char s2=0)"
+.br
+.ti -1c
+.RI "bool \fBaddBorder\fP (\fBTerritoryType\fP type1, \fBuchar_v\fP s1, \fBTerritoryType\fP type2, \fBuchar_v\fP s2)"
+.br
+.ti -1c
+.RI "bool \fBaddBorder\fP (\fBTerritoryType\fP type, \fBuchar_pair_v\fP v)"
+.br
+.ti -1c
+.RI "bool \fBaddBorder\fP (\fBTerritoryType\fP type1, \fBTerritoryType\fP type2, \fBuchar_pair_v\fP v)"
+.br
+.ti -1c
+.RI "\fBProvince\fP * \fBfindProvince\fP (\fBTerritoryType\fP type, unsigned char stars) const"
+.br
+.ti -1c
+.RI "\fBTerritory\fP * \fBfindTerritory\fP (\fBTerritoryType\fP type) const"
+.br
+.ti -1c
+.RI "void \fBaddLandBorder\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddNavyBorder\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetShowCombatToken\fP (bool \fBshowCombatToken\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "TerritoryList \fBm_territoryList\fP"
+.br
+.ti -1c
+.RI "BorderList \fBm_listBorders\fP"
+.br
+.ti -1c
+.RI "bool \fBm_showCombatToken\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBGame\fP"
+.br
+.ti -1c
+.RI "class \fBhandler::Battle\fP"
+.br
+.ti -1c
+.RI "class \fBobject::SecretObjective\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file map\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::karta::Map::Map (QObject * parent)"
+
+.PP
+Definition at line 7 of file map\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool battle_for_rokugan::karta::Map::addBorder (\fBTerritoryType\fP type, \fBuchar_pair_v\fP v)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 86 of file map\&.cpp\&.
+.SS "bool battle_for_rokugan::karta::Map::addBorder (\fBTerritoryType\fP type, \fBuchar_v\fP v)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 45 of file map\&.cpp\&.
+.SS "bool battle_for_rokugan::karta::Map::addBorder (\fBTerritoryType\fP type1, \fBTerritoryType\fP type2, \fBuchar_pair_v\fP v)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 91 of file map\&.cpp\&.
+.SS "bool battle_for_rokugan::karta::Map::addBorder (\fBTerritoryType\fP type1, \fBuchar_v\fP s1, \fBTerritoryType\fP type2, \fBuchar_v\fP s2)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 75 of file map\&.cpp\&.
+.SS "bool battle_for_rokugan::karta::Map::addBorder (\fBTerritoryType\fP type1, unsigned char s1, \fBTerritoryType\fP type2, unsigned char s2 = \fC0\fP)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 61 of file map\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Map::addLandBorder ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 116 of file map\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Map::addNavyBorder ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 151 of file map\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Map::allTokenOpened ()\fC [signal]\fP"
+
+.SS "void battle_for_rokugan::karta::Map::clear ()"
+
+.PP
+Definition at line 25 of file map\&.cpp\&.
+.SS "bfr::karta::Province * battle_for_rokugan::karta::Map::findProvince (\fBTerritoryType\fP type, unsigned char stars) const\fC [private]\fP"
+
+.PP
+Definition at line 100 of file map\&.cpp\&.
+.SS "bfr::karta::Territory * battle_for_rokugan::karta::Map::findTerritory (\fBTerritoryType\fP type) const\fC [private]\fP"
+
+.PP
+Definition at line 108 of file map\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Map::newTurn ()"
+
+.PP
+Definition at line 35 of file map\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Map::openTokens ()"
+
+.PP
+Definition at line 30 of file map\&.cpp\&.
+.SS "bfr::karta::Territory * battle_for_rokugan::karta::Map::operator[] (const \fBTerritoryType\fP type) const"
+
+.PP
+Definition at line 17 of file map\&.cpp\&.
+.SS "void battle_for_rokugan::karta::Map::setShowCombatToken (bool showCombatToken)\fC [private]\fP"
+
+.PP
+Definition at line 163 of file map\&.cpp\&.
+.SS "bool battle_for_rokugan::karta::Map::showCombatToken () const"
+
+.SS "void battle_for_rokugan::karta::Map::showCombatTokenChanged (bool showCombatToken)\fC [signal]\fP"
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBGame\fP\fC [friend]\fP"
+
+.PP
+Definition at line 46 of file map\&.h\&.
+.SS "friend class \fBhandler::Battle\fP\fC [friend]\fP"
+
+.PP
+Definition at line 47 of file map\&.h\&.
+.SS "friend class \fBobject::SecretObjective\fP\fC [friend]\fP"
+
+.PP
+Definition at line 48 of file map\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "BorderList battle_for_rokugan::karta::Map::m_listBorders\fC [private]\fP"
+
+.PP
+Definition at line 27 of file map\&.h\&.
+.SS "bool battle_for_rokugan::karta::Map::m_showCombatToken\fC [private]\fP"
+
+.PP
+Definition at line 28 of file map\&.h\&.
+.SS "TerritoryList battle_for_rokugan::karta::Map::m_territoryList\fC [private]\fP"
+
+.PP
+Definition at line 26 of file map\&.h\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool battle_for_rokugan::karta::Map::showCombatToken\fC [read]\fP"
+
+.PP
+Definition at line 10 of file map\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

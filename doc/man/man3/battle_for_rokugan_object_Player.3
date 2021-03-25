@@ -1,0 +1,308 @@
+.TH "battle_for_rokugan::object::Player" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::object::Player
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <player\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBsecretObjectivePicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBstartCtrlTokenPlaced\fP ()"
+.br
+.ti -1c
+.RI "void \fBcombatTokenPlaced\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlayer\fP (QString \fBname\fP, \fBClanType\fP \fBclan\fP, \fBkarta::Map\fP *map, \fBhandler::Turn\fP *turns, \fBhandler::Stats\fP *stats, \fBSecretObjective\fP *secret1, \fBSecretObjective\fP *secret2, QObject *parent)"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "const \fBClan\fP * \fBclan\fP () const"
+.br
+.ti -1c
+.RI "const \fBSecretObjective\fP * \fBsecretObjective\fP () const"
+.br
+.ti -1c
+.RI "\fBErrorMsg\fP \fBpickSecretObjective\fP (\fBSecretObjectiveType\fP secret)"
+.br
+.ti -1c
+.RI "unsigned \fBterritoryCardCount\fP () const"
+.br
+.ti -1c
+.RI "unsigned \fBprovinceCount\fP () const"
+.br
+.ti -1c
+.RI "unsigned \fBcontrolTokenCount\fP () const"
+.br
+.ti -1c
+.RI "unsigned \fBpointsOfHonor\fP () const"
+.br
+.ti -1c
+.RI "void \fBtakeProvince\fP (\fBkarta::Province\fP *province)"
+.br
+.ti -1c
+.RI "void \fBuntakeProvince\fP (\fBkarta::Province\fP *province)"
+.br
+.ti -1c
+.RI "void \fBlostProvince\fP (\fBkarta::Province\fP *province)"
+.br
+.ti -1c
+.RI "void \fBlostProvince\fP (\fBPlayer\fP *player)"
+.br
+.ti -1c
+.RI "int \fBposition\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPosition\fP (int \fBposition\fP)"
+.br
+.ti -1c
+.RI "int \fBqueue\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetQueue\fP (int \fBqueue\fP)"
+.br
+.ti -1c
+.RI "bool \fBcontains\fP (\fBSecretObjectiveType\fP type) const"
+.br
+.ti -1c
+.RI "void \fBaddFirstCard\fP (\fBCard\fP *firstCard)"
+.br
+.ti -1c
+.RI "void \fBremoveFirstCard\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetStartCtrlToken\fP (int size)"
+.br
+.ti -1c
+.RI "void \fBupdateCombatTokenInAssets\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddTokenToReserve\fP (\fBCombatTokenType\fP type, unsigned char count=1, unsigned char value=0)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBClan\fP * \fBm_clan\fP"
+.br
+.ti -1c
+.RI "QString \fBm_name\fP"
+.br
+.ti -1c
+.RI "\fBSecretObjective\fP * \fBm_secretObjective1\fP"
+.br
+.ti -1c
+.RI "\fBSecretObjective\fP * \fBm_secretObjective2\fP"
+.br
+.ti -1c
+.RI "\fBkarta::Map\fP * \fBm_map\fP"
+.br
+.ti -1c
+.RI "\fBhandler::Stats\fP * \fBm_stats\fP"
+.br
+.ti -1c
+.RI "\fBhandler::Turn\fP * \fBm_turns\fP"
+.br
+.ti -1c
+.RI "int \fBm_position\fP"
+.br
+.ti -1c
+.RI "int \fBm_queue\fP"
+.br
+.ti -1c
+.RI "int \fBm_startCtrlToken\fP"
+.br
+.ti -1c
+.RI "karta::ProvinceList \fBm_provinceList\fP"
+.br
+.ti -1c
+.RI "CardList \fBm_cardList\fP"
+.br
+.ti -1c
+.RI "token::CombatList \fBm_tokenList\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file player\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::object::Player::Player (QString name, \fBClanType\fP clan, \fBkarta::Map\fP * map, \fBhandler::Turn\fP * turns, \fBhandler::Stats\fP * stats, \fBSecretObjective\fP * secret1, \fBSecretObjective\fP * secret2, QObject * parent)"
+
+.PP
+Definition at line 13 of file player\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void battle_for_rokugan::object::Player::addFirstCard (\fBCard\fP * firstCard)"
+
+.PP
+Definition at line 179 of file player\&.cpp\&.
+.SS "void battle_for_rokugan::object::Player::addTokenToReserve (\fBCombatTokenType\fP type, unsigned char count = \fC1\fP, unsigned char value = \fC0\fP)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 230 of file player\&.cpp\&.
+.SS "const bfr::object::Clan * battle_for_rokugan::object::Player::clan () const"
+
+.PP
+Definition at line 65 of file player\&.cpp\&.
+.SS "void battle_for_rokugan::object::Player::combatTokenPlaced ()\fC [signal]\fP"
+
+.SS "bool battle_for_rokugan::object::Player::contains (\fBSecretObjectiveType\fP type) const"
+
+.PP
+Definition at line 174 of file player\&.cpp\&.
+.SS "unsigned battle_for_rokugan::object::Player::controlTokenCount () const"
+
+.PP
+Definition at line 100 of file player\&.cpp\&.
+.SS "void battle_for_rokugan::object::Player::lostProvince (\fBkarta::Province\fP * province)"
+
+.PP
+Definition at line 155 of file player\&.cpp\&.
+.SS "void battle_for_rokugan::object::Player::lostProvince (\fBPlayer\fP * player)"
+
+.PP
+Definition at line 160 of file player\&.cpp\&.
+.SS "QString battle_for_rokugan::object::Player::name () const"
+
+.PP
+Definition at line 60 of file player\&.cpp\&.
+.SS "\fBErrorMsg\fP battle_for_rokugan::object::Player::pickSecretObjective (\fBSecretObjectiveType\fP secret)"
+
+.PP
+Definition at line 70 of file player\&.cpp\&.
+.SS "unsigned battle_for_rokugan::object::Player::pointsOfHonor () const"
+
+.PP
+Definition at line 108 of file player\&.cpp\&.
+.SS "int battle_for_rokugan::object::Player::position () const"
+
+.PP
+Definition at line 121 of file player\&.cpp\&.
+.SS "unsigned battle_for_rokugan::object::Player::provinceCount () const"
+
+.PP
+Definition at line 95 of file player\&.cpp\&.
+.SS "int battle_for_rokugan::object::Player::queue () const"
+
+.PP
+Definition at line 131 of file player\&.cpp\&.
+.SS "void battle_for_rokugan::object::Player::removeFirstCard ()"
+
+.PP
+Definition at line 185 of file player\&.cpp\&.
+.SS "const bfr::object::SecretObjective * battle_for_rokugan::object::Player::secretObjective () const"
+
+.PP
+Definition at line 219 of file player\&.cpp\&.
+.SS "void battle_for_rokugan::object::Player::secretObjectivePicked ()\fC [signal]\fP"
+
+.SS "void battle_for_rokugan::object::Player::setPosition (int position)"
+
+.PP
+Definition at line 126 of file player\&.cpp\&.
+.SS "void battle_for_rokugan::object::Player::setQueue (int queue)"
+
+.PP
+Definition at line 136 of file player\&.cpp\&.
+.SS "void battle_for_rokugan::object::Player::setStartCtrlToken (int size)"
+
+.PP
+Definition at line 197 of file player\&.cpp\&.
+.SS "void battle_for_rokugan::object::Player::startCtrlTokenPlaced ()\fC [signal]\fP"
+
+.SS "void battle_for_rokugan::object::Player::takeProvince (\fBkarta::Province\fP * province)"
+
+.PP
+Definition at line 141 of file player\&.cpp\&.
+.SS "unsigned battle_for_rokugan::object::Player::territoryCardCount () const"
+
+.PP
+Definition at line 86 of file player\&.cpp\&.
+.SS "void battle_for_rokugan::object::Player::untakeProvince (\fBkarta::Province\fP * province)"
+
+.PP
+Definition at line 169 of file player\&.cpp\&.
+.SS "void battle_for_rokugan::object::Player::updateCombatTokenInAssets ()"
+
+.PP
+Definition at line 202 of file player\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "CardList battle_for_rokugan::object::Player::m_cardList\fC [private]\fP"
+
+.PP
+Definition at line 61 of file player\&.h\&.
+.SS "\fBClan\fP* battle_for_rokugan::object::Player::m_clan\fC [private]\fP"
+
+.PP
+Definition at line 48 of file player\&.h\&.
+.SS "\fBkarta::Map\fP* battle_for_rokugan::object::Player::m_map\fC [private]\fP"
+
+.PP
+Definition at line 52 of file player\&.h\&.
+.SS "QString battle_for_rokugan::object::Player::m_name\fC [private]\fP"
+
+.PP
+Definition at line 49 of file player\&.h\&.
+.SS "int battle_for_rokugan::object::Player::m_position\fC [private]\fP"
+
+.PP
+Definition at line 55 of file player\&.h\&.
+.SS "karta::ProvinceList battle_for_rokugan::object::Player::m_provinceList\fC [private]\fP"
+
+.PP
+Definition at line 59 of file player\&.h\&.
+.SS "int battle_for_rokugan::object::Player::m_queue\fC [private]\fP"
+
+.PP
+Definition at line 56 of file player\&.h\&.
+.SS "\fBSecretObjective\fP* battle_for_rokugan::object::Player::m_secretObjective1\fC [private]\fP"
+
+.PP
+Definition at line 50 of file player\&.h\&.
+.SS "\fBSecretObjective\fP* battle_for_rokugan::object::Player::m_secretObjective2\fC [private]\fP"
+
+.PP
+Definition at line 51 of file player\&.h\&.
+.SS "int battle_for_rokugan::object::Player::m_startCtrlToken\fC [private]\fP"
+
+.PP
+Definition at line 57 of file player\&.h\&.
+.SS "\fBhandler::Stats\fP* battle_for_rokugan::object::Player::m_stats\fC [private]\fP"
+
+.PP
+Definition at line 53 of file player\&.h\&.
+.SS "token::CombatList battle_for_rokugan::object::Player::m_tokenList\fC [private]\fP"
+
+.PP
+Definition at line 62 of file player\&.h\&.
+.SS "\fBhandler::Turn\fP* battle_for_rokugan::object::Player::m_turns\fC [private]\fP"
+
+.PP
+Definition at line 54 of file player\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

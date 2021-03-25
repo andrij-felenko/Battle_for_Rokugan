@@ -1,0 +1,107 @@
+.TH "battle_for_rokugan::object::Clan" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::object::Clan
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <clan\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClan\fP (\fBClanType\fP \fBtype\fP, QObject *parent)"
+.br
+.ti -1c
+.RI "\fBClanType\fP \fBtype\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetType\fP (\fBClanType\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "\fBTerritoryType\fP \fBhomeTerritory\fP () const"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "const \fBtoken::Combat\fP * \fBuniqueCombatToken\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBTerritoryType\fP \fBhomeTerritory\fP (\fBClanType\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "static QString \fBname\fP (\fBClanType\fP \fBtype\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBClanType\fP \fBm_type\fP"
+.br
+.ti -1c
+.RI "\fBtoken::Combat\fP * \fBm_specialToken\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file clan\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::object::Clan::Clan (\fBClanType\fP type, QObject * parent)"
+
+.PP
+Definition at line 5 of file clan\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBbfr::TerritoryType\fP battle_for_rokugan::object::Clan::homeTerritory () const"
+
+.PP
+Definition at line 22 of file clan\&.cpp\&.
+.SS "\fBbfr::TerritoryType\fP battle_for_rokugan::object::Clan::homeTerritory (\fBClanType\fP type)\fC [static]\fP"
+
+.PP
+Definition at line 31 of file clan\&.cpp\&.
+.SS "QString battle_for_rokugan::object::Clan::name () const"
+
+.PP
+Definition at line 24 of file clan\&.cpp\&.
+.SS "QString battle_for_rokugan::object::Clan::name (\fBClanType\fP type)\fC [static]\fP"
+
+.PP
+Definition at line 51 of file clan\&.cpp\&.
+.SS "void battle_for_rokugan::object::Clan::setType (\fBClanType\fP type)"
+
+.PP
+Definition at line 26 of file clan\&.cpp\&.
+.SS "\fBbfr::ClanType\fP battle_for_rokugan::object::Clan::type () const"
+
+.PP
+Definition at line 23 of file clan\&.cpp\&.
+.SS "const bfr::token::Combat * battle_for_rokugan::object::Clan::uniqueCombatToken () const"
+
+.PP
+Definition at line 46 of file clan\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBtoken::Combat\fP* battle_for_rokugan::object::Clan::m_specialToken\fC [private]\fP"
+
+.PP
+Definition at line 26 of file clan\&.h\&.
+.SS "\fBClanType\fP battle_for_rokugan::object::Clan::m_type\fC [private]\fP"
+
+.PP
+Definition at line 25 of file clan\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

@@ -1,0 +1,285 @@
+.TH "battle_for_rokugan::handler::Stats::OneStat" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::handler::Stats::OneStat
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <stats\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBhonorPointsChanged\fP (uint \fBhonorPoints\fP)"
+.br
+.ti -1c
+.RI "void \fBprovinceCountChanged\fP (uint \fBprovinceCount\fP)"
+.br
+.ti -1c
+.RI "void \fBterritoryCountChanged\fP (uint \fBterritoryCount\fP)"
+.br
+.ti -1c
+.RI "void \fBterritoryCardCountChanged\fP (uint \fBterritoryCardCount\fP)"
+.br
+.ti -1c
+.RI "void \fBctrlTokenOnChanged\fP (uint \fBctrlTokenOn\fP)"
+.br
+.ti -1c
+.RI "void \fBctrlTokenOffChanged\fP (uint \fBctrlTokenOff\fP)"
+.br
+.ti -1c
+.RI "void \fBctrlTokenChanged\fP (uint \fBctrlToken\fP)"
+.br
+.ti -1c
+.RI "void \fBtypeChanged\fP (\fBClanType\fP \fBtype\fP)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOneStat\fP (\fBClanType\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "uint \fBhonorPoints\fP () const"
+.br
+.ti -1c
+.RI "uint \fBprovinceCount\fP () const"
+.br
+.ti -1c
+.RI "uint \fBterritoryCount\fP () const"
+.br
+.ti -1c
+.RI "uint \fBterritoryCardCount\fP () const"
+.br
+.ti -1c
+.RI "uint \fBctrlTokenOn\fP () const"
+.br
+.ti -1c
+.RI "uint \fBctrlTokenOff\fP () const"
+.br
+.ti -1c
+.RI "uint \fBctrlToken\fP () const"
+.br
+.ti -1c
+.RI "\fBClanType\fP \fBtype\fP () const"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "uint \fBhonorPoints\fP"
+.br
+.ti -1c
+.RI "uint \fBprovinceCount\fP"
+.br
+.ti -1c
+.RI "uint \fBterritoryCount\fP"
+.br
+.ti -1c
+.RI "uint \fBterritoryCardCount\fP"
+.br
+.ti -1c
+.RI "uint \fBctrlTokenOn\fP"
+.br
+.ti -1c
+.RI "uint \fBctrlTokenOff\fP"
+.br
+.ti -1c
+.RI "uint \fBctrlToken\fP"
+.br
+.ti -1c
+.RI "\fBClanType\fP \fBtype\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetHonorPoints\fP (uint \fBhonorPoints\fP)"
+.br
+.ti -1c
+.RI "void \fBsetProvinceCount\fP (uint \fBprovinceCount\fP)"
+.br
+.ti -1c
+.RI "void \fBsetTerritoryCount\fP (uint \fBterritoryCount\fP)"
+.br
+.ti -1c
+.RI "void \fBsetTerritoryCardCount\fP (uint \fBterritoryCardCount\fP)"
+.br
+.ti -1c
+.RI "void \fBsetCtrlTokenOn\fP (uint \fBctrlTokenOn\fP)"
+.br
+.ti -1c
+.RI "void \fBsetCtrlTokenOff\fP (uint \fBctrlTokenOff\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint \fBm_honorPoints\fP"
+.br
+.ti -1c
+.RI "uint \fBm_provinceCount\fP"
+.br
+.ti -1c
+.RI "uint \fBm_territoryCount\fP"
+.br
+.ti -1c
+.RI "uint \fBm_territoryCardCount\fP"
+.br
+.ti -1c
+.RI "uint \fBm_ctrlTokenOn\fP"
+.br
+.ti -1c
+.RI "uint \fBm_ctrlTokenOff\fP"
+.br
+.ti -1c
+.RI "\fBClanType\fP \fBm_type\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBStats\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 33 of file stats\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::handler::Stats::OneStat::OneStat (\fBClanType\fP type)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void battle_for_rokugan::handler::Stats::OneStat::clear ()\fC [private]\fP"
+
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::ctrlToken () const"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::ctrlTokenChanged (uint ctrlToken)\fC [signal]\fP"
+
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::ctrlTokenOff () const"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::ctrlTokenOffChanged (uint ctrlTokenOff)\fC [signal]\fP"
+
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::ctrlTokenOn () const"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::ctrlTokenOnChanged (uint ctrlTokenOn)\fC [signal]\fP"
+
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::honorPoints () const"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::honorPointsChanged (uint honorPoints)\fC [signal]\fP"
+
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::provinceCount () const"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::provinceCountChanged (uint provinceCount)\fC [signal]\fP"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::setCtrlTokenOff (uint ctrlTokenOff)\fC [private]\fP"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::setCtrlTokenOn (uint ctrlTokenOn)\fC [private]\fP"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::setHonorPoints (uint honorPoints)\fC [private]\fP"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::setProvinceCount (uint provinceCount)\fC [private]\fP"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::setTerritoryCardCount (uint territoryCardCount)\fC [private]\fP"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::setTerritoryCount (uint territoryCount)\fC [private]\fP"
+
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::territoryCardCount () const"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::territoryCardCountChanged (uint territoryCardCount)\fC [signal]\fP"
+
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::territoryCount () const"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::territoryCountChanged (uint territoryCount)\fC [signal]\fP"
+
+.SS "\fBClanType\fP battle_for_rokugan::handler::Stats::OneStat::type () const"
+
+.SS "void battle_for_rokugan::handler::Stats::OneStat::typeChanged (\fBClanType\fP type)\fC [signal]\fP"
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBStats\fP\fC [friend]\fP"
+
+.PP
+Definition at line 92 of file stats\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::m_ctrlTokenOff\fC [private]\fP"
+
+.PP
+Definition at line 98 of file stats\&.h\&.
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::m_ctrlTokenOn\fC [private]\fP"
+
+.PP
+Definition at line 97 of file stats\&.h\&.
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::m_honorPoints\fC [private]\fP"
+
+.PP
+Definition at line 93 of file stats\&.h\&.
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::m_provinceCount\fC [private]\fP"
+
+.PP
+Definition at line 94 of file stats\&.h\&.
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::m_territoryCardCount\fC [private]\fP"
+
+.PP
+Definition at line 96 of file stats\&.h\&.
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::m_territoryCount\fC [private]\fP"
+
+.PP
+Definition at line 95 of file stats\&.h\&.
+.SS "\fBClanType\fP battle_for_rokugan::handler::Stats::OneStat::m_type\fC [private]\fP"
+
+.PP
+Definition at line 99 of file stats\&.h\&.
+.SH "Property Documentation"
+.PP 
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::ctrlToken\fC [read]\fP"
+
+.PP
+Definition at line 66 of file stats\&.h\&.
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::ctrlTokenOff\fC [read]\fP, \fC [write]\fP"
+
+.PP
+Definition at line 64 of file stats\&.h\&.
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::ctrlTokenOn\fC [read]\fP, \fC [write]\fP"
+
+.PP
+Definition at line 59 of file stats\&.h\&.
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::honorPoints\fC [read]\fP, \fC [write]\fP"
+
+.PP
+Definition at line 39 of file stats\&.h\&.
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::provinceCount\fC [read]\fP, \fC [write]\fP"
+
+.PP
+Definition at line 44 of file stats\&.h\&.
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::territoryCardCount\fC [read]\fP, \fC [write]\fP"
+
+.PP
+Definition at line 54 of file stats\&.h\&.
+.SS "uint battle_for_rokugan::handler::Stats::OneStat::territoryCount\fC [read]\fP, \fC [write]\fP"
+
+.PP
+Definition at line 49 of file stats\&.h\&.
+.SS "\fBClanType\fP battle_for_rokugan::handler::Stats::OneStat::type\fC [read]\fP"
+
+.PP
+Definition at line 67 of file stats\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

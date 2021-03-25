@@ -1,0 +1,103 @@
+.TH "battle_for_rokugan::karta::TokenBasement" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::karta::TokenBasement
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <tokenBasement\&.h>\fP
+.PP
+Inherits QObject\&.
+.PP
+Inherited by \fBbattle_for_rokugan::karta::Border\fP, and \fBbattle_for_rokugan::karta::Province\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTokenBasement\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "bool \fBcombatTokenContains\fP (\fBCombatTokenType\fP type) const"
+.br
+.ti -1c
+.RI "virtual void \fBpushCombatToken\fP (\fBtoken::Combat\fP *token)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "token::CombatList \fBm_combatList\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBclearEmptyTokens\fP ()"
+.br
+.ti -1c
+.RI "void \fBremoveCombatToken\fP (\fBtoken::Combat\fP *token)"
+.br
+.ti -1c
+.RI "void \fBremoveCombatToken\fP (token::CombatList list)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBhandler::Battle\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file tokenBasement\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::karta::TokenBasement::TokenBasement (QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 4 of file tokenBasement\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void battle_for_rokugan::karta::TokenBasement::clearEmptyTokens ()\fC [protected]\fP"
+
+.PP
+Definition at line 23 of file tokenBasement\&.cpp\&.
+.SS "bool battle_for_rokugan::karta::TokenBasement::combatTokenContains (\fBCombatTokenType\fP type) const"
+
+.PP
+Definition at line 10 of file tokenBasement\&.cpp\&.
+.SS "void battle_for_rokugan::karta::TokenBasement::pushCombatToken (\fBtoken::Combat\fP * token)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBbattle_for_rokugan::karta::Border\fP\&.
+.PP
+Definition at line 18 of file tokenBasement\&.cpp\&.
+.SS "void battle_for_rokugan::karta::TokenBasement::removeCombatToken (\fBtoken::Combat\fP * token)\fC [protected]\fP"
+
+.PP
+Definition at line 39 of file tokenBasement\&.cpp\&.
+.SS "void battle_for_rokugan::karta::TokenBasement::removeCombatToken (token::CombatList list)\fC [protected]\fP"
+
+.PP
+Definition at line 44 of file tokenBasement\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBhandler::Battle\fP\fC [friend]\fP"
+
+.PP
+Definition at line 21 of file tokenBasement\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "token::CombatList battle_for_rokugan::karta::TokenBasement::m_combatList"
+
+.PP
+Definition at line 10 of file tokenBasement\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

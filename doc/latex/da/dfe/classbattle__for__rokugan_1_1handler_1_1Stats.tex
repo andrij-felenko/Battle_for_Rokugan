@@ -1,0 +1,219 @@
+\hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats}{}\doxysection{battle\+\_\+for\+\_\+rokugan\+::handler\+::Stats Class Reference}
+\label{classbattle__for__rokugan_1_1handler_1_1Stats}\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+
+
+{\ttfamily \#include $<$stats.\+h$>$}
+
+Inheritance diagram for battle\+\_\+for\+\_\+rokugan\+::handler\+::Stats\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{da/dfe/classbattle__for__rokugan_1_1handler_1_1Stats}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_1_1OneStat}{One\+Stat}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::optional$<$ \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_1_1OneStat}{One\+Stat}} $\ast$ $>$ \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_ae008854ac1eaa6f467c8bd7892b0bb3f}{One\+Stat\+Opt}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_ab95c5bd24e03236f7d4a6328ec5a4361}{Stats}} (\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map}{karta\+::\+Map}} $\ast$map)
+\item 
+virtual \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_ab6c7e9e01e83277fd82005aa118db259}{$\sim$\+Stats}} ()
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_ae008854ac1eaa6f467c8bd7892b0bb3f}{One\+Stat\+Opt}} \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_aa7e060fe1bae681cf6788dbba821dad9}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}} clan) const
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_adc0e573d59094c3fb3f1080dc7ad28be}{Clan\+Type\+List}} \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_a3911882ebaa5d58901b17fdc3fc31310}{max\+Territory\+Card}} () const
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_adc0e573d59094c3fb3f1080dc7ad28be}{Clan\+Type\+List}} \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_ab5179555823316b2567c54a40d22149f}{min\+Province\+Clan}} () const
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_adc0e573d59094c3fb3f1080dc7ad28be}{Clan\+Type\+List}} \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_a4d57eb23d142412bbed817116c5a4577}{max\+Province\+Clan}} () const
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_adc0e573d59094c3fb3f1080dc7ad28be}{Clan\+Type\+List}} \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_abac0b0190ef8163f7e950fc8388c6580}{max\+Ctrl\+Token}} (bool with\+Token) const
+\item 
+bool \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_a0c47fb7b32299ce36460c241eace8e56}{max\+Province\+Clan}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}} clan) const
+\item 
+bool \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_a19456a8497595541b30a94a50146acaf}{min\+Province\+Clan}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}} clan) const
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_abdf82a9e3292aa353808b43591feed8e}{update}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_aa0fd93b6f543372a73c15982c23c3a61}{clear}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map}{karta\+::\+Map}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_a8541ca0e9025f41299fcd663bbe016c8}{m\+\_\+map}}
+\item 
+Q\+List$<$ \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_1_1OneStat}{One\+Stat}} $\ast$ $>$ \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_a4ba6954096453ffd2bb6fd29a271443b}{m\+\_\+clan\+List}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 6 of file stats.\+h.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_ae008854ac1eaa6f467c8bd7892b0bb3f}\label{classbattle__for__rokugan_1_1handler_1_1Stats_ae008854ac1eaa6f467c8bd7892b0bb3f}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!OneStatOpt@{OneStatOpt}}
+\index{OneStatOpt@{OneStatOpt}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{OneStatOpt}{OneStatOpt}}
+{\footnotesize\ttfamily typedef std\+::optional$<$\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_1_1OneStat}{One\+Stat}}$\ast$$>$ \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_ae008854ac1eaa6f467c8bd7892b0bb3f}{battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::\+One\+Stat\+Opt}}}
+
+
+
+Definition at line 10 of file stats.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_ab95c5bd24e03236f7d4a6328ec5a4361}\label{classbattle__for__rokugan_1_1handler_1_1Stats_ab95c5bd24e03236f7d4a6328ec5a4361}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!Stats@{Stats}}
+\index{Stats@{Stats}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{Stats()}{Stats()}}
+{\footnotesize\ttfamily battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::\+Stats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map}{karta\+::\+Map}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file stats.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_ab6c7e9e01e83277fd82005aa118db259}\label{classbattle__for__rokugan_1_1handler_1_1Stats_ab6c7e9e01e83277fd82005aa118db259}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!````~Stats@{$\sim$Stats}}
+\index{````~Stats@{$\sim$Stats}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{$\sim$Stats()}{~Stats()}}
+{\footnotesize\ttfamily battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::$\sim$\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 13 of file stats.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_aa0fd93b6f543372a73c15982c23c3a61}\label{classbattle__for__rokugan_1_1handler_1_1Stats_aa0fd93b6f543372a73c15982c23c3a61}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!clear@{clear}}
+\index{clear@{clear}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 109 of file stats.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_abac0b0190ef8163f7e950fc8388c6580}\label{classbattle__for__rokugan_1_1handler_1_1Stats_abac0b0190ef8163f7e950fc8388c6580}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!maxCtrlToken@{maxCtrlToken}}
+\index{maxCtrlToken@{maxCtrlToken}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{maxCtrlToken()}{maxCtrlToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_adc0e573d59094c3fb3f1080dc7ad28be}{bfr\+::\+Clan\+Type\+List}} battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::max\+Ctrl\+Token (\begin{DoxyParamCaption}\item[{bool}]{with\+Token }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 88 of file stats.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_a4d57eb23d142412bbed817116c5a4577}\label{classbattle__for__rokugan_1_1handler_1_1Stats_a4d57eb23d142412bbed817116c5a4577}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!maxProvinceClan@{maxProvinceClan}}
+\index{maxProvinceClan@{maxProvinceClan}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{maxProvinceClan()}{maxProvinceClan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_adc0e573d59094c3fb3f1080dc7ad28be}{bfr\+::\+Clan\+Type\+List}} battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::max\+Province\+Clan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 42 of file stats.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_a0c47fb7b32299ce36460c241eace8e56}\label{classbattle__for__rokugan_1_1handler_1_1Stats_a0c47fb7b32299ce36460c241eace8e56}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!maxProvinceClan@{maxProvinceClan}}
+\index{maxProvinceClan@{maxProvinceClan}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{maxProvinceClan()}{maxProvinceClan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::max\+Province\+Clan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}}}]{clan }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 70 of file stats.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_a3911882ebaa5d58901b17fdc3fc31310}\label{classbattle__for__rokugan_1_1handler_1_1Stats_a3911882ebaa5d58901b17fdc3fc31310}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!maxTerritoryCard@{maxTerritoryCard}}
+\index{maxTerritoryCard@{maxTerritoryCard}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{maxTerritoryCard()}{maxTerritoryCard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_adc0e573d59094c3fb3f1080dc7ad28be}{bfr\+::\+Clan\+Type\+List}} battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::max\+Territory\+Card (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 28 of file stats.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_ab5179555823316b2567c54a40d22149f}\label{classbattle__for__rokugan_1_1handler_1_1Stats_ab5179555823316b2567c54a40d22149f}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!minProvinceClan@{minProvinceClan}}
+\index{minProvinceClan@{minProvinceClan}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{minProvinceClan()}{minProvinceClan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_adc0e573d59094c3fb3f1080dc7ad28be}{bfr\+::\+Clan\+Type\+List}} battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::min\+Province\+Clan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 56 of file stats.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_a19456a8497595541b30a94a50146acaf}\label{classbattle__for__rokugan_1_1handler_1_1Stats_a19456a8497595541b30a94a50146acaf}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!minProvinceClan@{minProvinceClan}}
+\index{minProvinceClan@{minProvinceClan}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{minProvinceClan()}{minProvinceClan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::min\+Province\+Clan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}}}]{clan }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 79 of file stats.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_aa7e060fe1bae681cf6788dbba821dad9}\label{classbattle__for__rokugan_1_1handler_1_1Stats_aa7e060fe1bae681cf6788dbba821dad9}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily bfr\+::handler\+::\+Stats\+::\+One\+Stat\+Opt battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}}}]{clan }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 20 of file stats.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_abdf82a9e3292aa353808b43591feed8e}\label{classbattle__for__rokugan_1_1handler_1_1Stats_abdf82a9e3292aa353808b43591feed8e}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!update@{update}}
+\index{update@{update}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 104 of file stats.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_a4ba6954096453ffd2bb6fd29a271443b}\label{classbattle__for__rokugan_1_1handler_1_1Stats_a4ba6954096453ffd2bb6fd29a271443b}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!m\_clanList@{m\_clanList}}
+\index{m\_clanList@{m\_clanList}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{m\_clanList}{m\_clanList}}
+{\footnotesize\ttfamily Q\+List$<$\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Stats_1_1OneStat}{One\+Stat}}$\ast$$>$ battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::m\+\_\+clan\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file stats.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Stats_a8541ca0e9025f41299fcd663bbe016c8}\label{classbattle__for__rokugan_1_1handler_1_1Stats_a8541ca0e9025f41299fcd663bbe016c8}} 
+\index{battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}!m\_map@{m\_map}}
+\index{m\_map@{m\_map}!battle\_for\_rokugan::handler::Stats@{battle\_for\_rokugan::handler::Stats}}
+\doxysubsubsection{\texorpdfstring{m\_map}{m\_map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map}{karta\+::\+Map}}$\ast$ battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Stats\+::m\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 29 of file stats.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+bfr/include/lib\+\_\+bfr/handler/\mbox{\hyperlink{stats_8h}{stats.\+h}}\item 
+lib\+\_\+bfr/src/handler/\mbox{\hyperlink{stats_8cpp}{stats.\+cpp}}\end{DoxyCompactItemize}

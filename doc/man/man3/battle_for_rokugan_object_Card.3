@@ -1,0 +1,310 @@
+.TH "battle_for_rokugan::object::Card" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::object::Card
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <card\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "\fBCombatTokenType\fP \fBuseFirstPlayer\fP (\fBtoken::Combat\fP *token)"
+.br
+.ti -1c
+.RI "\fBCombatTokenType\fP \fBuseScout\fP (\fBtoken::Combat\fP *token)"
+.br
+.ti -1c
+.RI "void \fBuseShugenja\fP (\fBtoken::Combat\fP *token)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryCrab_Promotion\fP (\fBkarta::Province\fP *province)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryCrab_FeatsOfEngineering\fP (\fBkarta::Province\fP *province, \fBkarta::Province\fP *pushProvince=nullptr)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryCrane_CodeOfHonor\fP (\fBkarta::Province\fP *prov1, \fBkarta::Province\fP *prov2)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryCrane_DiplomaticMission\fP (\fBkarta::Province\fP *provPeace, \fBkarta::Province\fP *provToken=nullptr)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryDragon_SacredGround\fP (\fBkarta::Province\fP *province)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryDragon_StrengthOfPurpose\fP (\fBkarta::Province\fP *prov1, \fBkarta::Province\fP *prov2)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryIslands_PortOfProsperity\fP (\fBkarta::Province\fP *province)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryIslands_PirateRaids\fP (\fBkarta::Province\fP *provScorch, \fBkarta::Province\fP *provToken=nullptr)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryLion_Bushido\fP (\fBkarta::Province\fP *province)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryLion_HonorableFight\fP (\fBkarta::Province\fP *province)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryMountains_BountifulHarvest\fP (\fBkarta::Province\fP *province)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryMountains_AshigaruLevies\fP (\fBkarta::Province\fP *prov1, \fBkarta::Province\fP *prov2, \fBkarta::Province\fP *prov3)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryPhoenix_AidOfTheKami\fP (\fBkarta::Province\fP *province)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryPhoenix_BlessTheLands\fP (\fBkarta::Province\fP *province)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryScorpion_FomentRebellion\fP (\fBkarta::Province\fP *province)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryShadowlandsSouth_InspireFear\fP (\fBkarta::Province\fP *province, \fBtoken::Province\fP *token1, \fBtoken::Province\fP *token2=nullptr)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryUnicorn_Reinforcement\fP (\fBtoken::Combat\fP *dis1, \fBtoken::Combat\fP *dis2, \fBtoken::Combat\fP *ast1, \fBtoken::Combat\fP *ast2)"
+.br
+.ti -1c
+.RI "void \fBuseTerritoryUnicorn_CulturalExchange\fP (\fBkarta::Province\fP *prov1, \fBkarta::Province\fP *prov2)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCard\fP (\fBCardType\fP \fBtype\fP, \fBPlayer\fP *owner=nullptr)"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "QString \fBdescription\fP () const"
+.br
+.ti -1c
+.RI "\fBCardType\fP \fBtype\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisUsed\fP () const"
+.br
+.ti -1c
+.RI "\fBPlayer\fP * \fBgetOwner\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetOwner\fP (\fBPlayer\fP *owner)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBarray_u3\fP \fBrandNeutralCard\fP ()"
+.br
+.ti -1c
+.RI "static \fBCardType\fP \fBgetNeutralCard\fP (uint i)"
+.br
+.ti -1c
+.RI "static bool \fBisInitiative\fP (\fBCardType\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "static bool \fBisTerritory\fP (\fBCardType\fP \fBtype\fP)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBuse\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPlayer\fP * \fBm_owner\fP"
+.br
+.ti -1c
+.RI "\fBCardType\fP \fBm_type\fP"
+.br
+.ti -1c
+.RI "bool \fBm_used\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBhandler::Turn\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file card\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::object::Card::Card (\fBCardType\fP type, \fBPlayer\fP * owner = \fCnullptr\fP)"
+
+.PP
+Definition at line 9 of file card\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QString battle_for_rokugan::object::Card::description () const"
+
+.PP
+Definition at line 316 of file card\&.cpp\&.
+.SS "\fBbfr::CardType\fP battle_for_rokugan::object::Card::getNeutralCard (uint i)\fC [static]\fP"
+
+.PP
+Definition at line 19 of file card\&.cpp\&.
+.SS "bfr::object::Player * battle_for_rokugan::object::Card::getOwner () const"
+
+.PP
+Definition at line 34 of file card\&.cpp\&.
+.SS "bool battle_for_rokugan::object::Card::isInitiative (\fBCardType\fP type)\fC [static]\fP"
+
+.PP
+Definition at line 24 of file card\&.cpp\&.
+.SS "bool battle_for_rokugan::object::Card::isTerritory (\fBCardType\fP type)\fC [static]\fP"
+
+.PP
+Definition at line 29 of file card\&.cpp\&.
+.SS "bool battle_for_rokugan::object::Card::isUsed () const"
+
+.PP
+Definition at line 16 of file card\&.cpp\&.
+.SS "QString battle_for_rokugan::object::Card::name () const"
+
+.PP
+Definition at line 279 of file card\&.cpp\&.
+.SS "\fBarray_u3\fP battle_for_rokugan::object::Card::randNeutralCard ()\fC [static]\fP"
+
+.PP
+Definition at line 432 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::setOwner (\fBPlayer\fP * owner)"
+
+.PP
+Definition at line 39 of file card\&.cpp\&.
+.SS "\fBbfr::CardType\fP battle_for_rokugan::object::Card::type () const"
+
+.PP
+Definition at line 15 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::use ()\fC [private]\fP"
+
+.PP
+Definition at line 17 of file card\&.cpp\&.
+.SS "\fBbfr::CombatTokenType\fP battle_for_rokugan::object::Card::useFirstPlayer (\fBtoken::Combat\fP * token)\fC [slot]\fP"
+
+.PP
+Definition at line 44 of file card\&.cpp\&.
+.SS "\fBbfr::CombatTokenType\fP battle_for_rokugan::object::Card::useScout (\fBtoken::Combat\fP * token)\fC [slot]\fP"
+
+.PP
+Definition at line 54 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useShugenja (\fBtoken::Combat\fP * token)\fC [slot]\fP"
+
+.PP
+Definition at line 63 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryCrab_FeatsOfEngineering (\fBkarta::Province\fP * province, \fBkarta::Province\fP * pushProvince = \fCnullptr\fP)\fC [slot]\fP"
+
+.PP
+Definition at line 74 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryCrab_Promotion (\fBkarta::Province\fP * province)\fC [slot]\fP"
+
+.PP
+Definition at line 90 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryCrane_CodeOfHonor (\fBkarta::Province\fP * prov1, \fBkarta::Province\fP * prov2)\fC [slot]\fP"
+
+.PP
+Definition at line 99 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryCrane_DiplomaticMission (\fBkarta::Province\fP * provPeace, \fBkarta::Province\fP * provToken = \fCnullptr\fP)\fC [slot]\fP"
+
+.PP
+Definition at line 110 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryDragon_SacredGround (\fBkarta::Province\fP * province)\fC [slot]\fP"
+
+.PP
+Definition at line 121 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryDragon_StrengthOfPurpose (\fBkarta::Province\fP * prov1, \fBkarta::Province\fP * prov2)\fC [slot]\fP"
+
+.PP
+Definition at line 130 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryIslands_PirateRaids (\fBkarta::Province\fP * provScorch, \fBkarta::Province\fP * provToken = \fCnullptr\fP)\fC [slot]\fP"
+
+.PP
+Definition at line 140 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryIslands_PortOfProsperity (\fBkarta::Province\fP * province)\fC [slot]\fP"
+
+.PP
+Definition at line 152 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryLion_Bushido (\fBkarta::Province\fP * province)\fC [slot]\fP"
+
+.PP
+Definition at line 161 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryLion_HonorableFight (\fBkarta::Province\fP * province)\fC [slot]\fP"
+
+.PP
+Definition at line 170 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryMountains_AshigaruLevies (\fBkarta::Province\fP * prov1, \fBkarta::Province\fP * prov2, \fBkarta::Province\fP * prov3)\fC [slot]\fP"
+
+.PP
+Definition at line 179 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryMountains_BountifulHarvest (\fBkarta::Province\fP * province)\fC [slot]\fP"
+
+.PP
+Definition at line 196 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryPhoenix_AidOfTheKami (\fBkarta::Province\fP * province)\fC [slot]\fP"
+
+.PP
+Definition at line 205 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryPhoenix_BlessTheLands (\fBkarta::Province\fP * province)\fC [slot]\fP"
+
+.PP
+Definition at line 214 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryScorpion_FomentRebellion (\fBkarta::Province\fP * province)\fC [slot]\fP"
+
+.PP
+Definition at line 228 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryShadowlandsSouth_InspireFear (\fBkarta::Province\fP * province, \fBtoken::Province\fP * token1, \fBtoken::Province\fP * token2 = \fCnullptr\fP)\fC [slot]\fP"
+
+.PP
+Definition at line 241 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryUnicorn_CulturalExchange (\fBkarta::Province\fP * prov1, \fBkarta::Province\fP * prov2)\fC [slot]\fP"
+
+.PP
+Definition at line 270 of file card\&.cpp\&.
+.SS "void battle_for_rokugan::object::Card::useTerritoryUnicorn_Reinforcement (\fBtoken::Combat\fP * dis1, \fBtoken::Combat\fP * dis2, \fBtoken::Combat\fP * ast1, \fBtoken::Combat\fP * ast2)\fC [slot]\fP"
+
+.PP
+Definition at line 255 of file card\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBhandler::Turn\fP\fC [friend]\fP"
+
+.PP
+Definition at line 84 of file card\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBPlayer\fP* battle_for_rokugan::object::Card::m_owner\fC [private]\fP"
+
+.PP
+Definition at line 74 of file card\&.h\&.
+.SS "\fBCardType\fP battle_for_rokugan::object::Card::m_type\fC [private]\fP"
+
+.PP
+Definition at line 75 of file card\&.h\&.
+.SS "bool battle_for_rokugan::object::Card::m_used\fC [private]\fP"
+
+.PP
+Definition at line 76 of file card\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

@@ -1,0 +1,794 @@
+\hypertarget{namespacebattle__for__rokugan}{}\doxysection{battle\+\_\+for\+\_\+rokugan Namespace Reference}
+\label{namespacebattle__for__rokugan}\index{battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacebattle__for__rokugan_1_1handler}{handler}}
+\item 
+ \mbox{\hyperlink{namespacebattle__for__rokugan_1_1karta}{karta}}
+\item 
+ \mbox{\hyperlink{namespacebattle__for__rokugan_1_1object}{object}}
+\item 
+ \mbox{\hyperlink{namespacebattle__for__rokugan_1_1token}{token}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbattle__for__rokugan_1_1Game}{Game}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Q\+List$<$ \mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}} $>$ \mbox{\hyperlink{namespacebattle__for__rokugan_a7adfe1665455778383de5fb447de5b40}{Card\+Type\+List}}
+\item 
+typedef std\+::optional$<$ \mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}} $>$ \mbox{\hyperlink{namespacebattle__for__rokugan_a9e9c7f684a75b97b7a12ede7a2a32ddc}{Clan\+Type\+Opt}}
+\item 
+typedef Q\+List$<$ \mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}} $>$ \mbox{\hyperlink{namespacebattle__for__rokugan_adc0e573d59094c3fb3f1080dc7ad28be}{Clan\+Type\+List}}
+\item 
+typedef \mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_a8e565986d5c2c2a8e8ef7f6ab9f386af}{S\+OT}}
+\item 
+typedef \mbox{\hyperlink{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369}{Combat\+Token\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_af429c3b81a658a5c989f71b83fb80d4a}{C\+TT}}
+\item 
+typedef \mbox{\hyperlink{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229}{Status\+Token\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_a54e5a2ac81546a26a36fb5359bd0d3f8}{S\+TT}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacebattle__for__rokugan_a461bc6ddf134d6bd51c7ddd8c5d39d0b}{Border\+Type}} 
+\begin{DoxyCompactList}\small\item\em The Border\+Type enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}} 
+\begin{DoxyCompactList}\small\item\em The Card\+Type enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}} 
+\begin{DoxyCompactList}\small\item\em The Clan\+Type enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacebattle__for__rokugan_acd49428312862d19cf2fc077cb1d7b2b}{Place\+Type}} 
+\begin{DoxyCompactList}\small\item\em The Place\+Type enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacebattle__for__rokugan_a168acb8772c8ff41184ea13a7706ae60}{Phase}} \+: unsigned char 
+\begin{DoxyCompactList}\small\item\em The Phase enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}} \+: unsigned char 
+\begin{DoxyCompactList}\small\item\em The Secret\+Objective\+Type enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940}{Province\+Token\+Type}} 
+\begin{DoxyCompactList}\small\item\em The Province\+Token\+Type enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} \+: uchar 
+\begin{DoxyCompactList}\small\item\em The Territory\+Type enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369}{Combat\+Token\+Type}} 
+\begin{DoxyCompactList}\small\item\em The Combat\+Token\+Type enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229}{Status\+Token\+Type}} 
+\begin{DoxyCompactList}\small\item\em The Status\+Token\+Type enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_a22f9270569dd135d998ef91663f6a1e4}{A\+Fdeclare\+Class}} (\mbox{\hyperlink{classbattle__for__rokugan_1_1Game}{Game}}) namespace handler
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_a9f10654a726eb1277b963025e01ff26d}{operator+}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type, unsigned i)
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_a1ed36325051d7ff0ca76ae1943680ea1}{operator++}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type)
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_a05ae8e7481ee093561136c5eb3dfd02d}{operator+}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}} type, uint i)
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_a988824b0b82c27b24a86e9c759a73f9d}{operator+}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}} card, \mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}} clan)
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_a3679e06f8e863ecee9dd441e35b36f50}{operator-\/}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}} left, \mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}} right)
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_a667b68b155156c0ffb1e868a2db8a7b1}{operator+}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}} type, uint i)
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_a75237b29e3d6581adf5642dd5220002b}{operator+}} (\mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}} type, uint i)
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_ae1394f2be5ba4f5450c3bb1c33c9b9c2}{operator++}} (\mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}} type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a7adfe1665455778383de5fb447de5b40}\label{namespacebattle__for__rokugan_a7adfe1665455778383de5fb447de5b40}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!CardTypeList@{CardTypeList}}
+\index{CardTypeList@{CardTypeList}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{CardTypeList}{CardTypeList}}
+{\footnotesize\ttfamily typedef Q\+List$<$\mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}}$>$ \mbox{\hyperlink{namespacebattle__for__rokugan_a7adfe1665455778383de5fb447de5b40}{battle\+\_\+for\+\_\+rokugan\+::\+Card\+Type\+List}}}
+
+
+
+Definition at line 64 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_adc0e573d59094c3fb3f1080dc7ad28be}\label{namespacebattle__for__rokugan_adc0e573d59094c3fb3f1080dc7ad28be}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!ClanTypeList@{ClanTypeList}}
+\index{ClanTypeList@{ClanTypeList}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{ClanTypeList}{ClanTypeList}}
+{\footnotesize\ttfamily typedef Q\+List$<$\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}}$>$ \mbox{\hyperlink{namespacebattle__for__rokugan_adc0e573d59094c3fb3f1080dc7ad28be}{battle\+\_\+for\+\_\+rokugan\+::\+Clan\+Type\+List}}}
+
+
+
+Definition at line 81 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a9e9c7f684a75b97b7a12ede7a2a32ddc}\label{namespacebattle__for__rokugan_a9e9c7f684a75b97b7a12ede7a2a32ddc}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!ClanTypeOpt@{ClanTypeOpt}}
+\index{ClanTypeOpt@{ClanTypeOpt}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{ClanTypeOpt}{ClanTypeOpt}}
+{\footnotesize\ttfamily typedef std\+::optional$<$\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}}$>$ \mbox{\hyperlink{namespacebattle__for__rokugan_a9e9c7f684a75b97b7a12ede7a2a32ddc}{battle\+\_\+for\+\_\+rokugan\+::\+Clan\+Type\+Opt}}}
+
+
+
+Definition at line 80 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_af429c3b81a658a5c989f71b83fb80d4a}\label{namespacebattle__for__rokugan_af429c3b81a658a5c989f71b83fb80d4a}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!CTT@{CTT}}
+\index{CTT@{CTT}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{CTT}{CTT}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369}{Combat\+Token\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369}{battle\+\_\+for\+\_\+rokugan\+::\+C\+TT}}}
+
+
+
+Definition at line 170 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a8e565986d5c2c2a8e8ef7f6ab9f386af}\label{namespacebattle__for__rokugan_a8e565986d5c2c2a8e8ef7f6ab9f386af}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!SOT@{SOT}}
+\index{SOT@{SOT}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{SOT}{SOT}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{battle\+\_\+for\+\_\+rokugan\+::\+S\+OT}}}
+
+
+
+Definition at line 119 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a54e5a2ac81546a26a36fb5359bd0d3f8}\label{namespacebattle__for__rokugan_a54e5a2ac81546a26a36fb5359bd0d3f8}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!STT@{STT}}
+\index{STT@{STT}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{STT}{STT}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229}{Status\+Token\+Type}} \mbox{\hyperlink{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229}{battle\+\_\+for\+\_\+rokugan\+::\+S\+TT}}}
+
+
+
+Definition at line 180 of file bfr\+Enum.\+h.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a461bc6ddf134d6bd51c7ddd8c5d39d0b}\label{namespacebattle__for__rokugan_a461bc6ddf134d6bd51c7ddd8c5d39d0b}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!BorderType@{BorderType}}
+\index{BorderType@{BorderType}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{BorderType}{BorderType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacebattle__for__rokugan_a461bc6ddf134d6bd51c7ddd8c5d39d0b}{battle\+\_\+for\+\_\+rokugan\+::\+Border\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The Border\+Type enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Land@{Land}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Land@{Land}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a461bc6ddf134d6bd51c7ddd8c5d39d0ba512ef7c688a2c8572d5e16f44e17e869}\label{namespacebattle__for__rokugan_a461bc6ddf134d6bd51c7ddd8c5d39d0ba512ef7c688a2c8572d5e16f44e17e869}} 
+Land&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Navy@{Navy}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Navy@{Navy}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a461bc6ddf134d6bd51c7ddd8c5d39d0ba13ad5ac690e735fa48cf982532174e79}\label{namespacebattle__for__rokugan_a461bc6ddf134d6bd51c7ddd8c5d39d0ba13ad5ac690e735fa48cf982532174e79}} 
+Navy&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 10 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!CardType@{CardType}}
+\index{CardType@{CardType}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{CardType}{CardType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{battle\+\_\+for\+\_\+rokugan\+::\+Card\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The Card\+Type enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FirstPlayer@{FirstPlayer}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!FirstPlayer@{FirstPlayer}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180affd500e680e42ab433681df1af36d880}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180affd500e680e42ab433681df1af36d880}} 
+First\+Player&\mbox{[}1\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Shugenja@{Shugenja}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Shugenja@{Shugenja}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a47c730b9402f4ff2c044c7a59cadd5d6}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a47c730b9402f4ff2c044c7a59cadd5d6}} 
+Shugenja&\mbox{[}5\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Scout@{Scout}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Scout@{Scout}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a71e79ef80600d398d90cfebe3b0b758d}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a71e79ef80600d398d90cfebe3b0b758d}} 
+Scout&\mbox{[}10\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InitiativeCrab@{InitiativeCrab}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!InitiativeCrab@{InitiativeCrab}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a7d1610db4075084db8bf73a54f551a2d}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a7d1610db4075084db8bf73a54f551a2d}} 
+Initiative\+Crab&\mbox{[}7 for each nation with their logit and 3 neutral cards\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InitiativeCrane@{InitiativeCrane}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!InitiativeCrane@{InitiativeCrane}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a57bffa1ef2754573e08455bc4e4df415}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a57bffa1ef2754573e08455bc4e4df415}} 
+Initiative\+Crane&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InitiativeDragon@{InitiativeDragon}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!InitiativeDragon@{InitiativeDragon}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180adc69a282264241e28eedd2b3e5fd071a}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180adc69a282264241e28eedd2b3e5fd071a}} 
+Initiative\+Dragon&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InitiativeLion@{InitiativeLion}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!InitiativeLion@{InitiativeLion}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ac9c00c3685c4a6799886c2d302d96a7e}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ac9c00c3685c4a6799886c2d302d96a7e}} 
+Initiative\+Lion&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InitiativePhoenix@{InitiativePhoenix}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!InitiativePhoenix@{InitiativePhoenix}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a683c85e83f0c6d157852cfdbd13d8cb8}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a683c85e83f0c6d157852cfdbd13d8cb8}} 
+Initiative\+Phoenix&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InitiativeScorpion@{InitiativeScorpion}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!InitiativeScorpion@{InitiativeScorpion}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ae317419a4a9f9131ff9ee48e2f073033}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ae317419a4a9f9131ff9ee48e2f073033}} 
+Initiative\+Scorpion&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InitiativeUnicorn@{InitiativeUnicorn}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!InitiativeUnicorn@{InitiativeUnicorn}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ac9969f6c3ee1f7f45e5b14cdee2c53fb}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ac9969f6c3ee1f7f45e5b14cdee2c53fb}} 
+Initiative\+Unicorn&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MasterOfGovernance@{MasterOfGovernance}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!MasterOfGovernance@{MasterOfGovernance}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180aa932f258ad20e0b23cf60f9bd1af815b}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180aa932f258ad20e0b23cf60f9bd1af815b}} 
+Master\+Of\+Governance&Neutral card. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MasterOfTactics@{MasterOfTactics}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!MasterOfTactics@{MasterOfTactics}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a3880e2015562211b90c28cf1a76af1a5}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a3880e2015562211b90c28cf1a76af1a5}} 
+Master\+Of\+Tactics&Neutral card. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RiseOfAnEmpire@{RiseOfAnEmpire}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!RiseOfAnEmpire@{RiseOfAnEmpire}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a2b0127a207e940dbef99d6cf48e5f7da}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a2b0127a207e940dbef99d6cf48e5f7da}} 
+Rise\+Of\+An\+Empire&Neutral card. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryCrab\_FeatsOfEngineering@{TerritoryCrab\_FeatsOfEngineering}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryCrab\_FeatsOfEngineering@{TerritoryCrab\_FeatsOfEngineering}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180af1eadab839566a8129d24856215e1682}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180af1eadab839566a8129d24856215e1682}} 
+Territory\+Crab\+\_\+\+Feats\+Of\+Engineering&territory cards \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryCrab\_Promotion@{TerritoryCrab\_Promotion}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryCrab\_Promotion@{TerritoryCrab\_Promotion}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180addb1a9db8fbebb54484c4a82ddcb101e}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180addb1a9db8fbebb54484c4a82ddcb101e}} 
+Territory\+Crab\+\_\+\+Promotion&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryCrane\_CodeOfHonor@{TerritoryCrane\_CodeOfHonor}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryCrane\_CodeOfHonor@{TerritoryCrane\_CodeOfHonor}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a47e6d4a5e5c550d591ab77fd2c2a1f6c}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a47e6d4a5e5c550d591ab77fd2c2a1f6c}} 
+Territory\+Crane\+\_\+\+Code\+Of\+Honor&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryCrane\_DiplomaticMission@{TerritoryCrane\_DiplomaticMission}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryCrane\_DiplomaticMission@{TerritoryCrane\_DiplomaticMission}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180aebab94a7e0b4470ea6831ee2669c81da}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180aebab94a7e0b4470ea6831ee2669c81da}} 
+Territory\+Crane\+\_\+\+Diplomatic\+Mission&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryDragon\_StrengthOfPurpose@{TerritoryDragon\_StrengthOfPurpose}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryDragon\_StrengthOfPurpose@{TerritoryDragon\_StrengthOfPurpose}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180afd2713f2e500cc50d5e55afdf3e1911e}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180afd2713f2e500cc50d5e55afdf3e1911e}} 
+Territory\+Dragon\+\_\+\+Strength\+Of\+Purpose&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryDragon\_SacredGround@{TerritoryDragon\_SacredGround}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryDragon\_SacredGround@{TerritoryDragon\_SacredGround}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180addab925d2110323f6cab2944cbfca53b}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180addab925d2110323f6cab2944cbfca53b}} 
+Territory\+Dragon\+\_\+\+Sacred\+Ground&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryLion\_Bushido@{TerritoryLion\_Bushido}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryLion\_Bushido@{TerritoryLion\_Bushido}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a3851e576787fc9bab43caa069f69cf12}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a3851e576787fc9bab43caa069f69cf12}} 
+Territory\+Lion\+\_\+\+Bushido&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryLion\_HonorableFight@{TerritoryLion\_HonorableFight}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryLion\_HonorableFight@{TerritoryLion\_HonorableFight}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a0faf0e0dc3d0e549642bff1f9ad0b09e}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a0faf0e0dc3d0e549642bff1f9ad0b09e}} 
+Territory\+Lion\+\_\+\+Honorable\+Fight&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryPhoenix\_AidOfTheKami@{TerritoryPhoenix\_AidOfTheKami}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryPhoenix\_AidOfTheKami@{TerritoryPhoenix\_AidOfTheKami}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a8ada649bec8798ba91c9825ee836906f}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a8ada649bec8798ba91c9825ee836906f}} 
+Territory\+Phoenix\+\_\+\+Aid\+Of\+The\+Kami&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryPhoenix\_BlessTheLands@{TerritoryPhoenix\_BlessTheLands}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryPhoenix\_BlessTheLands@{TerritoryPhoenix\_BlessTheLands}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180aedda9e8f02d18ae60b5eb628b2105068}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180aedda9e8f02d18ae60b5eb628b2105068}} 
+Territory\+Phoenix\+\_\+\+Bless\+The\+Lands&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryScorpion\_SpyNetwork@{TerritoryScorpion\_SpyNetwork}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryScorpion\_SpyNetwork@{TerritoryScorpion\_SpyNetwork}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a1cb19f1a1fbc2043438916545bbe7757}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a1cb19f1a1fbc2043438916545bbe7757}} 
+Territory\+Scorpion\+\_\+\+Spy\+Network&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryScorpion\_FomentRebellion@{TerritoryScorpion\_FomentRebellion}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryScorpion\_FomentRebellion@{TerritoryScorpion\_FomentRebellion}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a76cef9da61e33042bf1a5e950ade901e}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a76cef9da61e33042bf1a5e950ade901e}} 
+Territory\+Scorpion\+\_\+\+Foment\+Rebellion&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryUnicorn\_Reinforcement@{TerritoryUnicorn\_Reinforcement}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryUnicorn\_Reinforcement@{TerritoryUnicorn\_Reinforcement}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a10e094708eeb18eb40d6327babb7dee2}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a10e094708eeb18eb40d6327babb7dee2}} 
+Territory\+Unicorn\+\_\+\+Reinforcement&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryUnicorn\_CulturalExchange@{TerritoryUnicorn\_CulturalExchange}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryUnicorn\_CulturalExchange@{TerritoryUnicorn\_CulturalExchange}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a676fc37bbe48663cdce2c42c1d7667a2}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a676fc37bbe48663cdce2c42c1d7667a2}} 
+Territory\+Unicorn\+\_\+\+Cultural\+Exchange&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryIslands\_PirateRaids@{TerritoryIslands\_PirateRaids}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryIslands\_PirateRaids@{TerritoryIslands\_PirateRaids}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180acef454f6890407f8bc080d145030faac}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180acef454f6890407f8bc080d145030faac}} 
+Territory\+Islands\+\_\+\+Pirate\+Raids&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryIslands\_PortOfProsperity@{TerritoryIslands\_PortOfProsperity}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryIslands\_PortOfProsperity@{TerritoryIslands\_PortOfProsperity}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a6b7ba9a0cb3daa84d8cd08b1b001dcd3}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a6b7ba9a0cb3daa84d8cd08b1b001dcd3}} 
+Territory\+Islands\+\_\+\+Port\+Of\+Prosperity&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryMountains\_BountifulHarvest@{TerritoryMountains\_BountifulHarvest}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryMountains\_BountifulHarvest@{TerritoryMountains\_BountifulHarvest}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ae35eb44b22eb0f8ae0856a31293fd596}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ae35eb44b22eb0f8ae0856a31293fd596}} 
+Territory\+Mountains\+\_\+\+Bountiful\+Harvest&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryMountains\_AshigaruLevies@{TerritoryMountains\_AshigaruLevies}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryMountains\_AshigaruLevies@{TerritoryMountains\_AshigaruLevies}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ad805465df62d95b4b9c6710cba8faad3}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ad805465df62d95b4b9c6710cba8faad3}} 
+Territory\+Mountains\+\_\+\+Ashigaru\+Levies&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryShadowlandsNorth\_DarkFavors@{TerritoryShadowlandsNorth\_DarkFavors}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryShadowlandsNorth\_DarkFavors@{TerritoryShadowlandsNorth\_DarkFavors}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ae5880faeb55506cb62e08033501873c3}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ae5880faeb55506cb62e08033501873c3}} 
+Territory\+Shadowlands\+North\+\_\+\+Dark\+Favors&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryShadowlandsNorth\_PurgeTheWeak@{TerritoryShadowlandsNorth\_PurgeTheWeak}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryShadowlandsNorth\_PurgeTheWeak@{TerritoryShadowlandsNorth\_PurgeTheWeak}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a50932c52d39e3e1e96a89e9d2bc2901e}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a50932c52d39e3e1e96a89e9d2bc2901e}} 
+Territory\+Shadowlands\+North\+\_\+\+Purge\+The\+Weak&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryShadowlandsSouth\_AnimateTheDead@{TerritoryShadowlandsSouth\_AnimateTheDead}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryShadowlandsSouth\_AnimateTheDead@{TerritoryShadowlandsSouth\_AnimateTheDead}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a1f40fc62950d0aae3e7430b9ead885c7}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a1f40fc62950d0aae3e7430b9ead885c7}} 
+Territory\+Shadowlands\+South\+\_\+\+Animate\+The\+Dead&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TerritoryShadowlandsSouth\_InspireFear@{TerritoryShadowlandsSouth\_InspireFear}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryShadowlandsSouth\_InspireFear@{TerritoryShadowlandsSouth\_InspireFear}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a7c594d7d461213a480f46e0c7e1cf292}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a7c594d7d461213a480f46e0c7e1cf292}} 
+Territory\+Shadowlands\+South\+\_\+\+Inspire\+Fear&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FirstInitiative@{FirstInitiative}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!FirstInitiative@{FirstInitiative}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a342c06f16d31141618244e9105899a91}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a342c06f16d31141618244e9105899a91}} 
+First\+Initiative&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LastInitiative@{LastInitiative}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!LastInitiative@{LastInitiative}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ae4d9ed206dffbeb4857dda5d4aeca3a8}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ae4d9ed206dffbeb4857dda5d4aeca3a8}} 
+Last\+Initiative&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FirstTerritory@{FirstTerritory}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!FirstTerritory@{FirstTerritory}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a124b78a7a9d8cdc7b486b23844a346e2}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180a124b78a7a9d8cdc7b486b23844a346e2}} 
+First\+Territory&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LastTerritory@{LastTerritory}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!LastTerritory@{LastTerritory}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ae18474078a39f3f4f191f794bb9f5949}\label{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180ae18474078a39f3f4f191f794bb9f5949}} 
+Last\+Territory&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 18 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}\label{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!ClanType@{ClanType}}
+\index{ClanType@{ClanType}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{ClanType}{ClanType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{battle\+\_\+for\+\_\+rokugan\+::\+Clan\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The Clan\+Type enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Crab@{Crab}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Crab@{Crab}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844aff174d64774d5421545e1b38ded8db2f}\label{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844aff174d64774d5421545e1b38ded8db2f}} 
+Crab&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Crane@{Crane}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Crane@{Crane}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a91c18a5dec9cf1fbb20ffffd101409cd}\label{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a91c18a5dec9cf1fbb20ffffd101409cd}} 
+Crane&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dragon@{Dragon}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Dragon@{Dragon}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a583f4be146b6127f9e4f3f036ce7df43}\label{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a583f4be146b6127f9e4f3f036ce7df43}} 
+Dragon&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lion@{Lion}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Lion@{Lion}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a60d28e7d879c0dc48b9a593468cf11e5}\label{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a60d28e7d879c0dc48b9a593468cf11e5}} 
+Lion&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Phoenix@{Phoenix}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Phoenix@{Phoenix}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a5047bc596a4bab2dc7f7c120bb22dec5}\label{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a5047bc596a4bab2dc7f7c120bb22dec5}} 
+Phoenix&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Scorpion@{Scorpion}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Scorpion@{Scorpion}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a5d0f5219d1a5557d70758202f92e0076}\label{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a5d0f5219d1a5557d70758202f92e0076}} 
+Scorpion&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unicorn@{Unicorn}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Unicorn@{Unicorn}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a393eb74047bb90c8d80dea54218430ee}\label{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a393eb74047bb90c8d80dea54218430ee}} 
+Unicorn&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!None@{None}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a6adf97f83acf6453d4a6a4b1070f3754}\label{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a6adf97f83acf6453d4a6a4b1070f3754}} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{First@{First}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!First@{First}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a7fb55ed0b7a30342ba6da306428cae04}\label{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844a7fb55ed0b7a30342ba6da306428cae04}} 
+First&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 69 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369}\label{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!CombatTokenType@{CombatTokenType}}
+\index{CombatTokenType@{CombatTokenType}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{CombatTokenType}{CombatTokenType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369}{battle\+\_\+for\+\_\+rokugan\+::\+Combat\+Token\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The Combat\+Token\+Type enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Army@{Army}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Army@{Army}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369ab06662c1658f052b202f87a33fa00138}\label{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369ab06662c1658f052b202f87a33fa00138}} 
+Army&1\mbox{[}6\mbox{]}, 2\mbox{[}4\mbox{]}, 3\mbox{[}3\mbox{]}, 4\mbox{[}2\mbox{]}, 5\mbox{[}1\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Navy@{Navy}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Navy@{Navy}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369a13ad5ac690e735fa48cf982532174e79}\label{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369a13ad5ac690e735fa48cf982532174e79}} 
+Navy&1\mbox{[}2\mbox{]}, 2\mbox{[}1\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Shinobi@{Shinobi}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Shinobi@{Shinobi}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369ada43bbcc124db9c01b9e45ad90c49c70}\label{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369ada43bbcc124db9c01b9e45ad90c49c70}} 
+Shinobi&1\mbox{[}1\mbox{]}, 2\mbox{[}2\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Diplomacy@{Diplomacy}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Diplomacy@{Diplomacy}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369ad38f4afc007ddb255c04f2d810fafaf5}\label{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369ad38f4afc007ddb255c04f2d810fafaf5}} 
+Diplomacy&1\mbox{[}1\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Raid@{Raid}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Raid@{Raid}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369ac8a23798f7577fe951f173d3380bee0d}\label{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369ac8a23798f7577fe951f173d3380bee0d}} 
+Raid&1\mbox{[}1\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Blessing@{Blessing}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Blessing@{Blessing}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369af1347562011016753e18334ffe7a5c99}\label{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369af1347562011016753e18334ffe7a5c99}} 
+Blessing&2\mbox{[}2\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Empty@{Empty}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Empty@{Empty}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369ace2c8aed9c2fa0cfbed56cbda4d8bf07}\label{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369ace2c8aed9c2fa0cfbed56cbda4d8bf07}} 
+Empty&\mbox{[} 1\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!None@{None}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369a6adf97f83acf6453d4a6a4b1070f3754}\label{namespacebattle__for__rokugan_a8c43a16d0e2384dc95916458bb04b369a6adf97f83acf6453d4a6a4b1070f3754}} 
+None&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 159 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a168acb8772c8ff41184ea13a7706ae60}\label{namespacebattle__for__rokugan_a168acb8772c8ff41184ea13a7706ae60}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Phase@{Phase}}
+\index{Phase@{Phase}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{Phase}{Phase}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacebattle__for__rokugan_a168acb8772c8ff41184ea13a7706ae60}{battle\+\_\+for\+\_\+rokugan\+::\+Phase}} \+: unsigned char\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The Phase enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pregame@{Pregame}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Pregame@{Pregame}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a168acb8772c8ff41184ea13a7706ae60ab323fc0a2e36b8e42d8c34cd11f87cbc}\label{namespacebattle__for__rokugan_a168acb8772c8ff41184ea13a7706ae60ab323fc0a2e36b8e42d8c34cd11f87cbc}} 
+Pregame&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Game@{Game}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Game@{Game}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a168acb8772c8ff41184ea13a7706ae60a63d72051e901c069f8aa1b32aa0c43bb}\label{namespacebattle__for__rokugan_a168acb8772c8ff41184ea13a7706ae60a63d72051e901c069f8aa1b32aa0c43bb}} 
+Game&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Postgame@{Postgame}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Postgame@{Postgame}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a168acb8772c8ff41184ea13a7706ae60a8a4506c9c5fae487d851e60f49145b62}\label{namespacebattle__for__rokugan_a168acb8772c8ff41184ea13a7706ae60a8a4506c9c5fae487d851e60f49145b62}} 
+Postgame&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 93 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_acd49428312862d19cf2fc077cb1d7b2b}\label{namespacebattle__for__rokugan_acd49428312862d19cf2fc077cb1d7b2b}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!PlaceType@{PlaceType}}
+\index{PlaceType@{PlaceType}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{PlaceType}{PlaceType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacebattle__for__rokugan_acd49428312862d19cf2fc077cb1d7b2b}{battle\+\_\+for\+\_\+rokugan\+::\+Place\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The Place\+Type enum. 
+
+
+
+Definition at line 86 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940}\label{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!ProvinceTokenType@{ProvinceTokenType}}
+\index{ProvinceTokenType@{ProvinceTokenType}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{ProvinceTokenType}{ProvinceTokenType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940}{battle\+\_\+for\+\_\+rokugan\+::\+Province\+Token\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The Province\+Token\+Type enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Shrine@{Shrine}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Shrine@{Shrine}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940ad080757314974eaea4984ee96ffdeeb9}\label{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940ad080757314974eaea4984ee96ffdeeb9}} 
+Shrine&\mbox{[} 1\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Harbor@{Harbor}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Harbor@{Harbor}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940a8b9bda71368928332d9e910b5795a6a7}\label{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940a8b9bda71368928332d9e910b5795a6a7}} 
+Harbor&\mbox{[} 1\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Glory@{Glory}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Glory@{Glory}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940ac1efb154af1a3906a4d7f81f01b0828c}\label{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940ac1efb154af1a3906a4d7f81f01b0828c}} 
+Glory&\mbox{[} 1\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Peace@{Peace}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Peace@{Peace}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940acc2073b04d2e90482ab2c7b7f03dfcc1}\label{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940acc2073b04d2e90482ab2c7b7f03dfcc1}} 
+Peace&\mbox{[}15\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ScorchedEarth@{ScorchedEarth}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!ScorchedEarth@{ScorchedEarth}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940add35c02c528acc821edfb936919501a8}\label{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940add35c02c528acc821edfb936919501a8}} 
+Scorched\+Earth&\mbox{[}15\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ProtectionBonus@{ProtectionBonus}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!ProtectionBonus@{ProtectionBonus}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940a452c38916509b69b4149f7110ef27852}\label{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940a452c38916509b69b4149f7110ef27852}} 
+Protection\+Bonus&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ProtectionBonus2@{ProtectionBonus2}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!ProtectionBonus2@{ProtectionBonus2}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940a9099106108dce583842290eba2ceb4c2}\label{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940a9099106108dce583842290eba2ceb4c2}} 
+Protection\+Bonus2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HonorBonusFull@{HonorBonusFull}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!HonorBonusFull@{HonorBonusFull}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940aaf39a2b6e9a9264298702bbc42be00c2}\label{namespacebattle__for__rokugan_a0833e5ffd6310910940d2fede5196940aaf39a2b6e9a9264298702bbc42be00c2}} 
+Honor\+Bonus\+Full&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 124 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!SecretObjectiveType@{SecretObjectiveType}}
+\index{SecretObjectiveType@{SecretObjectiveType}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{SecretObjectiveType}{SecretObjectiveType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{battle\+\_\+for\+\_\+rokugan\+::\+Secret\+Objective\+Type}} \+: unsigned char\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The Secret\+Objective\+Type enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CourtOfTheFiveWinds@{CourtOfTheFiveWinds}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!CourtOfTheFiveWinds@{CourtOfTheFiveWinds}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a9733be008d567b275dfae3ba4d6dedb6}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a9733be008d567b275dfae3ba4d6dedb6}} 
+Court\+Of\+The\+Five\+Winds&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GreatLibrary@{GreatLibrary}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!GreatLibrary@{GreatLibrary}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913aa90c63890c2729ad6ef8c285360807dd}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913aa90c63890c2729ad6ef8c285360807dd}} 
+Great\+Library&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DenOfSecrets@{DenOfSecrets}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!DenOfSecrets@{DenOfSecrets}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a6f57524b4c36ab7e077b3e220657b064}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a6f57524b4c36ab7e077b3e220657b064}} 
+Den\+Of\+Secrets&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RiceBowlOfTheEmpire@{RiceBowlOfTheEmpire}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!RiceBowlOfTheEmpire@{RiceBowlOfTheEmpire}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a49b578ed884082b7b208c09dd1550338}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a49b578ed884082b7b208c09dd1550338}} 
+Rice\+Bowl\+Of\+The\+Empire&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GreatWallOfTheNorth@{GreatWallOfTheNorth}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!GreatWallOfTheNorth@{GreatWallOfTheNorth}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a55f23d59841004b045765aaa7863583b}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a55f23d59841004b045765aaa7863583b}} 
+Great\+Wall\+Of\+The\+North&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WayOfTheSail@{WayOfTheSail}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!WayOfTheSail@{WayOfTheSail}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913aaf578d943c0b7e2074ecc9294a46db1a}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913aaf578d943c0b7e2074ecc9294a46db1a}} 
+Way\+Of\+The\+Sail&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EmeraldEmpire@{EmeraldEmpire}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!EmeraldEmpire@{EmeraldEmpire}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913aadc3f52892175daf4e23cfe2cc70d0c7}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913aadc3f52892175daf4e23cfe2cc70d0c7}} 
+Emerald\+Empire&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WayOfHumility@{WayOfHumility}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!WayOfHumility@{WayOfHumility}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a5cdaf18854ea5f83140f590ca244767d}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a5cdaf18854ea5f83140f590ca244767d}} 
+Way\+Of\+Humility&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WebOfInfluence@{WebOfInfluence}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!WebOfInfluence@{WebOfInfluence}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a919112e69141a8f4ba4da92ad7e1e27b}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a919112e69141a8f4ba4da92ad7e1e27b}} 
+Web\+Of\+Influence&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PlainsOfBattle@{PlainsOfBattle}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!PlainsOfBattle@{PlainsOfBattle}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a2271463976c9c11a3ef26d93dd710009}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a2271463976c9c11a3ef26d93dd710009}} 
+Plains\+Of\+Battle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TheLastLineOfDefense@{TheLastLineOfDefense}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TheLastLineOfDefense@{TheLastLineOfDefense}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913aa2123792e7176ebb19077d4d3f37165c}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913aa2123792e7176ebb19077d4d3f37165c}} 
+The\+Last\+Line\+Of\+Defense&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ReclaimingLostLands@{ReclaimingLostLands}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!ReclaimingLostLands@{ReclaimingLostLands}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a9591692f8a2678db7bba308a120171fe}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a9591692f8a2678db7bba308a120171fe}} 
+Reclaiming\+Lost\+Lands&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{First@{First}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!First@{First}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a7fb55ed0b7a30342ba6da306428cae04}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913a7fb55ed0b7a30342ba6da306428cae04}} 
+First&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Last@{Last}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Last@{Last}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913ad55b30607c2a9a2616347d6edb789f6b}\label{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913ad55b30607c2a9a2616347d6edb789f6b}} 
+Last&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 102 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229}\label{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!StatusTokenType@{StatusTokenType}}
+\index{StatusTokenType@{StatusTokenType}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{StatusTokenType}{StatusTokenType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229}{battle\+\_\+for\+\_\+rokugan\+::\+Status\+Token\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The Status\+Token\+Type enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Reserve@{Reserve}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Reserve@{Reserve}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229a66f9c6c5b672ee16deeef6e4503cb4bc}\label{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229a66f9c6c5b672ee16deeef6e4503cb4bc}} 
+Reserve&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Assets@{Assets}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Assets@{Assets}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229a9aedeaf1f77b8642abe528503b8c5de8}\label{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229a9aedeaf1f77b8642abe528503b8c5de8}} 
+Assets&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Discharge@{Discharge}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Discharge@{Discharge}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229a2a10b47fb4e3c274d2147f8bbd1a2c5c}\label{namespacebattle__for__rokugan_abbd764b8529db8f26d50db1c16be1229a2a10b47fb4e3c274d2147f8bbd1a2c5c}} 
+Discharge&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 175 of file bfr\+Enum.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!TerritoryType@{TerritoryType}}
+\index{TerritoryType@{TerritoryType}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{TerritoryType}{TerritoryType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{battle\+\_\+for\+\_\+rokugan\+::\+Territory\+Type}} \+: uchar\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The Territory\+Type enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Crab@{Crab}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Crab@{Crab}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8aff174d64774d5421545e1b38ded8db2f}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8aff174d64774d5421545e1b38ded8db2f}} 
+Crab&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Crane@{Crane}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Crane@{Crane}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a91c18a5dec9cf1fbb20ffffd101409cd}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a91c18a5dec9cf1fbb20ffffd101409cd}} 
+Crane&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dragon@{Dragon}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Dragon@{Dragon}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a583f4be146b6127f9e4f3f036ce7df43}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a583f4be146b6127f9e4f3f036ce7df43}} 
+Dragon&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lion@{Lion}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Lion@{Lion}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a60d28e7d879c0dc48b9a593468cf11e5}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a60d28e7d879c0dc48b9a593468cf11e5}} 
+Lion&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Phoenix@{Phoenix}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Phoenix@{Phoenix}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a5047bc596a4bab2dc7f7c120bb22dec5}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a5047bc596a4bab2dc7f7c120bb22dec5}} 
+Phoenix&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Scorpion@{Scorpion}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Scorpion@{Scorpion}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a5d0f5219d1a5557d70758202f92e0076}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a5d0f5219d1a5557d70758202f92e0076}} 
+Scorpion&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unicorn@{Unicorn}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Unicorn@{Unicorn}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a393eb74047bb90c8d80dea54218430ee}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a393eb74047bb90c8d80dea54218430ee}} 
+Unicorn&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Islands@{Islands}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Islands@{Islands}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a81e271c0609b755a9f4b460150f4fc01}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a81e271c0609b755a9f4b460150f4fc01}} 
+Islands&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mountains@{Mountains}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Mountains@{Mountains}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a8e8c2adc91106422362ffd9b8b44e9a2}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a8e8c2adc91106422362ffd9b8b44e9a2}} 
+Mountains&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ShadowlandsNorth@{ShadowlandsNorth}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!ShadowlandsNorth@{ShadowlandsNorth}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a9a22733938e5683c1003be391fb7713e}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a9a22733938e5683c1003be391fb7713e}} 
+Shadowlands\+North&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ShadowlandsSouth@{ShadowlandsSouth}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!ShadowlandsSouth@{ShadowlandsSouth}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a16cc7648619a23f151eedd0c668cdfe5}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a16cc7648619a23f151eedd0c668cdfe5}} 
+Shadowlands\+South&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!None@{None}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a6adf97f83acf6453d4a6a4b1070f3754}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a6adf97f83acf6453d4a6a4b1070f3754}} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{First@{First}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!First@{First}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a7fb55ed0b7a30342ba6da306428cae04}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8a7fb55ed0b7a30342ba6da306428cae04}} 
+First&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Last@{Last}!battle\_for\_rokugan@{battle\_for\_rokugan}}\index{battle\_for\_rokugan@{battle\_for\_rokugan}!Last@{Last}}}\mbox{\Hypertarget{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8ad55b30607c2a9a2616347d6edb789f6b}\label{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8ad55b30607c2a9a2616347d6edb789f6b}} 
+Last&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 138 of file bfr\+Enum.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a22f9270569dd135d998ef91663f6a1e4}\label{namespacebattle__for__rokugan_a22f9270569dd135d998ef91663f6a1e4}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!AFdeclareClass@{AFdeclareClass}}
+\index{AFdeclareClass@{AFdeclareClass}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{AFdeclareClass()}{AFdeclareClass()}}
+{\footnotesize\ttfamily battle\+\_\+for\+\_\+rokugan\+::\+A\+Fdeclare\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1Game}{Game}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file bfr\+Lib\+\_\+pre.\+h.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a988824b0b82c27b24a86e9c759a73f9d}\label{namespacebattle__for__rokugan_a988824b0b82c27b24a86e9c759a73f9d}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!operator+@{operator+}}
+\index{operator+@{operator+}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}} battle\+\_\+for\+\_\+rokugan\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}}}]{card,  }\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}}}]{clan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 458 of file card.\+cpp.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a05ae8e7481ee093561136c5eb3dfd02d}\label{namespacebattle__for__rokugan_a05ae8e7481ee093561136c5eb3dfd02d}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!operator+@{operator+}}
+\index{operator+@{operator+}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}} battle\+\_\+for\+\_\+rokugan\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}}}]{type,  }\item[{uint}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line 447 of file card.\+cpp.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a667b68b155156c0ffb1e868a2db8a7b1}\label{namespacebattle__for__rokugan_a667b68b155156c0ffb1e868a2db8a7b1}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!operator+@{operator+}}
+\index{operator+@{operator+}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}} battle\+\_\+for\+\_\+rokugan\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a24faf58c7e5e3f12185194bde8ab4844}{Clan\+Type}}}]{type,  }\item[{uint}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file clan.\+cpp.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a75237b29e3d6581adf5642dd5220002b}\label{namespacebattle__for__rokugan_a75237b29e3d6581adf5642dd5220002b}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!operator+@{operator+}}
+\index{operator+@{operator+}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{S\+OT}} battle\+\_\+for\+\_\+rokugan\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}}}]{type,  }\item[{uint}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line 201 of file secret\+Objective.\+cpp.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a9f10654a726eb1277b963025e01ff26d}\label{namespacebattle__for__rokugan_a9f10654a726eb1277b963025e01ff26d}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!operator+@{operator+}}
+\index{operator+@{operator+}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} battle\+\_\+for\+\_\+rokugan\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type,  }\item[{unsigned}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line 108 of file territory.\+cpp.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_ae1394f2be5ba4f5450c3bb1c33c9b9c2}\label{namespacebattle__for__rokugan_ae1394f2be5ba4f5450c3bb1c33c9b9c2}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!operator++@{operator++}}
+\index{operator++@{operator++}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{S\+OT}} battle\+\_\+for\+\_\+rokugan\+::operator++ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_aa323e31c8ffdf200395031138874b913}{Secret\+Objective\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 206 of file secret\+Objective.\+cpp.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a1ed36325051d7ff0ca76ae1943680ea1}\label{namespacebattle__for__rokugan_a1ed36325051d7ff0ca76ae1943680ea1}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!operator++@{operator++}}
+\index{operator++@{operator++}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} battle\+\_\+for\+\_\+rokugan\+::operator++ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 113 of file territory.\+cpp.
+
+\mbox{\Hypertarget{namespacebattle__for__rokugan_a3679e06f8e863ecee9dd441e35b36f50}\label{namespacebattle__for__rokugan_a3679e06f8e863ecee9dd441e35b36f50}} 
+\index{battle\_for\_rokugan@{battle\_for\_rokugan}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!battle\_for\_rokugan@{battle\_for\_rokugan}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}} battle\+\_\+for\+\_\+rokugan\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}}}]{left,  }\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a1c715afe8df6a245a940edb880635180}{Card\+Type}}}]{right }\end{DoxyParamCaption})}
+
+
+
+Definition at line 452 of file card.\+cpp.
+

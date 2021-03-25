@@ -1,0 +1,109 @@
+.TH "lib_bfr/include/bfrLib_pre.h" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib_bfr/include/bfrLib_pre.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <QtCore/QSharedPointer>\fP
+.br
+\fC#include <QtCore/QList>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include 'bfrEnum\&.h'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBbattle_for_rokugan\fP"
+.br
+.ti -1c
+.RI " \fBbattle_for_rokugan::karta\fP"
+.br
+.ti -1c
+.RI " \fBbattle_for_rokugan::object\fP"
+.br
+.ti -1c
+.RI " \fBbattle_for_rokugan::token\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBAFdeclareClass\fP(name)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::array< unsigned, 3 > \fBarray_u3\fP"
+.br
+.ti -1c
+.RI "typedef std::array< unsigned, 7 > \fBarray_u7\fP"
+.br
+.ti -1c
+.RI "typedef std::optional< QString > \fBErrorMsg\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< char > \fBchar_v\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< uchar > \fBuchar_v\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< std::pair< uchar, uchar > > \fBuchar_pair_v\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbattle_for_rokugan::AFdeclareClass\fP (Game) namespace handler"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define AFdeclareClass(name)"
+\fBValue:\fP
+.PP
+.nf
+    class name; \
+    typedef QList <name*> name##List;
+.fi
+.PP
+Definition at line 9 of file bfrLib_pre\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef std::array<unsigned, 3> \fBarray_u3\fP"
+
+.PP
+Definition at line 13 of file bfrLib_pre\&.h\&.
+.SS "typedef std::array<unsigned, 7> \fBarray_u7\fP"
+
+.PP
+Definition at line 14 of file bfrLib_pre\&.h\&.
+.SS "typedef std::vector< char> \fBchar_v\fP"
+
+.PP
+Definition at line 17 of file bfrLib_pre\&.h\&.
+.SS "typedef std::optional<QString> \fBErrorMsg\fP"
+
+.PP
+Definition at line 16 of file bfrLib_pre\&.h\&.
+.SS "typedef std::vector<std::pair <uchar, uchar> > \fBuchar_pair_v\fP"
+
+.PP
+Definition at line 19 of file bfrLib_pre\&.h\&.
+.SS "typedef std::vector<uchar> \fBuchar_v\fP"
+
+.PP
+Definition at line 18 of file bfrLib_pre\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

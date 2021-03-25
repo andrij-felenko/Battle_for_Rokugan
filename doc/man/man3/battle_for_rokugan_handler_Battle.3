@@ -1,0 +1,102 @@
+.TH "battle_for_rokugan::handler::Battle" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::handler::Battle
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <battle\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBbattleFinished\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBattle\fP (\fBkarta::Map\fP *map, QObject *parent)"
+.br
+.ti -1c
+.RI "void \fBreset\fP (object::PlayerList playerList)"
+.br
+.ti -1c
+.RI "void \fBrun\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBremoveNotFormatPlaced\fP ()"
+.br
+.ti -1c
+.RI "void \fBscorcheEarthAndDiplomacy\fP ()"
+.br
+.ti -1c
+.RI "void \fBcalculateBattle\fP (\fBkarta::Province\fP *province)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBkarta::Map\fP * \fBm_map\fP"
+.br
+.ti -1c
+.RI "object::PlayerList \fBm_playerList\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file battle\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::handler::Battle::Battle (\fBkarta::Map\fP * map, QObject * parent)"
+
+.PP
+Definition at line 12 of file battle\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void battle_for_rokugan::handler::Battle::battleFinished ()\fC [signal]\fP"
+
+.SS "void battle_for_rokugan::handler::Battle::calculateBattle (\fBkarta::Province\fP * province)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 119 of file battle\&.cpp\&.
+.SS "void battle_for_rokugan::handler::Battle::removeNotFormatPlaced ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 40 of file battle\&.cpp\&.
+.SS "void battle_for_rokugan::handler::Battle::reset (object::PlayerList playerList)"
+
+.PP
+Definition at line 18 of file battle\&.cpp\&.
+.SS "void battle_for_rokugan::handler::Battle::run ()"
+
+.PP
+Definition at line 23 of file battle\&.cpp\&.
+.SS "void battle_for_rokugan::handler::Battle::scorcheEarthAndDiplomacy ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 98 of file battle\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBkarta::Map\fP* battle_for_rokugan::handler::Battle::m_map\fC [private]\fP"
+
+.PP
+Definition at line 19 of file battle\&.h\&.
+.SS "object::PlayerList battle_for_rokugan::handler::Battle::m_playerList\fC [private]\fP"
+
+.PP
+Definition at line 20 of file battle\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

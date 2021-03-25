@@ -1,0 +1,150 @@
+\hypertarget{classbattle__for__rokugan_1_1handler_1_1Battle}{}\doxysection{battle\+\_\+for\+\_\+rokugan\+::handler\+::Battle Class Reference}
+\label{classbattle__for__rokugan_1_1handler_1_1Battle}\index{battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}}
+
+
+{\ttfamily \#include $<$battle.\+h$>$}
+
+Inheritance diagram for battle\+\_\+for\+\_\+rokugan\+::handler\+::Battle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dd/d37/classbattle__for__rokugan_1_1handler_1_1Battle}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Battle_aa31a8d4fdffa5dbf794e1b4aba22b744}{battle\+Finished}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Battle_a27874d6a467b397c67412bf954987ac3}{Battle}} (\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map}{karta\+::\+Map}} $\ast$map, Q\+Object $\ast$parent)
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Battle_ad6d8d56467aed6015a2d5955ee8bf425}{reset}} (object\+::\+Player\+List player\+List)
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Battle_a4a01ca3a47df34270aacfa2dfc89a8ba}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Battle_aef3aa05dd9990a16d996a030748fab8b}{remove\+Not\+Format\+Placed}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Battle_a2acf666fb40140093a22f4c1f7030c8b}{scorche\+Earth\+And\+Diplomacy}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Battle_ade12f88fdb2030a8c48cf49d3d5726fb}{calculate\+Battle}} (\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Province}{karta\+::\+Province}} $\ast$province)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map}{karta\+::\+Map}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Battle_a8c8eff3a98862251e05e610468e909b9}{m\+\_\+map}}
+\item 
+object\+::\+Player\+List \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Battle_adcc8986a3b548546b4be28913c0404db}{m\+\_\+player\+List}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 6 of file battle.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Battle_a27874d6a467b397c67412bf954987ac3}\label{classbattle__for__rokugan_1_1handler_1_1Battle_a27874d6a467b397c67412bf954987ac3}} 
+\index{battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}!Battle@{Battle}}
+\index{Battle@{Battle}!battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}}
+\doxysubsubsection{\texorpdfstring{Battle()}{Battle()}}
+{\footnotesize\ttfamily battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Battle\+::\+Battle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map}{karta\+::\+Map}} $\ast$}]{map,  }\item[{Q\+Object $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file battle.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Battle_aa31a8d4fdffa5dbf794e1b4aba22b744}\label{classbattle__for__rokugan_1_1handler_1_1Battle_aa31a8d4fdffa5dbf794e1b4aba22b744}} 
+\index{battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}!battleFinished@{battleFinished}}
+\index{battleFinished@{battleFinished}!battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}}
+\doxysubsubsection{\texorpdfstring{battleFinished}{battleFinished}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Battle\+::battle\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Battle_ade12f88fdb2030a8c48cf49d3d5726fb}\label{classbattle__for__rokugan_1_1handler_1_1Battle_ade12f88fdb2030a8c48cf49d3d5726fb}} 
+\index{battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}!calculateBattle@{calculateBattle}}
+\index{calculateBattle@{calculateBattle}!battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}}
+\doxysubsubsection{\texorpdfstring{calculateBattle()}{calculateBattle()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Battle\+::calculate\+Battle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Province}{karta\+::\+Province}} $\ast$}]{province }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 119 of file battle.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Battle_aef3aa05dd9990a16d996a030748fab8b}\label{classbattle__for__rokugan_1_1handler_1_1Battle_aef3aa05dd9990a16d996a030748fab8b}} 
+\index{battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}!removeNotFormatPlaced@{removeNotFormatPlaced}}
+\index{removeNotFormatPlaced@{removeNotFormatPlaced}!battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}}
+\doxysubsubsection{\texorpdfstring{removeNotFormatPlaced()}{removeNotFormatPlaced()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Battle\+::remove\+Not\+Format\+Placed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 40 of file battle.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Battle_ad6d8d56467aed6015a2d5955ee8bf425}\label{classbattle__for__rokugan_1_1handler_1_1Battle_ad6d8d56467aed6015a2d5955ee8bf425}} 
+\index{battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}!reset@{reset}}
+\index{reset@{reset}!battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Battle\+::reset (\begin{DoxyParamCaption}\item[{object\+::\+Player\+List}]{player\+List }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file battle.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Battle_a4a01ca3a47df34270aacfa2dfc89a8ba}\label{classbattle__for__rokugan_1_1handler_1_1Battle_a4a01ca3a47df34270aacfa2dfc89a8ba}} 
+\index{battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}!run@{run}}
+\index{run@{run}!battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Battle\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file battle.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Battle_a2acf666fb40140093a22f4c1f7030c8b}\label{classbattle__for__rokugan_1_1handler_1_1Battle_a2acf666fb40140093a22f4c1f7030c8b}} 
+\index{battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}!scorcheEarthAndDiplomacy@{scorcheEarthAndDiplomacy}}
+\index{scorcheEarthAndDiplomacy@{scorcheEarthAndDiplomacy}!battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}}
+\doxysubsubsection{\texorpdfstring{scorcheEarthAndDiplomacy()}{scorcheEarthAndDiplomacy()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Battle\+::scorche\+Earth\+And\+Diplomacy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 98 of file battle.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Battle_a8c8eff3a98862251e05e610468e909b9}\label{classbattle__for__rokugan_1_1handler_1_1Battle_a8c8eff3a98862251e05e610468e909b9}} 
+\index{battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}!m\_map@{m\_map}}
+\index{m\_map@{m\_map}!battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}}
+\doxysubsubsection{\texorpdfstring{m\_map}{m\_map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map}{karta\+::\+Map}}$\ast$ battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Battle\+::m\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file battle.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1handler_1_1Battle_adcc8986a3b548546b4be28913c0404db}\label{classbattle__for__rokugan_1_1handler_1_1Battle_adcc8986a3b548546b4be28913c0404db}} 
+\index{battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}!m\_playerList@{m\_playerList}}
+\index{m\_playerList@{m\_playerList}!battle\_for\_rokugan::handler::Battle@{battle\_for\_rokugan::handler::Battle}}
+\doxysubsubsection{\texorpdfstring{m\_playerList}{m\_playerList}}
+{\footnotesize\ttfamily object\+::\+Player\+List battle\+\_\+for\+\_\+rokugan\+::handler\+::\+Battle\+::m\+\_\+player\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file battle.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+bfr/include/lib\+\_\+bfr/handler/\mbox{\hyperlink{battle_8h}{battle.\+h}}\item 
+lib\+\_\+bfr/src/handler/\mbox{\hyperlink{battle_8cpp}{battle.\+cpp}}\end{DoxyCompactItemize}

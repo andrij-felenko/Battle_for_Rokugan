@@ -1,0 +1,504 @@
+.TH "battle_for_rokugan" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBhandler\fP"
+.br
+.ti -1c
+.RI " \fBkarta\fP"
+.br
+.ti -1c
+.RI " \fBobject\fP"
+.br
+.ti -1c
+.RI " \fBtoken\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBGame\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef QList< \fBCardType\fP > \fBCardTypeList\fP"
+.br
+.ti -1c
+.RI "typedef std::optional< \fBClanType\fP > \fBClanTypeOpt\fP"
+.br
+.ti -1c
+.RI "typedef QList< \fBClanType\fP > \fBClanTypeList\fP"
+.br
+.ti -1c
+.RI "typedef \fBSecretObjectiveType\fP \fBSOT\fP"
+.br
+.ti -1c
+.RI "typedef \fBCombatTokenType\fP \fBCTT\fP"
+.br
+.ti -1c
+.RI "typedef \fBStatusTokenType\fP \fBSTT\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBBorderType\fP "
+.br
+.RI "The BorderType enum\&. "
+.ti -1c
+.RI "enum \fBCardType\fP "
+.br
+.RI "The CardType enum\&. "
+.ti -1c
+.RI "enum \fBClanType\fP "
+.br
+.RI "The ClanType enum\&. "
+.ti -1c
+.RI "enum \fBPlaceType\fP "
+.br
+.RI "The PlaceType enum\&. "
+.ti -1c
+.RI "enum \fBPhase\fP : unsigned char "
+.br
+.RI "The Phase enum\&. "
+.ti -1c
+.RI "enum \fBSecretObjectiveType\fP : unsigned char "
+.br
+.RI "The SecretObjectiveType enum\&. "
+.ti -1c
+.RI "enum \fBProvinceTokenType\fP "
+.br
+.RI "The ProvinceTokenType enum\&. "
+.ti -1c
+.RI "enum \fBTerritoryType\fP : uchar "
+.br
+.RI "The TerritoryType enum\&. "
+.ti -1c
+.RI "enum \fBCombatTokenType\fP "
+.br
+.RI "The CombatTokenType enum\&. "
+.ti -1c
+.RI "enum \fBStatusTokenType\fP "
+.br
+.RI "The StatusTokenType enum\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAFdeclareClass\fP (\fBGame\fP) namespace handler"
+.br
+.ti -1c
+.RI "\fBTerritoryType\fP \fBoperator+\fP (\fBTerritoryType\fP type, unsigned i)"
+.br
+.ti -1c
+.RI "\fBTerritoryType\fP \fBoperator++\fP (\fBTerritoryType\fP type)"
+.br
+.ti -1c
+.RI "\fBCardType\fP \fBoperator+\fP (\fBCardType\fP type, uint i)"
+.br
+.ti -1c
+.RI "\fBCardType\fP \fBoperator+\fP (\fBCardType\fP card, \fBClanType\fP clan)"
+.br
+.ti -1c
+.RI "\fBCardType\fP \fBoperator\-\fP (\fBCardType\fP left, \fBCardType\fP right)"
+.br
+.ti -1c
+.RI "\fBClanType\fP \fBoperator+\fP (\fBClanType\fP type, uint i)"
+.br
+.ti -1c
+.RI "\fBSecretObjectiveType\fP \fBoperator+\fP (\fBSecretObjectiveType\fP type, uint i)"
+.br
+.ti -1c
+.RI "\fBSecretObjectiveType\fP \fBoperator++\fP (\fBSecretObjectiveType\fP type)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef QList<\fBCardType\fP> \fBbattle_for_rokugan::CardTypeList\fP"
+
+.PP
+Definition at line 64 of file bfrEnum\&.h\&.
+.SS "typedef QList<\fBClanType\fP> \fBbattle_for_rokugan::ClanTypeList\fP"
+
+.PP
+Definition at line 81 of file bfrEnum\&.h\&.
+.SS "typedef std::optional<\fBClanType\fP> \fBbattle_for_rokugan::ClanTypeOpt\fP"
+
+.PP
+Definition at line 80 of file bfrEnum\&.h\&.
+.SS "typedef \fBCombatTokenType\fP \fBbattle_for_rokugan::CTT\fP"
+
+.PP
+Definition at line 170 of file bfrEnum\&.h\&.
+.SS "typedef \fBSecretObjectiveType\fP \fBbattle_for_rokugan::SOT\fP"
+
+.PP
+Definition at line 119 of file bfrEnum\&.h\&.
+.SS "typedef \fBStatusTokenType\fP \fBbattle_for_rokugan::STT\fP"
+
+.PP
+Definition at line 180 of file bfrEnum\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBbattle_for_rokugan::BorderType\fP\fC [strong]\fP"
+
+.PP
+The BorderType enum\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILand \fP\fP
+.TP
+\fB\fINavy \fP\fP
+.PP
+Definition at line 10 of file bfrEnum\&.h\&.
+.SS "enum \fBbattle_for_rokugan::CardType\fP\fC [strong]\fP"
+
+.PP
+The CardType enum\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIFirstPlayer \fP\fP
+[1] 
+.TP
+\fB\fIShugenja \fP\fP
+[5] 
+.TP
+\fB\fIScout \fP\fP
+[10] 
+.TP
+\fB\fIInitiativeCrab \fP\fP
+[7 for each nation with their logit and 3 neutral cards] 
+.TP
+\fB\fIInitiativeCrane \fP\fP
+.TP
+\fB\fIInitiativeDragon \fP\fP
+.TP
+\fB\fIInitiativeLion \fP\fP
+.TP
+\fB\fIInitiativePhoenix \fP\fP
+.TP
+\fB\fIInitiativeScorpion \fP\fP
+.TP
+\fB\fIInitiativeUnicorn \fP\fP
+.TP
+\fB\fIMasterOfGovernance \fP\fP
+Neutral card\&. 
+.TP
+\fB\fIMasterOfTactics \fP\fP
+Neutral card\&. 
+.TP
+\fB\fIRiseOfAnEmpire \fP\fP
+Neutral card\&. 
+.TP
+\fB\fITerritoryCrab_FeatsOfEngineering \fP\fP
+territory cards 
+.TP
+\fB\fITerritoryCrab_Promotion \fP\fP
+.TP
+\fB\fITerritoryCrane_CodeOfHonor \fP\fP
+.TP
+\fB\fITerritoryCrane_DiplomaticMission \fP\fP
+.TP
+\fB\fITerritoryDragon_StrengthOfPurpose \fP\fP
+.TP
+\fB\fITerritoryDragon_SacredGround \fP\fP
+.TP
+\fB\fITerritoryLion_Bushido \fP\fP
+.TP
+\fB\fITerritoryLion_HonorableFight \fP\fP
+.TP
+\fB\fITerritoryPhoenix_AidOfTheKami \fP\fP
+.TP
+\fB\fITerritoryPhoenix_BlessTheLands \fP\fP
+.TP
+\fB\fITerritoryScorpion_SpyNetwork \fP\fP
+.TP
+\fB\fITerritoryScorpion_FomentRebellion \fP\fP
+.TP
+\fB\fITerritoryUnicorn_Reinforcement \fP\fP
+.TP
+\fB\fITerritoryUnicorn_CulturalExchange \fP\fP
+.TP
+\fB\fITerritoryIslands_PirateRaids \fP\fP
+.TP
+\fB\fITerritoryIslands_PortOfProsperity \fP\fP
+.TP
+\fB\fITerritoryMountains_BountifulHarvest \fP\fP
+.TP
+\fB\fITerritoryMountains_AshigaruLevies \fP\fP
+.TP
+\fB\fITerritoryShadowlandsNorth_DarkFavors \fP\fP
+.TP
+\fB\fITerritoryShadowlandsNorth_PurgeTheWeak \fP\fP
+.TP
+\fB\fITerritoryShadowlandsSouth_AnimateTheDead \fP\fP
+.TP
+\fB\fITerritoryShadowlandsSouth_InspireFear \fP\fP
+.TP
+\fB\fIFirstInitiative \fP\fP
+.TP
+\fB\fILastInitiative \fP\fP
+.TP
+\fB\fIFirstTerritory \fP\fP
+.TP
+\fB\fILastTerritory \fP\fP
+.PP
+Definition at line 18 of file bfrEnum\&.h\&.
+.SS "enum \fBbattle_for_rokugan::ClanType\fP\fC [strong]\fP"
+
+.PP
+The ClanType enum\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICrab \fP\fP
+.TP
+\fB\fICrane \fP\fP
+.TP
+\fB\fIDragon \fP\fP
+.TP
+\fB\fILion \fP\fP
+.TP
+\fB\fIPhoenix \fP\fP
+.TP
+\fB\fIScorpion \fP\fP
+.TP
+\fB\fIUnicorn \fP\fP
+.TP
+\fB\fINone \fP\fP
+.TP
+\fB\fIFirst \fP\fP
+.PP
+Definition at line 69 of file bfrEnum\&.h\&.
+.SS "enum \fBbattle_for_rokugan::CombatTokenType\fP\fC [strong]\fP"
+
+.PP
+The CombatTokenType enum\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIArmy \fP\fP
+1[6], 2[4], 3[3], 4[2], 5[1] 
+.TP
+\fB\fINavy \fP\fP
+1[2], 2[1] 
+.TP
+\fB\fIShinobi \fP\fP
+1[1], 2[2] 
+.TP
+\fB\fIDiplomacy \fP\fP
+1[1] 
+.TP
+\fB\fIRaid \fP\fP
+1[1] 
+.TP
+\fB\fIBlessing \fP\fP
+2[2] 
+.TP
+\fB\fIEmpty \fP\fP
+[ 1] 
+.TP
+\fB\fINone \fP\fP
+.PP
+Definition at line 159 of file bfrEnum\&.h\&.
+.SS "enum \fBbattle_for_rokugan::Phase\fP : unsigned char\fC [strong]\fP"
+
+.PP
+The Phase enum\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPregame \fP\fP
+.TP
+\fB\fIGame \fP\fP
+.TP
+\fB\fIPostgame \fP\fP
+.PP
+Definition at line 93 of file bfrEnum\&.h\&.
+.SS "enum \fBbattle_for_rokugan::PlaceType\fP\fC [strong]\fP"
+
+.PP
+The PlaceType enum\&. 
+.PP
+Definition at line 86 of file bfrEnum\&.h\&.
+.SS "enum \fBbattle_for_rokugan::ProvinceTokenType\fP\fC [strong]\fP"
+
+.PP
+The ProvinceTokenType enum\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIShrine \fP\fP
+[ 1] 
+.TP
+\fB\fIHarbor \fP\fP
+[ 1] 
+.TP
+\fB\fIGlory \fP\fP
+[ 1] 
+.TP
+\fB\fIPeace \fP\fP
+[15] 
+.TP
+\fB\fIScorchedEarth \fP\fP
+[15] 
+.TP
+\fB\fIProtectionBonus \fP\fP
+.TP
+\fB\fIProtectionBonus2 \fP\fP
+.TP
+\fB\fIHonorBonusFull \fP\fP
+.PP
+Definition at line 124 of file bfrEnum\&.h\&.
+.SS "enum \fBbattle_for_rokugan::SecretObjectiveType\fP : unsigned char\fC [strong]\fP"
+
+.PP
+The SecretObjectiveType enum\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICourtOfTheFiveWinds \fP\fP
+.TP
+\fB\fIGreatLibrary \fP\fP
+.TP
+\fB\fIDenOfSecrets \fP\fP
+.TP
+\fB\fIRiceBowlOfTheEmpire \fP\fP
+.TP
+\fB\fIGreatWallOfTheNorth \fP\fP
+.TP
+\fB\fIWayOfTheSail \fP\fP
+.TP
+\fB\fIEmeraldEmpire \fP\fP
+.TP
+\fB\fIWayOfHumility \fP\fP
+.TP
+\fB\fIWebOfInfluence \fP\fP
+.TP
+\fB\fIPlainsOfBattle \fP\fP
+.TP
+\fB\fITheLastLineOfDefense \fP\fP
+.TP
+\fB\fIReclaimingLostLands \fP\fP
+.TP
+\fB\fIFirst \fP\fP
+.TP
+\fB\fILast \fP\fP
+.PP
+Definition at line 102 of file bfrEnum\&.h\&.
+.SS "enum \fBbattle_for_rokugan::StatusTokenType\fP\fC [strong]\fP"
+
+.PP
+The StatusTokenType enum\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIReserve \fP\fP
+.TP
+\fB\fIAssets \fP\fP
+.TP
+\fB\fIDischarge \fP\fP
+.PP
+Definition at line 175 of file bfrEnum\&.h\&.
+.SS "enum \fBbattle_for_rokugan::TerritoryType\fP : uchar\fC [strong]\fP"
+
+.PP
+The TerritoryType enum\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICrab \fP\fP
+.TP
+\fB\fICrane \fP\fP
+.TP
+\fB\fIDragon \fP\fP
+.TP
+\fB\fILion \fP\fP
+.TP
+\fB\fIPhoenix \fP\fP
+.TP
+\fB\fIScorpion \fP\fP
+.TP
+\fB\fIUnicorn \fP\fP
+.TP
+\fB\fIIslands \fP\fP
+.TP
+\fB\fIMountains \fP\fP
+.TP
+\fB\fIShadowlandsNorth \fP\fP
+.TP
+\fB\fIShadowlandsSouth \fP\fP
+.TP
+\fB\fINone \fP\fP
+.TP
+\fB\fIFirst \fP\fP
+.TP
+\fB\fILast \fP\fP
+.PP
+Definition at line 138 of file bfrEnum\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "battle_for_rokugan::AFdeclareClass (\fBGame\fP)"
+
+.PP
+Definition at line 22 of file bfrLib_pre\&.h\&.
+.SS "\fBCardType\fP battle_for_rokugan::operator+ (\fBCardType\fP card, \fBClanType\fP clan)"
+
+.PP
+Definition at line 458 of file card\&.cpp\&.
+.SS "\fBCardType\fP battle_for_rokugan::operator+ (\fBCardType\fP type, uint i)"
+
+.PP
+Definition at line 447 of file card\&.cpp\&.
+.SS "\fBClanType\fP battle_for_rokugan::operator+ (\fBClanType\fP type, uint i)"
+
+.PP
+Definition at line 67 of file clan\&.cpp\&.
+.SS "\fBSOT\fP battle_for_rokugan::operator+ (\fBSecretObjectiveType\fP type, uint i)"
+
+.PP
+Definition at line 201 of file secretObjective\&.cpp\&.
+.SS "\fBTerritoryType\fP battle_for_rokugan::operator+ (\fBTerritoryType\fP type, unsigned i)"
+
+.PP
+Definition at line 108 of file territory\&.cpp\&.
+.SS "\fBSOT\fP battle_for_rokugan::operator++ (\fBSecretObjectiveType\fP type)"
+
+.PP
+Definition at line 206 of file secretObjective\&.cpp\&.
+.SS "\fBTerritoryType\fP battle_for_rokugan::operator++ (\fBTerritoryType\fP type)"
+
+.PP
+Definition at line 113 of file territory\&.cpp\&.
+.SS "\fBCardType\fP battle_for_rokugan::operator\- (\fBCardType\fP left, \fBCardType\fP right)"
+
+.PP
+Definition at line 452 of file card\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

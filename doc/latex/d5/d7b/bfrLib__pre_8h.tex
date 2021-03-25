@@ -1,0 +1,124 @@
+\hypertarget{bfrLib__pre_8h}{}\doxysection{lib\+\_\+bfr/include/bfr\+Lib\+\_\+pre.h File Reference}
+\label{bfrLib__pre_8h}\index{lib\_bfr/include/bfrLib\_pre.h@{lib\_bfr/include/bfrLib\_pre.h}}
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Shared\+Pointer$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+Q\+List$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}bfr\+Enum.\+h\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacebattle__for__rokugan}{battle\+\_\+for\+\_\+rokugan}}
+\item 
+ \mbox{\hyperlink{namespacebattle__for__rokugan_1_1karta}{battle\+\_\+for\+\_\+rokugan\+::karta}}
+\item 
+ \mbox{\hyperlink{namespacebattle__for__rokugan_1_1object}{battle\+\_\+for\+\_\+rokugan\+::object}}
+\item 
+ \mbox{\hyperlink{namespacebattle__for__rokugan_1_1token}{battle\+\_\+for\+\_\+rokugan\+::token}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bfrLib__pre_8h_a1b61e8b62e35a0b388c5127df0282745}{A\+Fdeclare\+Class}}(name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::array$<$ unsigned, 3 $>$ \mbox{\hyperlink{bfrLib__pre_8h_a4d964a21ce762c796f652a10dbe1b08d}{array\+\_\+u3}}
+\item 
+typedef std\+::array$<$ unsigned, 7 $>$ \mbox{\hyperlink{bfrLib__pre_8h_ab9bb3519f1242ea974e3ed869aff6900}{array\+\_\+u7}}
+\item 
+typedef std\+::optional$<$ Q\+String $>$ \mbox{\hyperlink{bfrLib__pre_8h_a88275d72684a99779efa82a372db701e}{Error\+Msg}}
+\item 
+typedef std\+::vector$<$ char $>$ \mbox{\hyperlink{bfrLib__pre_8h_a25d52dcb001bd0f8a7e0962f42fc528c}{char\+\_\+v}}
+\item 
+typedef std\+::vector$<$ uchar $>$ \mbox{\hyperlink{bfrLib__pre_8h_a71405e43544df63dea9a135a768cf864}{uchar\+\_\+v}}
+\item 
+typedef std\+::vector$<$ std\+::pair$<$ uchar, uchar $>$ $>$ \mbox{\hyperlink{bfrLib__pre_8h_a3a3f9a2c61e94556286ca5ea840552aa}{uchar\+\_\+pair\+\_\+v}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebattle__for__rokugan_a22f9270569dd135d998ef91663f6a1e4}{battle\+\_\+for\+\_\+rokugan\+::\+A\+Fdeclare\+Class}} (Game) namespace handler
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{bfrLib__pre_8h_a1b61e8b62e35a0b388c5127df0282745}\label{bfrLib__pre_8h_a1b61e8b62e35a0b388c5127df0282745}} 
+\index{bfrLib\_pre.h@{bfrLib\_pre.h}!AFdeclareClass@{AFdeclareClass}}
+\index{AFdeclareClass@{AFdeclareClass}!bfrLib\_pre.h@{bfrLib\_pre.h}}
+\doxysubsubsection{\texorpdfstring{AFdeclareClass}{AFdeclareClass}}
+{\footnotesize\ttfamily \#define A\+Fdeclare\+Class(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{class }name; \(\backslash\)}
+\DoxyCodeLine{    typedef QList <name*> name\#\#List;}
+
+\end{DoxyCode}
+
+
+Definition at line 9 of file bfr\+Lib\+\_\+pre.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{bfrLib__pre_8h_a4d964a21ce762c796f652a10dbe1b08d}\label{bfrLib__pre_8h_a4d964a21ce762c796f652a10dbe1b08d}} 
+\index{bfrLib\_pre.h@{bfrLib\_pre.h}!array\_u3@{array\_u3}}
+\index{array\_u3@{array\_u3}!bfrLib\_pre.h@{bfrLib\_pre.h}}
+\doxysubsubsection{\texorpdfstring{array\_u3}{array\_u3}}
+{\footnotesize\ttfamily typedef std\+::array$<$unsigned, 3$>$ \mbox{\hyperlink{bfrLib__pre_8h_a4d964a21ce762c796f652a10dbe1b08d}{array\+\_\+u3}}}
+
+
+
+Definition at line 13 of file bfr\+Lib\+\_\+pre.\+h.
+
+\mbox{\Hypertarget{bfrLib__pre_8h_ab9bb3519f1242ea974e3ed869aff6900}\label{bfrLib__pre_8h_ab9bb3519f1242ea974e3ed869aff6900}} 
+\index{bfrLib\_pre.h@{bfrLib\_pre.h}!array\_u7@{array\_u7}}
+\index{array\_u7@{array\_u7}!bfrLib\_pre.h@{bfrLib\_pre.h}}
+\doxysubsubsection{\texorpdfstring{array\_u7}{array\_u7}}
+{\footnotesize\ttfamily typedef std\+::array$<$unsigned, 7$>$ \mbox{\hyperlink{bfrLib__pre_8h_ab9bb3519f1242ea974e3ed869aff6900}{array\+\_\+u7}}}
+
+
+
+Definition at line 14 of file bfr\+Lib\+\_\+pre.\+h.
+
+\mbox{\Hypertarget{bfrLib__pre_8h_a25d52dcb001bd0f8a7e0962f42fc528c}\label{bfrLib__pre_8h_a25d52dcb001bd0f8a7e0962f42fc528c}} 
+\index{bfrLib\_pre.h@{bfrLib\_pre.h}!char\_v@{char\_v}}
+\index{char\_v@{char\_v}!bfrLib\_pre.h@{bfrLib\_pre.h}}
+\doxysubsubsection{\texorpdfstring{char\_v}{char\_v}}
+{\footnotesize\ttfamily typedef std\+::vector$<$ char$>$ \mbox{\hyperlink{bfrLib__pre_8h_a25d52dcb001bd0f8a7e0962f42fc528c}{char\+\_\+v}}}
+
+
+
+Definition at line 17 of file bfr\+Lib\+\_\+pre.\+h.
+
+\mbox{\Hypertarget{bfrLib__pre_8h_a88275d72684a99779efa82a372db701e}\label{bfrLib__pre_8h_a88275d72684a99779efa82a372db701e}} 
+\index{bfrLib\_pre.h@{bfrLib\_pre.h}!ErrorMsg@{ErrorMsg}}
+\index{ErrorMsg@{ErrorMsg}!bfrLib\_pre.h@{bfrLib\_pre.h}}
+\doxysubsubsection{\texorpdfstring{ErrorMsg}{ErrorMsg}}
+{\footnotesize\ttfamily typedef std\+::optional$<$Q\+String$>$ \mbox{\hyperlink{bfrLib__pre_8h_a88275d72684a99779efa82a372db701e}{Error\+Msg}}}
+
+
+
+Definition at line 16 of file bfr\+Lib\+\_\+pre.\+h.
+
+\mbox{\Hypertarget{bfrLib__pre_8h_a3a3f9a2c61e94556286ca5ea840552aa}\label{bfrLib__pre_8h_a3a3f9a2c61e94556286ca5ea840552aa}} 
+\index{bfrLib\_pre.h@{bfrLib\_pre.h}!uchar\_pair\_v@{uchar\_pair\_v}}
+\index{uchar\_pair\_v@{uchar\_pair\_v}!bfrLib\_pre.h@{bfrLib\_pre.h}}
+\doxysubsubsection{\texorpdfstring{uchar\_pair\_v}{uchar\_pair\_v}}
+{\footnotesize\ttfamily typedef std\+::vector$<$std\+::pair $<$uchar, uchar$>$ $>$ \mbox{\hyperlink{bfrLib__pre_8h_a3a3f9a2c61e94556286ca5ea840552aa}{uchar\+\_\+pair\+\_\+v}}}
+
+
+
+Definition at line 19 of file bfr\+Lib\+\_\+pre.\+h.
+
+\mbox{\Hypertarget{bfrLib__pre_8h_a71405e43544df63dea9a135a768cf864}\label{bfrLib__pre_8h_a71405e43544df63dea9a135a768cf864}} 
+\index{bfrLib\_pre.h@{bfrLib\_pre.h}!uchar\_v@{uchar\_v}}
+\index{uchar\_v@{uchar\_v}!bfrLib\_pre.h@{bfrLib\_pre.h}}
+\doxysubsubsection{\texorpdfstring{uchar\_v}{uchar\_v}}
+{\footnotesize\ttfamily typedef std\+::vector$<$uchar$>$ \mbox{\hyperlink{bfrLib__pre_8h_a71405e43544df63dea9a135a768cf864}{uchar\+\_\+v}}}
+
+
+
+Definition at line 18 of file bfr\+Lib\+\_\+pre.\+h.
+

@@ -1,0 +1,346 @@
+\hypertarget{classbattle__for__rokugan_1_1karta_1_1Map}{}\doxysection{battle\+\_\+for\+\_\+rokugan\+::karta\+::Map Class Reference}
+\label{classbattle__for__rokugan_1_1karta_1_1Map}\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+
+
+{\ttfamily \#include $<$map.\+h$>$}
+
+Inheritance diagram for battle\+\_\+for\+\_\+rokugan\+::karta\+::Map\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d0/d9f/classbattle__for__rokugan_1_1karta_1_1Map}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_af1f69019e77455c30d48995844a89fa5}{all\+Token\+Opened}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_a6fb62850241899959a8515039a494b81}{show\+Combat\+Token\+Changed}} (bool \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_a50167ff70a54baf47406cc030d202944}{show\+Combat\+Token}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_a027d2d63ac5136c56a215781a85858ef}{Map}} (Q\+Object $\ast$parent)
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Territory}{Territory}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_a1a7e629e85b7b0139343ccf62d718466}{operator\mbox{[}$\,$\mbox{]}}} (const \mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type) const
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_a877abcc643cb755b286f8c8892983058}{clear}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_aca15afe5df6eed5286748f68424ca7a8}{open\+Tokens}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_ae6696b0075c36d2ff64368c62eb8b077}{new\+Turn}} ()
+\item 
+bool \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_aeb4e66a34da09868d9f9acc53c0a0977}{show\+Combat\+Token}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_a50167ff70a54baf47406cc030d202944}{show\+Combat\+Token}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_ae8617b3c3a46030bf39e4a050bf57c70}{add\+Border}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type, \mbox{\hyperlink{bfrLib__pre_8h_a71405e43544df63dea9a135a768cf864}{uchar\+\_\+v}} v)
+\item 
+bool \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_a6d8708db4aeeb59697a159a0f59e889d}{add\+Border}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type1, unsigned char s1, \mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type2, unsigned char s2=0)
+\item 
+bool \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_ad16040abb3095b61f491b9b8b8895f3e}{add\+Border}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type1, \mbox{\hyperlink{bfrLib__pre_8h_a71405e43544df63dea9a135a768cf864}{uchar\+\_\+v}} s1, \mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type2, \mbox{\hyperlink{bfrLib__pre_8h_a71405e43544df63dea9a135a768cf864}{uchar\+\_\+v}} s2)
+\item 
+bool \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_aaed1b52057a990f263cffd11ccc996a1}{add\+Border}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type, \mbox{\hyperlink{bfrLib__pre_8h_a3a3f9a2c61e94556286ca5ea840552aa}{uchar\+\_\+pair\+\_\+v}} v)
+\item 
+bool \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_a1263a5593cc49c9f07a5cd552e2e01c6}{add\+Border}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type1, \mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type2, \mbox{\hyperlink{bfrLib__pre_8h_a3a3f9a2c61e94556286ca5ea840552aa}{uchar\+\_\+pair\+\_\+v}} v)
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Province}{Province}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_ad7de8f7374196f127aa5e437f951c499}{find\+Province}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type, unsigned char stars) const
+\item 
+\mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Territory}{Territory}} $\ast$ \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_ae60872c92756ebe0b1ba38db0a23af0d}{find\+Territory}} (\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}} type) const
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_a1e3c9363419d57b3bc4e4f00a9dd7e65}{add\+Land\+Border}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_aea270c11b83e88bc93c471f131ca8ee0}{add\+Navy\+Border}} ()
+\item 
+void \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_aa8793f26b70ab7f221c3cf3a313627aa}{set\+Show\+Combat\+Token}} (bool \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_a50167ff70a54baf47406cc030d202944}{show\+Combat\+Token}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Territory\+List \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_aeb41edb55bb5c875871f12a2b5dcf2da}{m\+\_\+territory\+List}}
+\item 
+Border\+List \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_a77c80eabd2b16f83b656dbb263d6d7a4}{m\+\_\+list\+Borders}}
+\item 
+bool \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_acce37b6d1f9ffc2b240ad32ce09bd35a}{m\+\_\+show\+Combat\+Token}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_aa2fab026580d6f14280c2ffb8063a314}{Game}}
+\item 
+class \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_aef20821e6daad4ed77426f36c3b8bf58}{handler\+::\+Battle}}
+\item 
+class \mbox{\hyperlink{classbattle__for__rokugan_1_1karta_1_1Map_afad89085c9a076e9a531ff28e1cb74b8}{object\+::\+Secret\+Objective}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 7 of file map.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_a027d2d63ac5136c56a215781a85858ef}\label{classbattle__for__rokugan_1_1karta_1_1Map_a027d2d63ac5136c56a215781a85858ef}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!Map@{Map}}
+\index{Map@{Map}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}}
+{\footnotesize\ttfamily battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::\+Map (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file map.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_aaed1b52057a990f263cffd11ccc996a1}\label{classbattle__for__rokugan_1_1karta_1_1Map_aaed1b52057a990f263cffd11ccc996a1}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!addBorder@{addBorder}}
+\index{addBorder@{addBorder}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{addBorder()}{addBorder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily bool battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::add\+Border (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type,  }\item[{\mbox{\hyperlink{bfrLib__pre_8h_a3a3f9a2c61e94556286ca5ea840552aa}{uchar\+\_\+pair\+\_\+v}}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 86 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_ae8617b3c3a46030bf39e4a050bf57c70}\label{classbattle__for__rokugan_1_1karta_1_1Map_ae8617b3c3a46030bf39e4a050bf57c70}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!addBorder@{addBorder}}
+\index{addBorder@{addBorder}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{addBorder()}{addBorder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily bool battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::add\+Border (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type,  }\item[{\mbox{\hyperlink{bfrLib__pre_8h_a71405e43544df63dea9a135a768cf864}{uchar\+\_\+v}}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 45 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_a1263a5593cc49c9f07a5cd552e2e01c6}\label{classbattle__for__rokugan_1_1karta_1_1Map_a1263a5593cc49c9f07a5cd552e2e01c6}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!addBorder@{addBorder}}
+\index{addBorder@{addBorder}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{addBorder()}{addBorder()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily bool battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::add\+Border (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type1,  }\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type2,  }\item[{\mbox{\hyperlink{bfrLib__pre_8h_a3a3f9a2c61e94556286ca5ea840552aa}{uchar\+\_\+pair\+\_\+v}}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 91 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_ad16040abb3095b61f491b9b8b8895f3e}\label{classbattle__for__rokugan_1_1karta_1_1Map_ad16040abb3095b61f491b9b8b8895f3e}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!addBorder@{addBorder}}
+\index{addBorder@{addBorder}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{addBorder()}{addBorder()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily bool battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::add\+Border (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type1,  }\item[{\mbox{\hyperlink{bfrLib__pre_8h_a71405e43544df63dea9a135a768cf864}{uchar\+\_\+v}}}]{s1,  }\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type2,  }\item[{\mbox{\hyperlink{bfrLib__pre_8h_a71405e43544df63dea9a135a768cf864}{uchar\+\_\+v}}}]{s2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 75 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_a6d8708db4aeeb59697a159a0f59e889d}\label{classbattle__for__rokugan_1_1karta_1_1Map_a6d8708db4aeeb59697a159a0f59e889d}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!addBorder@{addBorder}}
+\index{addBorder@{addBorder}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{addBorder()}{addBorder()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily bool battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::add\+Border (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type1,  }\item[{unsigned char}]{s1,  }\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type2,  }\item[{unsigned char}]{s2 = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 61 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_a1e3c9363419d57b3bc4e4f00a9dd7e65}\label{classbattle__for__rokugan_1_1karta_1_1Map_a1e3c9363419d57b3bc4e4f00a9dd7e65}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!addLandBorder@{addLandBorder}}
+\index{addLandBorder@{addLandBorder}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{addLandBorder()}{addLandBorder()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::add\+Land\+Border (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 116 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_aea270c11b83e88bc93c471f131ca8ee0}\label{classbattle__for__rokugan_1_1karta_1_1Map_aea270c11b83e88bc93c471f131ca8ee0}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!addNavyBorder@{addNavyBorder}}
+\index{addNavyBorder@{addNavyBorder}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{addNavyBorder()}{addNavyBorder()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::add\+Navy\+Border (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 151 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_af1f69019e77455c30d48995844a89fa5}\label{classbattle__for__rokugan_1_1karta_1_1Map_af1f69019e77455c30d48995844a89fa5}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!allTokenOpened@{allTokenOpened}}
+\index{allTokenOpened@{allTokenOpened}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{allTokenOpened}{allTokenOpened}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::all\+Token\+Opened (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_a877abcc643cb755b286f8c8892983058}\label{classbattle__for__rokugan_1_1karta_1_1Map_a877abcc643cb755b286f8c8892983058}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!clear@{clear}}
+\index{clear@{clear}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_ad7de8f7374196f127aa5e437f951c499}\label{classbattle__for__rokugan_1_1karta_1_1Map_ad7de8f7374196f127aa5e437f951c499}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!findProvince@{findProvince}}
+\index{findProvince@{findProvince}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{findProvince()}{findProvince()}}
+{\footnotesize\ttfamily bfr\+::karta\+::\+Province $\ast$ battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::find\+Province (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type,  }\item[{unsigned char}]{stars }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 100 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_ae60872c92756ebe0b1ba38db0a23af0d}\label{classbattle__for__rokugan_1_1karta_1_1Map_ae60872c92756ebe0b1ba38db0a23af0d}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!findTerritory@{findTerritory}}
+\index{findTerritory@{findTerritory}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{findTerritory()}{findTerritory()}}
+{\footnotesize\ttfamily bfr\+::karta\+::\+Territory $\ast$ battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::find\+Territory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 108 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_ae6696b0075c36d2ff64368c62eb8b077}\label{classbattle__for__rokugan_1_1karta_1_1Map_ae6696b0075c36d2ff64368c62eb8b077}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!newTurn@{newTurn}}
+\index{newTurn@{newTurn}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{newTurn()}{newTurn()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::new\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_aca15afe5df6eed5286748f68424ca7a8}\label{classbattle__for__rokugan_1_1karta_1_1Map_aca15afe5df6eed5286748f68424ca7a8}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!openTokens@{openTokens}}
+\index{openTokens@{openTokens}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{openTokens()}{openTokens()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::open\+Tokens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_a1a7e629e85b7b0139343ccf62d718466}\label{classbattle__for__rokugan_1_1karta_1_1Map_a1a7e629e85b7b0139343ccf62d718466}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily bfr\+::karta\+::\+Territory $\ast$ battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacebattle__for__rokugan_a8a33a7daec429639341c39a880af29a8}{Territory\+Type}}}]{type }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 17 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_aa8793f26b70ab7f221c3cf3a313627aa}\label{classbattle__for__rokugan_1_1karta_1_1Map_aa8793f26b70ab7f221c3cf3a313627aa}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!setShowCombatToken@{setShowCombatToken}}
+\index{setShowCombatToken@{setShowCombatToken}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{setShowCombatToken()}{setShowCombatToken()}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::set\+Show\+Combat\+Token (\begin{DoxyParamCaption}\item[{bool}]{show\+Combat\+Token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 163 of file map.\+cpp.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_aeb4e66a34da09868d9f9acc53c0a0977}\label{classbattle__for__rokugan_1_1karta_1_1Map_aeb4e66a34da09868d9f9acc53c0a0977}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!showCombatToken@{showCombatToken}}
+\index{showCombatToken@{showCombatToken}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{showCombatToken()}{showCombatToken()}}
+{\footnotesize\ttfamily bool battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::show\+Combat\+Token (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_a6fb62850241899959a8515039a494b81}\label{classbattle__for__rokugan_1_1karta_1_1Map_a6fb62850241899959a8515039a494b81}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!showCombatTokenChanged@{showCombatTokenChanged}}
+\index{showCombatTokenChanged@{showCombatTokenChanged}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{showCombatTokenChanged}{showCombatTokenChanged}}
+{\footnotesize\ttfamily void battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::show\+Combat\+Token\+Changed (\begin{DoxyParamCaption}\item[{bool}]{show\+Combat\+Token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_aa2fab026580d6f14280c2ffb8063a314}\label{classbattle__for__rokugan_1_1karta_1_1Map_aa2fab026580d6f14280c2ffb8063a314}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!Game@{Game}}
+\index{Game@{Game}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{Game}{Game}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classbattle__for__rokugan_1_1Game}{Game}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 46 of file map.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_aef20821e6daad4ed77426f36c3b8bf58}\label{classbattle__for__rokugan_1_1karta_1_1Map_aef20821e6daad4ed77426f36c3b8bf58}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!handler::Battle@{handler::Battle}}
+\index{handler::Battle@{handler::Battle}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{handler::Battle}{handler::Battle}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classbattle__for__rokugan_1_1handler_1_1Battle}{handler\+::\+Battle}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 47 of file map.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_afad89085c9a076e9a531ff28e1cb74b8}\label{classbattle__for__rokugan_1_1karta_1_1Map_afad89085c9a076e9a531ff28e1cb74b8}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!object::SecretObjective@{object::SecretObjective}}
+\index{object::SecretObjective@{object::SecretObjective}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{object::SecretObjective}{object::SecretObjective}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classbattle__for__rokugan_1_1object_1_1SecretObjective}{object\+::\+Secret\+Objective}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 48 of file map.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_a77c80eabd2b16f83b656dbb263d6d7a4}\label{classbattle__for__rokugan_1_1karta_1_1Map_a77c80eabd2b16f83b656dbb263d6d7a4}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!m\_listBorders@{m\_listBorders}}
+\index{m\_listBorders@{m\_listBorders}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{m\_listBorders}{m\_listBorders}}
+{\footnotesize\ttfamily Border\+List battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::m\+\_\+list\+Borders\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file map.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_acce37b6d1f9ffc2b240ad32ce09bd35a}\label{classbattle__for__rokugan_1_1karta_1_1Map_acce37b6d1f9ffc2b240ad32ce09bd35a}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!m\_showCombatToken@{m\_showCombatToken}}
+\index{m\_showCombatToken@{m\_showCombatToken}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{m\_showCombatToken}{m\_showCombatToken}}
+{\footnotesize\ttfamily bool battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::m\+\_\+show\+Combat\+Token\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 28 of file map.\+h.
+
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_aeb41edb55bb5c875871f12a2b5dcf2da}\label{classbattle__for__rokugan_1_1karta_1_1Map_aeb41edb55bb5c875871f12a2b5dcf2da}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!m\_territoryList@{m\_territoryList}}
+\index{m\_territoryList@{m\_territoryList}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{m\_territoryList}{m\_territoryList}}
+{\footnotesize\ttfamily Territory\+List battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::m\+\_\+territory\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 26 of file map.\+h.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classbattle__for__rokugan_1_1karta_1_1Map_a50167ff70a54baf47406cc030d202944}\label{classbattle__for__rokugan_1_1karta_1_1Map_a50167ff70a54baf47406cc030d202944}} 
+\index{battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}!showCombatToken@{showCombatToken}}
+\index{showCombatToken@{showCombatToken}!battle\_for\_rokugan::karta::Map@{battle\_for\_rokugan::karta::Map}}
+\doxysubsubsection{\texorpdfstring{showCombatToken}{showCombatToken}}
+{\footnotesize\ttfamily bool battle\+\_\+for\+\_\+rokugan\+::karta\+::\+Map\+::show\+Combat\+Token\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 10 of file map.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+bfr/include/lib\+\_\+bfr/karta/\mbox{\hyperlink{map_8h}{map.\+h}}\item 
+lib\+\_\+bfr/src/karta/\mbox{\hyperlink{map_8cpp}{map.\+cpp}}\end{DoxyCompactItemize}

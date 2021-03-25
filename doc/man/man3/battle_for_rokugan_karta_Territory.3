@@ -1,0 +1,152 @@
+.TH "battle_for_rokugan::karta::Territory" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::karta::Territory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <territory\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTerritory\fP (\fBTerritoryType\fP \fBtype\fP, QObject *parent)"
+.br
+.ti -1c
+.RI "\fBClanType\fP \fBdaimyo\fP () const"
+.br
+.ti -1c
+.RI "int \fBprovinceOwnerCount\fP (\fBClanType\fP \fBtype\fP) const"
+.br
+.ti -1c
+.RI "\fBProvince\fP * \fBcapital\fP () const"
+.br
+.ti -1c
+.RI "\fBProvince\fP * \fBoperator[]\fP (unsigned number) const"
+.br
+.ti -1c
+.RI "\fBTerritoryType\fP \fBtype\fP () const"
+.br
+.ti -1c
+.RI "unsigned \fBprovinceCount\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBisShadow\fP (\fBTerritoryType\fP \fBtype\fP)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddProvinces\fP (\fBchar_v\fP list, char \fBcapital\fP=\-1, \fBchar_v\fP navyList={})"
+.br
+.ti -1c
+.RI "\fBProvince\fP * \fBfindProvince\fP (uchar number)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTerritoryType\fP \fBm_type\fP"
+.br
+.ti -1c
+.RI "bool \fBm_firstCard\fP"
+.br
+.ti -1c
+.RI "ProvinceList \fBm_provinceList\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBMap\fP"
+.br
+.ti -1c
+.RI "class \fBobject::SecretObjective\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file territory\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::karta::Territory::Territory (\fBTerritoryType\fP type, QObject * parent)"
+
+.PP
+Definition at line 5 of file territory\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void battle_for_rokugan::karta::Territory::addProvinces (\fBchar_v\fP list, char capital = \fC\-1\fP, \fBchar_v\fP navyList = \fC{}\fP)\fC [private]\fP"
+
+.PP
+Definition at line 88 of file territory\&.cpp\&.
+.SS "bfr::karta::Province * battle_for_rokugan::karta::Territory::capital () const"
+
+.PP
+Definition at line 58 of file territory\&.cpp\&.
+.SS "\fBbfr::ClanType\fP battle_for_rokugan::karta::Territory::daimyo () const"
+
+.PP
+Definition at line 25 of file territory\&.cpp\&.
+.SS "bfr::karta::Province * battle_for_rokugan::karta::Territory::findProvince (uchar number)\fC [private]\fP"
+
+.PP
+Definition at line 99 of file territory\&.cpp\&.
+.SS "bool battle_for_rokugan::karta::Territory::isShadow (\fBTerritoryType\fP type)\fC [static]\fP"
+
+.PP
+Definition at line 78 of file territory\&.cpp\&.
+.SS "bfr::karta::Province * battle_for_rokugan::karta::Territory::operator[] (unsigned number) const"
+
+.PP
+Definition at line 66 of file territory\&.cpp\&.
+.SS "uint battle_for_rokugan::karta::Territory::provinceCount () const"
+
+.PP
+Definition at line 83 of file territory\&.cpp\&.
+.SS "int battle_for_rokugan::karta::Territory::provinceOwnerCount (\fBClanType\fP type) const"
+
+.PP
+Definition at line 49 of file territory\&.cpp\&.
+.SS "\fBbfr::TerritoryType\fP battle_for_rokugan::karta::Territory::type () const"
+
+.PP
+Definition at line 73 of file territory\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBMap\fP\fC [friend]\fP"
+
+.PP
+Definition at line 32 of file territory\&.h\&.
+.SS "friend class \fBobject::SecretObjective\fP\fC [friend]\fP"
+
+.PP
+Definition at line 33 of file territory\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool battle_for_rokugan::karta::Territory::m_firstCard\fC [private]\fP"
+
+.PP
+Definition at line 26 of file territory\&.h\&.
+.SS "ProvinceList battle_for_rokugan::karta::Territory::m_provinceList\fC [private]\fP"
+
+.PP
+Definition at line 27 of file territory\&.h\&.
+.SS "\fBTerritoryType\fP battle_for_rokugan::karta::Territory::m_type\fC [private]\fP"
+
+.PP
+Definition at line 25 of file territory\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

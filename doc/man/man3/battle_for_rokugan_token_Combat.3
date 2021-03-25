@@ -1,0 +1,206 @@
+.TH "battle_for_rokugan::token::Combat" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::token::Combat
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <combat\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBshow\fP (bool show=true)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBshowChanged\fP (bool \fBshow\fP)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCombat\fP (\fBobject::Player\fP *\fBowner\fP, \fBCombatTokenType\fP \fBtype\fP, uchar \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBCombat\fP (\fBobject::Player\fP *\fBowner\fP, \fBCombatTokenType\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "\fBCombatTokenType\fP \fBtype\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetType\fP (\fBCombatTokenType\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "\fBErrorMsg\fP \fBname\fP (\fBCombatTokenType\fP \fBtype\fP) const"
+.br
+.ti -1c
+.RI "\fBErrorMsg\fP \fBname\fP () const"
+.br
+.ti -1c
+.RI "uchar \fBvalue\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (uchar \fBvalue\fP)"
+.br
+.ti -1c
+.RI "bool \fBsetBlessing\fP (\fBCombat\fP *token)"
+.br
+.ti -1c
+.RI "\fBobject::Player\fP * \fBowner\fP () const"
+.br
+.ti -1c
+.RI "\fBStatusTokenType\fP \fBstatus\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStatus\fP (const \fBStatusTokenType\fP &\fBstatus\fP)"
+.br
+.ti -1c
+.RI "\fBCombat\fP * \fBblessing\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisShow\fP () const"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBshow\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "uchar \fBm_value\fP"
+.br
+.ti -1c
+.RI "\fBobject::Player\fP * \fBm_owner\fP"
+.br
+.ti -1c
+.RI "\fBCombatTokenType\fP \fBm_type\fP"
+.br
+.ti -1c
+.RI "\fBStatusTokenType\fP \fBm_status\fP"
+.br
+.ti -1c
+.RI "\fBCombat\fP * \fBm_blessing\fP"
+.br
+.ti -1c
+.RI "bool \fBm_show\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file combat\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::token::Combat::Combat (\fBobject::Player\fP * owner, \fBCombatTokenType\fP type, uchar value)"
+
+.PP
+Definition at line 4 of file combat\&.cpp\&.
+.SS "battle_for_rokugan::token::Combat::Combat (\fBobject::Player\fP * owner, \fBCombatTokenType\fP type)"
+
+.PP
+Definition at line 12 of file combat\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bfr::token::Combat * battle_for_rokugan::token::Combat::blessing () const"
+
+.PP
+Definition at line 95 of file combat\&.cpp\&.
+.SS "bool battle_for_rokugan::token::Combat::isShow () const"
+
+.PP
+Definition at line 100 of file combat\&.cpp\&.
+.SS "\fBErrorMsg\fP battle_for_rokugan::token::Combat::name () const"
+
+.PP
+Definition at line 45 of file combat\&.cpp\&.
+.SS "\fBErrorMsg\fP battle_for_rokugan::token::Combat::name (\fBCombatTokenType\fP type) const"
+
+.PP
+Definition at line 30 of file combat\&.cpp\&.
+.SS "bfr::object::Player * battle_for_rokugan::token::Combat::owner () const"
+
+.PP
+Definition at line 79 of file combat\&.cpp\&.
+.SS "bool battle_for_rokugan::token::Combat::setBlessing (\fBCombat\fP * token)"
+
+.PP
+Definition at line 65 of file combat\&.cpp\&.
+.SS "void battle_for_rokugan::token::Combat::setStatus (const \fBStatusTokenType\fP & status)"
+
+.PP
+Definition at line 89 of file combat\&.cpp\&.
+.SS "void battle_for_rokugan::token::Combat::setType (\fBCombatTokenType\fP type)"
+
+.PP
+Definition at line 23 of file combat\&.cpp\&.
+.SS "void battle_for_rokugan::token::Combat::setValue (uchar value)"
+
+.PP
+Definition at line 58 of file combat\&.cpp\&.
+.SS "void battle_for_rokugan::token::Combat::show (bool show = \fCtrue\fP)\fC [slot]\fP"
+
+.PP
+Definition at line 105 of file combat\&.cpp\&.
+.SS "void battle_for_rokugan::token::Combat::showChanged (bool show)\fC [signal]\fP"
+
+.SS "\fBbfr::StatusTokenType\fP battle_for_rokugan::token::Combat::status () const"
+
+.PP
+Definition at line 84 of file combat\&.cpp\&.
+.SS "\fBbfr::CombatTokenType\fP battle_for_rokugan::token::Combat::type () const"
+
+.PP
+Definition at line 18 of file combat\&.cpp\&.
+.SS "uchar battle_for_rokugan::token::Combat::value () const"
+
+.PP
+Definition at line 50 of file combat\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCombat\fP* battle_for_rokugan::token::Combat::m_blessing\fC [private]\fP"
+
+.PP
+Definition at line 46 of file combat\&.h\&.
+.SS "\fBobject::Player\fP* battle_for_rokugan::token::Combat::m_owner\fC [private]\fP"
+
+.PP
+Definition at line 43 of file combat\&.h\&.
+.SS "bool battle_for_rokugan::token::Combat::m_show\fC [private]\fP"
+
+.PP
+Definition at line 47 of file combat\&.h\&.
+.SS "\fBStatusTokenType\fP battle_for_rokugan::token::Combat::m_status\fC [private]\fP"
+
+.PP
+Definition at line 45 of file combat\&.h\&.
+.SS "\fBCombatTokenType\fP battle_for_rokugan::token::Combat::m_type\fC [private]\fP"
+
+.PP
+Definition at line 44 of file combat\&.h\&.
+.SS "uchar battle_for_rokugan::token::Combat::m_value\fC [private]\fP"
+
+.PP
+Definition at line 42 of file combat\&.h\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool battle_for_rokugan::token::Combat::show\fC [read]\fP, \fC [write]\fP"
+
+.PP
+Definition at line 9 of file combat\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.

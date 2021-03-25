@@ -1,0 +1,93 @@
+.TH "battle_for_rokugan::token::Province" 3 "Thu Mar 25 2021" "Battle for rokugan" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+battle_for_rokugan::token::Province
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <province\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProvince\fP (\fBobject::Player\fP *player, \fBkarta::Province\fP *\fBprovince\fP, \fBProvinceTokenType\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "\fBProvinceTokenType\fP \fBtype\fP () const"
+.br
+.ti -1c
+.RI "\fBkarta::Province\fP * \fBprovince\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBname\fP (\fBProvinceTokenType\fP \fBtype\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBProvinceTokenType\fP \fBm_type\fP"
+.br
+.ti -1c
+.RI "\fBobject::Player\fP * \fBm_player\fP"
+.br
+.ti -1c
+.RI "\fBkarta::Province\fP * \fBm_province\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file province\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "battle_for_rokugan::token::Province::Province (\fBobject::Player\fP * player, \fBkarta::Province\fP * province, \fBProvinceTokenType\fP type)"
+
+.PP
+Definition at line 4 of file province\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QString battle_for_rokugan::token::Province::name () const"
+
+.PP
+Definition at line 25 of file province\&.cpp\&.
+.SS "QString battle_for_rokugan::token::Province::name (\fBProvinceTokenType\fP type)\fC [static]\fP"
+
+.PP
+Definition at line 10 of file province\&.cpp\&.
+.SS "bfr::karta::Province * battle_for_rokugan::token::Province::province () const"
+
+.PP
+Definition at line 35 of file province\&.cpp\&.
+.SS "\fBbfr::ProvinceTokenType\fP battle_for_rokugan::token::Province::type () const"
+
+.PP
+Definition at line 30 of file province\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBobject::Player\fP* battle_for_rokugan::token::Province::m_player\fC [private]\fP"
+
+.PP
+Definition at line 21 of file province\&.h\&.
+.SS "\fBkarta::Province\fP* battle_for_rokugan::token::Province::m_province\fC [private]\fP"
+
+.PP
+Definition at line 22 of file province\&.h\&.
+.SS "\fBProvinceTokenType\fP battle_for_rokugan::token::Province::m_type\fC [private]\fP"
+
+.PP
+Definition at line 20 of file province\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Battle for rokugan from the source code\&.
