@@ -82,7 +82,7 @@ qt6_create_translation(QM_FILES ${lib_bfr_h} ${lib_bfr_cpp}
 add_library(lib_bfr ${lib_bfr_h} ${lib_bfr_cpp}
     rc_lib_bfr_tr.qrc ${bfr_initialize_header} ${QM_FILES})
 
-set_target_properties(lib_bfr PROPERTIES OUTPUT_NAME "lib_bfr")
+set_target_properties(lib_bfr PROPERTIES OUTPUT_NAME "bfr")
 target_link_libraries(lib_bfr lib_baseAF lib_currencyAF Qt6::Core)
 target_include_directories(lib_bfr
     PUBLIC  include
