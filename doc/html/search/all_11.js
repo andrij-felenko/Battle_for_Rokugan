@@ -38,7 +38,7 @@ var searchData=
   ['showcombattokenchanged_304',['showCombatTokenChanged',['../d0/d9f/classbattle__for__rokugan_1_1karta_1_1Map.html#a6fb62850241899959a8515039a494b81',1,'battle_for_rokugan::karta::Map']]],
   ['shrine_305',['Shrine',['../d5/de6/namespacebattle__for__rokugan.html#a0833e5ffd6310910940d2fede5196940ad080757314974eaea4984ee96ffdeeb9',1,'battle_for_rokugan']]],
   ['shugenja_306',['Shugenja',['../d5/de6/namespacebattle__for__rokugan.html#a1c715afe8df6a245a940edb880635180a47c730b9402f4ff2c044c7a59cadd5d6',1,'battle_for_rokugan']]],
-  ['sot_307',['SOT',['../d5/de6/namespacebattle__for__rokugan.html#a8e565986d5c2c2a8e8ef7f6ab9f386af',1,'battle_for_rokugan']]],
+  ['sot_307',['SOT',['../d5/de6/namespacebattle__for__rokugan.html#a2b404aab53b831fae2a61b0579f5bb79',1,'battle_for_rokugan']]],
   ['stars_308',['stars',['../d8/d40/classbattle__for__rokugan_1_1karta_1_1Province.html#a3e56faf7ca6ab003ffeab169e888a06c',1,'battle_for_rokugan::karta::Province::stars()'],['../d1/d44/classbattle__for__rokugan_1_1token_1_1Control.html#a7b3ea05331e4332914d6143c0be93769',1,'battle_for_rokugan::token::Control::stars()']]],
   ['start_309',['start',['../da/dec/classbattle__for__rokugan_1_1Game.html#af4a6ffe079511d85de4c02e5328d83ba',1,'battle_for_rokugan::Game']]],
   ['startctrltokenplaced_310',['startCtrlTokenPlaced',['../dd/df1/classbattle__for__rokugan_1_1object_1_1Player.html#af8c27c88c19d8bc41e3ff6b944fe2b70',1,'battle_for_rokugan::object::Player']]],
@@ -47,6 +47,6 @@ var searchData=
   ['stats_2eh_313',['stats.h',['../d9/d9b/stats_8h.html',1,'']]],
   ['status_314',['status',['../da/d7e/classbattle__for__rokugan_1_1token_1_1Combat.html#af8ee9854d39322f701f40c79587b6ec5',1,'battle_for_rokugan::token::Combat']]],
   ['statustokentype_315',['StatusTokenType',['../d5/de6/namespacebattle__for__rokugan.html#abbd764b8529db8f26d50db1c16be1229',1,'battle_for_rokugan']]],
-  ['stt_316',['STT',['../d5/de6/namespacebattle__for__rokugan.html#a54e5a2ac81546a26a36fb5359bd0d3f8',1,'battle_for_rokugan']]],
+  ['stt_316',['STT',['../d5/de6/namespacebattle__for__rokugan.html#a5ffc2574be12d379a348ab92634f8fb1',1,'battle_for_rokugan']]],
   ['swapallcontent_317',['swapAllContent',['../d8/d40/classbattle__for__rokugan_1_1karta_1_1Province.html#ab7c543a03bac83d6c715bc3ce3c65edd',1,'battle_for_rokugan::karta::Province']]]
 ];

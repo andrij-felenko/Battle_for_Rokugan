@@ -3,9 +3,9 @@ var bfrEnum_8h =
     [ "CardTypeList", "d6/d8f/bfrEnum_8h.html#a7adfe1665455778383de5fb447de5b40", null ],
     [ "ClanTypeList", "d6/d8f/bfrEnum_8h.html#adc0e573d59094c3fb3f1080dc7ad28be", null ],
     [ "ClanTypeOpt", "d6/d8f/bfrEnum_8h.html#a9e9c7f684a75b97b7a12ede7a2a32ddc", null ],
-    [ "CTT", "d6/d8f/bfrEnum_8h.html#af429c3b81a658a5c989f71b83fb80d4a", null ],
-    [ "SOT", "d6/d8f/bfrEnum_8h.html#a8e565986d5c2c2a8e8ef7f6ab9f386af", null ],
-    [ "STT", "d6/d8f/bfrEnum_8h.html#a54e5a2ac81546a26a36fb5359bd0d3f8", null ],
+    [ "CTT", "d6/d8f/bfrEnum_8h.html#a14c38d0c78e8a26e2de99d6f3774be07", null ],
+    [ "SOT", "d6/d8f/bfrEnum_8h.html#a2b404aab53b831fae2a61b0579f5bb79", null ],
+    [ "STT", "d6/d8f/bfrEnum_8h.html#a5ffc2574be12d379a348ab92634f8fb1", null ],
     [ "BorderType", "d6/d8f/bfrEnum_8h.html#a461bc6ddf134d6bd51c7ddd8c5d39d0b", [
       [ "Land", "d6/d8f/bfrEnum_8h.html#a461bc6ddf134d6bd51c7ddd8c5d39d0ba512ef7c688a2c8572d5e16f44e17e869", null ],
       [ "Navy", "d6/d8f/bfrEnum_8h.html#a461bc6ddf134d6bd51c7ddd8c5d39d0ba13ad5ac690e735fa48cf982532174e79", null ]
