@@ -41,5 +41,5 @@ var searchData=
   ['ctrltokenoffchanged_70',['ctrlTokenOffChanged',['../d8/df1/classbattle__for__rokugan_1_1handler_1_1Stats_1_1OneStat.html#ab615249c24be93b80265047345c5d3c8',1,'battle_for_rokugan::handler::Stats::OneStat']]],
   ['ctrltokenon_71',['ctrlTokenOn',['../d8/df1/classbattle__for__rokugan_1_1handler_1_1Stats_1_1OneStat.html#aa0e61759599f0ff331b97121fa39865a',1,'battle_for_rokugan::handler::Stats::OneStat::ctrlTokenOn()'],['../d8/df1/classbattle__for__rokugan_1_1handler_1_1Stats_1_1OneStat.html#a1169b834733fc959653f6c2b892353d2',1,'battle_for_rokugan::handler::Stats::OneStat::ctrlTokenOn() const']]],
   ['ctrltokenonchanged_72',['ctrlTokenOnChanged',['../d8/df1/classbattle__for__rokugan_1_1handler_1_1Stats_1_1OneStat.html#a6520a017f48a3fb4068ed97bb19078a9',1,'battle_for_rokugan::handler::Stats::OneStat']]],
-  ['ctt_73',['CTT',['../d5/de6/namespacebattle__for__rokugan.html#a14c38d0c78e8a26e2de99d6f3774be07',1,'battle_for_rokugan']]]
+  ['ctt_73',['CTT',['../d5/de6/namespacebattle__for__rokugan.html#af429c3b81a658a5c989f71b83fb80d4a',1,'battle_for_rokugan']]]
 ];
